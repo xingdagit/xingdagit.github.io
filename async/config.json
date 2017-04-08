@@ -1,1 +1,1 @@
-{"global":{"title":"SPACE-19","subtitle":"XD","description":"record--noBlog","author":null,"url":"http://yoursite.com"},"theme":{"menu":{"归档":"/archive","首页":"/#blog","关于":"/about"},"favicon":"/favicon.png","mathjax":true,"awesome_toc":true,"github_repo_widget":false}}
+{"global":{"title":"SPACE-19","subtitle":"XD","description":"record--noBlog","author":null,"url":"http://yoursite.com"},"theme":{"menu":{"归档":"/archive","标签":"/tags","关于":"/about"},"favicon":"/favicon.png","mathjax":true,"awesome_toc":true,"github_repo_widget":false}}
