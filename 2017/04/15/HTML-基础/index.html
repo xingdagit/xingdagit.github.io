@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/15/HTML-基础/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="1. HTML 简介 HTML 是用来描述网页的一种语言。 指的是超文本标记语言 (Hyper Text Markup Language) 不是一种编程语言，而是一种标记语言 (markup language) ，即一套标记标签(markup tag) 使用标记标签来描述网页 HTML 文档 = 网页(描述网页)      HTML 文档包含 HTML 标签和纯文本      HTML 文档是由">
-<meta property="og:updated_time" content="2017-04-15T14:05:33.293Z">
+<meta property="og:updated_time" content="2017-04-15T14:14:26.414Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML基础 | SPACE-19">
 <meta name="twitter:description" content="1. HTML 简介 HTML 是用来描述网页的一种语言。 指的是超文本标记语言 (Hyper Text Markup Language) 不是一种编程语言，而是一种标记语言 (markup language) ，即一套标记标签(markup tag) 使用标记标签来描述网页 HTML 文档 = 网页(描述网页)      HTML 文档包含 HTML 标签和纯文本      HTML 文档是由">
@@ -330,10 +330,46 @@ classes that you can use:
 <h2 id="10-“计算机输出”标签"><a href="#10-“计算机输出”标签" class="headerlink" title="10. “计算机输出”标签"></a>10. “计算机输出”标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;code&gt;  定义计算机代码。</div><div class="line">&lt;kbd&gt;	定义键盘码。</div><div class="line">&lt;samp&gt;  定义计算机代码样本。</div><div class="line">&lt;tt&gt;	定义打字机代码。</div><div class="line">&lt;var&gt;	定义变量。</div><div class="line">&lt;pre&gt;	定义预格式文本。</div></pre></td></tr></table></figure>
 <h2 id="11-使用-HTML5-的网站布局"><a href="#11-使用-HTML5-的网站布局" class="headerlink" title="11. 使用 HTML5 的网站布局"></a>11. 使用 HTML5 的网站布局</h2><ul>
 <li>HTML5 提供的新语义元素定义了网页的不同部分</li>
-<li><p>HTML5 语义元素</p>
-<p>|header  |定义文档或节的页眉|<br>| :—–:| :—-:  |<br>|nav        |定义导航链接的容器|<br>|section    |定义文档中的节|<br>|article |定义独立的自包含文章|<br>|aside    |定义内容之外的内容（比如侧栏）|<br>|footer    |定义文档或节的页脚|<br>|details |定义额外的细节|<br>|summary |定义 details 元素的标题|</p>
-</li>
+<li>HTML5 语义元素</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">header</th>
+<th style="text-align:center">定义文档或节的页眉</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">nav</td>
+<td style="text-align:center">定义导航链接的容器</td>
+</tr>
+<tr>
+<td style="text-align:center">section</td>
+<td style="text-align:center">定义文档中的节</td>
+</tr>
+<tr>
+<td style="text-align:center">article</td>
+<td style="text-align:center">定义独立的自包含文章</td>
+</tr>
+<tr>
+<td style="text-align:center">aside</td>
+<td style="text-align:center">定义内容之外的内容（比如侧栏）</td>
+</tr>
+<tr>
+<td style="text-align:center">footer</td>
+<td style="text-align:center">定义文档或节的页脚</td>
+</tr>
+<tr>
+<td style="text-align:center">details</td>
+<td style="text-align:center">定义额外的细节</td>
+</tr>
+<tr>
+<td style="text-align:center">summary</td>
+<td style="text-align:center">定义 details 元素的标题</td>
+</tr>
+</tbody>
+</table>
 <h2 id="12-HTML-标题"><a href="#12-HTML-标题" class="headerlink" title="12. HTML 标题"></a>12. HTML 标题</h2><p><code>&lt;h1&gt;(最大) --- &lt;h6&gt;(最小)</code></p>
 <h2 id="13-HTML-段落"><a href="#13-HTML-段落" class="headerlink" title="13. HTML 段落"></a>13. HTML 段落</h2><p><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></p>
 <h2 id="14-HTML-链接"><a href="#14-HTML-链接" class="headerlink" title="14. HTML 链接"></a>14. HTML 链接</h2><ul>
@@ -510,21 +546,7 @@ classes that you can use:
 </li>
 <li>target属性规定在何处打开action属性定义的URL</li>
 <li><code>&lt;form&gt;</code>包含的是表单元素，表单元素指的是不同类型的 input 元素、复选框、单选按钮、提交按钮等等</li>
-<li>表单元素<code>&lt;input&gt;</code>：</li>
-</ul>
-<ul>
-<li><code>&lt;input type=&quot;text&quot;&gt;</code> 定义用于文本输入的单行输入字段 </li>
-<li><code>&lt;input type=&quot;radio&quot;&gt;</code> 定义单选按钮</li>
-<li><code>&lt;input type=&quot;checkbox&quot;&gt;</code>定义复选框</li>
-<li><code>&lt;inputtype=&quot;submit&quot;&gt;</code>定义用于向表单处理程序提交表单的按钮(表单处理程序通常是包含用来处理输入数        据的脚本的服务器页面，在<form>的action属性中指定)</form></li>
-<li><code>&lt;input type=&quot;password&quot;&gt;</code> 定义密码字段</li>
-<li><code>&lt;input type=&quot;button&gt;</code> 定义按钮</li>
-<li>HTML5 增加了多个新的type值：color,date,datetime,datetime-local,email,month,number,range,searc        h,tel,time,url,week</li>
-<li>如果要正确地被提交，每个输入字段必须设置一个name属性</li>
-<li>其他属性：<br>disabled    规定输入字段应该被禁用。<br>max    规定输入字段的最大值。<br>maxlength    规定输入字段的最大字符数。<br>min    规定输入字段的最小值。<br>pattern    规定通过其检查输入值的正则表达式。<br>readonly    规定输入字段为只读（无法修改）。<br>required    规定输入字段是必需的（必需填写）。<br>size    规定输入字段的宽度（以字符计）。<br>step    规定输入字段的合法数字间隔。<br>value    规定输入字段的默认值。</li>
-<li>HTML5新增属性：<br>autocomplete 规定表单或输入字段是否应该自动完成<br>autofocus<br>form  规定<code>&lt;input&gt;</code>元素所属的一个或多个表单<br>(以下几个适用于 type=”submit” 以及 type=”image”)<br>formaction   规定当提交表单时处理该输入控件的文件的 URL<br>formenctype  规定当把表单数据提交至服务器时如何对其进行编码（仅针对 method=”post” 的表单）<br>formmethod   定义用以向 action URL 发送表单数据的HTTP方法<br>formnovalidate 规定在提交表单时不对 <code>&lt;input&gt;</code>元素进行验证<br>formtarget    规定的名称或关键词指示提交表单后在何处显示接收到的响应<br>height 和 width<br>list<br>min 和 max<br>multiple<br>pattern   规定用于检查 <code>&lt;input&gt;</code>元素值的正则表达式<br>placeholder<br>required<br>step</li>
-</ul>
-<ul>
+<li>表单元素<code>&lt;input&gt;</code>：<br><code>&lt;input type=&quot;text&quot;&gt;</code> 定义用于文本输入的单行输入字段<br><code>&lt;input type=&quot;radio&quot;&gt;</code> 定义单选按钮<br><code>&lt;input type=&quot;checkbox&quot;&gt;</code>定义复选框<br><code>&lt;inputtype=&quot;submit&quot;&gt;</code>定义用于向表单处理程序提交表单的按钮(表单处理程序通常是包含用来处理输入数        据的脚本的服务器页面，在<form>的action属性中指定)<br><code>&lt;input type=&quot;password&quot;&gt;</code> 定义密码字段<br><code>&lt;input type=&quot;button&gt;</code> 定义按钮<br>HTML5 增加了多个新的type值：color,date,datetime,datetime-local,email,month,number,range,searc        h,tel,time,url,week<br>如果要正确地被提交，每个输入字段必须设置一个name属性<br>其他属性：<br>disabled    规定输入字段应该被禁用。<br>max    规定输入字段的最大值。<br>maxlength    规定输入字段的最大字符数。<br>min    规定输入字段的最小值。<br>pattern    规定通过其检查输入值的正则表达式。<br>readonly    规定输入字段为只读（无法修改）。<br>required    规定输入字段是必需的（必需填写）。<br>size    规定输入字段的宽度（以字符计）。<br>step    规定输入字段的合法数字间隔。<br>value    规定输入字段的默认值。<br>HTML5新增属性：<br>autocomplete 规定表单或输入字段是否应该自动完成<br>autofocus<br>form  规定<code>&lt;input&gt;</code>元素所属的一个或多个表单<br>(以下几个适用于 type=”submit” 以及 type=”image”)<br>formaction   规定当提交表单时处理该输入控件的文件的 URL<br>formenctype  规定当把表单数据提交至服务器时如何对其进行编码（仅针对 method=”post” 的表单）<br>formmethod   定义用以向 action URL 发送表单数据的HTTP方法<br>formnovalidate 规定在提交表单时不对 <code>&lt;input&gt;</code>元素进行验证<br>formtarget    规定的名称或关键词指示提交表单后在何处显示接收到的响应<br>height 和 width<br>list<br>min 和 max<br>multiple<br>pattern   规定用于检查 <code>&lt;input&gt;</code>元素值的正则表达式<br>placeholder<br>required<br>step</form></li>
 <li><p>表单元素<code>&lt;select&gt;</code>：<br>定义下拉列表</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;select name=&quot;cars&quot;&gt;</div><div class="line">&lt;option value=&quot;volvo&quot;&gt;Volvo&lt;/option&gt;</div><div class="line">&lt;option value=&quot;saab&quot;&gt;Saab&lt;/option&gt;</div><div class="line">&lt;option value=&quot;fiat&quot; selected &gt;Fiat&lt;/option&gt;</div><div class="line">&lt;option value=&quot;audi&quot;&gt;Audi&lt;/option&gt;</div><div class="line">&lt;/select&gt;</div></pre></td></tr></table></figure>
 </li>
