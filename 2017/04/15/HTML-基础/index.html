@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/15/HTML-基础/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="1. HTML 简介 HTML 是用来描述网页的一种语言。 指的是超文本标记语言 (Hyper Text Markup Language) 不是一种编程语言，而是一种标记语言 (markup language) ，即一套标记标签(markup tag) 使用标记标签来描述网页 HTML 文档 = 网页(描述网页)      HTML 文档包含 HTML 标签和纯文本      HTML 文档是由">
-<meta property="og:updated_time" content="2017-04-15T13:53:30.153Z">
+<meta property="og:updated_time" content="2017-04-15T14:05:33.293Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML基础 | SPACE-19">
 <meta name="twitter:description" content="1. HTML 简介 HTML 是用来描述网页的一种语言。 指的是超文本标记语言 (Hyper Text Markup Language) 不是一种编程语言，而是一种标记语言 (markup language) ，即一套标记标签(markup tag) 使用标记标签来描述网页 HTML 文档 = 网页(描述网页)      HTML 文档包含 HTML 标签和纯文本      HTML 文档是由">
@@ -330,7 +330,9 @@ classes that you can use:
 <h2 id="10-“计算机输出”标签"><a href="#10-“计算机输出”标签" class="headerlink" title="10. “计算机输出”标签"></a>10. “计算机输出”标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;code&gt;  定义计算机代码。</div><div class="line">&lt;kbd&gt;	定义键盘码。</div><div class="line">&lt;samp&gt;  定义计算机代码样本。</div><div class="line">&lt;tt&gt;	定义打字机代码。</div><div class="line">&lt;var&gt;	定义变量。</div><div class="line">&lt;pre&gt;	定义预格式文本。</div></pre></td></tr></table></figure>
 <h2 id="11-使用-HTML5-的网站布局"><a href="#11-使用-HTML5-的网站布局" class="headerlink" title="11. 使用 HTML5 的网站布局"></a>11. 使用 HTML5 的网站布局</h2><ul>
 <li>HTML5 提供的新语义元素定义了网页的不同部分</li>
-<li>HTML5 语义元素<br>|header  |定义文档或节的页眉|<br>| :—–:| :—-:  |:—-:  |<br>|nav        |定义导航链接的容器|<br>|section    |定义文档中的节|<br>|article |定义独立的自包含文章|<br>|aside    |定义内容之外的内容（比如侧栏）|<br>|footer    |定义文档或节的页脚|<br>|details |定义额外的细节|<br>|summary |定义 details 元素的标题|</li>
+<li><p>HTML5 语义元素</p>
+<p>|header  |定义文档或节的页眉|<br>| :—–:| :—-:  |<br>|nav        |定义导航链接的容器|<br>|section    |定义文档中的节|<br>|article |定义独立的自包含文章|<br>|aside    |定义内容之外的内容（比如侧栏）|<br>|footer    |定义文档或节的页脚|<br>|details |定义额外的细节|<br>|summary |定义 details 元素的标题|</p>
+</li>
 </ul>
 <h2 id="12-HTML-标题"><a href="#12-HTML-标题" class="headerlink" title="12. HTML 标题"></a>12. HTML 标题</h2><p><code>&lt;h1&gt;(最大) --- &lt;h6&gt;(最小)</code></p>
 <h2 id="13-HTML-段落"><a href="#13-HTML-段落" class="headerlink" title="13. HTML 段落"></a>13. HTML 段落</h2><p><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></p>
@@ -384,11 +386,10 @@ classes that you can use:
 <ul>
 <li><p>以 <code>&lt;dl&gt;</code>标签开始，每个自定义列表项以<code>&lt;dt&gt;</code>开始，其内容定义以 <code>&lt;dd&gt;</code> 开始  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;dl&gt;</div><div class="line">&lt;dt&gt;Coffee&lt;/dt&gt;</div><div class="line">    &lt;dd&gt;Black hot drink&lt;/dd&gt;</div><div class="line">&lt;dt&gt;Milk&lt;/dt&gt;</div><div class="line">    &lt;dd&gt;White cold drink&lt;/dd&gt;</div><div class="line">&lt;/dl&gt;</div></pre></td></tr></table></figure>
-<ul>
-<li>可实现嵌套</li>
-<li>type属性可定义列表标记方式</li>
-</ul>
 </li>
+<li><p>可实现嵌套</p>
+</li>
+<li>type属性可定义列表标记方式</li>
 </ul>
 </li>
 </ul>
@@ -437,7 +438,65 @@ classes that you can use:
 </ul>
 <h2 id="22-HTML-颜色"><a href="#22-HTML-颜色" class="headerlink" title="22. HTML 颜色"></a>22. HTML 颜色</h2><ul>
 <li>颜色由一个十六进制符号来定义，这个符号由红色、绿色和蓝色的值组成（RGB）</li>
-<li>每种颜色的最小值是0（十六进制：#00）。最大值是255（十六进制：#FF）<br>|Color  |    Color HEX|    Color RGB|<br>|:—–:| :—-:  | :—-: |<br>|黑色    |#000000|    rgb(0,0,0)|<br>|红色    |#FF0000|    rgb(255,0,0)|<br>|绿色   |#00FF00|    rgb(0,255,0)|<br>|蓝色   |#0000FF|    rgb(0,0,255)|<br>|黄色   |#FFFF00|   rgb(255,255,0)|<br>|青色   |#00FFFF|    rgb(0,255,255)|<br>|粉红色 |#FF00FF|    rgb(255,0,255)|<br>|灰色   |#C0C0C0|    rgb(192,192,192)|<br>|白色   |#FFFFFF|    rgb(255,255,255)|</li>
+<li>每种颜色的最小值是0（十六进制：#00）。最大值是255（十六进制：#FF）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Color</th>
+<th style="text-align:center">Color HEX</th>
+<th style="text-align:center">Color RGB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">黑色</td>
+<td style="text-align:center">#000000</td>
+<td style="text-align:center">rgb(0,0,0)</td>
+</tr>
+<tr>
+<td style="text-align:center">红色</td>
+<td style="text-align:center">#FF0000</td>
+<td style="text-align:center">rgb(255,0,0)</td>
+</tr>
+<tr>
+<td style="text-align:center">绿色</td>
+<td style="text-align:center">#00FF00</td>
+<td style="text-align:center">rgb(0,255,0)</td>
+</tr>
+<tr>
+<td style="text-align:center">蓝色</td>
+<td style="text-align:center">#0000FF</td>
+<td style="text-align:center">rgb(0,0,255)</td>
+</tr>
+<tr>
+<td style="text-align:center">黄色</td>
+<td style="text-align:center">#FFFF00</td>
+<td style="text-align:center">rgb(255,255,0)</td>
+</tr>
+<tr>
+<td style="text-align:center">青色</td>
+<td style="text-align:center">#00FFFF</td>
+<td style="text-align:center">rgb(0,255,255)</td>
+</tr>
+<tr>
+<td style="text-align:center">粉红色</td>
+<td style="text-align:center">#FF00FF</td>
+<td style="text-align:center">rgb(255,0,255)</td>
+</tr>
+<tr>
+<td style="text-align:center">灰色</td>
+<td style="text-align:center">#C0C0C0</td>
+<td style="text-align:center">rgb(192,192,192)</td>
+</tr>
+<tr>
+<td style="text-align:center">白色</td>
+<td style="text-align:center">#FFFFFF</td>
+<td style="text-align:center">rgb(255,255,255)</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><a href="http://www.114la.com/other/rgb.htm" target="_blank" rel="external">RGB颜色查询对照表</a></li>
 </ul>
 <h2 id="23-HTML-表单"><a href="#23-HTML-表单" class="headerlink" title="23. HTML 表单"></a>23. HTML 表单</h2><ul>
