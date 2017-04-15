@@ -15,13 +15,13 @@
     
 
     <meta name="description" content="1. HTML 简介 HTML 是用来描述网页的一种语言。 指的是超文本标记语言 (Hyper Text Markup Language) 不是一种编程语言，而是一种标记语言 (markup language) ，即一套标记标签(markup tag) 使用标记标签来描述网页 HTML 文档 = 网页(描述网页)      HTML 文档包含 HTML 标签和纯文本      HTML 文档是由">
-<meta name="keywords" content="HTML,基础">
+<meta name="keywords" content="HTML 基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML基础 | SPACE-19">
 <meta property="og:url" content="http://yoursite.com/2017/04/15/HTML-基础/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="1. HTML 简介 HTML 是用来描述网页的一种语言。 指的是超文本标记语言 (Hyper Text Markup Language) 不是一种编程语言，而是一种标记语言 (markup language) ，即一套标记标签(markup tag) 使用标记标签来描述网页 HTML 文档 = 网页(描述网页)      HTML 文档包含 HTML 标签和纯文本      HTML 文档是由">
-<meta property="og:updated_time" content="2017-04-15T13:31:11.215Z">
+<meta property="og:updated_time" content="2017-04-15T13:43:25.404Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML基础 | SPACE-19">
 <meta name="twitter:description" content="1. HTML 简介 HTML 是用来描述网页的一种语言。 指的是超文本标记语言 (Hyper Text Markup Language) 不是一种编程语言，而是一种标记语言 (markup language) ，即一套标记标签(markup tag) 使用标记标签来描述网页 HTML 文档 = 网页(描述网页)      HTML 文档包含 HTML 标签和纯文本      HTML 文档是由">
@@ -167,7 +167,7 @@ classes that you can use:
           
              &#8226; 标签:
             <font class="tags">
-              <a class="tags-link" href="/tags/HTML/">HTML</a>, <a class="tags-link" href="/tags/基础/">基础</a>
+              <a class="tags-link" href="/tags/HTML-基础/">HTML 基础</a>
             </font>
           
 
@@ -212,11 +212,12 @@ classes that you can use:
 <tr>
 <td style="text-align:center">&lt;br /&gt;</td>
 <td style="text-align:center">某些 HTML 元素具有空内容（空元素在开始标签中关闭）</td>
+<td style="text-align:center">＆nbsp;</td>
 </tr>
 </tbody>
 </table>
 <h2 id="3-HTML-块级元素"><a href="#3-HTML-块级元素" class="headerlink" title="3. HTML 块级元素"></a>3. HTML 块级元素</h2><blockquote>
-<p><strong>从新行开始，可容纳内联元素和其他块元素</strong></p>
+<p>从新行开始，可容纳内联元素和其他块元素</p>
 </blockquote>
 <ul>
 <li><code>&lt;address&gt;</code> - 地址</li>
@@ -240,9 +241,9 @@ classes that you can use:
 <li><code>&lt;ul&gt;</code> - 非排序列表</li>
 </ul>
 <h2 id="3-HTML-内联元素"><a href="#3-HTML-内联元素" class="headerlink" title="3. HTML 内联元素"></a>3. HTML 内联元素</h2><blockquote>
-<p><strong>不从新行开始，只能容纳文本或者其他内联元素</strong></p>
+<p>不从新行开始，只能容纳文本或者其他内联元素</p>
 </blockquote>
-<p> ####<em>内联元素变块级元素—display:block</em>####</p>
+<p>   内联元素变块级元素—display:block</p>
 <ul>
 <li><code>&lt;a&gt;</code> - 锚点 </li>
 <li><code>&lt;abbr &gt;</code>- 缩写 </li>
@@ -318,11 +319,11 @@ classes that you can use:
 <li><p>内部样式表<br>当单个文件需要特别样式时，可使用内部样式表。在<code>&lt;head&gt;</code>内部通过 <code>&lt;style&gt;</code> 标签定义内部样式表。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">body &#123;background-color: red&#125;</div><div class="line">p &#123;margin-left: 20px&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
 </li>
-</ul>
+<li><p>内联样式<br>当特殊的样式需应用到个别元素时,可使用内联样式。即在相关的标签中使用样式属性，样式属性可以包含任      何 CSS 属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p style=&quot;color: red; margin-left: 20px&quot;&gt;This is a paragraph&lt;/p&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<ul>
-<li>内联样式<br>当特殊的样式需应用到个别元素时,可使用内联样式。即在相关的标签中使用样式属性，样式属性可以包含任      何 CSS 属性<br><code>&lt;p style=&quot;color: red; margin-left: 20px&quot;&gt;This is a paragraph&lt;/p&gt;</code></li>
+</li>
 </ul>
 <h2 id="8-文本格式化标签"><a href="#8-文本格式化标签" class="headerlink" title="8. 文本格式化标签"></a>8. 文本格式化标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;!-- This is a comment --&gt;  注释</div><div class="line">&lt;hr /&gt; 水平线，可用于分隔内容</div><div class="line">&lt;br /&gt; 换行</div><div class="line">&lt;b&gt;-  定义粗体文本</div><div class="line">&lt;big&gt;	定义大号字。</div><div class="line">&lt;em&gt;	定义着重文字。</div><div class="line">&lt;i&gt;	定义斜体字。</div><div class="line">&lt;small&gt; 定义小号字。</div><div class="line">&lt;strong&gt; 定义加重语气。</div><div class="line">&lt;sub&gt;	定义下标字。</div><div class="line">&lt;sup&gt;	定义上标字。</div><div class="line">&lt;ins&gt;	定义插入字。</div><div class="line">&lt;del&gt;	定义删除字</div></pre></td></tr></table></figure>
 <h2 id="9-引用、引用和术语定义"><a href="#9-引用、引用和术语定义" class="headerlink" title="9. 引用、引用和术语定义"></a>9. 引用、引用和术语定义</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;abbr&gt;    定义缩写。</div><div class="line">&lt;acronym&gt; 定义首字母缩写。</div><div class="line">&lt;address&gt; 定义地址。</div><div class="line">&lt;bdo&gt;	  定义文字方向。(dir属性: ltr/rtl)</div><div class="line">&lt;blockquote&gt;	定义长的引用。(缩进处理)</div><div class="line">&lt;q&gt;	      定义短的引用语。(加上引号)</div><div class="line">&lt;cite&gt;	  定义引用、引证。(用于著作标题)</div><div class="line">&lt;dfn&gt;	  定义一个定义项目</div></pre></td></tr></table></figure>
@@ -383,12 +384,12 @@ classes that you can use:
 <ul>
 <li>以 <code>&lt;dl&gt;</code>标签开始，每个自定义列表项以<code>&lt;dt&gt;</code>开始，其内容定义以 <code>&lt;dd&gt;</code> 开始</li>
 </ul>
+</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;dl&gt;</div><div class="line">&lt;dt&gt;Coffee&lt;/dt&gt;</div><div class="line">    &lt;dd&gt;Black hot drink&lt;/dd&gt;</div><div class="line">&lt;dt&gt;Milk&lt;/dt&gt;</div><div class="line">    &lt;dd&gt;White cold drink&lt;/dd&gt;</div><div class="line">&lt;/dl&gt;</div></pre></td></tr></table></figure>
 <ul>
 <li>可实现嵌套</li>
 <li>type属性可定义列表标记方式</li>
-</ul>
-</li>
 </ul>
 <h2 id="18-HTML-框架"><a href="#18-HTML-框架" class="headerlink" title="18. HTML 框架"></a>18. HTML 框架</h2><ul>
 <li>框架结构标签<code>&lt;frameset&gt;</code><ul>
@@ -467,9 +468,9 @@ classes that you can use:
 <li>表单元素<code>&lt;select&gt;</code>：</li>
 </ul>
 <ul>
-<li>定义下拉列表</li>
+<li>定义下拉列表<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;select name=&quot;cars&quot;&gt;</div><div class="line">&lt;option value=&quot;volvo&quot;&gt;Volvo&lt;/option&gt;</div><div class="line">&lt;option value=&quot;saab&quot;&gt;Saab&lt;/option&gt;</div><div class="line">&lt;option value=&quot;fiat&quot; selected &gt;Fiat&lt;/option&gt;</div><div class="line">&lt;option value=&quot;audi&quot;&gt;Audi&lt;/option&gt;</div><div class="line">&lt;/select&gt;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;select name=&quot;cars&quot;&gt;</div><div class="line">&lt;option value=&quot;volvo&quot;&gt;Volvo&lt;/option&gt;</div><div class="line">&lt;option value=&quot;saab&quot;&gt;Saab&lt;/option&gt;</div><div class="line">&lt;option value=&quot;fiat&quot; selected &gt;Fiat&lt;/option&gt;</div><div class="line">&lt;option value=&quot;audi&quot;&gt;Audi&lt;/option&gt;</div><div class="line">&lt;/select&gt;</div></pre></td></tr></table></figure>
 <ul>
 <li>表单元素<code>&lt;textarea&gt;</code>：</li>
 </ul>
@@ -489,9 +490,9 @@ classes that you can use:
 </ul>
 <ul>
 <li>HTML5新增元素</li>
-<li>为 <code>&lt;input&gt;</code>元素规定预定义选项列表(<code>&lt;input&gt;</code>list属性必须引用<code>&lt;datalist&gt;</code>元素的id属性)</li>
+<li>为 <code>&lt;input&gt;</code>元素规定预定义选项列表(<code>&lt;input&gt;</code>list属性必须引用<code>&lt;datalist&gt;</code>元素的id属性)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;form action=&quot;action_page.php&quot;&gt;</div><div class="line">    &lt;input list=&quot;browsers&quot;&gt;</div><div class="line">    &lt;datalist id=&quot;browsers&quot;&gt;</div><div class="line">      &lt;option value=&quot;Internet Explorer&quot;&gt;</div><div class="line">      &lt;option value=&quot;Firefox&quot;&gt;</div><div class="line">    &lt;/datalist&gt; </div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;form action=&quot;action_page.php&quot;&gt;</div><div class="line">   &lt;input list=&quot;browsers&quot;&gt;</div><div class="line">   &lt;datalist id=&quot;browsers&quot;&gt;</div><div class="line">     &lt;option value=&quot;Internet Explorer&quot;&gt;</div><div class="line">     &lt;option value=&quot;Firefox&quot;&gt;</div><div class="line">   &lt;/datalist&gt; </div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
 <ul>
 <li><code>&lt;fieldset&gt;</code> 元素</li>
 </ul>
