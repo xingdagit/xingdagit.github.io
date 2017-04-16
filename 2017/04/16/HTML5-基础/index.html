@@ -15,19 +15,20 @@
     
 
     <meta name="description" content="1. HTML5 新特性 HTML5 Doctype：&amp;lt;!doctype html&amp;gt; HTML5 编码：&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; 新的语义元素，比如 &amp;lt;header&amp;gt;, &amp;lt;footer&amp;gt;, &amp;lt;article&amp;gt;, and &amp;lt;section&amp;gt;。 新的表单控件，比如数字、日期、时间、日历和滑块">
-<meta name="keywords" content="基础,HTML5">
+<meta name="keywords" content="HTML5,基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML5-基础 | SPACE-19">
 <meta property="og:url" content="http://yoursite.com/2017/04/16/HTML5-基础/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="1. HTML5 新特性 HTML5 Doctype：&amp;lt;!doctype html&amp;gt; HTML5 编码：&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; 新的语义元素，比如 &amp;lt;header&amp;gt;, &amp;lt;footer&amp;gt;, &amp;lt;article&amp;gt;, and &amp;lt;section&amp;gt;。 新的表单控件，比如数字、日期、时间、日历和滑块">
+<meta property="og:image" content="http://yoursite.com/2017/04/16/HTML5-基础/HTML5-基础/1.png">
 <meta property="og:image" content="http://yoursite.com/2017/04/16/HTML5-基础/HTML5-基础/2.png">
 <meta property="og:image" content="http://yoursite.com/2017/04/16/HTML5-基础/HTML5-基础/3.png">
-<meta property="og:updated_time" content="2017-04-16T07:10:34.759Z">
+<meta property="og:updated_time" content="2017-04-16T07:26:59.592Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML5-基础 | SPACE-19">
 <meta name="twitter:description" content="1. HTML5 新特性 HTML5 Doctype：&amp;lt;!doctype html&amp;gt; HTML5 编码：&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; 新的语义元素，比如 &amp;lt;header&amp;gt;, &amp;lt;footer&amp;gt;, &amp;lt;article&amp;gt;, and &amp;lt;section&amp;gt;。 新的表单控件，比如数字、日期、时间、日历和滑块">
-<meta name="twitter:image" content="http://yoursite.com/2017/04/16/HTML5-基础/HTML5-基础/2.png">
+<meta name="twitter:image" content="http://yoursite.com/2017/04/16/HTML5-基础/HTML5-基础/1.png">
     
     
     
@@ -290,18 +291,16 @@ classes that you can use:
 </li>
 <li><p>圆形:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cxt.beginPath();//若之前已画了图，在开始画前要使用该方法，否则运行stroke()会把所有已画的图重画一次</div><div class="line">cxt.arc(70,18,15,0,Math.PI*2,true);//圆心坐标，圆的半径，起始角度，结束角度，和绘图方向(顺/逆时针)</div><div class="line">cxt.closePath();</div><div class="line">cxt.fill();或cxt.stroke(); //画</div></pre></td></tr></table></figure>
+<p><img src="HTML5-基础/1.png" alt="圆形arc"></p>
 </li>
-</ul>
-</li>
-</ul>
-<pre><code>![圆形arc](HTML5-基础/1.png)
-</code></pre><ul>
 <li><p>图像：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var img=new Image()</div><div class="line">img.src=&quot;flower.png&quot;</div><div class="line">cxt.drawImage(img,0,0)</div></pre></td></tr></table></figure>
-<ul>
-<li>Canvas 是逐像素进行渲染的，一旦图形被绘制完成，它就不会继续得到浏览器的关注。如果其位置发生变化，那么整个场景也需要重新绘制，包括任何或许已被图形覆盖的对象</li>
+</li>
 </ul>
 </li>
+</ul>
+<ul>
+<li>Canvas 是逐像素进行渲染的，一旦图形被绘制完成，它就不会继续得到浏览器的关注。如果其位置发生变化，那么整个场景也需要重新绘制，包括任何或许已被图形覆盖的对象</li>
 </ul>
 <h2 id="9-HTML5-内联-SVG"><a href="#9-HTML5-内联-SVG" class="headerlink" title="9. HTML5 内联 SVG"></a>9. HTML5 内联 SVG</h2><ul>
 <li>指可伸缩矢量图形 (Scalable Vector Graphics)</li>
