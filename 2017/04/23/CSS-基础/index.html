@@ -21,10 +21,13 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/23/CSS-基础/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="1. CSS 简介 CSS 指层叠样式表 (Cascading Style Sheets) 样式定义如何显示 HTML 元素  样式通常存储在样式表中，外部样式表通常存储在 CSS 文件中  把样式添加到 HTML 4.0 中，是为了解决内容与表现分离的问题 多个样式定义可层叠为一 当同一个 HTML 元素被不止一个样式定义时，多重样式将层叠为一个 优先级(高到底): 内联样式（在 HTML 元素">
-<meta property="og:updated_time" content="2017-04-23T01:42:00.673Z">
+<meta property="og:image" content="http://www.w3school.com.cn/i/ct_css_selector.gif">
+<meta property="og:image" content="http://www.w3school.com.cn/i/ct_boxmodel.gif">
+<meta property="og:updated_time" content="2017-04-23T01:47:57.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS-基础 | SPACE-19">
 <meta name="twitter:description" content="1. CSS 简介 CSS 指层叠样式表 (Cascading Style Sheets) 样式定义如何显示 HTML 元素  样式通常存储在样式表中，外部样式表通常存储在 CSS 文件中  把样式添加到 HTML 4.0 中，是为了解决内容与表现分离的问题 多个样式定义可层叠为一 当同一个 HTML 元素被不止一个样式定义时，多重样式将层叠为一个 优先级(高到底): 内联样式（在 HTML 元素">
+<meta name="twitter:image" content="http://www.w3school.com.cn/i/ct_css_selector.gif">
     
     
     
@@ -188,7 +191,7 @@ classes that you can use:
 <li>当同一个 HTML 元素被不止一个样式定义时，多重样式将层叠为一个</li>
 <li>优先级(高到底):<ol>
 <li>内联样式（在 HTML 元素内部）</li>
-<li>内部样式表（位于 <head> 的<style>标签内部）</li>
+<li>内部样式表（位于 <code>&lt;head&gt;</code> 的<code>&lt;style&gt;</code>标签内部）</li>
 <li>外部样式表</li>
 <li>浏览器缺省设置</li>
 </ol>
@@ -211,7 +214,7 @@ classes that you can use:
 <h2 id="4-创建-CSS"><a href="#4-创建-CSS" class="headerlink" title="4. 创建 CSS"></a>4. 创建 CSS</h2><ul>
 <li><p>三种方式来插入样式表：</p>
 <ul>
-<li><p>外部样式表<br>当样式需要被应用到很多页面的时候，可使用外部样式表，在<head>内部通过<code>&lt;link&gt;</code>标签定义外部样式表</p>
+<li><p>外部样式表<br>当样式需要被应用到很多页面的时候，可使用外部样式表，在<head>内部通过<code>&lt;link&gt;</code>标签定义外部样式表</head></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;mystyle.css&quot;&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
 </li>
 <li><p>内部样式表<br>当单个文件需要特别样式时，可使用内部样式表。在<code>&lt;head&gt;</code>内部通过 <code>&lt;style&gt;</code> 标签定义内部样式表。</p>
@@ -234,7 +237,7 @@ classes that you can use:
 </li>
 <li><p>CSS not 选择器</p>
 <ul>
-<li><code>:not(p){ background-color: #ff0000;}</code>//设置非 <p> 元素的所有元素的背景色</li>
+<li><code>:not(p){ background-color: #ff0000;}</code>//设置非 <p> 元素的所有元素的背景色</p></li>
 </ul>
 </li>
 <li><p>CSS 通配符选择器</p>
@@ -754,7 +757,7 @@ classes that you can use:
 <li>margin 属性(margin-top、margin-right、margin-bottom、margin-left)</li>
 <li>取值: 长度值/百分比(相对于其父元素的width计算) / auto / 0(默认值)</li>
 <li>例: <code>h1 {margin : 10px 0px 15px 5px;}</code></li>
-<li><a href="http://www.w3school.com.cn/css/css_margin_collapsing.asp">外边距合并</a><ul>
+<li><a href="http://www.w3school.com.cn/css/css_margin_collapsing.asp" target="_blank" rel="external">外边距合并</a><ul>
 <li>指 当两个垂直外边距相遇时，将形成一个外边距</li>
 <li>合并后的外边距的高度 = 两个发生合并的外边距的高度中的较大者</li>
 <li>行内框、浮动框和绝对定位间外边距 不会合并</li>
@@ -854,9 +857,9 @@ classes that you can use:
 </li>
 </ul>
 <h2 id="19-CSS-注意事项"><a href="#19-CSS-注意事项" class="headerlink" title="19. CSS 注意事项"></a>19. CSS 注意事项</h2><ul>
-<li><a href="http://www.w3school.com.cn/css/css_dont.asp">Internet Explorer Behaviors</a></li>
+<li><a href="http://www.w3school.com.cn/css/css_dont.asp" target="_blank" rel="external">Internet Explorer Behaviors</a></li>
 </ul>
-</style></head></li></ol></li></ul></li></ul>
+
   </section>
 
   
