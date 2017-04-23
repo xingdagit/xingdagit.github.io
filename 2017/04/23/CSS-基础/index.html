@@ -15,7 +15,7 @@
     
 
     <meta name="description" content="1. CSS 简介 CSS 指层叠样式表 (Cascading Style Sheets) 样式定义如何显示 HTML 元素  样式通常存储在样式表中，外部样式表通常存储在 CSS 文件中  把样式添加到 HTML 4.0 中，是为了解决内容与表现分离的问题 多个样式定义可层叠为一 当同一个 HTML 元素被不止一个样式定义时，多重样式将层叠为一个 优先级(高到底): 内联样式（在 HTML 元素">
-<meta name="keywords" content="基础,CSS">
+<meta name="keywords" content="CSS,基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS-基础 | SPACE-19">
 <meta property="og:url" content="http://yoursite.com/2017/04/23/CSS-基础/index.html">
@@ -23,7 +23,7 @@
 <meta property="og:description" content="1. CSS 简介 CSS 指层叠样式表 (Cascading Style Sheets) 样式定义如何显示 HTML 元素  样式通常存储在样式表中，外部样式表通常存储在 CSS 文件中  把样式添加到 HTML 4.0 中，是为了解决内容与表现分离的问题 多个样式定义可层叠为一 当同一个 HTML 元素被不止一个样式定义时，多重样式将层叠为一个 优先级(高到底): 内联样式（在 HTML 元素">
 <meta property="og:image" content="http://www.w3school.com.cn/i/ct_css_selector.gif">
 <meta property="og:image" content="http://www.w3school.com.cn/i/ct_boxmodel.gif">
-<meta property="og:updated_time" content="2017-04-23T03:14:54.870Z">
+<meta property="og:updated_time" content="2017-04-23T03:17:10.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS-基础 | SPACE-19">
 <meta name="twitter:description" content="1. CSS 简介 CSS 指层叠样式表 (Cascading Style Sheets) 样式定义如何显示 HTML 元素  样式通常存储在样式表中，外部样式表通常存储在 CSS 文件中  把样式添加到 HTML 4.0 中，是为了解决内容与表现分离的问题 多个样式定义可层叠为一 当同一个 HTML 元素被不止一个样式定义时，多重样式将层叠为一个 优先级(高到底): 内联样式（在 HTML 元素">
@@ -314,17 +314,19 @@ classes that you can use:
 <li>结合后代选择器和子选择器:<br><code>table.company td &gt; p</code>//选择作为 td 元素子元素的所有 p 元素，这个 td 元素本身从 table 元素继承，该 table 元素有一个包含 company 的 class 属性</li>
 </ul>
 </li>
-<li><p>CSS 相邻兄弟选择器（加号+）</p>
+</ol>
+<ol>
+<li>CSS 相邻兄弟选择器（加号+）</li>
+</ol>
 <ul>
 <li>可选择紧接在某一元素后的元素，且二者有相同父元素</li>
 <li><code>h1 + p {margin-top:50px;}</code>//将紧接在 h1 元素后出现的段落 增加上边距(h1和p都有相同父元素)</li>
 <li>用一个结合符只能选择两个相邻兄弟中的第二个元素,例:  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">li + li &#123;font-weight:bold;&#125;//只会把列表中第二个和第三个列表项变为粗体。而第一个列表项不受影响</div><div class="line"> .....</div><div class="line">&lt;div&gt;</div><div class="line">  &lt;ul&gt;</div><div class="line">      &lt;li&gt;List item 1&lt;/li&gt;</div><div class="line">      &lt;li&gt;List item 2&lt;/li&gt;//加粗</div><div class="line">      &lt;li&gt;List item 3&lt;/li&gt;//加粗</div><div class="line">  &lt;/ul&gt;</div><div class="line">  &lt;ol&gt;</div><div class="line">      &lt;li&gt;List item 1&lt;/li&gt;</div><div class="line">      &lt;li&gt;List item 2&lt;/li&gt;//加粗</div><div class="line">      &lt;li&gt;List item 3&lt;/li&gt;//加粗</div><div class="line">  &lt;/ol&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-</li>
-</ol>
 <ul>
-<li><p><code>html &gt; body table + ul {margin-top:20px;}</code>//选择紧接在 table 元素后出现的所有兄弟 ul 元素，该 table 元素包含在一个 body 元素中，body 元素本身是 html 元素的子元素</p>
+<li><code>html &gt; body table + ul {margin-top:20px;}</code>//选择紧接在 table 元素后出现的所有兄弟 ul 元素，该 table 元素包含在一个 body 元素中，body 元素本身是 html 元素的子元素</li>
+</ul>
 <ol>
 <li>CSS 伪类 (Pseudo-classes)</li>
 </ol>
@@ -332,10 +334,7 @@ classes that you can use:
 <li>用于向某些选择器添加特殊的效果</li>
 <li>语法: <code>selector : pseudo-class {property: value}</code></li>
 <li>也可与 CSS类 搭配使用: <code>selector.class : pseudo-class {property: value}</code></li>
-<li>锚伪类</li>
-</ul>
-</li>
-</ul>
+<li><p>锚伪类</p>
 <ul>
 <li>在支持 CSS 的浏览器中，链接的不同状态都可以不同的方式显示</li>
 <li><p>这些状态包括：活动状态，已被访问状态，未被访问状态，和鼠标悬停状态</p>
@@ -347,8 +346,9 @@ classes that you can use:
 <li>伪类与CSS类配合使用：/<em>若链接被访问过，那么它将显示为红色</em>/<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a.red : visited &#123;color: #FF0000&#125;</div><div class="line">&lt;a class=&quot;red&quot; href=&quot;css_syntax.asp&quot;&gt;CSS Syntax&lt;/a&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
+</li>
+<li><p>:first-child 伪类(CSS2)</p>
 <ul>
-<li>:first-child 伪类(CSS2)<ul>
 <li>选择某元素的第一个子元素</li>
 <li><code>p:first-child {font-weight: bold;}</code>//匹配第一个 <code>&lt;p&gt;</code> 元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">   &lt;p&gt;some text&lt;/p&gt;//匹配!</div><div class="line">   &lt;p&gt;some text&lt;/p&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
 </li>
@@ -372,10 +372,12 @@ classes that you can use:
 <p>结果: <code>文字段落中的引用的文字文字</code></p>
 </li>
 </ul>
+</li>
+</ul>
 <ol>
 <li>CSS 伪元素(Pseudo-elements)</li>
 </ol>
-</li>
+<ul>
 <li>用于向某些选择器设置特殊效果</li>
 <li>语法: <code>selector:pseudo-element {property:value;}</code></li>
 <li>:first-line 伪元素<ul>
