@@ -22,7 +22,8 @@
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="1. CSS 简介 CSS 指层叠样式表 (Cascading Style Sheets) 样式定义如何显示 HTML 元素  样式通常存储在样式表中，外部样式表通常存储在 CSS 文件中  把样式添加到 HTML 4.0 中，是为了解决内容与表现分离的问题 多个样式定义可层叠为一 当同一个 HTML 元素被不止一个样式定义时，多重样式将层叠为一个 优先级(高到底): 内联样式（在 HTML 元素">
 <meta property="og:image" content="http://www.w3school.com.cn/i/ct_css_selector.gif">
-<meta property="og:updated_time" content="2017-04-23T02:51:45.397Z">
+<meta property="og:image" content="http://www.w3school.com.cn/i/ct_boxmodel.gif">
+<meta property="og:updated_time" content="2017-04-23T02:59:00.371Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS-基础 | SPACE-19">
 <meta name="twitter:description" content="1. CSS 简介 CSS 指层叠样式表 (Cascading Style Sheets) 样式定义如何显示 HTML 元素  样式通常存储在样式表中，外部样式表通常存储在 CSS 文件中  把样式添加到 HTML 4.0 中，是为了解决内容与表现分离的问题 多个样式定义可层叠为一 当同一个 HTML 元素被不止一个样式定义时，多重样式将层叠为一个 优先级(高到底): 内联样式（在 HTML 元素">
@@ -213,7 +214,7 @@ classes that you can use:
 <h2 id="4-创建-CSS"><a href="#4-创建-CSS" class="headerlink" title="4. 创建 CSS"></a>4. 创建 CSS</h2><ul>
 <li><p>三种方式来插入样式表：</p>
 <ul>
-<li><p>外部样式表<br>当样式需要被应用到很多页面的时候，可使用外部样式表，在<head>内部通过<code>&lt;link&gt;</code>标签定义外部样式表</head></p>
+<li><p>外部样式表<br>当样式需要被应用到很多页面的时候，可使用外部样式表，在<code>&lt;head&gt;</code>内部通过<code>&lt;link&gt;</code>标签定义外部样式表</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;mystyle.css&quot;&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
 </li>
 <li><p>内部样式表<br>当单个文件需要特别样式时，可使用内部样式表。在<code>&lt;head&gt;</code>内部通过 <code>&lt;style&gt;</code> 标签定义内部样式表。</p>
@@ -236,7 +237,7 @@ classes that you can use:
 </li>
 <li><p>CSS not 选择器</p>
 <ul>
-<li><code>:not(p){ background-color: #ff0000;}</code>//设置非 <p> 元素的所有元素的背景色</p></li>
+<li><code>:not(p){ background-color: #ff0000;}</code>//设置非 <code>&lt;p&gt;</code> 元素的所有元素的背景色</li>
 </ul>
 </li>
 <li><p>CSS 通配符选择器</p>
@@ -317,47 +318,543 @@ classes that you can use:
 <ul>
 <li>可选择紧接在某一元素后的元素，且二者有相同父元素</li>
 <li><code>h1 + p {margin-top:50px;}</code>//将紧接在 h1 元素后出现的段落 增加上边距(h1和p都有相同父元素)</li>
-<li><p>用一个结合符只能选择两个相邻兄弟中的第二个元素,例:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">   li + li &#123;font-weight:bold;&#125;//只会把列表中第二个和第三个列表项变为粗体。而第一个列表项不受影响</div><div class="line">   .....</div><div class="line">   &lt;div&gt;</div><div class="line">      &lt;ul&gt;</div><div class="line">         &lt;li&gt;List item 1&lt;/li&gt;</div><div class="line">         &lt;li&gt;List item 2&lt;/li&gt;//加粗</div><div class="line">         &lt;li&gt;List item 3&lt;/li&gt;//加粗</div><div class="line">      &lt;/ul&gt;</div><div class="line">      &lt;ol&gt;</div><div class="line">         &lt;li&gt;List item 1&lt;/li&gt;</div><div class="line">         &lt;li&gt;List item 2&lt;/li&gt;//加粗</div><div class="line">         &lt;li&gt;List item 3&lt;/li&gt;//加粗</div><div class="line">      &lt;/ol&gt;</div><div class="line">   &lt;/div&gt;  </div><div class="line">   ```   </div><div class="line">   - 选择紧接在 table 元素后出现的所有兄弟 ul 元素，该 table 元素包含在一个 body 元素中，body 元素本身是 html 元素的子元素：</div><div class="line">     `html &gt; body table + ul &#123;margin-top:20px;&#125;`</div><div class="line">  </div><div class="line"></div><div class="line">  </div><div class="line">11. CSS 伪类 (Pseudo-classes)</div><div class="line">   - 用于向某些选择器添加特殊的效果</div><div class="line">   - 语法: `selector : pseudo-class &#123;property: value&#125;`</div><div class="line">   - 也可与 CSS类 搭配使用: `selector.class : pseudo-class &#123;property: value&#125;`</div><div class="line">   - 锚伪类</div><div class="line">     + 在支持 CSS 的浏览器中，链接的不同状态都可以不同的方式显示</div><div class="line">     + 这些状态包括：活动状态，已被访问状态，未被访问状态，和鼠标悬停状态</div></pre></td></tr></table></figure>
-<p> a:link {color: #FF0000}        /<em> 未访问的链接 </em>/<br> a:visited {color: #00FF00}    /<em> 已访问的链接 </em>/<br> a:hover {color: #FF00FF}    /<em> 鼠标移动到链接上 </em>/<br> a:active {color: #0000FF}    /<em> 选定的链接 </em>/</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">+ 在 CSS 定义中，**a:hover** 必须被置于 **a:link**和**a:visited**之后，才是有效的;**a:active** 必须被置于 **a:hover** 之后，才是有效的.</div><div class="line">+ 伪类名称对大小写不敏感</div><div class="line">+ 伪类与CSS类配合使用：/*若链接被访问过，那么它将显示为红色*/</div></pre></td></tr></table></figure>
-<p>a.red : visited {color: #FF0000}<br><a class="red" href="css_syntax.asp">CSS Syntax</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- :first-child 伪类(CSS2)</div><div class="line">  + 选择某元素的第一个子元素</div><div class="line">  + `p:first-child &#123;font-weight: bold;&#125;`//匹配第一个 `&lt;p&gt;` 元素</div></pre></td></tr></table></figure>
-  <body><br>     <p>some text</p>//匹配!<br>     <p>some text</p><br>  </body>
-
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">+ `p &gt; i:first-child &#123; font-weight:bold; &#125; `//匹配所有`&lt;p&gt;`元素中的第一个`&lt;i&gt;`元素</div></pre></td></tr></table></figure>
-  <body><br>     <p>some <i>text</i>. some <i>text</i>.</p> //只匹配前面的<i>元素<br>     <p>some <i>text</i>. some <i>text</i>.</p> //只匹配前面的<i>元素<br>  </i></i></body>
-
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">+ `p:first-child i &#123; color:blue; &#125;`//匹配所有作为第一个子元素的`&lt;p&gt;`元素中的所有`&lt;i&gt;`元素</div></pre></td></tr></table></figure>
-  <body><br>     <p>some <i>text</i>. some <i>text</i>.</p> //这一行的<i>元素都匹配<br>     <p>some <i>text</i>. some <i>text</i>.</p> //都不匹配<br>  </i></body>    
-
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">		 </div><div class="line">- :lang 伪类(CSS2)  </div><div class="line">  + 使你有能力为不同的语言定义特殊的规则</div><div class="line">  + 下面的例子中，:lang 类为属性值为 no 的 q 元素定义引号的类型：</div></pre></td></tr></table></figure>
-<p> <html><br> <head><br> <style type="text/css"></p>
-<pre><code>q:lang(no){quotes: &quot;~&quot; &quot;~&quot;}
-</code></pre><p> </style><br> </head><br> <body></body></html></p>
-   <p>文字<q lang="no">段落中的引用的文字</q>文字</p><br> <br> /<em>结果: 文字段落中的引用的文字文字</em>/<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line">12. CSS 伪元素(Pseudo-elements)</div><div class="line">   - 用于向某些选择器设置特殊效果</div><div class="line">   - 语法: `selector:pseudo-element &#123;property:value;&#125;`</div><div class="line">   - :first-line 伪元素</div><div class="line">     + 用于向文本的**首行**设置特殊样式</div><div class="line">     + 只能用于块级元素</div><div class="line">     + `p:first-line &#123; color:#ff0000; font-variant:small-caps; &#125;`//对p元素的第一行文本进行格式化</div><div class="line">   - :first-letter 伪元素</div><div class="line">     + 用于向文本的**首字母**设置特殊样式</div><div class="line">     + 只能用于块级元素</div><div class="line">     + `p:first-letter &#123; color:#ff0000; font-size:xx-large; &#125;`//对p元素的第一个字母进行格式化</div><div class="line">   - 伪元素 与 CSS 类配合使用</div><div class="line">     + 语法: `selector.class:pseudo-element &#123;property:value;&#125;`</div><div class="line">     + 例: </div><div class="line">       使所有 class 为 article 的段落的首字母变为红色</div></pre></td></tr></table></figure><br><br> p.article:first-letter { color: #FF0000; }<br> <p class="article">This is a paragraph in an article。</p>
-
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div><div class="line">261</div><div class="line">262</div><div class="line">263</div><div class="line">264</div><div class="line">265</div><div class="line">266</div><div class="line">267</div><div class="line">268</div><div class="line">269</div><div class="line">270</div><div class="line">271</div><div class="line">272</div><div class="line">273</div><div class="line">274</div><div class="line">275</div><div class="line">276</div><div class="line">277</div><div class="line">278</div><div class="line">279</div><div class="line">280</div><div class="line">281</div><div class="line">282</div><div class="line">283</div><div class="line">284</div><div class="line">285</div><div class="line">286</div><div class="line">287</div><div class="line">288</div><div class="line">289</div><div class="line">290</div><div class="line">291</div><div class="line">292</div><div class="line">293</div><div class="line">294</div><div class="line">295</div><div class="line">296</div><div class="line">297</div><div class="line">298</div><div class="line">299</div><div class="line">300</div><div class="line">301</div><div class="line">302</div></pre></td><td class="code"><pre><div class="line">    - 可结合多个伪元素来使用（即多重伪元素）</div><div class="line">    - :before 伪元素(CSS2)</div><div class="line">      + 可在元素的内容前面插入新内容</div><div class="line">      + `h1:before &#123; content:url(logo.gif); &#125;`//在每个 `&lt;h1&gt; `元素前面插入一幅图片</div><div class="line">    - :after  伪元素(CSS2)</div><div class="line">      + 可在元素的内容之后插入新内容</div><div class="line">      + `h1:after &#123; content:url(logo.gif); &#125;`//在每个 `&lt;h1&gt; `元素后面插入一幅图片</div><div class="line"></div><div class="line">## 6. CSS 背景</div><div class="line"></div><div class="line"> 1. 背景色</div><div class="line">    + 使用 background-color 属性(这个属性接受任何合法的颜色值)</div><div class="line">    + `p &#123;background-color: gray;&#125;`//把元素的背景设置为灰色</div><div class="line">    + background-color 不能继承，其默认值是transparent（即如果一个元素没有指定背景色，那么背景就是透明的，这样其祖先元素的背景才能可见）</div><div class="line">      </div><div class="line"> 2. 背景图像</div><div class="line">    + 使用 background-image 属性</div><div class="line">    + 默认值为none(表示背景上没任何图像)</div><div class="line">    + 如需设置一个背景图像，须为这个属性设置一个 URL 值</div><div class="line">    + 例: `body &#123;background-image: url(/i/eg_bg_04.gif);&#125;`</div><div class="line">    + background-image 也不能继承。(事实上，所有背景属性都不能继承)</div><div class="line"></div><div class="line"> 3. 背景重复(平铺)</div><div class="line">    + 使用 background-repeat 属性</div><div class="line">    + 属性值 </div><div class="line">      - repeat 图像在水平垂直方向上都平铺</div><div class="line">      - repeat-x 图像在水平方向上重复</div><div class="line">      - repeat-y 图像在垂直方向上重复</div><div class="line">      - no-repeat 不允许图像在任何方向上平铺</div><div class="line">    + 默认地，背景图像将从一个元素的**左上角**开始</div><div class="line"></div><div class="line"> 4. 背景定位</div><div class="line">    + 使用 background-position 属性</div><div class="line">    + 属性值 </div><div class="line">      - 关键字: top、bottom、left、right、两个(水平方向一个加垂直方向一个)、center</div><div class="line">      - 百分比: </div><div class="line">        1. 默认值为0% 0%(即top left)</div><div class="line">        2. 只写一个值时，会默认当作水平值，而垂直值默认为50%</div><div class="line">        3. 百分数值同时应用于元素和图像</div><div class="line">        4. 图像中描述为 50% 50% 的点（中心点）与元素中描述为50% 50%的点（中心点）对齐；如果图像位于 0% 0%，其左上角将放在元素内边距区的左上角；如图像位置是100% 100%，会使图像的右下角放在右边距的右下角。</div><div class="line">      - 长度值</div><div class="line">        1. 元素内边距区左上角的偏移(偏移点是图像的左上角)</div><div class="line">        2. 例: `background-position:50px 100px;`//图像的左上角将定位在元素内边距区左上角向右 50 像素、向下 100 像素的位置上</div><div class="line">        3. 与百分数值不同，偏移只是从一个左上角到另一个左上角(图像的左上角与 background-position 声明中的指定的点对齐)</div><div class="line"> </div><div class="line"> 5. 背景关联</div><div class="line">    + background-attachment 属性 </div><div class="line">    + 通过这个属性，可以声明图像相对于可视区是固定的（fixed），防止当文档滚动到超过背景图像的位置时，随着滚动的背景图像就会消失的现象</div><div class="line">    + 属性值</div><div class="line">      - scroll(默认值): 背景会随文档滚动</div><div class="line">      - fixed : 固定 </div><div class="line"></div><div class="line">## 7. CSS 文本</div><div class="line"></div><div class="line"> 1. 缩进文本</div><div class="line">    + text-indent 属性</div><div class="line">    + 实现文本缩进(常用于段落的首行缩进)</div><div class="line">    + 一般来说，可应用于所有块级元素，但无法应用于行内元素，以及图像之类的替换元素。(若想把一个行内元素的首行“缩进”，可以用**左内边距或外边距**创造这种效果)</div><div class="line">    + 不过如果一个块级元素（比如段落）的首行中有一个图像，它会随该行的其余文本移动。</div><div class="line">    + 属性值: 可使用所有长度单位，如**长度、百分值**(可为负值)</div><div class="line">      例: `p &#123;text-indent: 5em;&#125;`//使所有段落的首行缩进 5 em</div><div class="line">      例: `p &#123;text-indent: -5em;&#125;`//使所有段落的首行悬挂在元素中余下部分的左边(“悬挂缩进”)</div><div class="line">      例: `p &#123;text-indent:-5em;padding-left:5em;&#125;`//使用负值，首行的某些文本可能会超出浏览器窗口的左边界。为避免出现这种显示问题，可针对负缩进再设置一个外边距或一些内边距</div><div class="line">      例: `p &#123;text-indent: 20%;&#125;`//缩进其父元素宽度的 20%</div><div class="line">    + text-indent 属性可以继承，即设置了缩进元素所包括(派生)的所有子元素也相应缩进</div><div class="line"> 2. 水平对齐</div><div class="line">    + text-align 属性</div><div class="line">    + 属性值: </div><div class="line">      - left - 左对齐 </div><div class="line">      - right - 右对齐</div><div class="line">      - center - 内容居中，元素不居中（与`&lt;center&gt;`的区别）</div><div class="line">      - justify - 两端对齐(文本行的左右两端都放在父元素的内边界上,调整单词和字母间的间隔，使各行的长度恰好相等)</div><div class="line"> 3. 字间隔</div><div class="line">    + word-spacing 属性</div><div class="line">    + 改变**字（单词）之间**的标准间隔</div><div class="line">    + 属性值: </div><div class="line">      - normal或0: 默认值</div><div class="line">      - 正长度值: 30px或0.5em</div><div class="line">      - 负长度值: -30px或-0.5em</div><div class="line"> 4. 字母间隔</div><div class="line">    + letter-spacing 属性</div><div class="line">    + 改变**字符或字母之间**的间隔</div><div class="line">    + 属性值: </div><div class="line">      - normal或0: 默认值</div><div class="line">      - 正长度值: 30px或0.5em</div><div class="line">      - 负长度值: -30px或-0.5em</div><div class="line"> 5. 字符转换</div><div class="line">    + text-transform 属性</div><div class="line">    + 处理文本的大小写</div><div class="line">    + 属性值: </div><div class="line">      - none: 默认值</div><div class="line">      - uppercase: 大写</div><div class="line">      - lowercase: 小写</div><div class="line">      - capitalize: 首字母大写</div><div class="line"> 6. 文本装饰</div><div class="line">    + text-decoration 属性</div><div class="line">    + 属性值: (可组合使用)</div><div class="line">      - none: 默认值</div><div class="line">      - underline: 下划线</div><div class="line">      - overline: 上划线</div><div class="line">      - line-through: 贯穿线</div><div class="line">      - blink: 闪烁</div><div class="line">      - 可组合使用，但当两个不同的装饰都与同一元素匹配时，优先级较高的值会完全取代较低的值(而不是积累起来)</div><div class="line"> 7. 空白符处理</div><div class="line">    + white-space 属性</div><div class="line">    + 属性值</div><div class="line">      - normal(默认)：忽略多余的空白符(回车、空格)</div><div class="line">      - pre: 不忽略多余的空白符(类似于`&lt;pre&gt;`)</div><div class="line">      - nowrap: 防止换行(除非用`&lt;br/&gt;`)</div><div class="line">      - pre-wrap</div><div class="line">      - pre-line</div><div class="line"> 8. 文本方向</div><div class="line">    + direction 属性</div><div class="line">    + 属性值:</div><div class="line">      - ltr: 左到右</div><div class="line">      - rtl: 右到左</div><div class="line"></div><div class="line">## 8. CSS 字体</div><div class="line"></div><div class="line"> 1. CSS 字体系列</div><div class="line">    + 通用字体系列 - 拥有相似外观的字体系统组合（比如 &quot;Serif&quot; 或 &quot;Monospace&quot;）</div><div class="line">    + 特定字体系列 - 具体的字体系列（比如 &quot;Times&quot; 或 &quot;Courier&quot;）</div><div class="line"> 2. 指定字体系列</div><div class="line">    + font-family 属性 </div><div class="line">    + 取值: 字体系列名 / 具体某个特定字体名 / 多个组合(若包括空格，要加引号)</div><div class="line"> 3. 字体风格</div><div class="line">    + font-style 属性</div><div class="line">    + 取值: normal / italic(文本斜体显示) / oblique(文本倾斜显示)</div><div class="line"> 4. 字体变形</div><div class="line">    + font-variant 属性</div><div class="line">    + 设定小型大写字母</div><div class="line">    + 例： `p &#123;font-variant:small-caps;&#125;`</div><div class="line"> 5. 字体加粗</div><div class="line">    + font-weight 属性</div><div class="line">    + 设置文本的粗细</div><div class="line">    + 取值: 100-900代表1到9级(normal为400，bold为700)</div><div class="line"> 6. 字体大小</div><div class="line">    + font-size 属性</div><div class="line">    + 设置文本的大小</div><div class="line">    + 取值:</div><div class="line">      - 绝对值：</div><div class="line">        1. 将文本设置为指定的大小</div><div class="line">        2. 不允许用户在所有浏览器中改变文本大小（不利于可用性）</div><div class="line">        3. 绝对大小在确定了输出的物理尺寸时很有用</div><div class="line">      - 相对大小：</div><div class="line">        1. 相对于周围的元素来设置大小</div><div class="line">        2. 允许用户在浏览器改变文本大小</div><div class="line">      - 普通文本(如段落)的默认大小为16px(1em)</div><div class="line">      </div><div class="line">## 9. CSS 列表</div><div class="line"></div><div class="line"> + 主要是改变列表的标志类型(无序列表的标志是圆点；有序列表的是字母，数字等)</div><div class="line"> + 例：</div><div class="line">   - `ul &#123;list-style-type : square&#125;` // 把无序列表中的列表项标志设置为方块</div><div class="line">   - `ul li &#123;list-style-image : url(xxx.gif)&#125;` // 使用图像作为标志</div><div class="line">   - `li &#123;list-style-position : inside/outside&#125;`//设置标志出现在列表项内还是外</div><div class="line">   - `li &#123;list-style : url(example.gif) square inside&#125;`//上述设置组合</div><div class="line"></div><div class="line">## 10. CSS 表格</div><div class="line"> 1. 表格边框(双线)</div><div class="line">    + border 属性</div><div class="line">    + `table, th, td &#123; border: 1px solid blue; &#125;` //为 table、th 以及 td 设置了蓝色边框</div><div class="line"> 2. 折叠边框(单线)</div><div class="line">    + border-collapse 属性</div><div class="line">    + 设置是否将表格边框折叠为单一边框</div><div class="line">    + 例: </div><div class="line">      `table &#123; border-collapse:collapse; &#125; `</div><div class="line">      `table,th,td &#123; border: 1px solid black; &#125;`</div><div class="line"> 3. 表格宽度和高度</div><div class="line">    + width 和 height 属性</div><div class="line">    + 取值: 长度值或百分比</div><div class="line"> 4. 表格文本对齐</div><div class="line">    + text-align： 水平对齐方式(取值: left、center、right) </div><div class="line">    + vertical-align：垂直对齐方式(取值: top、center、bottom)</div><div class="line"> 5. 表格内边距</div><div class="line">    + padding 属性</div><div class="line">    + `td &#123; padding:15px; &#125;`</div><div class="line"> 6. 表格颜色</div><div class="line">    + `table, td, th &#123; border:1px solid green; &#125;`//设置**边框**的颜色</div><div class="line">    + `th &#123; background-color:green; color:white; &#125;`//设置 th 元素的**文本和背景**颜色</div><div class="line"></div><div class="line">## 11. CSS 轮廓</div><div class="line"> + 轮廓（outline）: 绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用</div><div class="line"> + 属性：</div><div class="line">   - `outline`       在一个声明中设置所有的轮廓属性</div><div class="line">   - `outline-color` 设置轮廓的颜色</div><div class="line">   - `outline-style` 设置轮廓的样式</div><div class="line">   - `outline-width` 设置轮廓的宽度</div><div class="line"></div><div class="line">## 12. CSS 滤镜</div><div class="line"> + `...&#123; filter:滤镜名称(设置值) &#125;`</div><div class="line"> </div><div class="line">## 13. CSS 框模型</div><div class="line"> 1. 框模型概述</div><div class="line">    + CSS 框模型 (Box Model) 规定了元素框处理元素内容、内边距、边框 和 外边距 的方式</div><div class="line">    + ![框模型](http://www.w3school.com.cn/i/ct_boxmodel.gif)</div><div class="line">    + 元素框的最内部分是实际的内容，直接包围内容的是内边距</div><div class="line">    + 内边距呈现了元素的背景</div><div class="line">    + 内边距的边缘是边框</div><div class="line">    + 边框以外是外边距</div><div class="line">    + 外边距默认是透明的，不会遮挡其后的任何元素。(外边距可为负值，且在很多情况下都要使用负值的外边距)</div><div class="line">    + 背景应用于由内容和内边距、边框组成的区域</div><div class="line">    + 内边距、边框和外边距都是可选的，默认值是零</div><div class="line">    + 内边距、边框和外边距可以应用于一个元素的所有边，也可以应用于单独的边</div><div class="line">    + 可通过`* &#123; margin: 0; padding: 0; &#125;`来覆盖之前设置的内边距外边距样式</div><div class="line">    + 浏览器兼容性</div><div class="line">      &gt;一旦为页面设置了恰当的 DTD，大多数浏览器都会按照上面的图示来呈现内容。然而 IE 5 和 6 的呈现却是不正确的。根据 W3C 的规范，元素内容占据的空间是由 width 属性设置的，而内容周围的 padding 和 border 值是另外计算的。不幸的是，IE5.X 和 6 在怪异模式中使用自己的非标准模型。这些浏览器的 width 属性不是内容的宽度，而是内容、内边距和边框的宽度的总和。</div><div class="line">虽然有方法解决这个问题。但是目前最好的解决方案是回避这个问题。也就是，不要给元素添加具有指定宽度的内边距，而是尝试将内边距或外边距添加到元素的父元素和子元素。</div><div class="line"></div><div class="line"> 2. CSS 内边距(padding)</div><div class="line">    + 元素的内边距在边框和内容区之间</div><div class="line">    + padding 属性</div><div class="line">    + 取值: 长度值/百分比(相对于其父元素的width计算),但**不接受负值**</div><div class="line">    + 例:</div><div class="line">      - `h1 &#123;padding: 10px;&#125;`//设置所有 h1 元素的各边都有 10 像素的内边距</div><div class="line">      - `h1 &#123;padding: 10px 0.25em 2ex 20%;&#125;`//从顺时针分别设置</div><div class="line">      - `h1 &#123;padding-top: 10px; padding-right: 0.25em; padding-bottom: 2ex; padding-left: 20%;&#125;`//同上</div><div class="line"></div><div class="line"> 3. CSS 边框(border)</div><div class="line">    + 元素的边框: 围绕元素内容和内边距的一/多条线</div><div class="line">    + 边框与背景</div><div class="line">      &gt;CSS 规范指出，边框绘制在“元素的背景之上”。这很重要，因为有些边框是“间断的”（例如，点线边框或虚线框），元素的背景应当出现在边框的可见部分之间。</div><div class="line">       CSS2 指出背景只延伸到内边距，而不是边框。后来CSS2.1进行了更正：元素的背景是内容、内边距和边框区的背景。大多数浏览器都遵循 CSS2.1 定义，不过一些较老的浏览器可能会有不同的表现。</div><div class="line">    + 边框的样式</div><div class="line">      - 如果希望显示某种边框，就必须设置边框样式</div><div class="line">      - border-style 属性(border-top-style、border-right-style、border-bottom-style、border-left-style)</div><div class="line">      - 取值: </div><div class="line">        1. solid 实线</div><div class="line">        2. dotted 点线</div><div class="line">        3. dashed 虚线</div><div class="line">        4. double 双线</div><div class="line">        5. outset 凸起按钮</div><div class="line">        6. none </div><div class="line">      - 例: </div><div class="line">        1. `a:link img &#123;border-style:outset;&#125;`//把一幅图片的边框定义为outset，使之看上去像“凸起按钮”</div><div class="line">        2. `p.aside &#123;border-style: solid dotted dashed double;&#125;`//为一个边框定义多个样式 </div><div class="line">    + 边框的宽度</div><div class="line">      -  border-width 属性(border-top-width、border-right-width、border-bottom-width、border-left-width)</div><div class="line">      - 取值: </div><div class="line">        1. 长度值: px、em</div><div class="line">        2. 关键字: thin 、medium（默认值）和 thick (CSS没有定义3个关键字的具体宽度，根据用户代理设置值不同而不同)</div><div class="line">      - 例: </div><div class="line">        1. `p &#123;border-style: solid; border-width: 15px 5px 15px 5px;&#125;`//分别设置元素的各边边框</div><div class="line">        2. `p &#123;border-style: solid; border-width: 15px 5px;&#125;`//另一种写法</div><div class="line">      - 由于 border-style 的默认值是 none，如果没有声明边框样式，就相当于 border-style: none。因此，如果您希望边框出现，就必须声明一个边框样式。</div><div class="line"></div><div class="line">    + 边框的颜色</div><div class="line">      - border-color 属性(border-top-color、border-right-color、border-bottom-color、border-left-color)</div><div class="line">      - 取值: 任何类型的颜色值(命名颜色、十六进制和 RGB 值）</div><div class="line">      - &gt;默认的边框颜色是元素本身的前景色。如果没有为边框声明颜色，它将与元素的文本颜色相同。另一方面，如果元素没有任何文本，假设它是一个表格，其中只包含图像，那么该表的边框颜色就是其父元素的文本颜色（因为 color 可以继承）。这个父元素很可能是 body、div 或另一个 table。</div><div class="line">      </div><div class="line">      - 例: </div><div class="line">        1. `p &#123; border-style: solid; border-color: blue rgb(25%,35%,45%) #909090 red; &#125;`</div><div class="line">        2. `h1 &#123; border-style: solid; border-color: black; border-right-color: red; &#125;`</div><div class="line">        3. `border-color: transparent;`//透明边框</div><div class="line"></div><div class="line"> 4. CSS 外边距(margin)</div><div class="line">    + 外边距：围绕在元素边框外的空白区域</div><div class="line">    + 设置外边距会在元素外创建额外的“空白”</div><div class="line">    + margin 属性(margin-top、margin-right、margin-bottom、margin-left)</div><div class="line">    + 取值: 长度值/百分比(相对于其父元素的width计算) / auto / 0(默认值)</div><div class="line">    + 例: `h1 &#123;margin : 10px 0px 15px 5px;&#125;`</div><div class="line">    + [外边距合并](http://www.w3school.com.cn/css/css_margin_collapsing.asp)</div><div class="line">      - 指 当两个垂直外边距相遇时，将形成一个外边距</div><div class="line">      - 合并后的外边距的高度 = 两个发生合并的外边距的高度中的较大者</div><div class="line">      - 行内框、浮动框和绝对定位间外边距 不会合并</div><div class="line"></div><div class="line">## 14. CSS 尺寸</div><div class="line">   + CSS尺寸属性允许你控制元素的高度和宽度，也允许增加行间距</div><div class="line">   + 属性：</div><div class="line">      - height： 设置元素高度</div><div class="line">      - width ：设置元素宽度</div><div class="line">      - max/min height：设置最大/最小高度</div><div class="line">      - max/min width： 设置最大/最小宽度</div><div class="line">      - line-height：设置行间距</div><div class="line">   + 取值：像素值(px)/百分比（行间距还可以设置数值）</div><div class="line">  </div><div class="line">## 15. CSS 分类属性</div><div class="line">   + 规定如何以及在何处显示元素</div><div class="line">   + 属性：</div><div class="line">     1. clear</div><div class="line">       - 设置一个元素的侧面是否允许其他的浮动元素</div><div class="line">       - none(都允许)(默认)|left(左侧不允许)|right(右侧不允许)|both(都不允许)|inherit(从父元素继承clear属性值)</div><div class="line">     2. cursor</div><div class="line">       - 规定当指向某元素之上时显示的指针类型(形状)</div><div class="line">       - auto|default|url|..</div><div class="line">     3. display</div><div class="line">       - 设置是否以及如何显示元素</div><div class="line">       - none(不显示)|block(块级元素)|inline(内联元素)|....</div><div class="line">     4. float</div><div class="line">       - 定义元素向哪个方向浮动</div><div class="line">       - left|right|none(默认)|inherit</div><div class="line">     5. position</div><div class="line">       - 把元素放置到一个 静态/相对/绝对/固定 位置中</div><div class="line">       - absolute|fixed|relative|static(默认)|inherit</div><div class="line">     6. visibility</div><div class="line">       - 设置元素是否可见/不可见</div><div class="line">       - visible(默认)|hidden|collapse(表格)|inherit</div><div class="line"></div><div class="line">## 16. CSS 导航栏</div><div class="line">   + 导航栏 = 链接列表</div><div class="line">   + 垂直导航栏</div></pre></td></tr></table></figure>
+<li>用一个结合符只能选择两个相邻兄弟中的第二个元素,例:  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">li + li &#123;font-weight:bold;&#125;//只会把列表中第二个和第三个列表项变为粗体。而第一个列表项不受影响</div><div class="line">.....</div><div class="line">&lt;div&gt;</div><div class="line">   &lt;ul&gt;</div><div class="line">      &lt;li&gt;List item 1&lt;/li&gt;</div><div class="line">      &lt;li&gt;List item 2&lt;/li&gt;//加粗</div><div class="line">      &lt;li&gt;List item 3&lt;/li&gt;//加粗</div><div class="line">   &lt;/ul&gt;</div><div class="line">   &lt;ol&gt;</div><div class="line">      &lt;li&gt;List item 1&lt;/li&gt;</div><div class="line">      &lt;li&gt;List item 2&lt;/li&gt;//加粗</div><div class="line">      &lt;li&gt;List item 3&lt;/li&gt;//加粗</div><div class="line">   &lt;/ol&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ol>
-<p><style><br>/<strong><strong><strong><strong><strong><strong><em>*</em></strong></strong></strong></strong></strong></strong>实现导航栏标准代码<strong><strong><strong><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></strong></strong></strong>/<br>ul{<br>   list-style-type:none;/<em>删除圆点</em>/<br>   margin:0;/<em>把外边距和内边距设置为 0 可以去除浏览器的默认设定</em>/<br>   padding:0;<br>}<br>a{<br>   display:block;/<em>把链接显示为块元素可使整个链接区域可点击(不仅仅是文本)，同时也允许我们规定宽度</em>/<br>   width:60px; /<em>块元素默认占用全部可用宽度。我们根据需要规定像素的宽度</em>/<br>}<br></style><br>….</p>
-<p><body></body></p>
-<p><ul><br>   <li><a href="#home">Home</a></li><br>   <li><a href="#news">News</a></li><br>   <li><a href="#contact">Contact</a></li><br>   <li><a href="#about">About</a></li><br></ul><br>…..<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">+ 水平导航栏</div></pre></td></tr></table></figure></p>
-<p><style><br>/<strong><strong><strong><strong><strong><strong><em>*</em></strong></strong></strong></strong></strong></strong>实现导航栏标准代码<strong><strong><strong><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></strong></strong></strong>/<br>ul{<br>   list-style-type:none;/<em>删除圆点</em>/<br>   margin:0;/<em>把外边距和内边距设置为 0 可以去除浏览器的默认设定</em>/<br>   padding:0;<br>}</p>
-<p>/<strong><strong><strong><strong><strong><strong><em>*</em></strong></strong></strong></strong></strong></strong>行内列表项(选项宽度不等)<strong><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></strong>/<br>li{<br>   display:inline;/<em><li>元素是默认块元素。去除每个列表项前后的换行以让它们在一行中显示</em>/<br>}</p>
-<p>/<strong><strong><strong><strong><strong><strong><em>*</em></strong></strong></strong></strong></strong></strong>对列表项浮动(选项宽度相等)<strong><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></strong>/<br>li{  float:left;  }<br>a{  display:block;  width:60px;}</p>
-<p></style><br>….</p>
-<p><body></body></p>
-<p><ul><br>   <li><a href="#home">Home</a></li><br>   <li><a href="#news">News</a></li><br>   <li><a href="#contact">Contact</a></li><br>   <li><a href="#about">About</a></li><br></ul><br>….<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 17. CSS 图像透明</div><div class="line">   + 创建透明图像</div><div class="line">     - opacity ：0.0~1.0(越小越透明) ---------CSS标准</div><div class="line">     - filter：alpha(opacity=x)： 0~100(越小越透明) --------------IE8及更早版本</div><div class="line">   + 图像透明度</div><div class="line">     - 实现：当鼠标指针移出图像后，图像会再次透明</div></pre></td></tr></table></figure></p>
-<p>img{<br>   opacity:0.4;  /<em> CSS3 standard </em>/<br>   filter:alpha(opacity=40); /<em> 针对 IE8 以及更早的版本 </em>/<br>}<br>img:hover{<br>   opacity:1.0;   /<em> CSS3 standard </em>/<br>   filter:alpha(opacity=100); /<em> 针对 IE8 以及更早的版本 </em>/<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 18. CSS2 媒介类型(Media Types)</div><div class="line">   + 媒介类型允许你定义以何种媒介来提交文档。</div><div class="line">   + 文档可以被显示在显示器、纸媒介或者听觉浏览器等等</div><div class="line">   &gt;某些 CSS 属性仅仅被设计为针对某些媒介</div><div class="line">     -  &quot;voice-family&quot; 属性被设计为针对听觉用户终端，其他的属性可被用于不同的媒介</div><div class="line">     -  &quot;font-size&quot; 属性可被用于显示器以及印刷媒介，但是也许会带有不同的值。</div><div class="line">     -  显示器上面的显示的文档通常会需要比纸媒介文档更大的字号，同时，在显示器上，sans-serif 字体更易阅读，而在纸媒介上，serif 字体更易阅读</div><div class="line">   + @media规则</div><div class="line">     - @media 规则使你有能力在相同的样式表中，使用不同的样式规则来针对不同的媒介</div><div class="line">     - 例子:此例样式告知浏览器在显示器上显示 14 像素的 Verdana 字体。但是假如页面需要被打印，将使用 10 个像素的 Times 字体。注意：font-weight 被设置为粗体，不论显示器还是纸媒介</div></pre></td></tr></table></figure></p>
-<p><html></html></p>
-<p><head></head></p>
-<p><style><br>@media screen{  p.test {font-family:verdana,sans-serif; font-size:14px}   } /<em>显示器上显示</em>/<br>@media print{  p.test {font-family:times,serif; font-size:10px}  } /<em>打印</em>/<br>@media screen,print{  p.test {font-weight:bold}  } /<em>不论显示器还是纸媒介</em>/<br></style><br></p>
-<p><body>….</body><br><br>```</p>
+<pre><code>- `html &gt; body table + ul {margin-top:20px;}`//选择紧接在 table 元素后出现的所有兄弟 ul 元素，该 table 元素包含在一个 body 元素中，body 元素本身是 html 元素的子元素
+</code></pre><ol>
+<li><p>CSS 伪类 (Pseudo-classes)</p>
 <ul>
-<li>不同的媒介类型(媒介类型名称对大小写不敏感)</li>
+<li>用于向某些选择器添加特殊的效果</li>
+<li>语法: <code>selector : pseudo-class {property: value}</code></li>
+<li>也可与 CSS类 搭配使用: <code>selector.class : pseudo-class {property: value}</code></li>
+<li><p>锚伪类</p>
+<ul>
+<li>在支持 CSS 的浏览器中，链接的不同状态都可以不同的方式显示</li>
+<li><p>这些状态包括：活动状态，已被访问状态，未被访问状态，和鼠标悬停状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a:link &#123;color: #FF0000&#125;		/* 未访问的链接 */</div><div class="line">a:visited &#123;color: #00FF00&#125;	/* 已访问的链接 */</div><div class="line">a:hover &#123;color: #FF00FF&#125;	/* 鼠标移动到链接上 */ </div><div class="line">a:active &#123;color: #0000FF&#125;	/* 选定的链接 */</div></pre></td></tr></table></figure>
+</li>
+<li><p>在 CSS 定义中，<strong>a:hover</strong> 必须被置于 <strong>a:link</strong>和<strong>a:visited</strong>之后，才是有效的;<strong>a:active</strong> 必须被置于 <strong>a:hover</strong> 之后，才是有效的.</p>
+</li>
+<li>伪类名称对大小写不敏感</li>
+<li>伪类与CSS类配合使用：/<em>若链接被访问过，那么它将显示为红色</em>/<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a.red : visited &#123;color: #FF0000&#125;</div><div class="line">&lt;a class=&quot;red&quot; href=&quot;css_syntax.asp&quot;&gt;CSS Syntax&lt;/a&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>:first-child 伪类(CSS2)</p>
+<ul>
+<li>选择某元素的第一个子元素</li>
+<li><code>p:first-child {font-weight: bold;}</code>//匹配第一个 <code>&lt;p&gt;</code> 元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">   &lt;p&gt;some text&lt;/p&gt;//匹配!</div><div class="line">   &lt;p&gt;some text&lt;/p&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>  + `p &gt; i:first-child { font-weight:bold; } `//匹配所有`&lt;p&gt;`元素中的第一个`&lt;i&gt;`元素
+     <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">   &lt;p&gt;some &lt;i&gt;text&lt;/i&gt;. some &lt;i&gt;text&lt;/i&gt;.&lt;/p&gt; //只匹配前面的&lt;i&gt;元素</div><div class="line">   &lt;p&gt;some &lt;i&gt;text&lt;/i&gt;. some &lt;i&gt;text&lt;/i&gt;.&lt;/p&gt; //只匹配前面的&lt;i&gt;元素</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+
+  + `p:first-child i { color:blue; }`//匹配所有作为第一个子元素的`&lt;p&gt;`元素中的所有`&lt;i&gt;`元素
+     <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">   &lt;p&gt;some &lt;i&gt;text&lt;/i&gt;. some &lt;i&gt;text&lt;/i&gt;.&lt;/p&gt; //这一行的&lt;i&gt;元素都匹配</div><div class="line">   &lt;p&gt;some &lt;i&gt;text&lt;/i&gt;. some &lt;i&gt;text&lt;/i&gt;.&lt;/p&gt; //都不匹配</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+
+- :lang 伪类(CSS2)  
+  + 使你有能力为不同的语言定义特殊的规则
+  + 下面的例子中，:lang 类为属性值为 no 的 q 元素定义引号的类型：
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">   q:lang(no)&#123;quotes: &quot;~&quot; &quot;~&quot;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;p&gt;文字&lt;q lang=&quot;no&quot;&gt;段落中的引用的文字&lt;/q&gt;文字&lt;/p&gt;</div><div class="line">&lt;/body&gt;&lt;/html&gt;</div></pre></td></tr></table></figure>
+
+     结果: `文字段落中的引用的文字文字`
+</code></pre><ol>
+<li>CSS 伪元素(Pseudo-elements)<ul>
+<li>用于向某些选择器设置特殊效果</li>
+<li>语法: <code>selector:pseudo-element {property:value;}</code></li>
+<li>:first-line 伪元素<ul>
+<li>用于向文本的<strong>首行</strong>设置特殊样式</li>
+<li>只能用于块级元素</li>
+<li><code>p:first-line { color:#ff0000; font-variant:small-caps; }</code>//对p元素的第一行文本进行格式化</li>
+</ul>
+</li>
+<li>:first-letter 伪元素<ul>
+<li>用于向文本的<strong>首字母</strong>设置特殊样式</li>
+<li>只能用于块级元素</li>
+<li><code>p:first-letter { color:#ff0000; font-size:xx-large; }</code>//对p元素的第一个字母进行格式化</li>
+</ul>
+</li>
+<li>伪元素 与 CSS 类配合使用<ul>
+<li>语法: <code>selector.class:pseudo-element {property:value;}</code></li>
+<li>例:<br>使所有 class 为 article 的段落的首字母变为红色<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">p.article:first-letter &#123; color: #FF0000; &#125;</div><div class="line">&lt;p class=&quot;article&quot;&gt;This is a paragraph in an article。&lt;/p&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>- 可结合多个伪元素来使用（即多重伪元素）
+- :before 伪元素(CSS2)
+  + 可在元素的内容前面插入新内容
+  + `h1:before { content:url(logo.gif); }`//在每个 `&lt;h1&gt; `元素前面插入一幅图片
+- :after  伪元素(CSS2)
+  + 可在元素的内容之后插入新内容
+  + `h1:after { content:url(logo.gif); }`//在每个 `&lt;h1&gt; `元素后面插入一幅图片
+</code></pre><h2 id="6-CSS-背景"><a href="#6-CSS-背景" class="headerlink" title="6. CSS 背景"></a>6. CSS 背景</h2><ol>
+<li><p>背景色</p>
+<ul>
+<li>使用 background-color 属性(这个属性接受任何合法的颜色值)</li>
+<li><code>p {background-color: gray;}</code>//把元素的背景设置为灰色</li>
+<li>background-color 不能继承，其默认值是transparent（即如果一个元素没有指定背景色，那么背景就是透明的，这样其祖先元素的背景才能可见）</li>
+</ul>
+</li>
+<li><p>背景图像</p>
+<ul>
+<li>使用 background-image 属性</li>
+<li>默认值为none(表示背景上没任何图像)</li>
+<li>如需设置一个背景图像，须为这个属性设置一个 URL 值</li>
+<li>例: <code>body {background-image: url(/i/eg_bg_04.gif);}</code></li>
+<li>background-image 也不能继承。(事实上，所有背景属性都不能继承)</li>
+</ul>
+</li>
+<li><p>背景重复(平铺)</p>
+<ul>
+<li>使用 background-repeat 属性</li>
+<li>属性值 <ul>
+<li>repeat 图像在水平垂直方向上都平铺</li>
+<li>repeat-x 图像在水平方向上重复</li>
+<li>repeat-y 图像在垂直方向上重复</li>
+<li>no-repeat 不允许图像在任何方向上平铺</li>
+</ul>
+</li>
+<li>默认地，背景图像将从一个元素的<strong>左上角</strong>开始</li>
+</ul>
+</li>
+<li><p>背景定位</p>
+<ul>
+<li>使用 background-position 属性</li>
+<li>属性值 <ul>
+<li>关键字: top、bottom、left、right、两个(水平方向一个加垂直方向一个)、center</li>
+<li>百分比: <ol>
+<li>默认值为0% 0%(即top left)</li>
+<li>只写一个值时，会默认当作水平值，而垂直值默认为50%</li>
+<li>百分数值同时应用于元素和图像</li>
+<li>图像中描述为 50% 50% 的点（中心点）与元素中描述为50% 50%的点（中心点）对齐；如果图像位于 0% 0%，其左上角将放在元素内边距区的左上角；如图像位置是100% 100%，会使图像的右下角放在右边距的右下角。</li>
+</ol>
+</li>
+<li>长度值<ol>
+<li>元素内边距区左上角的偏移(偏移点是图像的左上角)</li>
+<li>例: <code>background-position:50px 100px;</code>//图像的左上角将定位在元素内边距区左上角向右 50 像素、向下 100 像素的位置上</li>
+<li>与百分数值不同，偏移只是从一个左上角到另一个左上角(图像的左上角与 background-position 声明中的指定的点对齐)</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>背景关联</p>
+<ul>
+<li>background-attachment 属性 </li>
+<li>通过这个属性，可以声明图像相对于可视区是固定的（fixed），防止当文档滚动到超过背景图像的位置时，随着滚动的背景图像就会消失的现象</li>
+<li>属性值<ul>
+<li>scroll(默认值): 背景会随文档滚动</li>
+<li>fixed : 固定 </li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="7-CSS-文本"><a href="#7-CSS-文本" class="headerlink" title="7. CSS 文本"></a>7. CSS 文本</h2><ol>
+<li>缩进文本<ul>
+<li>text-indent 属性</li>
+<li>实现文本缩进(常用于段落的首行缩进)</li>
+<li>一般来说，可应用于所有块级元素，但无法应用于行内元素，以及图像之类的替换元素。(若想把一个行内元素的首行“缩进”，可以用<strong>左内边距或外边距</strong>创造这种效果)</li>
+<li>不过如果一个块级元素（比如段落）的首行中有一个图像，它会随该行的其余文本移动。</li>
+<li>属性值: 可使用所有长度单位，如<strong>长度、百分值</strong>(可为负值)<br>例: <code>p {text-indent: 5em;}</code>//使所有段落的首行缩进 5 em<br>例: <code>p {text-indent: -5em;}</code>//使所有段落的首行悬挂在元素中余下部分的左边(“悬挂缩进”)<br>例: <code>p {text-indent:-5em;padding-left:5em;}</code>//使用负值，首行的某些文本可能会超出浏览器窗口的左边界。为避免出现这种显示问题，可针对负缩进再设置一个外边距或一些内边距<br>例: <code>p {text-indent: 20%;}</code>//缩进其父元素宽度的 20%</li>
+<li>text-indent 属性可以继承，即设置了缩进元素所包括(派生)的所有子元素也相应缩进</li>
+</ul>
+</li>
+<li>水平对齐<ul>
+<li>text-align 属性</li>
+<li>属性值: <ul>
+<li>left - 左对齐 </li>
+<li>right - 右对齐</li>
+<li>center - 内容居中，元素不居中（与<code>&lt;center&gt;</code>的区别）</li>
+<li>justify - 两端对齐(文本行的左右两端都放在父元素的内边界上,调整单词和字母间的间隔，使各行的长度恰好相等)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>字间隔<ul>
+<li>word-spacing 属性</li>
+<li>改变<strong>字（单词）之间</strong>的标准间隔</li>
+<li>属性值: <ul>
+<li>normal或0: 默认值</li>
+<li>正长度值: 30px或0.5em</li>
+<li>负长度值: -30px或-0.5em</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>字母间隔<ul>
+<li>letter-spacing 属性</li>
+<li>改变<strong>字符或字母之间</strong>的间隔</li>
+<li>属性值: <ul>
+<li>normal或0: 默认值</li>
+<li>正长度值: 30px或0.5em</li>
+<li>负长度值: -30px或-0.5em</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>字符转换<ul>
+<li>text-transform 属性</li>
+<li>处理文本的大小写</li>
+<li>属性值: <ul>
+<li>none: 默认值</li>
+<li>uppercase: 大写</li>
+<li>lowercase: 小写</li>
+<li>capitalize: 首字母大写</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>文本装饰<ul>
+<li>text-decoration 属性</li>
+<li>属性值: (可组合使用)<ul>
+<li>none: 默认值</li>
+<li>underline: 下划线</li>
+<li>overline: 上划线</li>
+<li>line-through: 贯穿线</li>
+<li>blink: 闪烁</li>
+<li>可组合使用，但当两个不同的装饰都与同一元素匹配时，优先级较高的值会完全取代较低的值(而不是积累起来)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>空白符处理<ul>
+<li>white-space 属性</li>
+<li>属性值<ul>
+<li>normal(默认)：忽略多余的空白符(回车、空格)</li>
+<li>pre: 不忽略多余的空白符(类似于<code>&lt;pre&gt;</code>)</li>
+<li>nowrap: 防止换行(除非用<code>&lt;br/&gt;</code>)</li>
+<li>pre-wrap</li>
+<li>pre-line</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>文本方向<ul>
+<li>direction 属性</li>
+<li>属性值:<ul>
+<li>ltr: 左到右</li>
+<li>rtl: 右到左</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="8-CSS-字体"><a href="#8-CSS-字体" class="headerlink" title="8. CSS 字体"></a>8. CSS 字体</h2><ol>
+<li>CSS 字体系列<ul>
+<li>通用字体系列 - 拥有相似外观的字体系统组合（比如 “Serif” 或 “Monospace”）</li>
+<li>特定字体系列 - 具体的字体系列（比如 “Times” 或 “Courier”）</li>
+</ul>
+</li>
+<li>指定字体系列<ul>
+<li>font-family 属性 </li>
+<li>取值: 字体系列名 / 具体某个特定字体名 / 多个组合(若包括空格，要加引号)</li>
+</ul>
+</li>
+<li>字体风格<ul>
+<li>font-style 属性</li>
+<li>取值: normal / italic(文本斜体显示) / oblique(文本倾斜显示)</li>
+</ul>
+</li>
+<li>字体变形<ul>
+<li>font-variant 属性</li>
+<li>设定小型大写字母</li>
+<li>例： <code>p {font-variant:small-caps;}</code></li>
+</ul>
+</li>
+<li>字体加粗<ul>
+<li>font-weight 属性</li>
+<li>设置文本的粗细</li>
+<li>取值: 100-900代表1到9级(normal为400，bold为700)</li>
+</ul>
+</li>
+<li>字体大小<ul>
+<li>font-size 属性</li>
+<li>设置文本的大小</li>
+<li>取值:<ul>
+<li>绝对值：<ol>
+<li>将文本设置为指定的大小</li>
+<li>不允许用户在所有浏览器中改变文本大小（不利于可用性）</li>
+<li>绝对大小在确定了输出的物理尺寸时很有用</li>
+</ol>
+</li>
+<li>相对大小：<ol>
+<li>相对于周围的元素来设置大小</li>
+<li>允许用户在浏览器改变文本大小</li>
+</ol>
+</li>
+<li>普通文本(如段落)的默认大小为16px(1em)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="9-CSS-列表"><a href="#9-CSS-列表" class="headerlink" title="9. CSS 列表"></a>9. CSS 列表</h2><ul>
+<li>主要是改变列表的标志类型(无序列表的标志是圆点；有序列表的是字母，数字等)</li>
+<li>例：<ul>
+<li><code>ul {list-style-type : square}</code> // 把无序列表中的列表项标志设置为方块</li>
+<li><code>ul li {list-style-image : url(xxx.gif)}</code> // 使用图像作为标志</li>
+<li><code>li {list-style-position : inside/outside}</code>//设置标志出现在列表项内还是外</li>
+<li><code>li {list-style : url(example.gif) square inside}</code>//上述设置组合</li>
+</ul>
+</li>
+</ul>
+<h2 id="10-CSS-表格"><a href="#10-CSS-表格" class="headerlink" title="10. CSS 表格"></a>10. CSS 表格</h2><ol>
+<li>表格边框(双线)<ul>
+<li>border 属性</li>
+<li><code>table, th, td { border: 1px solid blue; }</code> //为 table、th 以及 td 设置了蓝色边框</li>
+</ul>
+</li>
+<li>折叠边框(单线)<ul>
+<li>border-collapse 属性</li>
+<li>设置是否将表格边框折叠为单一边框</li>
+<li>例:<br><code>table { border-collapse:collapse; }</code><br><code>table,th,td { border: 1px solid black; }</code></li>
+</ul>
+</li>
+<li>表格宽度和高度<ul>
+<li>width 和 height 属性</li>
+<li>取值: 长度值或百分比</li>
+</ul>
+</li>
+<li>表格文本对齐<ul>
+<li>text-align： 水平对齐方式(取值: left、center、right) </li>
+<li>vertical-align：垂直对齐方式(取值: top、center、bottom)</li>
+</ul>
+</li>
+<li>表格内边距<ul>
+<li>padding 属性</li>
+<li><code>td { padding:15px; }</code></li>
+</ul>
+</li>
+<li>表格颜色<ul>
+<li><code>table, td, th { border:1px solid green; }</code>//设置<strong>边框</strong>的颜色</li>
+<li><code>th { background-color:green; color:white; }</code>//设置 th 元素的<strong>文本和背景</strong>颜色</li>
+</ul>
+</li>
+</ol>
+<h2 id="11-CSS-轮廓"><a href="#11-CSS-轮廓" class="headerlink" title="11. CSS 轮廓"></a>11. CSS 轮廓</h2><ul>
+<li>轮廓（outline）: 绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用</li>
+<li>属性：<ul>
+<li><code>outline</code>       在一个声明中设置所有的轮廓属性</li>
+<li><code>outline-color</code> 设置轮廓的颜色</li>
+<li><code>outline-style</code> 设置轮廓的样式</li>
+<li><code>outline-width</code> 设置轮廓的宽度</li>
+</ul>
+</li>
+</ul>
+<h2 id="12-CSS-滤镜"><a href="#12-CSS-滤镜" class="headerlink" title="12. CSS 滤镜"></a>12. CSS 滤镜</h2><ul>
+<li><code>...{ filter:滤镜名称(设置值) }</code></li>
+</ul>
+<h2 id="13-CSS-框模型"><a href="#13-CSS-框模型" class="headerlink" title="13. CSS 框模型"></a>13. CSS 框模型</h2><ol>
+<li><p>框模型概述</p>
+<ul>
+<li>CSS 框模型 (Box Model) 规定了元素框处理元素内容、内边距、边框 和 外边距 的方式</li>
+<li><img src="http://www.w3school.com.cn/i/ct_boxmodel.gif" alt="框模型"></li>
+<li>元素框的最内部分是实际的内容，直接包围内容的是内边距</li>
+<li>内边距呈现了元素的背景</li>
+<li>内边距的边缘是边框</li>
+<li>边框以外是外边距</li>
+<li>外边距默认是透明的，不会遮挡其后的任何元素。(外边距可为负值，且在很多情况下都要使用负值的外边距)</li>
+<li>背景应用于由内容和内边距、边框组成的区域</li>
+<li>内边距、边框和外边距都是可选的，默认值是零</li>
+<li>内边距、边框和外边距可以应用于一个元素的所有边，也可以应用于单独的边</li>
+<li>可通过<code>* { margin: 0; padding: 0; }</code>来覆盖之前设置的内边距外边距样式</li>
+<li>浏览器兼容性<blockquote>
+<p>一旦为页面设置了恰当的 DTD，大多数浏览器都会按照上面的图示来呈现内容。然而 IE 5 和 6 的呈现却是不正确的。根据 W3C 的规范，元素内容占据的空间是由 width 属性设置的，而内容周围的 padding 和 border 值是另外计算的。不幸的是，IE5.X 和 6 在怪异模式中使用自己的非标准模型。这些浏览器的 width 属性不是内容的宽度，而是内容、内边距和边框的宽度的总和。<br>虽然有方法解决这个问题。但是目前最好的解决方案是回避这个问题。也就是，不要给元素添加具有指定宽度的内边距，而是尝试将内边距或外边距添加到元素的父元素和子元素。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>CSS 内边距(padding)</p>
+<ul>
+<li>元素的内边距在边框和内容区之间</li>
+<li>padding 属性</li>
+<li>取值: 长度值/百分比(相对于其父元素的width计算),但<strong>不接受负值</strong></li>
+<li>例:<ul>
+<li><code>h1 {padding: 10px;}</code>//设置所有 h1 元素的各边都有 10 像素的内边距</li>
+<li><code>h1 {padding: 10px 0.25em 2ex 20%;}</code>//从顺时针分别设置</li>
+<li><code>h1 {padding-top: 10px; padding-right: 0.25em; padding-bottom: 2ex; padding-left: 20%;}</code>//同上</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>CSS 边框(border)</p>
+<ul>
+<li>元素的边框: 围绕元素内容和内边距的一/多条线</li>
+<li>边框与背景<blockquote>
+<p>CSS 规范指出，边框绘制在“元素的背景之上”。这很重要，因为有些边框是“间断的”（例如，点线边框或虚线框），元素的背景应当出现在边框的可见部分之间。<br> CSS2 指出背景只延伸到内边距，而不是边框。后来CSS2.1进行了更正：元素的背景是内容、内边距和边框区的背景。大多数浏览器都遵循 CSS2.1 定义，不过一些较老的浏览器可能会有不同的表现。</p>
+</blockquote>
+</li>
+<li>边框的样式<ul>
+<li>如果希望显示某种边框，就必须设置边框样式</li>
+<li>border-style 属性(border-top-style、border-right-style、border-bottom-style、border-left-style)</li>
+<li>取值: <ol>
+<li>solid 实线</li>
+<li>dotted 点线</li>
+<li>dashed 虚线</li>
+<li>double 双线</li>
+<li>outset 凸起按钮</li>
+<li>none </li>
+</ol>
+</li>
+<li>例: <ol>
+<li><code>a:link img {border-style:outset;}</code>//把一幅图片的边框定义为outset，使之看上去像“凸起按钮”</li>
+<li><code>p.aside {border-style: solid dotted dashed double;}</code>//为一个边框定义多个样式 </li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>边框的宽度</p>
+<ul>
+<li>border-width 属性(border-top-width、border-right-width、border-bottom-width、border-left-width)</li>
+<li>取值: <ol>
+<li>长度值: px、em</li>
+<li>关键字: thin 、medium（默认值）和 thick (CSS没有定义3个关键字的具体宽度，根据用户代理设置值不同而不同)</li>
+</ol>
+</li>
+<li>例: <ol>
+<li><code>p {border-style: solid; border-width: 15px 5px 15px 5px;}</code>//分别设置元素的各边边框</li>
+<li><code>p {border-style: solid; border-width: 15px 5px;}</code>//另一种写法</li>
+</ol>
+</li>
+<li>由于 border-style 的默认值是 none，如果没有声明边框样式，就相当于 border-style: none。因此，如果您希望边框出现，就必须声明一个边框样式。</li>
+</ul>
+</li>
+<li><p>边框的颜色</p>
+<ul>
+<li>border-color 属性(border-top-color、border-right-color、border-bottom-color、border-left-color)</li>
+<li>取值: 任何类型的颜色值(命名颜色、十六进制和 RGB 值）</li>
+<li><blockquote>
+<p>默认的边框颜色是元素本身的前景色。如果没有为边框声明颜色，它将与元素的文本颜色相同。另一方面，如果元素没有任何文本，假设它是一个表格，其中只包含图像，那么该表的边框颜色就是其父元素的文本颜色（因为 color 可以继承）。这个父元素很可能是 body、div 或另一个 table。</p>
+</blockquote>
+</li>
+<li><p>例: </p>
+<ol>
+<li><code>p { border-style: solid; border-color: blue rgb(25%,35%,45%) #909090 red; }</code></li>
+<li><code>h1 { border-style: solid; border-color: black; border-right-color: red; }</code></li>
+<li><code>border-color: transparent;</code>//透明边框</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>CSS 外边距(margin)</p>
+<ul>
+<li>外边距：围绕在元素边框外的空白区域</li>
+<li>设置外边距会在元素外创建额外的“空白”</li>
+<li>margin 属性(margin-top、margin-right、margin-bottom、margin-left)</li>
+<li>取值: 长度值/百分比(相对于其父元素的width计算) / auto / 0(默认值)</li>
+<li>例: <code>h1 {margin : 10px 0px 15px 5px;}</code></li>
+<li><a href="http://www.w3school.com.cn/css/css_margin_collapsing.asp" target="_blank" rel="external">外边距合并</a><ul>
+<li>指 当两个垂直外边距相遇时，将形成一个外边距</li>
+<li>合并后的外边距的高度 = 两个发生合并的外边距的高度中的较大者</li>
+<li>行内框、浮动框和绝对定位间外边距 不会合并</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="14-CSS-尺寸"><a href="#14-CSS-尺寸" class="headerlink" title="14. CSS 尺寸"></a>14. CSS 尺寸</h2><ul>
+<li>CSS尺寸属性允许你控制元素的高度和宽度，也允许增加行间距</li>
+<li>属性：<ul>
+<li>height： 设置元素高度</li>
+<li>width ：设置元素宽度</li>
+<li>max/min height：设置最大/最小高度</li>
+<li>max/min width： 设置最大/最小宽度</li>
+<li>line-height：设置行间距</li>
+</ul>
+</li>
+<li>取值：像素值(px)/百分比（行间距还可以设置数值）</li>
+</ul>
+<h2 id="15-CSS-分类属性"><a href="#15-CSS-分类属性" class="headerlink" title="15. CSS 分类属性"></a>15. CSS 分类属性</h2><ul>
+<li>规定如何以及在何处显示元素</li>
+<li>属性：<ol>
+<li>clear<ul>
+<li>设置一个元素的侧面是否允许其他的浮动元素</li>
+<li>none(都允许)(默认)|left(左侧不允许)|right(右侧不允许)|both(都不允许)|inherit(从父元素继承clear属性值)</li>
+</ul>
+</li>
+<li>cursor<ul>
+<li>规定当指向某元素之上时显示的指针类型(形状)</li>
+<li>auto|default|url|..</li>
+</ul>
+</li>
+<li>display<ul>
+<li>设置是否以及如何显示元素</li>
+<li>none(不显示)|block(块级元素)|inline(内联元素)|….</li>
+</ul>
+</li>
+<li>float<ul>
+<li>定义元素向哪个方向浮动</li>
+<li>left|right|none(默认)|inherit</li>
+</ul>
+</li>
+<li>position<ul>
+<li>把元素放置到一个 静态/相对/绝对/固定 位置中</li>
+<li>absolute|fixed|relative|static(默认)|inherit</li>
+</ul>
+</li>
+<li>visibility<ul>
+<li>设置元素是否可见/不可见</li>
+<li>visible(默认)|hidden|collapse(表格)|inherit</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="16-CSS-导航栏"><a href="#16-CSS-导航栏" class="headerlink" title="16. CSS 导航栏"></a>16. CSS 导航栏</h2><ul>
+<li>导航栏 = 链接列表</li>
+<li><p>垂直导航栏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">/***************************实现导航栏标准代码****************************************/</div><div class="line">ul&#123; </div><div class="line">   list-style-type:none;/*删除圆点*/</div><div class="line">   margin:0;/*把外边距和内边距设置为 0 可以去除浏览器的默认设定*/</div><div class="line">   padding:0;</div><div class="line">&#125;</div><div class="line">a&#123;</div><div class="line">   display:block;/*把链接显示为块元素可使整个链接区域可点击(不仅仅是文本)，同时也允许我们规定宽度*/</div><div class="line">   width:60px; /*块元素默认占用全部可用宽度。我们根据需要规定像素的宽度*/</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">....</div><div class="line">&lt;body&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">   &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;</div><div class="line">   &lt;li&gt;&lt;a href=&quot;#news&quot;&gt;News&lt;/a&gt;&lt;/li&gt;</div><div class="line">   &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;</div><div class="line">   &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">.....</div></pre></td></tr></table></figure>
+</li>
+<li><p>水平导航栏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">/***************************实现导航栏标准代码****************************************/</div><div class="line">ul&#123; </div><div class="line">   list-style-type:none;/*删除圆点*/</div><div class="line">   margin:0;/*把外边距和内边距设置为 0 可以去除浏览器的默认设定*/</div><div class="line">   padding:0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/***************************行内列表项(选项宽度不等)*********************************/</div><div class="line">li&#123;</div><div class="line">   display:inline;/*&lt;li&gt;元素是默认块元素。去除每个列表项前后的换行以让它们在一行中显示*/</div><div class="line">&#125;</div><div class="line"></div><div class="line">/***************************对列表项浮动(选项宽度相等)*********************************/</div><div class="line">li&#123;  float:left;  &#125;</div><div class="line">a&#123;  display:block;  width:60px;&#125;</div><div class="line"></div><div class="line">&lt;/style&gt;</div><div class="line">....</div><div class="line">&lt;body&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">   &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;</div><div class="line">   &lt;li&gt;&lt;a href=&quot;#news&quot;&gt;News&lt;/a&gt;&lt;/li&gt;</div><div class="line">   &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;</div><div class="line">   &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">....</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="17-CSS-图像透明"><a href="#17-CSS-图像透明" class="headerlink" title="17. CSS 图像透明"></a>17. CSS 图像透明</h2><ul>
+<li>创建透明图像<ul>
+<li>opacity ：0.0~1.0(越小越透明) ———CSS标准</li>
+<li>filter：alpha(opacity=x)： 0~100(越小越透明) ————–IE8及更早版本</li>
+</ul>
+</li>
+<li>图像透明度<ul>
+<li>实现：当鼠标指针移出图像后，图像会再次透明<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">img&#123;</div><div class="line">   opacity:0.4;  /* CSS3 standard */</div><div class="line">   filter:alpha(opacity=40); /* 针对 IE8 以及更早的版本 */</div><div class="line">&#125;</div><div class="line">img:hover&#123;</div><div class="line">   opacity:1.0;   /* CSS3 standard */</div><div class="line">   filter:alpha(opacity=100); /* 针对 IE8 以及更早的版本 */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="18-CSS2-媒介类型-Media-Types"><a href="#18-CSS2-媒介类型-Media-Types" class="headerlink" title="18. CSS2 媒介类型(Media Types)"></a>18. CSS2 媒介类型(Media Types)</h2><ul>
+<li>媒介类型允许你定义以何种媒介来提交文档。</li>
+<li>文档可以被显示在显示器、纸媒介或者听觉浏览器等等<blockquote>
+<p>某些 CSS 属性仅仅被设计为针对某些媒介</p>
+<ul>
+<li>“voice-family” 属性被设计为针对听觉用户终端，其他的属性可被用于不同的媒介</li>
+<li>“font-size” 属性可被用于显示器以及印刷媒介，但是也许会带有不同的值。</li>
+<li>显示器上面的显示的文档通常会需要比纸媒介文档更大的字号，同时，在显示器上，sans-serif 字体更易阅读，而在纸媒介上，serif 字体更易阅读</li>
+</ul>
+</blockquote>
+</li>
+<li><p>@media规则</p>
+<ul>
+<li>@media 规则使你有能力在相同的样式表中，使用不同的样式规则来针对不同的媒介</li>
+<li>例子:此例样式告知浏览器在显示器上显示 14 像素的 Verdana 字体。但是假如页面需要被打印，将使用 10 个像素的 Times 字体。注意：font-weight 被设置为粗体，不论显示器还是纸媒介<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">@media screen&#123;  p.test &#123;font-family:verdana,sans-serif; font-size:14px&#125;   &#125; /*显示器上显示*/</div><div class="line">@media print&#123;  p.test &#123;font-family:times,serif; font-size:10px&#125;  &#125; /*打印*/</div><div class="line">@media screen,print&#123;  p.test &#123;font-weight:bold&#125;  &#125; /*不论显示器还是纸媒介*/</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;....&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>不同的媒介类型(媒介类型名称对大小写不敏感)</p>
+</li>
 </ul>
 <table>
 <thead>
