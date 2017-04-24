@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/24/CSS-定位/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="1. 一切皆为框 分类  块级元素 —- “块框”从上到下一个接一个地排列，框之间的垂直距离是由框的垂直外边距计算出来 行内元素 —- “行内框”在一行中水平布置。只有通过水平内边距、边框和外边距可调整它们的间距。垂直内边距、边框和外边距不影响行内框的高度(除非改为display: block) 一段/每行文本 —- “无名块框”不与专门定义的元素相关联；也具有块级元素特点 一行形成的水平框 —-">
-<meta property="og:updated_time" content="2017-04-24T03:23:12.294Z">
+<meta property="og:updated_time" content="2017-04-24T04:35:06.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS-定位 | SPACE-19">
 <meta name="twitter:description" content="1. 一切皆为框 分类  块级元素 —- “块框”从上到下一个接一个地排列，框之间的垂直距离是由框的垂直外边距计算出来 行内元素 —- “行内框”在一行中水平布置。只有通过水平内边距、边框和外边距可调整它们的间距。垂直内边距、边框和外边距不影响行内框的高度(除非改为display: block) 一段/每行文本 —- “无名块框”不与专门定义的元素相关联；也具有块级元素特点 一行形成的水平框 —-">
@@ -190,7 +190,7 @@ classes that you can use:
 </li>
 <li><p>无法直接对 <strong>无名块</strong> 或 <strong>行框</strong> 应用样式，因为没有可以应用样式的地方</p>
 </li>
-<li><p>可使用 <strong>display 属性</strong>改变生成的框的类型</p>
+<li><p>可使用 <strong>display 属性</strong> 改变生成的框的类型</p>
 <ol>
 <li>block：可以让行内元素表现得像块级元素一样</li>
 <li>inline：可以让块级元素表现得像行内元素一样</li>
@@ -367,9 +367,11 @@ classes that you can use:
 </ol>
 </li>
 <li><p>跨浏览器兼容性问题</p>
-<blockquote>
-<p>使用 <strong>position</strong> 属性 和 <strong>float 属性</strong> 对齐元素时，对 <code>&lt;body&gt;</code>元素的外边距和内边距进行预定义(<code>body{margin:0;padding:0;}</code>)是一个好主意,这样可以避免在不同的浏览器中出现可见的差异。<br>  当使用 position 属性时，IE8以及更早的版本存在一个问题:若容器元素（如<code>&lt;divclass=&quot;container&quot;&gt;</code>）设置了指定的宽度，并且省略了 !DOCTYPE 声明，那么 IE8 以及更早的版本会在右侧增加 17px 的外边距（这似乎是为滚动条预留的空间）<br>  所以，请始终设置 !DOCTYPE 声明：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">body</div><div class="line">&#123;</div><div class="line">margin:0;</div><div class="line">padding:0;</div><div class="line">&#125;</div><div class="line">....</div></pre></td></tr></table></figure></blockquote>
+<ul>
+<li>使用 <strong>position</strong> 属性 和 <strong>float 属性</strong> 对齐元素时，对 <code>&lt;body&gt;</code>元素的外边距和内边距进行预定义(<code>body{margin:0;padding:0;}</code>)是一个好主意,这样可以避免在不同的浏览器中出现可见的差异。</li>
+<li>当使用 position 属性时，IE8以及更早的版本存在一个问题:若容器元素（如<code>&lt;divclass=&quot;container&quot;&gt;</code>）设置了指定的宽度，并且省略了 !DOCTYPE 声明，那么 IE8 以及更早的版本会在右侧增加 17px 的外边距（这似乎是为滚动条预留的空间）</li>
+<li>所以，请始终设置 !DOCTYPE 声明：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">body</div><div class="line">&#123;</div><div class="line">margin:0;</div><div class="line">padding:0;</div><div class="line">&#125;</div><div class="line">....</div></pre></td></tr></table></figure></li>
+</ul>
 </li>
 </ul>
 
