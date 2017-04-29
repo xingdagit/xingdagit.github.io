@@ -23,7 +23,8 @@
 <meta property="og:description" content="1. CSS 简介 CSS 指层叠样式表 (Cascading Style Sheets) 样式定义如何显示 HTML 元素  样式通常存储在样式表中，外部样式表通常存储在 CSS 文件中  把样式添加到 HTML 4.0 中，是为了解决内容与表现分离的问题 多个样式定义可层叠为一 当同一个 HTML 元素被不止一个样式定义时，多重样式将层叠为一个 优先级(高到底): 内联样式（在 HTML 元素">
 <meta property="og:image" content="http://www.w3school.com.cn/i/ct_css_selector.gif">
 <meta property="og:image" content="http://www.w3school.com.cn/i/ct_boxmodel.gif">
-<meta property="og:updated_time" content="2017-04-23T03:23:05.479Z">
+<meta property="og:image" content="http://img.mukewang.com/539fbb3a0001304305570259.jpg">
+<meta property="og:updated_time" content="2017-04-29T09:08:40.907Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS-基础 | SPACE-19">
 <meta name="twitter:description" content="1. CSS 简介 CSS 指层叠样式表 (Cascading Style Sheets) 样式定义如何显示 HTML 元素  样式通常存储在样式表中，外部样式表通常存储在 CSS 文件中  把样式添加到 HTML 4.0 中，是为了解决内容与表现分离的问题 多个样式定义可层叠为一 当同一个 HTML 元素被不止一个样式定义时，多重样式将层叠为一个 优先级(高到底): 内联样式（在 HTML 元素">
@@ -476,7 +477,7 @@ classes that you can use:
 <li>实现文本缩进(常用于段落的首行缩进)</li>
 <li>一般来说，可应用于所有块级元素，但无法应用于行内元素，以及图像之类的替换元素。(若想把一个行内元素的首行“缩进”，可以用<strong>左内边距或外边距</strong>创造这种效果)</li>
 <li>不过如果一个块级元素（比如段落）的首行中有一个图像，它会随该行的其余文本移动。</li>
-<li>属性值: 可使用所有长度单位，如<strong>长度、百分值</strong>(可为负值)<br>例: <code>p {text-indent: 5em;}</code>//使所有段落的首行缩进 5 em<br>例: <code>p {text-indent: -5em;}</code>//使所有段落的首行悬挂在元素中余下部分的左边(“悬挂缩进”)<br>例: <code>p {text-indent:-5em;padding-left:5em;}</code>//使用负值，首行的某些文本可能会超出浏览器窗口的左边界。为避免出现这种显示问题，可针对负缩进再设置一个外边距或一些内边距<br>例: <code>p {text-indent: 20%;}</code>//缩进其父元素宽度的 20%</li>
+<li>属性值: 可使用所有长度单位，如<strong>长度、百分值</strong>(可为负值)<br>例: <code>p {text-indent: 5em;}</code>//使所有段落的首行缩进 5 em(5em的意思就是文字的5倍大小)<br>例: <code>p {text-indent: -5em;}</code>//使所有段落的首行悬挂在元素中余下部分的左边(“悬挂缩进”)<br>例: <code>p {text-indent:-5em;padding-left:5em;}</code>//使用负值，首行的某些文本可能会超出浏览器窗口的左边界。为避免出现这种显示问题，可针对负缩进再设置一个外边距或一些内边距<br>例: <code>p {text-indent: 20%;}</code>//缩进其父元素宽度的 20%</li>
 <li>text-indent 属性可以继承，即设置了缩进元素所包括(派生)的所有子元素也相应缩进</li>
 </ul>
 </li>
@@ -608,7 +609,10 @@ classes that you can use:
 </li>
 </ul>
 </li>
+<li>一次性设置<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">    font-style:italic;</div><div class="line">    font-variant:small-caps; </div><div class="line">    font-weight:bold; </div><div class="line">    font-size:12px; </div><div class="line">    line-height:1.5em; </div><div class="line">    font-family:&quot;宋体&quot;,sans-serif;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
 </ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//简写形式</div><div class="line">//简写形式你至少要指定 font-size 和 font-family 属性，其他的属性如未指定将自动使用默认值</div><div class="line">//在缩写时 font-size 与 line-height 中间要加入“/”斜扛</div><div class="line">body&#123;</div><div class="line">    font:italic  small-caps  bold  12px/1.5em  &quot;宋体&quot;,sans-serif;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="9-CSS-列表"><a href="#9-CSS-列表" class="headerlink" title="9. CSS 列表"></a>9. CSS 列表</h2><ul>
 <li>主要是改变列表的标志类型(无序列表的标志是圆点；有序列表的是字母，数字等)</li>
 <li>例：<ul>
@@ -670,6 +674,7 @@ classes that you can use:
 <ul>
 <li>CSS 框模型 (Box Model) 规定了元素框处理元素内容、内边距、边框 和 外边距 的方式</li>
 <li><img src="http://www.w3school.com.cn/i/ct_boxmodel.gif" alt="框模型"></li>
+<li><img src="http://img.mukewang.com/539fbb3a0001304305570259.jpg" alt="盒模型"></li>
 <li>元素框的最内部分是实际的内容，直接包围内容的是内边距</li>
 <li>内边距呈现了元素的背景</li>
 <li>内边距的边缘是边框</li>

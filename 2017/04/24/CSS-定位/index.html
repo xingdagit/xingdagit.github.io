@@ -21,10 +21,12 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/24/CSS-定位/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="1. 一切皆为框 分类  块级元素 —- “块框”从上到下一个接一个地排列，框之间的垂直距离是由框的垂直外边距计算出来 行内元素 —- “行内框”在一行中水平布置。只有通过水平内边距、边框和外边距可调整它们的间距。垂直内边距、边框和外边距不影响行内框的高度(除非改为display: block) 一段/每行文本 —- “无名块框”不与专门定义的元素相关联；也具有块级元素特点 一行形成的水平框 —-">
-<meta property="og:updated_time" content="2017-04-24T10:05:49.265Z">
+<meta property="og:image" content="http://img.mukewang.com/539fbb3a0001304305570259.jpg">
+<meta property="og:updated_time" content="2017-04-29T08:50:11.530Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS-定位 | SPACE-19">
 <meta name="twitter:description" content="1. 一切皆为框 分类  块级元素 —- “块框”从上到下一个接一个地排列，框之间的垂直距离是由框的垂直外边距计算出来 行内元素 —- “行内框”在一行中水平布置。只有通过水平内边距、边框和外边距可调整它们的间距。垂直内边距、边框和外边距不影响行内框的高度(除非改为display: block) 一段/每行文本 —- “无名块框”不与专门定义的元素相关联；也具有块级元素特点 一行形成的水平框 —-">
+<meta name="twitter:image" content="http://img.mukewang.com/539fbb3a0001304305570259.jpg">
     
     
     
@@ -199,23 +201,24 @@ classes that you can use:
 </li>
 </ul>
 <h2 id="2-CSS-定位机制"><a href="#2-CSS-定位机制" class="headerlink" title="2. CSS 定位机制"></a>2. CSS 定位机制</h2><ol>
-<li><p>标准文档流(普通流)</p>
-<ul>
-<li>流式布局</li>
+<li>标准文档流(普通流)<ul>
+<li>流式布局/流动模型(Flow)</li>
 <li>除非专门指定，否则所有框都在普通流中定位。即普通流中的元素的位置由元素在(X)HTML中的位置决定</li>
 <li>相对定位元素仍处于标准文档流中，浮动元素与绝对定位元素则会脱离标准文档流</li>
-<li>从上到下，从左到右，输出文档内容</li>
 <li>由块级元素和行级元素组成(两者都具有盒子模型)</li>
+<li>从上到下(块级元素)，从左到右(行级元素)，输出文档内容</li>
 <li>盒子模型<ul>
 <li>3D层次<br>border(顶层)<br>content + padding<br>background-image<br>background-color<br>margin</li>
 <li>不设置高度，盒子模型随内容自适应高度</li>
+<li><img src="http://img.mukewang.com/539fbb3a0001304305570259.jpg" alt="盒模型"></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>浮动</p>
-<ul>
-<li>浮动布局</li>
+</ol>
+<ol>
+<li>浮动<ul>
+<li>浮动布局/浮动模型(Float)</li>
 <li>可实现横向多列布局</li>
 <li>float属性</li>
 <li>浮动框可向 左/右 移动，直至它的外边缘碰到 包含框/另一浮动框 的边框为止</li>
@@ -246,7 +249,9 @@ classes that you can use:
 </li>
 </ol>
 <ol>
-<li>定位<ul>
+<li><p>定位</p>
+<ul>
+<li>层模型（Layer）</li>
 <li>可实现横向多列布局及较复杂的定位</li>
 <li>三种定位形式<ol>
 <li>静态定位(不算定位)</li>
@@ -255,7 +260,8 @@ classes that you can use:
 </ol>
 </li>
 <li>position 属性</li>
-<li>四种属性值(position)<ol>
+<li><p>四种属性值(position)</p>
+<ol>
 <li>static —静态定位<ul>
 <li>元素框正常生成</li>
 <li>块级元素生成一个矩形框，作为文档流中的一部分</li>
@@ -263,14 +269,15 @@ classes that you can use:
 </ul>
 </li>
 <li>relative —相对定位<ul>
-<li>元素框偏移某个距离(相对于自身位置左上角进行位移)</li>
+<li>元素框偏移某个距离(相对于原先自身位置左上角进行位移)</li>
 <li>其元素仍处于标准文档流中</li>
 <li>元素仍保持其未定位前的形状，原本占据的空间仍保留</li>
 <li>拥有z-index属性</li>
 <li>position:relative 与top、right、bottom、left 分别组合实现各方向的相对定位</li>
 </ul>
 </li>
-<li>absolute —绝对定位<ul>
+<li><p>absolute —绝对定位</p>
+<ul>
 <li>元素框从文档流完全删除</li>
 <li>元素完全脱离了标准文档流</li>
 <li>元素在原文档流所占空间会消失，导致部分元素发生偏移(可能会出现元素的覆盖重叠)</li>
@@ -292,11 +299,15 @@ classes that you can use:
 <li>元素定位后生成一个块级框，而不论它在原正常文档流中生成何种类型的框</li>
 <li>当元素设置了绝对定位 但 没设置宽度时，宽度随内容变化而变化</li>
 <li>position:relative 与 top、right、bottom、left 分别组合 实现各方向的相对定位</li>
+<li>absolute + relative组合使用可实现元素相对于其他同等级元素进行定位：被参照的加relative，定位的加absolute</li>
 </ul>
 </li>
-<li>fixed —固定定位<ul>
-<li>元素框的表现类似于absolute，不过包含块为视窗本身</li>
+<li><p>fixed —固定定位</p>
+<ul>
+<li>元素框的表现类似于absolute，不过包含块为视窗本身(以屏幕内的网页窗口为偏移参照标准)</li>
 <li>绝对定位的一种</li>
+<li>固定定位的元素会始终位于浏览器窗口内视图的某个位置，不会受文档流动影响，不会因浏览器中的滚动条滚动而变化</li>
+<li>功能与background-attachment:fixed;属性相同</li>
 </ul>
 </li>
 </ol>

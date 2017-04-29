@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/15/HTML-基础/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="1. HTML 简介 HTML 是用来描述网页的一种语言。 指的是超文本标记语言 (Hyper Text Markup Language) 不是一种编程语言，而是一种标记语言 (markup language) ，即一套标记标签(markup tag) 使用标记标签来描述网页 HTML 文档 = 网页(描述网页)      HTML 文档包含 HTML 标签和纯文本      HTML 文档是由">
-<meta property="og:updated_time" content="2017-04-16T03:35:46.276Z">
+<meta property="og:updated_time" content="2017-04-29T09:35:07.882Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML基础 | SPACE-19">
 <meta name="twitter:description" content="1. HTML 简介 HTML 是用来描述网页的一种语言。 指的是超文本标记语言 (Hyper Text Markup Language) 不是一种编程语言，而是一种标记语言 (markup language) ，即一套标记标签(markup tag) 使用标记标签来描述网页 HTML 文档 = 网页(描述网页)      HTML 文档包含 HTML 标签和纯文本      HTML 文档是由">
@@ -217,7 +217,7 @@ classes that you can use:
 </tbody>
 </table>
 <h2 id="3-HTML-块级元素"><a href="#3-HTML-块级元素" class="headerlink" title="3. HTML 块级元素"></a>3. HTML 块级元素</h2><blockquote>
-<p><strong>从新行开始，可容纳内联元素和其他块元素</strong></p>
+<p><strong>从新行开始，可容纳内联元素和其他块元素</strong><br>   元素的高度、宽度、行高以及顶和底边距都可设置<br>   默认状态下块状元素的宽度都为100%,即在不设置宽度的情况下，是它本身父容器的100%（和父元素的宽度一致），除非设定一个宽度<br>   将内联元素变块级元素—display:block</p>
 </blockquote>
 <ul>
 <li><code>&lt;address&gt;</code> - 地址</li>
@@ -236,30 +236,28 @@ classes that you can use:
 <li><code>&lt;noscript&gt;</code> - 可选脚本内容（对于不支持script的浏览器显示此内容）</li>
 <li><code>&lt;ol &gt;</code>- 排序表单  </li>
 <li><code>&lt;p&gt;</code> - 段落 </li>
-<li><code>&lt;pre&gt;</code> - 格式化文本  </li>
+<li><code>&lt;pre&gt;</code> - 格式化文本  (可用于显示多行代码)</li>
 <li><code>&lt;table&gt;</code> - 表格</li>
 <li><code>&lt;ul&gt;</code> - 非排序列表</li>
 </ul>
 <h2 id="3-HTML-内联元素"><a href="#3-HTML-内联元素" class="headerlink" title="3. HTML 内联元素"></a>3. HTML 内联元素</h2><blockquote>
-<p><strong>不从新行开始，只能容纳文本或者其他内联元素</strong></p>
+<p><strong>不从新行开始，只能容纳文本或者其他内联元素</strong><br>   和其他元素都在一行上<br>   元素的高度、宽度及顶部和底部边距不可设置<br>   元素的宽度就是它包含的文字或图片的宽度，不可改变<br>   将块级元素变内联元素—display:inline</p>
 </blockquote>
-<p>   内联元素变块级元素—display:block</p>
+<p>内联元素之间有一个间距bug问题:当行内元素之间有“回车”、“tab”、“空格”时就会出现间隙，<br>解决方法：1、写在一行，之间不要有空格之类的符号;  2、使用font-size:0</p>
 <ul>
 <li><code>&lt;a&gt;</code> - 锚点 </li>
 <li><code>&lt;abbr &gt;</code>- 缩写 </li>
 <li><code>&lt;acronym&gt;</code> - 首字 </li>
 <li><code>&lt;b&gt;</code> - 粗体(不推荐) </li>
-<li><code>&lt; bdo&gt;</code> - bidi override</li>
+<li><code>&lt;bdo&gt;</code> - bidi override</li>
 <li><code>&lt;big &gt;</code>- 大字体 </li>
 <li><code>&lt;br &gt;</code>- 换行 </li>
 <li><code>&lt;cite&gt;</code> - 引用 </li>
-<li><code>&lt;code&gt;</code> - 计算机代码(在引用源码的时候需要) </li>
+<li><code>&lt;code&gt;</code> - 计算机代码(在引用源码的时候需要) (一行代码)(多行用<code>&lt;pre&gt;</code>)</li>
 <li><code>&lt;dfn&gt;</code> - 定义字段 </li>
 <li><code>&lt;em&gt;</code> - 强调 </li>
 <li><code>&lt;font&gt;</code> - 字体设定(不推荐) </li>
 <li><code>&lt;i&gt;</code>- 斜体 </li>
-<li><code>&lt;img&gt;</code>- 图片 </li>
-<li><code>&lt;input&gt;</code>- 输入框 </li>
 <li><code>&lt;kbd&gt;</code> - 定义键盘文本 </li>
 <li><code>&lt;label&gt;</code> - 表格标签 </li>
 <li><code>&lt;q&gt;</code> - 短引用 </li>
@@ -277,7 +275,14 @@ classes that you can use:
 <li><code>&lt;u&gt;</code>- 下划线 </li>
 <li><code>&lt;var&gt;</code> - 定义变量</li>
 </ul>
-<h2 id="4-HTML-可变元素"><a href="#4-HTML-可变元素" class="headerlink" title="4. HTML 可变元素"></a>4. HTML 可变元素</h2><blockquote>
+<h2 id="4-HTML-内联块状元素"><a href="#4-HTML-内联块状元素" class="headerlink" title="4. HTML 内联块状元素"></a>4. HTML 内联块状元素</h2><blockquote>
+<p><strong>同时具备内联元素、块状元素的特点</strong><br>   和其他元素都在一行上<br>   元素的高度、宽度、行高以及顶和底边距都可设置<br>   将元素设置为内联块状元素—display:inline-block</p>
+</blockquote>
+<ul>
+<li><code>&lt;img&gt;</code>- 图片 </li>
+<li><code>&lt;input&gt;</code>- 输入框   </li>
+</ul>
+<h2 id="5-HTML-可变元素"><a href="#5-HTML-可变元素" class="headerlink" title="5. HTML 可变元素"></a>5. HTML 可变元素</h2><blockquote>
 <p><strong>根据上下文语境决定该元素为块元素或者内联元素</strong></p>
 </blockquote>
 <ul>
@@ -290,7 +295,7 @@ classes that you can use:
 <li><code>&lt;object&gt;</code> - object对象   </li>
 <li><code>&lt;script&gt;</code> - 客户端脚本</li>
 </ul>
-<h2 id="5-HTML-标签"><a href="#5-HTML-标签" class="headerlink" title="5. HTML 标签"></a>5. HTML 标签</h2><ul>
+<h2 id="6-HTML-标签"><a href="#6-HTML-标签" class="headerlink" title="6. HTML 标签"></a>6. HTML 标签</h2><ul>
 <li>即由尖括号包围的关键词，比如 <code>&lt;html&gt;</code> </li>
 <li>通常是成对出现的，比如 <code>&lt;b&gt;</code>开始标签(开放标签) 和<code>&lt;/b&gt;</code>结束标签(闭合标签)</li>
 <li><code>&lt;html&gt;</code> 与 <code>&lt;/html&gt;</code> 之间的文本描述网页(<code>&lt;html&gt;</code>为文档的根元素) </li>
@@ -298,7 +303,7 @@ classes that you can use:
 <li><code>&lt;body&gt;</code> 与 <code>&lt;/body&gt;</code> 之间的文本是可见的页面内容(主体)</li>
 <li><code>&lt;!DOCTYPE&gt;</code>声明—帮助浏览器正确地显示网页（<code>&lt;!DOCTYPE html&gt;</code>）</li>
 </ul>
-<h2 id="6-HTML-属性"><a href="#6-HTML-属性" class="headerlink" title="6. HTML 属性"></a>6. HTML 属性</h2><ul>
+<h2 id="7-HTML-属性"><a href="#7-HTML-属性" class="headerlink" title="7. HTML 属性"></a>7. HTML 属性</h2><ul>
 <li>总是以名称/值对的形式出现，比如：name=”value”</li>
 <li>始终为属性值加引号(个别情况下属性值本身就含有双引号，则必须使用单引号)</li>
 <li>适用于大多数 HTML元素的属性：<ul>
@@ -309,7 +314,7 @@ classes that you can use:
 </ul>
 </li>
 </ul>
-<h2 id="7-HTML-样式"><a href="#7-HTML-样式" class="headerlink" title="7. HTML 样式"></a>7. HTML 样式</h2><ul>
+<h2 id="8-HTML-样式"><a href="#8-HTML-样式" class="headerlink" title="8. HTML 样式"></a>8. HTML 样式</h2><ul>
 <li>style 属性: 提供了一种改变所有 HTML 元素的样式的通用方法</li>
 <li><p>三种方式来插入样式表：</p>
 <ul>
@@ -325,10 +330,10 @@ classes that you can use:
 </ul>
 </li>
 </ul>
-<h2 id="8-文本格式化标签"><a href="#8-文本格式化标签" class="headerlink" title="8. 文本格式化标签"></a>8. 文本格式化标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;!-- This is a comment --&gt;  注释</div><div class="line">&lt;hr /&gt; 水平线，可用于分隔内容</div><div class="line">&lt;br /&gt; 换行</div><div class="line">&lt;b&gt;-  定义粗体文本</div><div class="line">&lt;big&gt;	定义大号字。</div><div class="line">&lt;em&gt;	定义着重文字。</div><div class="line">&lt;i&gt;	定义斜体字。</div><div class="line">&lt;small&gt; 定义小号字。</div><div class="line">&lt;strong&gt; 定义加重语气。</div><div class="line">&lt;sub&gt;	定义下标字。</div><div class="line">&lt;sup&gt;	定义上标字。</div><div class="line">&lt;ins&gt;	定义插入字。</div><div class="line">&lt;del&gt;	定义删除字</div></pre></td></tr></table></figure>
-<h2 id="9-引用、引用和术语定义"><a href="#9-引用、引用和术语定义" class="headerlink" title="9. 引用、引用和术语定义"></a>9. 引用、引用和术语定义</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;abbr&gt;    定义缩写。</div><div class="line">&lt;acronym&gt; 定义首字母缩写。</div><div class="line">&lt;address&gt; 定义地址。</div><div class="line">&lt;bdo&gt;	  定义文字方向。(dir属性: ltr/rtl)</div><div class="line">&lt;blockquote&gt;	定义长的引用。(缩进处理)</div><div class="line">&lt;q&gt;	      定义短的引用语。(加上引号)</div><div class="line">&lt;cite&gt;	  定义引用、引证。(用于著作标题)</div><div class="line">&lt;dfn&gt;	  定义一个定义项目</div></pre></td></tr></table></figure>
-<h2 id="10-“计算机输出”标签"><a href="#10-“计算机输出”标签" class="headerlink" title="10. “计算机输出”标签"></a>10. “计算机输出”标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;code&gt;  定义计算机代码。</div><div class="line">&lt;kbd&gt;	定义键盘码。</div><div class="line">&lt;samp&gt;  定义计算机代码样本。</div><div class="line">&lt;tt&gt;	定义打字机代码。</div><div class="line">&lt;var&gt;	定义变量。</div><div class="line">&lt;pre&gt;	定义预格式文本。</div></pre></td></tr></table></figure>
-<h2 id="11-使用-HTML5-的网站布局"><a href="#11-使用-HTML5-的网站布局" class="headerlink" title="11. 使用 HTML5 的网站布局"></a>11. 使用 HTML5 的网站布局</h2><ul>
+<h2 id="9-文本格式化标签"><a href="#9-文本格式化标签" class="headerlink" title="9. 文本格式化标签"></a>9. 文本格式化标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;!-- This is a comment --&gt;  注释</div><div class="line">&lt;hr /&gt; 水平线，可用于分隔内容</div><div class="line">&lt;br /&gt; 换行</div><div class="line">&lt;b&gt;-  定义粗体文本</div><div class="line">&lt;big&gt;	定义大号字。</div><div class="line">&lt;em&gt;	定义着重文字。</div><div class="line">&lt;i&gt;	定义斜体字。</div><div class="line">&lt;small&gt; 定义小号字。</div><div class="line">&lt;strong&gt; 定义加重语气。</div><div class="line">&lt;sub&gt;	定义下标字。</div><div class="line">&lt;sup&gt;	定义上标字。</div><div class="line">&lt;ins&gt;	定义插入字。</div><div class="line">&lt;del&gt;	定义删除字</div></pre></td></tr></table></figure>
+<h2 id="10-引用、引用和术语定义"><a href="#10-引用、引用和术语定义" class="headerlink" title="10. 引用、引用和术语定义"></a>10. 引用、引用和术语定义</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;abbr&gt;    定义缩写。</div><div class="line">&lt;acronym&gt; 定义首字母缩写。</div><div class="line">&lt;address&gt; 定义地址。</div><div class="line">&lt;bdo&gt;	  定义文字方向。(dir属性: ltr/rtl)</div><div class="line">&lt;blockquote&gt;	定义长的引用。(缩进处理)</div><div class="line">&lt;q&gt;	      定义短的引用语。(加上引号)</div><div class="line">&lt;cite&gt;	  定义引用、引证。(用于著作标题)</div><div class="line">&lt;dfn&gt;	  定义一个定义项目</div></pre></td></tr></table></figure>
+<h2 id="11-“计算机输出”标签"><a href="#11-“计算机输出”标签" class="headerlink" title="11. “计算机输出”标签"></a>11. “计算机输出”标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;code&gt;  定义计算机代码。</div><div class="line">&lt;kbd&gt;	定义键盘码。</div><div class="line">&lt;samp&gt;  定义计算机代码样本。</div><div class="line">&lt;tt&gt;	定义打字机代码。</div><div class="line">&lt;var&gt;	定义变量。</div><div class="line">&lt;pre&gt;	定义预格式文本。</div></pre></td></tr></table></figure>
+<h2 id="12-使用-HTML5-的网站布局"><a href="#12-使用-HTML5-的网站布局" class="headerlink" title="12. 使用 HTML5 的网站布局"></a>12. 使用 HTML5 的网站布局</h2><ul>
 <li>HTML5 提供的新语义元素定义了网页的不同部分</li>
 <li>HTML5 语义元素</li>
 </ul>
@@ -370,9 +375,9 @@ classes that you can use:
 </tr>
 </tbody>
 </table>
-<h2 id="12-HTML-标题"><a href="#12-HTML-标题" class="headerlink" title="12. HTML 标题"></a>12. HTML 标题</h2><p><code>&lt;h1&gt;(最大) --- &lt;h6&gt;(最小)</code></p>
-<h2 id="13-HTML-段落"><a href="#13-HTML-段落" class="headerlink" title="13. HTML 段落"></a>13. HTML 段落</h2><p><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></p>
-<h2 id="14-HTML-链接"><a href="#14-HTML-链接" class="headerlink" title="14. HTML 链接"></a>14. HTML 链接</h2><ul>
+<h2 id="13-HTML-标题"><a href="#13-HTML-标题" class="headerlink" title="13. HTML 标题"></a>13. HTML 标题</h2><p><code>&lt;h1&gt;(最大) --- &lt;h6&gt;(最小)</code></p>
+<h2 id="14-HTML-段落"><a href="#14-HTML-段落" class="headerlink" title="14. HTML 段落"></a>14. HTML 段落</h2><p><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></p>
+<h2 id="15-HTML-链接"><a href="#15-HTML-链接" class="headerlink" title="15. HTML 链接"></a>15. HTML 链接</h2><ul>
 <li><code>&lt;a href=&quot;http://www.baidu.com.cn&quot;&gt;This is a link&lt;/a&gt;</code></li>
 <li>使用 href 属性 - 创建指向另一个文档的链接</li>
 <li><p>使用 name 属性 - 创建文档内的书签，规定锚（anchor）的名称，实现文档内的跳转</p>
@@ -388,22 +393,24 @@ classes that you can use:
 </ul>
 </li>
 </ul>
-<h2 id="15-HTML-图像"><a href="#15-HTML-图像" class="headerlink" title="15. HTML 图像"></a>15. HTML 图像</h2><ul>
+<h2 id="16-HTML-图像"><a href="#16-HTML-图像" class="headerlink" title="16. HTML 图像"></a>16. HTML 图像</h2><ul>
 <li><code>&lt;img src=&quot; Big Boat.jpg&quot; width=&quot;104&quot; height=&quot;142&quot; alt=&quot;Big Boat&quot;/&gt;</code></li>
 <li>src 属性的值是图像的 URL 地址</li>
 <li>alt 属性用来为图像定义一串预备的可替换的文本</li>
 <li><code>&lt;map&gt;</code>标签—定义一个客户端图像映射，即带有可点击区域的图像映射<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;img src=&quot;planets.jpg&quot; border=&quot;0&quot; usemap=&quot;#planetmap&quot; alt=&quot;Planets&quot; /&gt;</div><div class="line">&lt;map name=&quot;planetmap&quot; id=&quot;planetmap&quot;&gt;</div><div class="line">     &lt;area shape=&quot;circle&quot; coords=&quot;180,139,14&quot; href =&quot;venus.html&quot; alt=&quot;Venus&quot; /&gt;</div><div class="line">     &lt;area shape=&quot;circle&quot; coords=&quot;129,161,10&quot; href =&quot;mercur.html&quot; alt=&quot;Mercury&quot; /&gt;</div><div class="line">     &lt;area shape=&quot;rect&quot; coords=&quot;0,0,110,260&quot; href =&quot;sun.html&quot; alt=&quot;Sun&quot; /&gt;</div><div class="line">&lt;/map&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="16-HTML-表格"><a href="#16-HTML-表格" class="headerlink" title="16. HTML 表格"></a>16. HTML 表格</h2><ul>
+<h2 id="17-HTML-表格"><a href="#17-HTML-表格" class="headerlink" title="17. HTML 表格"></a>17. HTML 表格</h2><ul>
 <li>由 <code>&lt;table&gt;</code> 标签来定义，如<code>&lt;table border=&quot;1&quot; cellpadding=&quot;10&quot; cellspacing=&quot;10&quot; &gt;</code><br>（cellpadding创建单元格内容与其边框之间的空白，cellspacing创建单元格之间的距离）</li>
 <li>每个表格均有若干行（<code>&lt;tr&gt;</code>），每行被分割为若干单元格（<code>&lt;td&gt;</code>）<br><td>包括表格数据，即数据单元格的内容</td></li>
 <li>表格的表头使用<code>&lt;th&gt;</code>标签进行定义（相当于<code>&lt;td&gt;</code>）</li>
 <li>如某个单元格是没内容，在空单元格中添加一个空格占位符<code>&amp;nbsp</code>;，就可将边框显示出来</li>
 <li>属性：colspan=”2”—-占两列；rowspan=”2”—-占两行；align—排列单元格内容</li>
 <li><code>&lt;caption&gt;</code>表格标题<code>&lt;/caption&gt;</code></li>
+<li>用<code>&lt;tbody&gt;..&lt;/tbody&gt;</code>可以使表格在表格内容全部下载后才显示</li>
+<li>为表格添加边框一般CSS语法：<code>table tr td,th{border:1px solid #000;}</code></li>
 </ul>
-<h2 id="17-HTML-列表"><a href="#17-HTML-列表" class="headerlink" title="17. HTML 列表"></a>17. HTML 列表</h2><ul>
+<h2 id="18-HTML-列表"><a href="#18-HTML-列表" class="headerlink" title="18. HTML 列表"></a>18. HTML 列表</h2><ul>
 <li><p>无序列表</p>
 <ul>
 <li>始于 <code>&lt;ul&gt;</code>标签，每个列表项始于<code>&lt;li&gt;</code></li>
@@ -429,7 +436,7 @@ classes that you can use:
 </ul>
 </li>
 </ul>
-<h2 id="18-HTML-框架"><a href="#18-HTML-框架" class="headerlink" title="18. HTML 框架"></a>18. HTML 框架</h2><ul>
+<h2 id="19-HTML-框架"><a href="#19-HTML-框架" class="headerlink" title="19. HTML 框架"></a>19. HTML 框架</h2><ul>
 <li>框架结构标签<code>&lt;frameset&gt;</code><ul>
 <li>定义如何将窗口分割为框架</li>
 <li>每个 frameset 定义了一系列行或列</li>
@@ -458,21 +465,21 @@ classes that you can use:
 </ul>
 </li>
 </ul>
-<h2 id="19-HTML-背景"><a href="#19-HTML-背景" class="headerlink" title="19. HTML 背景"></a>19. HTML 背景</h2><ul>
+<h2 id="20-HTML-背景"><a href="#20-HTML-背景" class="headerlink" title="20. HTML 背景"></a>20. HTML 背景</h2><ul>
 <li><code>&lt;body bgcolor=&quot;#000000/rgb(0,0,0)/black&quot;&gt;</code></li>
 <li><code>&lt;body background=&quot;clouds.gif&quot;&gt;</code></li>
 </ul>
-<h2 id="20-HTML-脚本"><a href="#20-HTML-脚本" class="headerlink" title="20. HTML 脚本"></a>20. HTML 脚本</h2><ul>
+<h2 id="21-HTML-脚本"><a href="#21-HTML-脚本" class="headerlink" title="21. HTML 脚本"></a>21. HTML 脚本</h2><ul>
 <li><code>&lt;script&gt;</code>标签</li>
 <li>用于定义客户端脚本，比如 JavaScript</li>
 <li>既可包含脚本语句，也可通过 src 属性指向外部脚本文件</li>
 <li>必需的 type 属性规定脚本的 MIME 类型</li>
 </ul>
-<h2 id="21-HTML-字符实体"><a href="#21-HTML-字符实体" class="headerlink" title="21. HTML 字符实体"></a>21. HTML 字符实体</h2><ul>
+<h2 id="22-HTML-字符实体"><a href="#22-HTML-字符实体" class="headerlink" title="22. HTML 字符实体"></a>22. HTML 字符实体</h2><ul>
 <li>HTML 中的预留字符必须被替换为字符实体</li>
 <li>HTML 实体符号参考手册——-<a href="http://www.w3school.com.cn/tags/html_ref_entities.html" target="_blank" rel="external">http://www.w3school.com.cn/tags/html_ref_entities.html</a></li>
 </ul>
-<h2 id="22-HTML-颜色"><a href="#22-HTML-颜色" class="headerlink" title="22. HTML 颜色"></a>22. HTML 颜色</h2><ul>
+<h2 id="23-HTML-颜色"><a href="#23-HTML-颜色" class="headerlink" title="23. HTML 颜色"></a>23. HTML 颜色</h2><ul>
 <li>颜色由一个十六进制符号来定义，这个符号由红色、绿色和蓝色的值组成（RGB）</li>
 <li>每种颜色的最小值是0（十六进制：#00）。最大值是255（十六进制：#FF）</li>
 </ul>
@@ -486,47 +493,47 @@ classes that you can use:
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">黑色</td>
+<td style="text-align:center">黑色black</td>
 <td style="text-align:center">#000000</td>
 <td style="text-align:center">rgb(0,0,0)</td>
 </tr>
 <tr>
-<td style="text-align:center">红色</td>
+<td style="text-align:center">红色red</td>
 <td style="text-align:center">#FF0000</td>
 <td style="text-align:center">rgb(255,0,0)</td>
 </tr>
 <tr>
-<td style="text-align:center">绿色</td>
+<td style="text-align:center">绿色green</td>
 <td style="text-align:center">#00FF00</td>
 <td style="text-align:center">rgb(0,255,0)</td>
 </tr>
 <tr>
-<td style="text-align:center">蓝色</td>
+<td style="text-align:center">蓝色blue</td>
 <td style="text-align:center">#0000FF</td>
 <td style="text-align:center">rgb(0,0,255)</td>
 </tr>
 <tr>
-<td style="text-align:center">黄色</td>
+<td style="text-align:center">黄色yellow</td>
 <td style="text-align:center">#FFFF00</td>
 <td style="text-align:center">rgb(255,255,0)</td>
 </tr>
 <tr>
-<td style="text-align:center">青色</td>
+<td style="text-align:center">青色..</td>
 <td style="text-align:center">#00FFFF</td>
 <td style="text-align:center">rgb(0,255,255)</td>
 </tr>
 <tr>
-<td style="text-align:center">粉红色</td>
+<td style="text-align:center">粉红色..</td>
 <td style="text-align:center">#FF00FF</td>
 <td style="text-align:center">rgb(255,0,255)</td>
 </tr>
 <tr>
-<td style="text-align:center">灰色</td>
+<td style="text-align:center">灰色..</td>
 <td style="text-align:center">#C0C0C0</td>
 <td style="text-align:center">rgb(192,192,192)</td>
 </tr>
 <tr>
-<td style="text-align:center">白色</td>
+<td style="text-align:center">白色..</td>
 <td style="text-align:center">#FFFFFF</td>
 <td style="text-align:center">rgb(255,255,255)</td>
 </tr>
@@ -535,7 +542,28 @@ classes that you can use:
 <ul>
 <li><a href="http://www.114la.com/other/rgb.htm" target="_blank" rel="external">RGB颜色查询对照表</a></li>
 </ul>
-<h2 id="23-HTML-表单"><a href="#23-HTML-表单" class="headerlink" title="23. HTML 表单"></a>23. HTML 表单</h2><ul>
+<h2 id="24-HTML-长度值"><a href="#24-HTML-长度值" class="headerlink" title="24. HTML 长度值"></a>24. HTML 长度值</h2><ol>
+<li>像素</li>
+</ol>
+<ul>
+<li>像素指的是显示器上的小点（CSS规范中假设“90像素=1英寸”）</li>
+<li>实际情况是浏览器会使用显示器的实际像素值有关，在目前大多数的设计者都倾向于使用像素（px）作为单位</li>
+</ul>
+<ol>
+<li>em</li>
+</ol>
+<ul>
+<li>em就是本元素给定字体的font-size值，如元素的font-size为14px，那么<code>1em=14px</code>；如font-size为18px，那么<code>1em=18px</code></li>
+<li><code>p{font-size:12px;text-indent:2em;}</code> //实现段落首行缩进 24px（也就是两个字体大小的距离）</li>
+<li>注意：当给 font-size 设置单位为 em 时，计算的标准以 p 的父元素的 font-size 为基础</li>
+</ul>
+<ol>
+<li>百分比</li>
+</ol>
+<ul>
+<li><code>p{font-size:12px; line-height:130%}</code> //设置行高（行间距）为字体的130%（12 * 1.3 = 15.6px）</li>
+</ul>
+<h2 id="25-HTML-表单"><a href="#25-HTML-表单" class="headerlink" title="25. HTML 表单"></a>25. HTML 表单</h2><ul>
 <li>用于搜集不同类型的用户输入</li>
 <li><code>&lt;form&gt;</code>元素<ul>
 <li>action 属性定义在提交表单时执行的动作(向何处提交表单)</li>
