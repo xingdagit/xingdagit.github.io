@@ -14,17 +14,17 @@
     
     
 
-    <meta name="description" content="布局模型是建立在盒模型的基础之上  清除默认样式(初始化页面)：body{margin:0; padding:0} //一般设置布局都要使用   1. 一列布局 实现步骤：(居中型) 设置水平居中{margin: 0 auto;} (上下值任意，但左右值必为auto) 设置固定宽度：设置width为某个定值，但不能为100%(100%就不居中了) 高度自定义设置   典型一列布局：三个&amp;lt;d">
+    <meta name="description" content="布局模型是建立在盒模型的基础之上  清除默认样式(初始化页面)：body{margin:0; padding:0} //一般设置布局都要使用  设置top、right、bottom、left时偏移的参照物为其已定位(一般是相对定位)的父元素   1. 一列居中布局 实现步骤： 设置水平居中{margin: 0 auto;} (上下值任意，但左右值必为auto) 设置固定宽度：设置width为某个">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS-布局 | SPACE-19">
 <meta property="og:url" content="http://yoursite.com/2017/04/24/CSS-布局/index.html">
 <meta property="og:site_name" content="SPACE-19">
-<meta property="og:description" content="布局模型是建立在盒模型的基础之上  清除默认样式(初始化页面)：body{margin:0; padding:0} //一般设置布局都要使用   1. 一列布局 实现步骤：(居中型) 设置水平居中{margin: 0 auto;} (上下值任意，但左右值必为auto) 设置固定宽度：设置width为某个定值，但不能为100%(100%就不居中了) 高度自定义设置   典型一列布局：三个&amp;lt;d">
-<meta property="og:updated_time" content="2017-04-29T16:03:12.022Z">
+<meta property="og:description" content="布局模型是建立在盒模型的基础之上  清除默认样式(初始化页面)：body{margin:0; padding:0} //一般设置布局都要使用  设置top、right、bottom、left时偏移的参照物为其已定位(一般是相对定位)的父元素   1. 一列居中布局 实现步骤： 设置水平居中{margin: 0 auto;} (上下值任意，但左右值必为auto) 设置固定宽度：设置width为某个">
+<meta property="og:updated_time" content="2017-04-30T13:58:15.942Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS-布局 | SPACE-19">
-<meta name="twitter:description" content="布局模型是建立在盒模型的基础之上  清除默认样式(初始化页面)：body{margin:0; padding:0} //一般设置布局都要使用   1. 一列布局 实现步骤：(居中型) 设置水平居中{margin: 0 auto;} (上下值任意，但左右值必为auto) 设置固定宽度：设置width为某个定值，但不能为100%(100%就不居中了) 高度自定义设置   典型一列布局：三个&amp;lt;d">
+<meta name="twitter:description" content="布局模型是建立在盒模型的基础之上  清除默认样式(初始化页面)：body{margin:0; padding:0} //一般设置布局都要使用  设置top、right、bottom、left时偏移的参照物为其已定位(一般是相对定位)的父元素   1. 一列居中布局 实现步骤： 设置水平居中{margin: 0 auto;} (上下值任意，但左右值必为auto) 设置固定宽度：设置width为某个">
     
     
     
@@ -184,50 +184,60 @@ classes that you can use:
 </li>
 <li><p>清除默认样式(初始化页面)：body{margin:0; padding:0} //一般设置布局都要使用</p>
 </li>
+<li><p>设置top、right、bottom、left时偏移的参照物为其已定位(一般是相对定位)的父元素</p>
+</li>
 </ul>
-<h2 id="1-一列布局"><a href="#1-一列布局" class="headerlink" title="1. 一列布局"></a>1. 一列布局</h2><ul>
-<li>实现步骤：(居中型)<ol>
+<h2 id="1-一列居中布局"><a href="#1-一列居中布局" class="headerlink" title="1. 一列居中布局"></a>1. 一列居中布局</h2><ul>
+<li>实现步骤：<ol>
 <li>设置水平居中<code>{margin: 0 auto;}</code> (上下值任意，但左右值必为auto)</li>
 <li>设置固定宽度：设置width为某个定值，但不能为100%(100%就不居中了)</li>
 <li>高度自定义设置</li>
 </ol>
 </li>
-<li>典型一列布局：三个<code>&lt;div&gt;</code>：头部top、主体main、尾部foot (根据各模块的需要来设置居不居中)</li>
+<li>包含子模块的情况：用一个包裹层包住所有子层，各个子层级的宽度根据需求设置相对父层宽度百分比(一般设为100%)，最后对包裹层进行上述设置</li>
+<li>典型一列布局：三个<code>&lt;div&gt;</code>：头部top、主体main、尾部foot (根据各模块的需要来设置居不居中以及宽度大小)</li>
 <li>若设置 <code>float属性</code>或 <code>position：absolute/fixed</code> 则取消居中了</li>
 <li>auto作用：根据浏览器宽度自动设置两边的外边距</li>
 <li>通常用于作首页</li>
 <li>不适用于存放文本</li>
 </ul>
-<h2 id="2-两列布局"><a href="#2-两列布局" class="headerlink" title="2. 两列布局"></a>2. 两列布局</h2><ul>
-<li>总宽度自适应的(较少使用)<ol>
+<h2 id="2-横向两列布局"><a href="#2-横向两列布局" class="headerlink" title="2. 横向两列布局"></a>2. 横向两列布局</h2><ul>
+<li>宽度自适应的(较少使用)—————–使用浮动定位<ol>
 <li>设置两列宽度：使用%(因为要自适应)</li>
-<li>需左右排列，所以分别设置float:left/right</li>
+<li>需左右排列，所以分别设置float:left/right(因浮动而影响位置的元素可根据需求消除浮动)</li>
 <li>高度自定义设置</li>
 </ol>
 </li>
-<li>固定宽度的(一般是居中的)<ol>
-<li>设置两列宽度，px(精确控制)/%(粗略控制)</li>
-<li>需左右排列，所以分别设置float:left/right</li>
+<li>固定宽度的(一般是居中的)—————使用浮动定位<ol>
+<li>设置两列宽度：px(精确控制)/%(粗略控制)</li>
+<li>需左右排列，所以分别设置float:left/right(因浮动而影响位置的元素可根据需求消除浮动)</li>
 <li>高度自定义设置</li>
 <li>然后用一个父div包住两列</li>
 <li>设置父div的width，再设置<code>margin:0 auto;</code></li>
 </ol>
 </li>
+<li>一列固定宽度另一列自适应(较少使用)—–使用绝对定位<ol>
+<li>设置两列宽度：px(固定宽度)/%(自适应宽度)</li>
+<li>自适应宽度元素绝对定位，其父元素相对定位(即设置绝对定位的元素一定在设置相对定位元素的里面)</li>
+<li>设置偏移量：自适应宽度元素以已定位父元素为参照基准进行偏移<br>(因为已脱离标准文档流，所以一般需设置margin值，从而与固定宽度列有一定间距，不覆盖)<br>(margin值一般为 固定宽度列宽度+间距 ，方向视情况而定)</li>
+<li>固定宽度列的高度 &gt; 自适应宽度列的高度(利用固定宽度页面撑开父元素的页面)</li>
+</ol>
+</li>
 </ul>
-<h2 id="3-三列布局"><a href="#3-三列布局" class="headerlink" title="3. 三列布局"></a>3. 三列布局</h2><ul>
-<li>总宽度自适应的(较少使用)<ol>
+<h2 id="3-横向三列布局"><a href="#3-横向三列布局" class="headerlink" title="3. 横向三列布局"></a>3. 横向三列布局</h2><ul>
+<li>总宽度自适应的(较少使用)————使用浮动定位<ol>
 <li>设置列宽度：使用%(因为要自适应)</li>
 <li>根据需求排列各列：分别设置float:left/right</li>
 <li>高度自定义设置</li>
 </ol>
 </li>
-<li>宽度有固定也有自适应的<ol>
+<li>宽度有固定宽度也有自适应的———-使用绝对定位<ol>
 <li>左右列固定宽度，中间列宽度自适应</li>
 <li>左列<strong>绝对定位</strong>：<code>position:absolute; left:0; top:0;</code></li>
 <li>右列<strong>绝对定位</strong>：<code>position:absolute; right:0; top:0;</code></li>
 <li>中间列去掉宽度定义，加上左右两侧margin值：<code>margin:0 310px 0 210px;</code>（假设右列300px，左列200px，剩下的10px是通过增加margin属性值实现列间空隙）</li>
 <li>设置父div的width，再设置<code>margin:0 auto;</code></li>
-<li>高度自定义设置</li>
+<li>固定宽度列的高度 &gt; 自适应宽度列的高度(利用固定宽度页面撑开父元素的页面)</li>
 </ol>
 </li>
 </ul>
@@ -238,8 +248,6 @@ classes that you can use:
 </li>
 <li><p>兼容IE6就不能用浮动,而要用绝对定位或者相对定位</p>
 </li>
-<li>当子元素要设定为absolute的时候，父元素要设定relative</li>
-<li>固定宽度列的高度 一定要大于 自适应宽度列的高度</li>
 </ul>
 
   </section>
