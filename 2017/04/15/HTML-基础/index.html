@@ -15,13 +15,13 @@
     
 
     <meta name="description" content="1. HTML 简介 HTML 是用来描述网页的一种语言。 指的是超文本标记语言 (Hyper Text Markup Language) 不是一种编程语言，而是一种标记语言 (markup language) ，即一套标记标签(markup tag) 使用标记标签来描述网页 HTML 文档 = 网页(描述网页)      HTML 文档包含 HTML 标签和纯文本      HTML 文档是由">
-<meta name="keywords" content="基础,HTML">
+<meta name="keywords" content="HTML,基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML基础 | SPACE-19">
 <meta property="og:url" content="http://yoursite.com/2017/04/15/HTML-基础/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="1. HTML 简介 HTML 是用来描述网页的一种语言。 指的是超文本标记语言 (Hyper Text Markup Language) 不是一种编程语言，而是一种标记语言 (markup language) ，即一套标记标签(markup tag) 使用标记标签来描述网页 HTML 文档 = 网页(描述网页)      HTML 文档包含 HTML 标签和纯文本      HTML 文档是由">
-<meta property="og:updated_time" content="2017-04-30T06:57:57.730Z">
+<meta property="og:updated_time" content="2017-05-02T10:09:09.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML基础 | SPACE-19">
 <meta name="twitter:description" content="1. HTML 简介 HTML 是用来描述网页的一种语言。 指的是超文本标记语言 (Hyper Text Markup Language) 不是一种编程语言，而是一种标记语言 (markup language) ，即一套标记标签(markup tag) 使用标记标签来描述网页 HTML 文档 = 网页(描述网页)      HTML 文档包含 HTML 标签和纯文本      HTML 文档是由">
@@ -205,19 +205,19 @@ classes that you can use:
 <td style="text-align:center">&lt;/p&gt;</td>
 </tr>
 <tr>
-<td style="text-align:center">&lt;a href=”default.htm” &gt;</td>
+<td style="text-align:center"><code>&lt;a href=&quot;default.htm&quot;&gt;</code></td>
 <td style="text-align:center">This is a link</td>
-<td style="text-align:center">&lt;/a&gt;</td>
+<td style="text-align:center"><code>&lt;/a&gt;</code></td>
 </tr>
 <tr>
-<td style="text-align:center">&lt;br /&gt;</td>
+<td style="text-align:center"><code>&lt;br/&gt;</code></td>
 <td style="text-align:center">某些 HTML 元素具有空内容（空元素在开始标签中关闭）</td>
 <td style="text-align:center">＆nbsp;</td>
 </tr>
 </tbody>
 </table>
 <h2 id="3-HTML-块级元素"><a href="#3-HTML-块级元素" class="headerlink" title="3. HTML 块级元素"></a>3. HTML 块级元素</h2><blockquote>
-<p><strong>从新行开始，可容纳内联元素和其他块元素</strong><br>   元素的高度、宽度、行高以及顶和底边距都可设置<br>   默认状态下块状元素的宽度都为100%,即在不设置宽度的情况下，是它本身父容器的100%（和父元素的宽度一致），除非设定一个宽度<br>   将内联元素变块级元素—display:block</p>
+<p><strong>从新行开始，可容纳内联元素和其他块元素</strong><br>   1.元素的高度、宽度、行高以及顶和底边距都可设置<br>   2.默认状态下块状元素的宽度都为100%,即在不设置宽度的情况下，是它本身父容器的100%（和父元素的宽度一致），除非设定一个宽度<br>   3.将内联元素变块级元素—<code>display:block</code></p>
 </blockquote>
 <ul>
 <li><code>&lt;address&gt;</code> - 地址</li>
@@ -241,9 +241,9 @@ classes that you can use:
 <li><code>&lt;ul&gt;</code> - 非排序列表</li>
 </ul>
 <h2 id="3-HTML-内联元素-行内元素"><a href="#3-HTML-内联元素-行内元素" class="headerlink" title="3. HTML 内联元素(行内元素)"></a>3. HTML 内联元素(行内元素)</h2><blockquote>
-<p><strong>不从新行开始，只能容纳文本或者其他内联元素</strong><br>   和其他元素都在一行上<br>   元素的高度、宽度、上下边距不可设置(设置了也无效)<br>   元素的宽度就是它包含的文字或图片的宽度，不可改变<br>   将块级元素变内联元素—display:inline</p>
+<p><strong>不从新行开始，只能容纳文本或者其他内联元素</strong><br>   1.和其他元素都在一行上<br>   2.元素的高度、宽度、上下边距不可设置(设置了也无效)<br>   3.元素的宽度就是它包含的文字或图片的宽度，不可改变<br>   4.将块级元素变内联元素—<code>display:inline</code></p>
 </blockquote>
-<p>内联元素之间有一个间距bug问题:当行内元素之间有“回车”、“tab”、“空格”时就会出现间隙，<br>解决方法：1、写在一行，之间不要有空格之类的符号;  2、使用font-size:0</p>
+<p>内联元素之间有一个间距bug问题:当行内元素之间有“回车”、“tab”、“空格”时就会出现间隙，<br>解决方法：<br>1、写在一行，之间不要有空格之类的符号;<br>2、使用font-size:0</p>
 <ul>
 <li><code>&lt;a&gt;</code> - 锚点 </li>
 <li><code>&lt;abbr &gt;</code>- 缩写 </li>
@@ -276,7 +276,7 @@ classes that you can use:
 <li><code>&lt;var&gt;</code> - 定义变量</li>
 </ul>
 <h2 id="4-HTML-内联块状元素"><a href="#4-HTML-内联块状元素" class="headerlink" title="4. HTML 内联块状元素"></a>4. HTML 内联块状元素</h2><blockquote>
-<p><strong>同时具备内联元素、块状元素的特点</strong><br>   和其他元素都在一行上<br>   元素的高度、宽度、行高以及顶和底边距都可设置<br>   将元素设置为内联块状元素—display:inline-block</p>
+<p><strong>同时具备内联元素、块状元素的特点</strong><br>   1.和其他元素都在一行上<br>   2.元素的高度、宽度、行高以及顶和底边距都可设置<br>   3.将元素设置为内联块状元素—<code>display:inline-block</code></p>
 </blockquote>
 <ul>
 <li><code>&lt;img&gt;</code>- 图片 </li>
