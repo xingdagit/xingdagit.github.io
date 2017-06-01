@@ -23,7 +23,7 @@
 <meta property="og:description" content="一般面向对象的两个基本概念：类：类是对象的类型模板，表示抽象；实例：实例是根据类创建的对象，表示具体实例。但在JavaScript中，JavaScript不区分类和实例的概念，而是通过原型（prototype）来实现面向对象编程 原型是指当我们想要创建xiaoming这个具体的学生时，并没有一个Student类型可用。而使用一个现成的对象来创建： 123456789101112131415//先">
 <meta property="og:image" content="http://www.liaoxuefeng.com/files/attachments/001435287613668a73ab76ccc85411282c1b1370be41636000/l">
 <meta property="og:image" content="http://www.liaoxuefeng.com/files/attachments/00143529922671163eebb527bc14547ac11363bf186557d000/l">
-<meta property="og:updated_time" content="2017-06-01T14:50:57.486Z">
+<meta property="og:updated_time" content="2017-06-01T15:01:08.551Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS-面向对象编程 | SPACE-19">
 <meta name="twitter:description" content="一般面向对象的两个基本概念：类：类是对象的类型模板，表示抽象；实例：实例是根据类创建的对象，表示具体实例。但在JavaScript中，JavaScript不区分类和实例的概念，而是通过原型（prototype）来实现面向对象编程 原型是指当我们想要创建xiaoming这个具体的学生时，并没有一个Student类型可用。而使用一个现成的对象来创建： 123456789101112131415//先">
@@ -178,7 +178,7 @@ classes that you can use:
 
   <section id="post-content" class="article-content post">
     <ul>
-<li>一般面向对象的两个基本概念：类：类是对象的类型模板，表示抽象；实例：实例是根据类创建的对象，表示具体实例。但在JavaScript中，JavaScript不区分类和实例的概念，而是通过<code>原型（prototype）</code>来实现面向对象编程</li>
+<li>一般面向对象的两个基本概念：<br>类：类是对象的类型模板，表示抽象；<br>实例：实例是根据类创建的对象，表示具体实例。<br>但在JavaScript中，JavaScript不区分类和实例的概念，而是通过<code>原型（prototype）</code>来实现面向对象编程</li>
 <li><p>原型是指当我们想要创建xiaoming这个具体的学生时，并没有一个Student类型可用。而使用一个现成的对象来创建：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//先创建一个student的对象</div><div class="line">var Student = &#123;</div><div class="line">    name: &apos;Robot&apos;,</div><div class="line">    height: 1.2,</div><div class="line">    run: function () &#123;</div><div class="line">        console.log(this.name + &apos; is running...&apos;);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">//然后创建出xiaoming对象</div><div class="line">var xiaoming = &#123;</div><div class="line">    name: &apos;小明&apos;</div><div class="line">&#125;;</div><div class="line">//把xiaoming的原型指向了对象Student，看上去xiaoming仿佛是从Student继承下来的</div><div class="line">xiaoming.__proto__ = Student ;</div><div class="line">//此时xiaoming不仅可以调用已定义的name属性，也可以调用没有定义run()方法。因为run()方法是从Student继承而来</div></pre></td></tr></table></figure>
 </li>
