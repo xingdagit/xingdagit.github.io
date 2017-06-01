@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/01/JS-标准对象/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="一、在JavaScript里可谓一切都是对象(不能说对也不能说不对)第一，其实并不是一切皆对象，因为javascript有5种基本数据类型(Undefined、Null、Boolean、Number和String)和一个复杂数据类型(Object)第二，但是在js的核心思想里：操作数据时，是将所有数据都视为对象进行操作的 二、为了区分对象的类型，用typeof操作符获取对象的类型，它总是返回一个字">
-<meta property="og:updated_time" content="2017-06-01T13:49:07.539Z">
+<meta property="og:updated_time" content="2017-06-01T14:03:56.734Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS-标准对象 | SPACE-19">
 <meta name="twitter:description" content="一、在JavaScript里可谓一切都是对象(不能说对也不能说不对)第一，其实并不是一切皆对象，因为javascript有5种基本数据类型(Undefined、Null、Boolean、Number和String)和一个复杂数据类型(Object)第二，但是在js的核心思想里：操作数据时，是将所有数据都视为对象进行操作的 二、为了区分对象的类型，用typeof操作符获取对象的类型，它总是返回一个字">
@@ -183,32 +183,26 @@ classes that you can use:
 <h3 id="二、为了区分对象的类型，用typeof操作符获取对象的类型，它总是返回一个字符串"><a href="#二、为了区分对象的类型，用typeof操作符获取对象的类型，它总是返回一个字符串" class="headerlink" title="二、为了区分对象的类型，用typeof操作符获取对象的类型，它总是返回一个字符串"></a>二、为了区分对象的类型，用typeof操作符获取对象的类型，它总是返回一个字符串</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">typeof 123; //返回 &apos;number&apos;</div><div class="line">typeof NaN; // &apos;number&apos;</div><div class="line">typeof &apos;str&apos;; // &apos;string&apos;</div><div class="line">typeof true; // &apos;boolean&apos;</div><div class="line">typeof undefined; // &apos;undefined&apos;</div><div class="line">typeof Math.abs; // &apos;function&apos;</div><div class="line">typeof null; // &apos;object&apos;</div><div class="line">typeof []; // &apos;object&apos;</div><div class="line">typeof &#123;&#125;; // &apos;object&apos;</div></pre></td></tr></table></figure>
 <h3 id="三、包装对象"><a href="#三、包装对象" class="headerlink" title="三、包装对象"></a>三、包装对象</h3><ul>
 <li>具有包装对象的类型：int、number、boolean和string </li>
-<li>用new创建包装对象<ol>
-<li>var n = new Number(123); // 123,生成了新的包装类型</li>
-<li>var b = new Boolean(true); // true,生成了新的包装类型</li>
-<li>var s = new String(‘str’); // ‘str’,生成了新的包装类型</li>
-</ol>
-</li>
+<li>用new创建包装对象<br><code>var n = new Number(123);</code> // 123,生成了新的包装类型<br><code>var b = new Boolean(true);</code> // true,生成了新的包装类型<br><code>var s = new String(&#39;str&#39;);</code>// ‘str’,生成了新的包装类型</li>
 <li>包装对象显示出来的值不变，但类型已经变为object(包装对象和原始值用===比较会返回false)</li>
 <li>因为这个原因少用包装对象(尤其是string类型)</li>
 <li>若在创建包装对象时没写new，则<code>Number()、Boolean和String()</code>等函数被当做普通函数，导致把任何类型的数据转换为<code>number、boolean和string</code>类型：<br> <code>var s = String(123.45); // &#39;123.45&#39;</code><br> <code>typeof s; // &#39;string&#39;</code></li>
 <li>使用包装对象需要遵守的几条规则：<ol>
 <li>不要使用new Number()、new Boolean()、new String()创建包装对象（即用构造函数的方式创建/实例化对象）。因为：包装对象创建/实例化出来的，是对象类型，而不是Number/Boolean/String类型。</li>
-<li>转换类型：<br>转为number类型：用parseInt() / parseFloat()；<br>转为boolean类型：通常不必把任意类型转换为boolean再判断，因为可以直接写if (myVar) {…}；<br>转为string类型：用String() /对象. toString()，但是注意：<br> 1)null和undefined伪对象没有toString()方法；<br> 2)整数number类型使用toSting()方法要在数末尾多加一个点或用括号括住数；</li>
+<li>转换类型：<br>1)转为<code>number</code>类型：用parseInt() / parseFloat()；<br>2)转为<code>boolean</code>类型：通常不必把任意类型转换为boolean再判断，因为可以直接写if (myVar) {…}；<br>3)转为<code>string</code>类型：用String() /对象. toString()，但是注意：<br>  第一，null和undefined伪对象没有toString()方法；<br>  第二，整数number类型使用toSting()方法要在数末尾多加一个点或用括号括住数；</li>
 <li>判断类型：<br>typeof操作符可判断：number / boolean / string / function / undefined；<br>判断Array：<code>Array.isArray(myArr)；</code><br>判断null：<code>myVar === null；</code></li>
 <li>判断存在性：<br>判断某个全局变量是否存在：用<code>typeof window.myVar === &#39;undefined&#39;；</code><br>判断函数内部某个变量是否存在：用<code>typeof myVar === &#39;undefined&#39;；</code> </li>
 </ol>
 </li>
 </ul>
-<p>###1.Date对象</p>
-<ul>
+<h3 id="1-Date对象"><a href="#1-Date对象" class="headerlink" title="1.Date对象"></a>1.Date对象</h3><ul>
 <li>Date对象用来表示日期和时间</li>
 <li><p>创建Date对象：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var now = new Date();//获取系统当前时间(从本机操作系统获取的时间，不一定准确)</div><div class="line">var d = new Date(2015, 5, 19, 20, 15, 30, 123); //创建一个指定日期和时间的Date对象</div><div class="line">var d = Date.parse(&apos;2015-06-24T19:49:22.875+08:00&apos;);//创建一个指定日期和时间的方法(通过解析一个符合ISO 8601格式的字符串)</div><div class="line">var d = new Date(时间戳数字串); //但返回的不是Date对象而是一个时间戳。于是再把时间戳转换为一个Date</div></pre></td></tr></table></figure>
 </li>
 <li><p>时间戳</p>
 <ul>
-<li>是一个自增的整数，它表示从<code>1970年1月1日零时整</code>的<code>GMT时区</code>开始那一刻到现在的<code>毫秒数</code>;</li>
+<li>是一个<code>自增</code>的整数，它表示从<code>1970年1月1日零时整</code>的<code>GMT时区</code>开始那一刻到现在的<code>毫秒数</code>;</li>
 <li>时间戳可以精确地表示一个时刻，并且与时区无关;(世界上无论哪个时区的电脑，它们此刻产生的时间戳数字都是一样的)</li>
 <li>任何浏览器都可以把一个时间戳正确转换为本地时间;</li>
 <li>所以只需要传递时间戳或把时间戳从数据库里读出来，再让JavaScript自动转换就可以转为当地时间</li>
@@ -218,13 +212,8 @@ classes that you can use:
 <li>Date对象的方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">now.getFullYear(); // 年份</div><div class="line">now.getMonth(); // 月份，注意月份范围是0~11，5表示六月</div><div class="line">now.getDate(); // 几号</div><div class="line">now.getDay(); // 星期几</div><div class="line">now.getHours(); // 时(24小时制)</div><div class="line">now.getMinutes(); // 分钟</div><div class="line">now.getSeconds(); // 秒</div><div class="line">now.getMilliseconds(); // 毫秒数</div><div class="line">now.getTime(); // 1435146562875(以number形式表示的时间戳)</div><div class="line">now.toLocaleString(); // &apos;2015/6/24 下午7:49:22&apos;，本地时间（北京时区+8:00），显示的字符串与操作系统设定的格式有关</div><div class="line">now.toUTCString(); // &apos;Wed, 24 Jun 2015 11:49:22 GMT&apos;，UTC时间，与本地时间相差8小时</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>###2.RegExp</p>
-<ul>
-<li>正则表达式<ul>
-<li>精确匹配：直接给出全部字符</li>
-<li>模糊匹配：用<code>\d</code>可匹配一个<code>数字</code>，<code>\w</code>可匹配一个<code>字母或数字</code>，<code>\s</code>可匹配一个<code>空格（包括Tab等空白符），</code>\s+<code>可匹配</code>至少一个空格`（例如匹配’ ‘，’\t\t’）</li>
-</ul>
-</li>
+<h3 id="2-RegExp"><a href="#2-RegExp" class="headerlink" title="2.RegExp"></a>2.RegExp</h3><ul>
+<li>正则表达式<br>1)精确匹配：直接给出全部字符<br>2)模糊匹配：用<code>\d</code>可匹配一个<code>数字</code>，<code>\w</code>可匹配一个<code>字母或数字</code>，<code>\s</code>可匹配一个<code>空格（包括Tab等空白符），</code>\s+<code>可匹配</code>至少一个空格`（例如匹配’ ‘，’\t\t’）</li>
 <li>用<code>*</code>表示任意个字符（包括0个）；</li>
 <li>用<code>+</code>表示至少一个字符；</li>
 <li>用<code>.</code>可以匹配任意字符；</li>
@@ -283,8 +272,7 @@ classes that you can use:
 </ul>
 </li>
 </ul>
-<p>###3.JSON</p>
-<ul>
+<h3 id="3-JSON"><a href="#3-JSON" class="headerlink" title="3.JSON"></a>3.JSON</h3><ul>
 <li>JavaScript Object Notation</li>
 <li>一种超轻量级的数据交换格式</li>
 <li>因XML的规范的复杂，JSON逐渐取代XML来传递数据</li>
