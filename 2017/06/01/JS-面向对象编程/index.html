@@ -23,7 +23,7 @@
 <meta property="og:description" content="一般面向对象的两个基本概念：类：类是对象的类型模板，表示抽象；实例：实例是根据类创建的对象，表示具体实例。但在JavaScript中，JavaScript不区分类和实例的概念，而是通过原型（prototype）来实现面向对象编程 原型是指当我们想要创建xiaoming这个具体的学生时，并没有一个Student类型可用。而使用一个现成的对象来创建： 123456789101112131415//先">
 <meta property="og:image" content="http://www.liaoxuefeng.com/files/attachments/001435287613668a73ab76ccc85411282c1b1370be41636000/l">
 <meta property="og:image" content="http://www.liaoxuefeng.com/files/attachments/00143529922671163eebb527bc14547ac11363bf186557d000/l">
-<meta property="og:updated_time" content="2017-06-01T14:49:43.093Z">
+<meta property="og:updated_time" content="2017-06-01T14:50:57.486Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS-面向对象编程 | SPACE-19">
 <meta name="twitter:description" content="一般面向对象的两个基本概念：类：类是对象的类型模板，表示抽象；实例：实例是根据类创建的对象，表示具体实例。但在JavaScript中，JavaScript不区分类和实例的概念，而是通过原型（prototype）来实现面向对象编程 原型是指当我们想要创建xiaoming这个具体的学生时，并没有一个Student类型可用。而使用一个现成的对象来创建： 123456789101112131415//先">
@@ -204,10 +204,12 @@ classes that you can use:
 </ul>
 <h3 id="2-构造函数"><a href="#2-构造函数" class="headerlink" title="2.构造函数"></a>2.构造函数</h3><ul>
 <li>除了直接用<code>{ ... }</code>创建一个对象外，JavaScript还可用一种构造函数的方法来创建对象。</li>
-<li>步骤：<br>1)先定义一个构造函数：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function Student(name) &#123;</div><div class="line">    this.name = name;</div><div class="line">    this.hello = function () &#123;</div><div class="line">        alert(&apos;Hello, &apos; + this.name + &apos;!&apos;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li><p>步骤：<br>1)先定义一个构造函数：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function Student(name) &#123;</div><div class="line">    this.name = name;</div><div class="line">    this.hello = function () &#123;</div><div class="line">        alert(&apos;Hello, &apos; + this.name + &apos;!&apos;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> 2)用关键字new来调用这个函数，并返回一个对象(构造函数)：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var xiaoming = new Student(&apos;小明&apos;);  //使用构造函数(如不写new则为普通函数，返回undefined)</div><div class="line">xiaoming.name; // &apos;小明&apos;</div><div class="line">xiaoming.hello(); // Hello, 小明!</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>   2)用关键字new来调用这个函数，并返回一个对象(构造函数)：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var xiaoming = new Student(&apos;小明&apos;);  //使用构造函数(如不写new则为普通函数，返回undefined)</div><div class="line">xiaoming.name; // &apos;小明&apos;</div><div class="line">xiaoming.hello(); // Hello, 小明!</div></pre></td></tr></table></figure></p>
 <ul>
 <li>构造函数绑定的this指向新创建的对象，并默认返回this，也就是说，不需要在最后写return this;</li>
 <li>新创建的xiaoming的原型链是：<br>  <code>xiaoming ----&gt; Student.prototype ----&gt; Object.prototype ----&gt; null</code> //xiaoming的原型指向函数Student的原型</li>
