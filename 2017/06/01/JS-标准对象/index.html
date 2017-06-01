@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      JS-标准对象 | SPACE-19 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    
+
+    <meta name="description" content="一、在JavaScript里可谓一切都是对象(不能说对也不能说不对)第一，其实并不是一切皆对象，因为javascript有5种基本数据类型(Undefined、Null、Boolean、Number和String)和一个复杂数据类型(Object)第二，但是在js的核心思想里：操作数据时，是将所有数据都视为对象进行操作的 二、为了区分对象的类型，用typeof操作符获取对象的类型，它总是返回一个字">
+<meta name="keywords" content="JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS-标准对象 | SPACE-19">
+<meta property="og:url" content="http://yoursite.com/2017/06/01/JS-标准对象/index.html">
+<meta property="og:site_name" content="SPACE-19">
+<meta property="og:description" content="一、在JavaScript里可谓一切都是对象(不能说对也不能说不对)第一，其实并不是一切皆对象，因为javascript有5种基本数据类型(Undefined、Null、Boolean、Number和String)和一个复杂数据类型(Object)第二，但是在js的核心思想里：操作数据时，是将所有数据都视为对象进行操作的 二、为了区分对象的类型，用typeof操作符获取对象的类型，它总是返回一个字">
+<meta property="og:updated_time" content="2017-06-01T13:31:42.933Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS-标准对象 | SPACE-19">
+<meta name="twitter:description" content="一、在JavaScript里可谓一切都是对象(不能说对也不能说不对)第一，其实并不是一切皆对象，因为javascript有5种基本数据类型(Undefined、Null、Boolean、Number和String)和一个复杂数据类型(Object)第二，但是在js的核心思想里：操作数据时，是将所有数据都视为对象进行操作的 二、为了区分对象的类型，用typeof操作符获取对象的类型，它总是返回一个字">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">SPACE-19</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          XD
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">JS-标准对象</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-01" class="post-meta__date date">2017-06-01</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/JS/">JS</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="一、在JavaScript里可谓一切都是对象-不能说对也不能说不对"><a href="#一、在JavaScript里可谓一切都是对象-不能说对也不能说不对" class="headerlink" title="一、在JavaScript里可谓一切都是对象(不能说对也不能说不对)"></a>一、在JavaScript里可谓一切都是对象(不能说对也不能说不对)</h2><p>第一，其实并不是一切皆对象，因为javascript有5种基本数据类型(Undefined、Null、Boolean、Number和String)和一个复杂数据类型(Object)<br>第二，但是在js的核心思想里：操作数据时，是将所有数据都视为对象进行操作的</p>
+<h2 id="二、为了区分对象的类型，用typeof操作符获取对象的类型，它总是返回一个字符串"><a href="#二、为了区分对象的类型，用typeof操作符获取对象的类型，它总是返回一个字符串" class="headerlink" title="二、为了区分对象的类型，用typeof操作符获取对象的类型，它总是返回一个字符串"></a>二、为了区分对象的类型，用typeof操作符获取对象的类型，它总是返回一个字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">typeof 123; //返回 &apos;number&apos;</div><div class="line">typeof NaN; // &apos;number&apos;</div><div class="line">typeof &apos;str&apos;; // &apos;string&apos;</div><div class="line">typeof true; // &apos;boolean&apos;</div><div class="line">typeof undefined; // &apos;undefined&apos;</div><div class="line">typeof Math.abs; // &apos;function&apos;</div><div class="line">typeof null; // &apos;object&apos;</div><div class="line">typeof []; // &apos;object&apos;</div><div class="line">typeof &#123;&#125;; // &apos;object&apos;</div></pre></td></tr></table></figure>
+<h2 id="三、包装对象"><a href="#三、包装对象" class="headerlink" title="三、包装对象"></a>三、包装对象</h2><ul>
+<li>具有包装对象的类型：int、number、boolean和string </li>
+<li>用new创建包装对象<ol>
+<li>var n = new Number(123); // 123,生成了新的包装类型</li>
+<li>var b = new Boolean(true); // true,生成了新的包装类型</li>
+<li>var s = new String(‘str’); // ‘str’,生成了新的包装类型</li>
+</ol>
+</li>
+<li>包装对象显示出来的值不变，但类型已经变为object(包装对象和原始值用===比较会返回false)</li>
+<li>因为这个原因少用包装对象(尤其是string类型)</li>
+<li>若在创建包装对象时没写new，则Number()、Boolean和String()等函数被当做普通函数，导致把任何类型的数据转换为number、boolean和string类型：<br> <code>var s = String(123.45); // &#39;123.45&#39;</code><br> <code>typeof s; // &#39;string&#39;</code></li>
+<li>使用包装对象需要遵守的几条规则：</li>
+</ul>
+<ol>
+<li>不要使用new Number()、new Boolean()、new String()创建包装对象（即用构造函数的方式创建/实例化对象）。因为：包装对象创建/实例化出来的，是对象类型，而不是Number/Boolean/String类型。</li>
+<li>转换类型：<br>转为number类型：用parseInt() / parseFloat()；<br>转为boolean类型：通常不必把任意类型转换为boolean再判断，因为可以直接写if (myVar) {…}；<br>转为string类型：用String() /对象. toString()，但是注意：<br> 1) null和undefined伪对象没有toString()方法；<br> 2) 整数number类型使用toSting()方法要在数末尾多加一个点或用括号括住数；</li>
+<li>判断类型：<br>typeof操作符可判断：number / boolean / string / function / undefined；<br>判断Array：<code>Array.isArray(myArr)；</code><br>判断null：<code>myVar === null；</code></li>
+<li>判断存在性：<br>判断某个全局变量是否存在：用typeof window.myVar === ‘undefined’；<br>判断函数内部某个变量是否存在：用typeof myVar === ‘undefined’；10. </li>
+</ol>
+<h2 id="1-Date对象"><a href="#1-Date对象" class="headerlink" title="1.Date对象"></a>1.Date对象</h2><ul>
+<li>Date对象用来表示日期和时间</li>
+<li><p>创建Date对象：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var now = new Date();//获取系统当前时间(从本机操作系统获取的时间，不一定准确)</div><div class="line">var d = new Date(2015, 5, 19, 20, 15, 30, 123); //创建一个指定日期和时间的Date对象</div><div class="line">var d = Date.parse(&apos;2015-06-24T19:49:22.875+08:00&apos;);//创建一个指定日期和时间的方法(通过解析一个符合ISO 8601格式的字符串)</div><div class="line">var d = new Date(时间戳数字串); //但返回的不是Date对象而是一个时间戳。于是再把时间戳转换为一个Date</div></pre></td></tr></table></figure>
+</li>
+<li><p>时间戳</p>
+<ul>
+<li>是一个自增的整数，它表示从1970年1月1日零时整的GMT时区开始那一刻到现在的毫秒数;</li>
+<li>时间戳可以精确地表示一个时刻，并且与时区无关;(世界上无论哪个时区的电脑，它们此刻产生的时间戳数字都是一样的)</li>
+<li>任何浏览器都可以把一个时间戳正确转换为本地时间;</li>
+<li>所以只需要传递时间戳或把时间戳从数据库里读出来，再让JavaScript自动转换就可以转为当地时间</li>
+<li>获取当前时间戳：Date.now</li>
+</ul>
+</li>
+<li>Date对象的方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">now.getFullYear(); // 年份</div><div class="line">now.getMonth(); // 月份，注意月份范围是0~11，5表示六月</div><div class="line">now.getDate(); // 几号</div><div class="line">now.getDay(); // 星期几</div><div class="line">now.getHours(); // 时(24小时制)</div><div class="line">now.getMinutes(); // 分钟</div><div class="line">now.getSeconds(); // 秒</div><div class="line">now.getMilliseconds(); // 毫秒数</div><div class="line">now.getTime(); // 1435146562875(以number形式表示的时间戳)</div><div class="line">now.toLocaleString(); // &apos;2015/6/24 下午7:49:22&apos;，本地时间（北京时区+8:00），显示的字符串与操作系统设定的格式有关</div><div class="line">now.toUTCString(); // &apos;Wed, 24 Jun 2015 11:49:22 GMT&apos;，UTC时间，与本地时间相差8小时</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="2-RegExp"><a href="#2-RegExp" class="headerlink" title="2.RegExp"></a>2.RegExp</h2><ul>
+<li>正则表达式<ul>
+<li>精确匹配：直接给出全部字符</li>
+<li>模糊匹配：用\d可匹配一个数字，\w可匹配一个字母或数字，\s可匹配一个空格（包括Tab等空白符），\s+可匹配至少一个空格（例如匹配’ ‘，’\t\t’）</li>
+</ul>
+</li>
+<li>用*表示任意个字符（包括0个）；<ul>
+<li>用+表示至少一个字符；</li>
+<li>用.可以匹配任意字符；</li>
+<li>用?表示0个或1个字符；</li>
+<li>用{n}表示n个字符；</li>
+<li>用{n,m}表示n-m个字符；</li>
+<li>A|B可以匹配A或B，所以(J|j)ava(S|s)cript可以匹配’JavaScript’、’Javascript’、’javaScript’或者’javascript’；</li>
+<li>^表示行的开头，^\d表示必须以数字开头；</li>
+<li>$表示行的结束，\d$表示必须以数字结束；</li>
+<li>空格也算入匹配范围</li>
+<li>做更精确地匹配，可以用[]表示范围；</li>
+<li>特殊字符，在正则表达式中要用’\’转义；</li>
+</ul>
+</li>
+<li>例子:<ul>
+<li>‘00\d’可匹配’007’，但无法匹配’00A’；</li>
+<li>‘\d\d\d’可匹配’010’；</li>
+<li>‘\w\w’可匹配’js’；/</li>
+<li>‘js.’ 可匹配 ‘jsp’、’jss’、’js!’等等</li>
+<li>[0-9a-zA-Z_]可以匹配一个数字、字母或者下划线；</li>
+<li>[0-9a-zA-Z_]+可以匹配至少由一个数字、字母或者下划线组成的字符串，比如’a100’，’0_Z’，’js2015’等等；</li>
+<li>[a-zA-Z_\$][0-9a-zA-Z_\$]*可以匹配由字母或下划线、$开头，后接任意个由一个数字、字母或者下划线、$组成的字符串，也就是JavaScript允许的变量名；</li>
+<li>[a-zA-Z_\$][0-9a-zA-Z_\$]{0, 19}更精确地限制了变量的长度是1-20个字符（前面1个字符+后面最多19个字符）。</li>
+</ul>
+</li>
+<li>创建一个正则表达式<ol>
+<li>直接通过<code>/正则表达式/</code>写出来：<code>var re1 = /ABC\-001/;</code></li>
+<li>通过<code>new RegExp(&#39;正则表达式&#39;)</code>创建一个RegExp对象：<br><code>var re2 = new RegExp(&#39;ABC\\-001&#39;);</code>//这种方式存在字符串的转义问题</li>
+</ol>
+</li>
+<li><p>RegExp对象的test()方法用于测试给定的字符串是否符合条件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var re = /^\d&#123;3&#125;\-\d&#123;3,8&#125;$/;</div><div class="line">re.test(&apos;010-12345&apos;); // true</div><div class="line">re.test(&apos;010-1234x&apos;); // false</div></pre></td></tr></table></figure>
+</li>
+<li><p>切分字符串<br>用正则表达式切分字符串比用固定的字符更灵活；<br>用正则表达式可把不规范的输入转化成正确的数组；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a b   c&apos;.split(&apos; &apos;);     // [&apos;a&apos;, &apos;b&apos;, &apos;&apos;, &apos;&apos;, &apos;c&apos; ]，无法识别连续的空格</div><div class="line">&apos;a b   c&apos;.split(/\s+/);  // [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]，使用正则表达式无论多少个空格都可以正常分割了</div><div class="line">&apos;a,b, c  d&apos;.split(/[\s\,]+/);   // [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;]，加入`,`的识别</div><div class="line">&apos;a,b;; c  d&apos;.split(/[\s\,\;]+/);  // [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;]，加入`;`的识别</div></pre></td></tr></table></figure>
+</li>
+<li><p>分组</p>
+<ul>
+<li>正则表达式还有提取子串的强大功能；</li>
+<li>RegExp对象的exec()方法用于提取出符合格式的子串；</li>
+<li>exec()方法在匹配成功后，会返回一个Array，第一个元素是正则表达式匹配到的整个字符串，后面的字符串表示匹配成功的子串；在匹配失败时返回null。</li>
+<li><p>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//从匹配的字符串中提取出区号和本地号码</div><div class="line">var re = /^(\d&#123;3&#125;)-(\d&#123;3,8&#125;)$/;</div><div class="line">re.exec(&apos;010-12345&apos;); // [&apos;010-12345&apos;, &apos;010&apos;, &apos;12345&apos;]</div><div class="line">re.exec(&apos;010 12345&apos;); // null</div></pre></td></tr></table></figure>
+</li>
+<li><p>有时候用正则表达式也无法做到完全验证，比如识别日期</p>
+</li>
+</ul>
+</li>
+<li><p>贪婪匹配</p>
+<ul>
+<li>正则匹配默认是贪婪匹配，即匹配尽可能多的字符；</li>
+<li>比如匹配出数字后面的0：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var re = /^(\d+)(0*)$/;</div><div class="line">re.exec(&apos;102300&apos;); // [&apos;102300&apos;, &apos;102300&apos;, &apos;&apos;]     (由于\d+采用贪婪匹配，直接把后面的0全部匹配了，结果0*只能匹配空字符串了)</div><div class="line">//必须让\d+采用非贪婪匹配（也就是尽可能少匹配），才能把后面的0匹配出来:</div><div class="line">var re = /^(\d+?)(0*)$/;  //加个?就可以让\d+采用非贪婪匹配</div><div class="line">re.exec(&apos;102300&apos;); // [&apos;102300&apos;, &apos;1023&apos;, &apos;00&apos;]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>全局搜索</p>
+<ul>
+<li>JavaScript的正则表达式还有几个特殊的标志，最常用的是g，表示全局匹配：<br><code>var r1 = /test/g;</code> 等价于 <code>var r2 = new RegExp(&#39;test&#39;, &#39;g&#39;);</code></li>
+<li>全局匹配可以多次执行exec()方法来搜索一个匹配的字符串，每运行exec()一次正则表达式本身会更新lastIndex属性一次，表示上次匹配到的最后索引；</li>
+<li>全局匹配类似搜索，因此不能使用/^…$/，那样只会最多匹配一次；</li>
+<li>正则表达式还可以指定i标志，表示忽略大小写，m标志，表示执行多行匹配。</li>
+</ul>
+</li>
+</ul>
+<p>##　3.JSON</p>
+<ul>
+<li>JavaScript Object Notation</li>
+<li>一种超轻量级的数据交换格式</li>
+<li>因XML的规范的复杂，JSON逐渐取代XML来传递数据</li>
+<li>JSON实际上是JavaScript的一个子集，JavaScript内置了JSON的解析</li>
+<li>JSON的数据类型：<br>　- number：和JavaScript的number完全一致；<br>　- boolean：就是JavaScript的true或false；<br>　- string：就是JavaScript的string；<br>　- null：就是JavaScript的null；<br>　- array：就是JavaScript的Array表示方式——[]；<br>　- object：就是JavaScript的{ … }表示方式；<br>　- 以及上面的任意组合。</li>
+<li>JSON规定了字符集必须是UTF-8，因此不能表示多语言。为了统一解析，JSON的字符串规定必须用双引号””，Object的键也必须用双引号””。</li>
+<li>把任何JavaScript对象变成JSON，相当于把这个对象序列化成一个JSON格式的字符串，从而才能够通过网络传递给其他计算机；当收到一个JSON格式的字符串，只需把它反序列化成一个JavaScript对象，就可在JavaScript中直接使用这个对象了</li>
+<li><p>序列化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">//把xiaoming对象序列化成JSON格式的字符串：</div><div class="line">var xiaoming = &#123;</div><div class="line">    name: &apos;小明&apos;,</div><div class="line">    age: 14,</div><div class="line">    gender: true,</div><div class="line">    height: 1.65,</div><div class="line">    grade: null,</div><div class="line">    &apos;middle-school&apos;: &apos;\&quot;W3C\&quot; Middle School&apos;,</div><div class="line">    skills: [&apos;JavaScript&apos;, &apos;Java&apos;, &apos;Python&apos;, &apos;Lisp&apos;]</div><div class="line">&#125;;</div><div class="line">JSON.stringify(xiaoming); // &apos;&#123;&quot;name&quot;:&quot;小明&quot;,&quot;age&quot;:14,&quot;gender&quot;:true,&quot;height&quot;:1.65,&quot;grade&quot;:null,&quot;middle-school&quot;:&quot;\&quot;W3C\&quot; Middle School&quot;,&quot;skills&quot;:[&quot;JavaScript&quot;,&quot;Java&quot;,&quot;Python&quot;,&quot;Lisp&quot;]&#125;&apos;</div><div class="line"></div><div class="line">//若要输出得好看一些，可以加上参数来按缩进输出</div><div class="line">JSON.stringify(xiaoming, null, &apos;  &apos;);</div><div class="line"></div><div class="line">//第二个参数用于控制如何筛选对象的键值，如只想输出指定的属性，可以传入Array：</div><div class="line">JSON.stringify(xiaoming, [&apos;name&apos;, &apos;skills&apos;], &apos;  &apos;);</div><div class="line"></div><div class="line">//第二个参数还可传入一个函数，这样对象的每个键值对都会被函数先处理：</div><div class="line">JSON.stringify(xiaoming, convert, &apos;  &apos;); //convert函数定义省略</div><div class="line"></div><div class="line">//可给xiaoming定义一个toJSON()的方法，规定要返回JSON序列化的数据</div><div class="line">var xiaoming = &#123;</div><div class="line">    name: &apos;小明&apos;,</div><div class="line">    age: 14,</div><div class="line">    …..</div><div class="line">    toJSON: function () &#123;</div><div class="line">        return &#123; &apos;Name&apos;: this.name , &apos;Age&apos;: this.age &#125;; //只输出name和age，并且改变了key：</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">JSON.stringify(xiaoming); // &apos;&#123;&quot;Name&quot;:&quot;小明&quot;,&quot;Age&quot;:14&#125;&apos;</div></pre></td></tr></table></figure>
+</li>
+<li><p>反序列化<br>1.　拿到一个JSON格式的字符串，用JSON.parse()把它变成一个JavaScript对象：<br>　<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">　JSON.parse(&apos;[1,2,3,true]&apos;); // [1, 2, 3, true]</div><div class="line">　JSON.parse(&apos;&#123;&quot;name&quot;:&quot;小明&quot;,&quot;age&quot;:14&#125;&apos;); // Object &#123;name: &apos;小明&apos;, age: 14&#125;</div><div class="line">　JSON.parse(&apos;true&apos;); // true</div><div class="line">　JSON.parse(&apos;123.45&apos;); // 123.45</div></pre></td></tr></table></figure></p>
+</li>
+</ul>
+<p>2.　JSON.parse()还可接收一个函数，用来转换、修改解析出的属性值：<br>　<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">　JSON.parse(&apos;&#123;&quot;name&quot;:&quot;小明&quot;,&quot;age&quot;:14&#125;&apos;, function (key, value) &#123;</div><div class="line">　　if (key === &apos;name&apos;) &#123;  return value + &apos;同学&apos;;  &#125;</div><div class="line">　　return value;</div><div class="line">　&#125;); </div><div class="line">　// Object &#123;name: &apos;小明同学&apos;, age: 14&#125;</div></pre></td></tr></table></figure></p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
