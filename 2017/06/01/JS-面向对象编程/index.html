@@ -14,18 +14,18 @@
     
     
 
-    <meta name="description" content="一般面向对象的两个基本概念：类：类是对象的类型模板，表示抽象；实例：实例是根据类创建的对象，表示具体实例。但在JavaScript中，JavaScript不区分类和实例的概念，而是通过原型（prototype）来实现面向对象编程 原型是指当我们想要创建xiaoming这个具体的学生时，并没有一个Student类型可用。而使用一个现成的对象来创建：123456789101112131415//先创">
+    <meta name="description" content="一般面向对象的两个基本概念：类：类是对象的类型模板，表示抽象；实例：实例是根据类创建的对象，表示具体实例。但在JavaScript中，JavaScript不区分类和实例的概念，而是通过原型（prototype）来实现面向对象编程 原型是指当我们想要创建xiaoming这个具体的学生时，并没有一个Student类型可用。而使用一个现成的对象来创建： 123456789101112131415//先">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS-面向对象编程 | SPACE-19">
 <meta property="og:url" content="http://yoursite.com/2017/06/01/JS-面向对象编程/index.html">
 <meta property="og:site_name" content="SPACE-19">
-<meta property="og:description" content="一般面向对象的两个基本概念：类：类是对象的类型模板，表示抽象；实例：实例是根据类创建的对象，表示具体实例。但在JavaScript中，JavaScript不区分类和实例的概念，而是通过原型（prototype）来实现面向对象编程 原型是指当我们想要创建xiaoming这个具体的学生时，并没有一个Student类型可用。而使用一个现成的对象来创建：123456789101112131415//先创">
+<meta property="og:description" content="一般面向对象的两个基本概念：类：类是对象的类型模板，表示抽象；实例：实例是根据类创建的对象，表示具体实例。但在JavaScript中，JavaScript不区分类和实例的概念，而是通过原型（prototype）来实现面向对象编程 原型是指当我们想要创建xiaoming这个具体的学生时，并没有一个Student类型可用。而使用一个现成的对象来创建： 123456789101112131415//先">
 <meta property="og:image" content="http://www.liaoxuefeng.com/files/attachments/001435287613668a73ab76ccc85411282c1b1370be41636000/l">
-<meta property="og:updated_time" content="2017-06-01T14:37:55.356Z">
+<meta property="og:updated_time" content="2017-06-01T14:46:02.800Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS-面向对象编程 | SPACE-19">
-<meta name="twitter:description" content="一般面向对象的两个基本概念：类：类是对象的类型模板，表示抽象；实例：实例是根据类创建的对象，表示具体实例。但在JavaScript中，JavaScript不区分类和实例的概念，而是通过原型（prototype）来实现面向对象编程 原型是指当我们想要创建xiaoming这个具体的学生时，并没有一个Student类型可用。而使用一个现成的对象来创建：123456789101112131415//先创">
+<meta name="twitter:description" content="一般面向对象的两个基本概念：类：类是对象的类型模板，表示抽象；实例：实例是根据类创建的对象，表示具体实例。但在JavaScript中，JavaScript不区分类和实例的概念，而是通过原型（prototype）来实现面向对象编程 原型是指当我们想要创建xiaoming这个具体的学生时，并没有一个Student类型可用。而使用一个现成的对象来创建： 123456789101112131415//先">
 <meta name="twitter:image" content="http://www.liaoxuefeng.com/files/attachments/001435287613668a73ab76ccc85411282c1b1370be41636000/l">
     
     
@@ -178,12 +178,13 @@ classes that you can use:
   <section id="post-content" class="article-content post">
     <ul>
 <li>一般面向对象的两个基本概念：类：类是对象的类型模板，表示抽象；实例：实例是根据类创建的对象，表示具体实例。但在JavaScript中，JavaScript不区分类和实例的概念，而是通过<code>原型（prototype）</code>来实现面向对象编程</li>
-<li>原型是指当我们想要创建xiaoming这个具体的学生时，并没有一个Student类型可用。而使用一个现成的对象来创建：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//先创建一个student的对象</div><div class="line">var Student = &#123;</div><div class="line">    name: &apos;Robot&apos;,</div><div class="line">    height: 1.2,</div><div class="line">    run: function () &#123;</div><div class="line">        console.log(this.name + &apos; is running...&apos;);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">//然后创建出xiaoming对象</div><div class="line">var xiaoming = &#123;</div><div class="line">    name: &apos;小明&apos;</div><div class="line">&#125;;</div><div class="line">//把xiaoming的原型指向了对象Student，看上去xiaoming仿佛是从Student继承下来的</div><div class="line">xiaoming.__proto__ = Student ;</div><div class="line">//此时xiaoming不仅可以调用已定义的name属性，也可以调用没有定义run()方法。因为run()方法是从Student继承而来</div></pre></td></tr></table></figure>
+<li><p>原型是指当我们想要创建xiaoming这个具体的学生时，并没有一个Student类型可用。而使用一个现成的对象来创建：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//先创建一个student的对象</div><div class="line">var Student = &#123;</div><div class="line">    name: &apos;Robot&apos;,</div><div class="line">    height: 1.2,</div><div class="line">    run: function () &#123;</div><div class="line">        console.log(this.name + &apos; is running...&apos;);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">//然后创建出xiaoming对象</div><div class="line">var xiaoming = &#123;</div><div class="line">    name: &apos;小明&apos;</div><div class="line">&#125;;</div><div class="line">//把xiaoming的原型指向了对象Student，看上去xiaoming仿佛是从Student继承下来的</div><div class="line">xiaoming.__proto__ = Student ;</div><div class="line">//此时xiaoming不仅可以调用已定义的name属性，也可以调用没有定义run()方法。因为run()方法是从Student继承而来</div></pre></td></tr></table></figure>
 </li>
-</ul>
-<p><img src="http://www.liaoxuefeng.com/files/attachments/001435287613668a73ab76ccc85411282c1b1370be41636000/l" alt="原型图解"></p>
-<ul>
-<li><code>JavaScript的原型链</code>和<code>Java的Class</code>区别就在于它没有“Class”的概念，所有对象都是实例。继承关系不过是把一个对象的原型指向另一个对象而已;</li>
+<li><p><img src="http://www.liaoxuefeng.com/files/attachments/001435287613668a73ab76ccc85411282c1b1370be41636000/l" alt="原型图解"></p>
+</li>
+<li><p><code>JavaScript的原型链</code>和<code>Java的Class</code>区别就在于它没有“Class”的概念，所有对象都是实例。继承关系不过是把一个对象的原型指向另一个对象而已;</p>
+</li>
 <li>如果把xiaoming的原型指向其他无run()方法的对象，则无法调用run()方法了：<code>xiaoming.__proto__ = Bird;</code></li>
 </ul>
 <p>注意：上述代码仅用于演示目的。在编写JavaScript代码时，不要直接用<code>obj.__proto__</code>去改变一个对象的原型。</p>
@@ -205,7 +206,7 @@ classes that you can use:
 <li><p>步骤：<br>  1)先定义一个构造函数：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function Student(name) &#123;</div><div class="line">    this.name = name;</div><div class="line">    this.hello = function () &#123;</div><div class="line">        alert(&apos;Hello, &apos; + this.name + &apos;!&apos;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>  2)用关键字new来调用这个函数，并返回一个对象(构造函数)：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">    var xiaoming = new Student(&apos;小明&apos;);  //使用构造函数(如不写new则为普通函数，返回undefined)</div><div class="line">    xiaoming.name; // &apos;小明&apos;</div><div class="line">    xiaoming.hello(); // Hello, 小明!</div><div class="line">    ``` </div><div class="line">* 构造函数绑定的this指向新创建的对象，并默认返回this，也就是说，不需要在最后写return this;</div><div class="line">* 新创建的xiaoming的原型链是：</div><div class="line">    `xiaoming ----&gt; Student.prototype ----&gt; Object.prototype ----&gt; null` //xiaoming的原型指向函数Student的原型</div><div class="line">* 如果又创建了xiaohong、xiaojun，那么这些对象的原型与xiaoming是一样的：</div></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">    var xiaoming = new Student(&apos;小明&apos;);  //使用构造函数(如不写new则为普通函数，返回undefined)</div><div class="line">    xiaoming.name; // &apos;小明&apos;</div><div class="line">    xiaoming.hello(); // Hello, 小明!</div><div class="line">    ``` </div><div class="line">	</div><div class="line">* 构造函数绑定的this指向新创建的对象，并默认返回this，也就是说，不需要在最后写return this;</div><div class="line">* 新创建的xiaoming的原型链是：</div><div class="line">    `xiaoming ----&gt; Student.prototype ----&gt; Object.prototype ----&gt; null` //xiaoming的原型指向函数Student的原型</div><div class="line">* 如果又创建了xiaohong、xiaojun，那么这些对象的原型与xiaoming是一样的：</div></pre></td></tr></table></figure>
 <p>xiaoming ↘<br>xiaohong -→ Student.prototype —-&gt; Object.prototype —-&gt; null<br>xiaojun  ↗</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* 用构造函数创建的对象还从原型上获得了一个constructor属性，它指向其原型对象本身：</div></pre></td></tr></table></figure>
 <p>//用new Student()创建的对象从原型上获得constructor属性，它指向函数Student本身<br>xiaoming.constructor === Student.prototype.constructor; // true<br>Student.prototype.constructor === Student; // true<br>Object.getPrototypeOf(xiaoming) === Student.prototype; // true<br>xiaoming instanceof Student; // true</p>
