@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/01/JS-函数/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="一、函数定义和调用 定义函数：function 函数名(参数) {…}JavaScript的函数也是一个对象，函数名可视为指向该函数的变量，因此也可以这样定义函数：var abs = function (x) {..}； 调用函数：1)在&amp;lt;script&amp;gt;标签内调用：函数名(参数);2)在HTML文件中调用，如通过点击按钮后调用已定义好的函数：onclick=&amp;quot;函数名(参数)&amp;">
-<meta property="og:updated_time" content="2017-06-01T12:02:33.639Z">
+<meta property="og:updated_time" content="2017-06-01T12:14:25.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS-函数 | SPACE-19">
 <meta name="twitter:description" content="一、函数定义和调用 定义函数：function 函数名(参数) {…}JavaScript的函数也是一个对象，函数名可视为指向该函数的变量，因此也可以这样定义函数：var abs = function (x) {..}； 调用函数：1)在&amp;lt;script&amp;gt;标签内调用：函数名(参数);2)在HTML文件中调用，如通过点击按钮后调用已定义好的函数：onclick=&amp;quot;函数名(参数)&amp;">
@@ -359,9 +359,7 @@ classes that you can use:
 <li><p>可以用逐个输出代替最后才输出一个数组的方式</p>
 </li>
 <li>创建generator对象：<code>foo(5);</code> 或 <code>var f= foo(5);</code>//用一个对象接收</li>
-<li><p>调用generator对象：<br>1)不断地调用generator对象的next()方法<br>  <em>语法：<code>f.next();</code>
-  </em>next()方法会执行generator的代码，每次遇到yield xxx ,就返回一个对象<code>{value: x, done: true/false}</code>，然后“暂停”；<br>  <em>返回的value就是yield的返回值，done表示这个generator是否已经执行结束了；
-  </em>当执行到done为true时， value就是return的返回值，这个generator对象已经全部执行完毕，不要再继续调用next()了。<br>2)用<code>for ... of</code>循环迭代generator对象<br>  语法：</p>
+<li><p>调用generator对象：<br>1)不断地调用generator对象的next()方法<br>  +语法：<code>f.next();</code><br>  +next()方法会执行generator的代码，每次遇到yield xxx ,就返回一个对象<code>{value: x, done: true/false}</code>，然后“暂停”；<br>  +返回的value就是yield的返回值，done表示这个generator是否已经执行结束了；<br>  +当执行到done为true时， value就是return的返回值，这个generator对象已经全部执行完毕，不要再继续调用next()了。<br>2)用<code>for ... of</code>循环迭代generator对象<br>  +语法：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for (var x of foo(5)) &#123;</div><div class="line">  console.log(x); </div><div class="line">&#125;</div><div class="line">//这种方式不需要我们自己判断done的值；</div></pre></td></tr></table></figure>
 </li>
 <li><p>因为generator可以在执行过程中多次返回，所以它看上去就像一个可以记住执行状态的函数，利用这一点，写一个generator就可以实现需要用面向对象才能实现的功能。例如，用一个对象来保存状态</p>
