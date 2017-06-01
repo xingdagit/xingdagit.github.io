@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="认识DOM DOM指 Document Object Model (文档对象模型)。 DOM 是 W3C（万维网联盟）的标准。 DOM定义访问和处理HTML文档的标准方法。   “W3C 文档对象模型 （DOM） 是中立于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。”    W3C DOM 标准被分为 3 个不同的部分：1)核心 DOM - 针对任何结构化文档的标准模">
 <meta property="og:image" content="http://www.w3school.com.cn/i/ct_htmltree.gif">
-<meta property="og:updated_time" content="2017-06-01T15:57:28.777Z">
+<meta property="og:updated_time" content="2017-06-01T16:03:48.497Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS-DOM | SPACE-19">
 <meta name="twitter:description" content="认识DOM DOM指 Document Object Model (文档对象模型)。 DOM 是 W3C（万维网联盟）的标准。 DOM定义访问和处理HTML文档的标准方法。   “W3C 文档对象模型 （DOM） 是中立于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。”    W3C DOM 标准被分为 3 个不同的部分：1)核心 DOM - 针对任何结构化文档的标准模">
@@ -233,7 +233,7 @@ classes that you can use:
 <li>事件通常与函数结合使用，函数不会在事件发生前被执行！</li>
 <li>网页中的每个元素都可以产生某些可触发 JavaScript 函数或程序的事件。</li>
 <li>如要使用事件，在相应元素中<code>设置事件属性</code>即可。</li>
-<li>一些常用事件：<br>1)鼠标单击事件(onclick)<br>-当在网页上单击鼠标时触发，同时onclick事件调用的程序块会被执行。通常与按钮<code>&lt;button&gt;</code>一起使用。<br>-实例：<code>&lt;input name=&quot;button&quot; type=&quot;button&quot; value=&quot;提交&quot; onclick=&quot;add()&quot; /&gt;</code><br>2)鼠标经过事件（onmouseover）<br>-当鼠标移到一个对象上时触发，并执行onmouseover事件调用的程序。<br>-实例：<code>&lt;input name=&quot;button&quot; type=&quot;button&quot; value=&quot;提交&quot; onmouseover =&quot;add()&quot; /&gt;</code><br>3)鼠标移开事件（onmouseout）<br>-当鼠标移开当前对象时触发，并执行onmouseout调用的程序。<br>-实例：<code>&lt;input name=&quot;button&quot; type=&quot;button&quot; value=&quot;提交&quot; onmouseout =&quot;add()&quot; /&gt;</code><br>4)光标聚焦事件（onfocus）<br>-当网页中的对象获得焦点(一般需点击)时触发，并执行onfocus调用的程序。<br>-不能用于<code>&lt;form&gt;</code>标签，须用于<code>&lt;form&gt;</code>里的子标签<br>-与<code>onblur事件</code>是相对事件<br>-实例：<code>&lt;input name=&quot;button&quot; type=&quot;button&quot; value=&quot;提交&quot; onfocus =&quot;add()&quot; /&gt;</code><br>5)失焦事件（onblur）<br>-当光标离开当前获得聚焦对象(失去焦点)时触发，并执行onblur调用的程序。<br>-与<code>onfocus事件</code>是相对事件<br>-实例：<code>&lt;input name=&quot;button&quot; type=&quot;button&quot; value=&quot;提交&quot; onfocus =&quot;add()&quot; /&gt;</code><br>6)内容选中事件（onselect）<br>-当<code>文本框</code>或者<code>文本域</code>中的文字被选中(变蓝色那种)时触发，并执行onselect调用的程序。<br>-注意在调用函数中不要使用<code>document.write()</code>,会因覆盖所有内容而使浏览器崩溃。<br>-实例：<code>&lt;input name=&quot;button&quot; type=&quot;button&quot; value=&quot;提交&quot; onselect =&quot;add()&quot; /&gt;</code><br>7)文本框内容改变事件（onchange）<br>-当文本框的内容改变且失去焦点时触发，并执行onchange调用的程序。<br>-实例：<code>&lt;input name=&quot;button&quot; type=&quot;button&quot; value=&quot;提交&quot; onchange =&quot;add()&quot; /&gt;</code><br>8)加载事件（onload）<br>-当页面加载完成后立即触发，并执行onload调用的程序。<br>-可将事件写在<code>&lt;body&gt;</code>标签内，但最好实现表现与行为分离，放在JS的文件里。<br>-实例：<code>&lt;body onload=&quot;message()&quot;&gt;</code> 或 <code>window.onload=函数名;</code><br>9)卸载事件（onunload）<br>-当页面刷新、超链接跳转其他页面等时触发，并执行onunload调用的程序。<br>-注意：不同浏览器对onunload事件支持不同(一般用于IE)。<br>-注意与<code>onbeforeunload</code>事件的区别。<br>-实例：<code>window.onunload = 函数名;</code><br>-拥有Document 对象集合、Document 对象属性和Document 对象方法。</li>
+<li>一些常用事件：<br>1)鼠标单击事件(onclick)<br>当在网页上单击鼠标时触发，同时onclick事件调用的程序块会被执行。通常与按钮<code>&lt;button&gt;</code>一起使用。<br>实例：<code>&lt;input name=&quot;button&quot; type=&quot;button&quot; value=&quot;提交&quot; onclick=&quot;add()&quot; /&gt;</code><br>2)鼠标经过事件（onmouseover）<br>当鼠标移到一个对象上时触发，并执行onmouseover事件调用的程序。<br>实例：<code>&lt;input name=&quot;button&quot; type=&quot;button&quot; value=&quot;提交&quot; onmouseover =&quot;add()&quot; /&gt;</code><br>3)鼠标移开事件（onmouseout）<br>当鼠标移开当前对象时触发，并执行onmouseout调用的程序。<br>实例：<code>&lt;input name=&quot;button&quot; type=&quot;button&quot; value=&quot;提交&quot; onmouseout =&quot;add()&quot; /&gt;</code><br>4)光标聚焦事件（onfocus）<br>当网页中的对象获得焦点(一般需点击)时触发，并执行onfocus调用的程序。<br>不能用于<code>&lt;form&gt;</code>标签，须用于<code>&lt;form&gt;</code>里的子标签<br>与<code>onblur事件</code>是相对事件<br>实例：<code>&lt;input name=&quot;button&quot; type=&quot;button&quot; value=&quot;提交&quot; onfocus =&quot;add()&quot; /&gt;</code><br>5)失焦事件（onblur）<br>当光标离开当前获得聚焦对象(失去焦点)时触发，并执行onblur调用的程序。<br>与<code>onfocus事件</code>是相对事件<br>实例：<code>&lt;input name=&quot;button&quot; type=&quot;button&quot; value=&quot;提交&quot; onfocus =&quot;add()&quot; /&gt;</code><br>6)内容选中事件（onselect）<br>当<code>文本框</code>或者<code>文本域</code>中的文字被选中(变蓝色那种)时触发，并执行onselect调用的程序。<br>注意在调用函数中不要使用<code>document.write()</code>,会因覆盖所有内容而使浏览器崩溃。<br>实例：<code>&lt;input name=&quot;button&quot; type=&quot;button&quot; value=&quot;提交&quot; onselect =&quot;add()&quot; /&gt;</code><br>7)文本框内容改变事件（onchange）<br>当文本框的内容改变且失去焦点时触发，并执行onchange调用的程序。<br>实例：<code>&lt;input name=&quot;button&quot; type=&quot;button&quot; value=&quot;提交&quot; onchange =&quot;add()&quot; /&gt;</code><br>8)加载事件（onload）<br>当页面加载完成后立即触发，并执行onload调用的程序。<br>可将事件写在<code>&lt;body&gt;</code>标签内，但最好实现表现与行为分离，放在JS的文件里。<br>实例：<code>&lt;body onload=&quot;message()&quot;&gt;</code> 或 <code>window.onload=函数名;</code><br>9)卸载事件（onunload）<br>当页面刷新、超链接跳转其他页面等时触发，并执行onunload调用的程序。<br>注意：不同浏览器对onunload事件支持不同(一般用于IE)。<br>注意与<code>onbeforeunload</code>事件的区别。<br>实例：<code>window.onunload = 函数名;</code><br>拥有Document 对象集合、Document 对象属性和Document 对象方法。</li>
 </ul>
 </li>
 </ol>
@@ -280,8 +280,7 @@ classes that you can use:
 </li>
 </ol>
 <h3 id="获取-创建DOM"><a href="#获取-创建DOM" class="headerlink" title="获取/创建DOM"></a>获取/创建DOM</h3><ul>
-<li>在操作一个DOM节点前，需先通过各种方式拿到这个DOM节点。最常用的方法： </li>
-</ul>
+<li><p>在操作一个DOM节点前，需先通过各种方式拿到这个DOM节点。最常用的方法： </p>
 <ol>
 <li><code>document.getElementById(‘’)</code>  //按<code>ID</code>获得一个DOM节点(元素/对象)，若要输出元素内容需使用其<code>innerHTML</code>属性；</li>
 <li><code>document.getElementsByName(‘name’)</code> //按元素的<code>name</code>属性获得<code>一个/组</code>DOM节点 (因name不唯一，可能返回数组，有length属性，像数组一样访问)</li>
@@ -289,8 +288,9 @@ classes that you can use:
 <li><code>document.getElementsByClassName(‘’)</code>。//返回一组DOM节点(CSS选择器)——–IE10前不支持，可通过js封装一个<code>getClass</code>方法，在方法里获取class并返回节点</li>
 <li>还有一种方法是：使用<code>querySelector()和querySelectorAll()</code>，不过需了解selector语法，使用条件来获取节点(低版本的IE&lt;8不支持) 。<br>【注意：当js代码写在相应id或tag对应元素定义之前，则返回null(因为HTML文档从上向下解析)】<br>【注意：方法的参数一定要加引号，否则无反应】</li>
 </ol>
-<ul>
-<li>要精确地选择DOM，先定位父节点，再从父节点开始选择，逐渐缩小范围。</li>
+</li>
+<li><p>要精确地选择DOM，先定位父节点，再从父节点开始选择，逐渐缩小范围。</p>
+</li>
 <li><p>实例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 返回ID为&apos;test&apos;的节点：</div><div class="line">var test = document.getElementById(&apos;test&apos;);</div><div class="line">// 先定位ID为&apos;test-table&apos;的节点，再返回其内部所有tr节点：</div><div class="line">var trs = document.getElementById(&apos;test-table&apos;).getElementsByTagName(&apos;tr&apos;);</div><div class="line">// 先定位ID为&apos;test-div&apos;的节点，再返回其内部所有class包含red的节点：</div><div class="line">var reds = document.getElementById(&apos;test-div&apos;).getElementsByClassName(&apos;red&apos;);</div><div class="line">// 获取节点test下的所有直属子节点:</div><div class="line">var cs = test.children;</div><div class="line">// 获取节点test下第一个、最后一个子节点：</div><div class="line">var first = test.firstElementChild;</div><div class="line">var last = test.lastElementChild;</div></pre></td></tr></table></figure>
 </li>
