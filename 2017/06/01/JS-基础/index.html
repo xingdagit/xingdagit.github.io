@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/01/JS-基础/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="一、JavaScript 运行在浏览器端的解释型语言(脚本语言)  在Web世界里，只有JavaScript能跨平台、跨浏览器驱动网页，与用户交互; 增强页面动态效果(如:下拉菜单、图片轮播、信息滚动等)；实现页面与用户之间的实时、动态交互(如:用户注册、登陆验证等)。 ECMAScript是一种语言标准，而JavaScript是网景公司对ECMAScript标准的一种实现(JavaScript的">
-<meta property="og:updated_time" content="2017-06-01T04:17:09.894Z">
+<meta property="og:updated_time" content="2017-06-01T08:23:00.844Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS-基础 | SPACE-19">
 <meta name="twitter:description" content="一、JavaScript 运行在浏览器端的解释型语言(脚本语言)  在Web世界里，只有JavaScript能跨平台、跨浏览器驱动网页，与用户交互; 增强页面动态效果(如:下拉菜单、图片轮播、信息滚动等)；实现页面与用户之间的实时、动态交互(如:用户注册、登陆验证等)。 ECMAScript是一种语言标准，而JavaScript是网景公司对ECMAScript标准的一种实现(JavaScript的">
@@ -240,7 +240,7 @@ classes that you can use:
 <li><code>=为赋值</code>  |  <code>==为一般比较</code>(可转换数据类型)  |  <code>===为严格比较(值和类型都要相等)</code></li>
 <li>最好使用”===”比较<br>false == 0; // true (自动转换数据类型再比较)<br>false === 0; // false (不会自动转换数据类型，如果数据类型不一致返回false，如果一致再比较)</li>
 <li>特殊的Number—-NaN：<br>与所有其他值都不相等，包括它自己（NaN === NaN; // false）<br>判断NaN的方法—-isNaN()函数：</li>
-<li>比较两个浮点数是否相等<br>浮点数在运算过程中会产生误差，因为计算机无法精确表示无限循环小数：<br><code>1 / 3 === (1 - 2 / 3); // false</code><br>所以只能通过计算它们之差的绝对值，看是否小于某个阈值来判断：<br><code>Math.abs(1 / 3 - (1 - 2 / 3)) &lt; 0.0000001; // true</code></li>
+<li>比较两个浮点数是否相等<br>浮点数在运算过程中会产生误差，因为计算机无法精确表示无限循环小数：<br> <code>1 / 3 === (1 - 2 / 3); // false</code><br>所以只能通过计算它们之差的绝对值，看是否小于某个阈值来判断：<br> <code>Math.abs(1 / 3 - (1 - 2 / 3)) &lt; 0.0000001; // true</code></li>
 </ul>
 </li>
 <li><p>null和undefined</p>
@@ -365,8 +365,7 @@ classes that you can use:
  如果对某些参数不感兴趣，由于JavaScript的函数调用不要求参数必须一致，因此可以忽略它们
  例子：只需要获得Array的element
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = [&apos;A&apos;, &apos;B&apos;, &apos;C&apos;];</div><div class="line">a.forEach(function (element) &#123;</div><div class="line">   alert(element);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-</code></pre><p>五、    基础语法</p>
-<ol>
+</code></pre><h2 id="五、基础语法"><a href="#五、基础语法" class="headerlink" title="五、基础语法"></a>五、基础语法</h2><ol>
 <li>条件判断<ul>
 <li>语法：if () { … }  ( else if { … } )  else { … }</li>
 <li>多种选择：<code>switch(表达式) { case值1: 执行代码块1  break; …. default: }</code></li>
@@ -375,7 +374,7 @@ classes that you can use:
 </li>
 <li>循环<ul>
 <li>for循环(通过初始条件、结束条件和递增条件来循环执行语句块)— 常用于利用索引来遍历数组</li>
-<li>for … in循环<br>1)可依次循环输出一个对象的所有属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for (var key in o) &#123;</div><div class="line">   if ( o.hasOwnProperty(key) )   //hasOwnProperty()来过滤掉对象继承的属性</div><div class="line">   &#123;  alert(key);  &#125;    //输出 &apos;name&apos;, &apos;age&apos;, &apos;city&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>for … in循环<br>1)可依次循环输出一个对象的所有属性  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for (var key in o) &#123;</div><div class="line">   if ( o.hasOwnProperty(key) )   //hasOwnProperty()来过滤掉对象继承的属性</div><div class="line">   &#123;  alert(key);  &#125;    //输出 &apos;name&apos;, &apos;age&apos;, &apos;city&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
