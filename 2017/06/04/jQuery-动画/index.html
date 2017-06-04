@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      jQuery-动画 | SPACE-19 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    
+
+    <meta name="description" content="JavaScript实现动画的原理：只需要以固定的时间间隔（如0.1秒），每次把DOM元素的CSS样式修改一点（如高宽各增加10%），就基本实现动画了。 用JavaScript手动实现动画效果需编写非常复杂的代码，但使用jQuery，可最大限度简化动画的实现。 jQuery内置的几种基本动画样式：   show / hide直接以无参数形式调用show()和hide()，会从左上角显示和隐藏DO">
+<meta name="keywords" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery-动画 | SPACE-19">
+<meta property="og:url" content="http://yoursite.com/2017/06/04/jQuery-动画/index.html">
+<meta property="og:site_name" content="SPACE-19">
+<meta property="og:description" content="JavaScript实现动画的原理：只需要以固定的时间间隔（如0.1秒），每次把DOM元素的CSS样式修改一点（如高宽各增加10%），就基本实现动画了。 用JavaScript手动实现动画效果需编写非常复杂的代码，但使用jQuery，可最大限度简化动画的实现。 jQuery内置的几种基本动画样式：   show / hide直接以无参数形式调用show()和hide()，会从左上角显示和隐藏DO">
+<meta property="og:updated_time" content="2017-06-04T15:09:24.151Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery-动画 | SPACE-19">
+<meta name="twitter:description" content="JavaScript实现动画的原理：只需要以固定的时间间隔（如0.1秒），每次把DOM元素的CSS样式修改一点（如高宽各增加10%），就基本实现动画了。 用JavaScript手动实现动画效果需编写非常复杂的代码，但使用jQuery，可最大限度简化动画的实现。 jQuery内置的几种基本动画样式：   show / hide直接以无参数形式调用show()和hide()，会从左上角显示和隐藏DO">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">SPACE-19</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          XD
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">jQuery-动画</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-04" class="post-meta__date date">2017-06-04</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/jQuery/">jQuery</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <ul>
+<li>JavaScript实现动画的原理：只需要以固定的时间间隔（如0.1秒），每次把DOM元素的CSS样式修改一点（如高宽各增加10%），就基本实现动画了。</li>
+<li>用JavaScript手动实现动画效果需编写非常复杂的代码，但使用<code>jQuery</code>，可最大限度简化动画的实现。</li>
+<li><code>jQuery</code>内置的几种基本动画样式：</li>
+</ul>
+<ol>
+<li><p>show / hide<br>直接以无参数形式调用<code>show()</code>和<code>hide()</code>，会从<code>左上角</code>显示和隐藏DOM元素；传递一个时间参数(以毫秒为单位，也可为’slow’，’fast’这些字符串)进去后，就变成了动画。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&apos;#div1&apos;) .show(3000); // 在3秒钟内逐渐显示</div><div class="line">$(&apos;#div1&apos;) . hide (&apos;slow&apos;); // 在0.6秒钟内逐渐消失</div><div class="line">$(&apos;#div1&apos;) . toggle (&apos;fast&apos;); // 根据当前状态决定是show()还是hide()</div></pre></td></tr></table></figure>
+</li>
+<li><p>slideUp / slideDown<br><code>slideUp()</code>和<code>slideDown()</code>与上两者相似，但它们是在<code>垂直方向</code>逐渐展开或收缩的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&apos;#div1&apos;). slideUp (3000); //在3秒钟内逐渐向上消失</div><div class="line">$(&apos;#div1&apos;) . slideDown (&apos;slow&apos;); // 在0.6秒钟内逐渐向下显示</div><div class="line">$(&apos;#div1&apos;) . slideToggle (&apos;fast&apos;); // 根据当前状态决定是slideUp ()还是slideDown ()</div></pre></td></tr></table></figure>
+</li>
+<li><p>fadeIn / fadeOut<br><code>fadeIn()</code>和<code>fadeOut()</code>的动画效果是淡入淡出。即通过不断设置DOM元素的<code>opacity属性</code>来实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&apos;#div1&apos;). fadeOut (3000); //在3秒钟内逐渐淡出</div><div class="line">$(&apos;#div1&apos;) . fadeIn (&apos;slow&apos;); // 在0.6秒钟内逐渐淡入</div><div class="line">$(&apos;#div1&apos;) . fadeToggle (&apos;fast&apos;); // 根据当前状态决定是fadeIn ()还是fadeOut ()</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>自定义动画</p>
+<ul>
+<li>若上述动画效果不能满足要求，那可以使用：<code>animate()</code>。它可以实现任意动画效果，只要传入<code>DOM元素最终的CSS状态</code>和<code>时间</code>作为参数，jQuery就会在时间段内不断调整CSS直到达到我们设定的值。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">// 在3秒钟内CSS过渡到设定值</div><div class="line">$(&apos;#divanimate &apos;) .animate(&#123;</div><div class="line">   opacity: 0.25,</div><div class="line">   width: &apos;256px&apos;,</div><div class="line">   height: &apos;256px&apos;</div><div class="line">&#125;, 3000); </div><div class="line"></div><div class="line">//animate()其实还可以再传入一个回调函数，当动画结束时该回调函数将被调用：</div><div class="line">$(&apos;#divanimate &apos;) .animate(&#123;</div><div class="line">   opacity: 0.25,</div><div class="line">   width: &apos;256px&apos;,</div><div class="line">   height: &apos;256px&apos;</div><div class="line">&#125;, 3000, function () &#123;</div><div class="line">   console.log(&apos;动画已结束&apos;);</div><div class="line">   $(this).css(&apos;opacity&apos;, &apos;1.0&apos;).css(&apos;width&apos;, &apos;128px&apos;).css(&apos;height&apos;, &apos;128px&apos;); //恢复至初始状态</div><div class="line">&#125;);</div><div class="line">/*这个回调函数参数对于基本动画也是适用的*/</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>串行动画</p>
+<ul>
+<li><p>jQuery的动画效果还可以串行执行，通过<code>delay()</code>方法还可以实现暂停。这样可以通过简单的代码来实现更复杂的动画效果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var div = $(&apos;#test-animates&apos;);</div><div class="line">// 动画效果：slideDown - 暂停 - 放大 - 暂停 - 缩小</div><div class="line">div.slideDown(2000)</div><div class="line">   .delay(1000)</div><div class="line">   .animate(&#123;</div><div class="line">     width: &apos;256px&apos;,</div><div class="line">     height: &apos;256px&apos;</div><div class="line">   &#125;, 2000)</div><div class="line">   .delay(1000)</div><div class="line">   .animate(&#123;</div><div class="line">     width: &apos;128px&apos;,</div><div class="line">     height: &apos;128px&apos;</div><div class="line">   &#125;, 2000);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>因为动画需要执行一段时间，所以jQuery必须不断返回新的<code>Promise对象</code>才能后续执行操作。简单地把动画封装在函数中是不够的。</p>
+</li>
+</ul>
+</li>
+<li><p>有些jQuery实现的动画会没有效果。<br>如<code>slideUp()</code>就对很多不是block性质的DOM元素无效，因为它需要改变高度属性；<br>如<code>background-color</code>，这种情况可使用CSS3的<code>transition</code>实现动画效果。</p>
+</li>
+</ul>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
