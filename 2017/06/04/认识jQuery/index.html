@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      认识jQuery | SPACE-19 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    
+
+    <meta name="description" content="jQuery的理念 ——-“Write Less, Do More”  jQuery作用  消除浏览器差异：不需要写冗长的代码来针对不同的浏览器来绑定事件，编写AJAX等代码； 简洁的操作DOM的方法：写$(&amp;#39;#test&amp;#39;)肯定比document.getElementById(&amp;#39;test&amp;#39;)来得简洁； 轻松实现动画、修改CSS等各种操作。   jQuery版本">
+<meta name="keywords" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="认识jQuery | SPACE-19">
+<meta property="og:url" content="http://yoursite.com/2017/06/04/认识jQuery/index.html">
+<meta property="og:site_name" content="SPACE-19">
+<meta property="og:description" content="jQuery的理念 ——-“Write Less, Do More”  jQuery作用  消除浏览器差异：不需要写冗长的代码来针对不同的浏览器来绑定事件，编写AJAX等代码； 简洁的操作DOM的方法：写$(&amp;#39;#test&amp;#39;)肯定比document.getElementById(&amp;#39;test&amp;#39;)来得简洁； 轻松实现动画、修改CSS等各种操作。   jQuery版本">
+<meta property="og:updated_time" content="2017-06-04T12:40:59.658Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="认识jQuery | SPACE-19">
+<meta name="twitter:description" content="jQuery的理念 ——-“Write Less, Do More”  jQuery作用  消除浏览器差异：不需要写冗长的代码来针对不同的浏览器来绑定事件，编写AJAX等代码； 简洁的操作DOM的方法：写$(&amp;#39;#test&amp;#39;)肯定比document.getElementById(&amp;#39;test&amp;#39;)来得简洁； 轻松实现动画、修改CSS等各种操作。   jQuery版本">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">SPACE-19</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          XD
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">认识jQuery</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-04" class="post-meta__date date">2017-06-04</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/jQuery/">jQuery</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <ul>
+<li><p>jQuery的理念 ——-“Write Less, Do More”</p>
+</li>
+<li><p>jQuery作用</p>
+<ol>
+<li>消除浏览器差异：不需要写冗长的代码来针对不同的浏览器来绑定事件，编写AJAX等代码；</li>
+<li>简洁的操作DOM的方法：写<code>$(&#39;#test&#39;)</code>肯定比<code>document.getElementById(&#39;test&#39;)</code>来得简洁；</li>
+<li>轻松实现动画、修改CSS等各种操作。</li>
+</ol>
+</li>
+<li><p>jQuery版本</p>
+<ul>
+<li>目前有1.x和2.x两个主要版本。</li>
+<li>区别：2.x移除了对古老的IE 6、7、8的支持，因此2.x的代码更精简（选择哪个版本主要取决于你是否想支持IE 6~8）。</li>
+<li>从jQuery官网可以下载最新版本。下载的jQuery只是一个jquery-xxx.js文件，有compressed（已压缩）和uncompressed（未压缩）两种版本，使用时完全一样。但如果你想深入研究jQuery源码，那就用uncompressed版本。</li>
+</ul>
+</li>
+<li><p>引入jQuery</p>
+<ul>
+<li>方法：在页面的<code>&lt;head&gt;</code>内引入jQuery文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">   &lt;script src=&quot;//code.jquery.com/jquery-1.11.3.min.js&quot;&gt;…&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>$</code>符号</p>
+<ul>
+<li><p>实际上，jQuery把所有功能全部封装在一个全局变量jQuery中，而合法的变量名<code>$</code>就是变量jQuery的别名。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">    window.jQuery; // jQuery(selector, context)</div><div class="line">    window.$; // jQuery(selector, context)</div><div class="line">$ === jQuery; // true</div><div class="line">    typeof($); // &apos;function&apos;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>$</code>本质上就是一个函数，但是函数也是对象，于是<code>$</code>除了可以直接调用外，也有很多其他属性。</p>
+</li>
+<li>注意，你看到的<code>$</code>函数名可能不是<code>jQuery(selector, context)</code>，因为很多JavaScript压缩工具可以对函数名和参数改名，所以压缩过的jQuery源码<code>$</code>函数可能变成<code>a(b, c)</code>。</li>
+<li>大多数时候都直接用<code>$</code>（因为写起来更简单）。但如果<code>$</code>这个变量不幸地被占用了，而且还不能改，那就只能让jQuery把<code>$</code>变量交出来，然后就只能使用<code>jQuery</code>这个变量：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   $;  // jQuery(selector, context)</div><div class="line">jQuery.noConflict();</div><div class="line">$;  // undefined</div><div class="line">   jQuery;  // jQuery(selector, context)</div><div class="line">   //由于jQuery在占用`$`之前，先在内部保存了原来的$，所以调用`jQuery.noConflict()`会把原来保存的变量还原</div></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
