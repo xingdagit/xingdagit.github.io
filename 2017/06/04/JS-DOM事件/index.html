@@ -14,17 +14,17 @@
     
     
 
-    <meta name="description" content="###　一、事件流  事件是文档或浏览器窗口中发生的特定的交互瞬间。 JS与html的交互都是通过事件来实现 事件流：描述的是从页面中接受事件的顺序 ，包括事件冒泡流和事件捕获流（两者相反）　1)事件冒泡流（IE）：事件最开始由最具体的元素（即文档中嵌套层次最深的那个节点）接收，然后逐级沿DOM树向上传播到最不具体的那个节点（文档）——–从最内层至最外层　2)事件捕获流（Netscape）：不太具">
+    <meta name="description" content="一、事件流 事件是文档或浏览器窗口中发生的特定的交互瞬间。 JS与html的交互都是通过事件来实现 事件流：描述的是从页面中接受事件的顺序 ，包括事件冒泡流和事件捕获流（两者相反）　1)事件冒泡流（IE）：事件最开始由最具体的元素（即文档中嵌套层次最深的那个节点）接收，然后逐级沿DOM树向上传播到最不具体的那个节点（文档）——–从最内层至最外层　2)事件捕获流（Netscape）：不太具体的节点（">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS-DOM事件 | SPACE-19">
 <meta property="og:url" content="http://yoursite.com/2017/06/04/JS-DOM事件/index.html">
 <meta property="og:site_name" content="SPACE-19">
-<meta property="og:description" content="###　一、事件流  事件是文档或浏览器窗口中发生的特定的交互瞬间。 JS与html的交互都是通过事件来实现 事件流：描述的是从页面中接受事件的顺序 ，包括事件冒泡流和事件捕获流（两者相反）　1)事件冒泡流（IE）：事件最开始由最具体的元素（即文档中嵌套层次最深的那个节点）接收，然后逐级沿DOM树向上传播到最不具体的那个节点（文档）——–从最内层至最外层　2)事件捕获流（Netscape）：不太具">
-<meta property="og:updated_time" content="2017-06-04T09:22:08.369Z">
+<meta property="og:description" content="一、事件流 事件是文档或浏览器窗口中发生的特定的交互瞬间。 JS与html的交互都是通过事件来实现 事件流：描述的是从页面中接受事件的顺序 ，包括事件冒泡流和事件捕获流（两者相反）　1)事件冒泡流（IE）：事件最开始由最具体的元素（即文档中嵌套层次最深的那个节点）接收，然后逐级沿DOM树向上传播到最不具体的那个节点（文档）——–从最内层至最外层　2)事件捕获流（Netscape）：不太具体的节点（">
+<meta property="og:updated_time" content="2017-06-04T11:04:10.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS-DOM事件 | SPACE-19">
-<meta name="twitter:description" content="###　一、事件流  事件是文档或浏览器窗口中发生的特定的交互瞬间。 JS与html的交互都是通过事件来实现 事件流：描述的是从页面中接受事件的顺序 ，包括事件冒泡流和事件捕获流（两者相反）　1)事件冒泡流（IE）：事件最开始由最具体的元素（即文档中嵌套层次最深的那个节点）接收，然后逐级沿DOM树向上传播到最不具体的那个节点（文档）——–从最内层至最外层　2)事件捕获流（Netscape）：不太具">
+<meta name="twitter:description" content="一、事件流 事件是文档或浏览器窗口中发生的特定的交互瞬间。 JS与html的交互都是通过事件来实现 事件流：描述的是从页面中接受事件的顺序 ，包括事件冒泡流和事件捕获流（两者相反）　1)事件冒泡流（IE）：事件最开始由最具体的元素（即文档中嵌套层次最深的那个节点）接收，然后逐级沿DOM树向上传播到最不具体的那个节点（文档）——–从最内层至最外层　2)事件捕获流（Netscape）：不太具体的节点（">
     
     
     
@@ -179,8 +179,7 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <p>###　一、事件流</p>
-<ul>
+    <h3 id="一、事件流"><a href="#一、事件流" class="headerlink" title="一、事件流"></a>一、事件流</h3><ul>
 <li>事件是文档或浏览器窗口中发生的特定的<code>交互</code>瞬间。</li>
 <li>JS与html的交互都是通过<code>事件</code>来实现</li>
 <li>事件流：描述的是从页面中接受事件的顺序 ，包括事件冒泡流和事件捕获流（两者相反）<br>　1)事件冒泡流（IE）：事件最开始由最具体的元素（即文档中嵌套层次最深的那个节点）接收，然后逐级沿DOM树向上传播到最不具体的那个节点（文档）——–从最内层至最外层<br>　2)事件捕获流（Netscape）：不太具体的节点（文档）更早接收到事件，并沿DOM树向下传播，最具体的节点最后接收到事件———–从最外层至最内层<br>　3)常使用<code>事件冒泡流</code>。</li>
@@ -249,8 +248,7 @@ classes that you can use:
 </ul>
 </li>
 </ol>
-<p>###　三、事件对象<code>Event</code></p>
-<ul>
+<h3 id="三、事件对象Event"><a href="#三、事件对象Event" class="headerlink" title="三、事件对象Event"></a>三、事件对象<code>Event</code></h3><ul>
 <li>在触发DOM上的事件时都会产生一个对象——事件对象<code>Event</code></li>
 <li>一般是在事件调用函数的参数中传递这个对象(名字自定义：如<code>event</code>)，在函数中就可以利用这个对象来调用获取它的各个属性和方法</li>
 </ul>
