@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/04/jQuery-操作DOM/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="jQuery操作DOM 用选择器拿到了jQuery对象之后做什么呢——–操作对应的DOM节点 用jQuery对象操作DOM，可改善JavaScript操作DOM的许多不足，而且不需要考虑浏览器差异了，全部统一操作。 一个jQuery对象可以包含(选择)0个或任意个DOM对象，它的方法实际上会作用在对应的每个DOM节点上。  jQuery对象有“批量操作”的特点。 jQuery对象的所有方法都返回一">
-<meta property="og:updated_time" content="2017-06-04T13:27:53.766Z">
+<meta property="og:updated_time" content="2017-06-04T13:31:20.019Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery-操作DOM | SPACE-19">
 <meta name="twitter:description" content="jQuery操作DOM 用选择器拿到了jQuery对象之后做什么呢——–操作对应的DOM节点 用jQuery对象操作DOM，可改善JavaScript操作DOM的许多不足，而且不需要考虑浏览器差异了，全部统一操作。 一个jQuery对象可以包含(选择)0个或任意个DOM对象，它的方法实际上会作用在对应的每个DOM节点上。  jQuery对象有“批量操作”的特点。 jQuery对象的所有方法都返回一">
@@ -234,7 +234,8 @@ classes that you can use:
 </li>
 <li><p>添加DOM节点</p>
 <ul>
-<li>添加新的DOM节点，除了通过jQuery的<code>html()</code>这种暴力方法外，还可以用<code>append()</code>和<code>prepend()</code>方法。<br>-他们接受<code>字符串、原始DOM对象、jQuery对象和函数对象</code>作为参数。</li>
+<li>添加新的DOM节点，除了通过jQuery的<code>html()</code>这种暴力方法外，还可以用<code>append()</code>和<code>prepend()</code>方法。</li>
+<li>他们接受<code>字符串、原始DOM对象、jQuery对象和函数对象</code>作为参数。</li>
 <li><code>append()</code>把DOM添加到最后，<code>prepend()</code>则把DOM添加到最前。</li>
 <li>注意：如果要添加的DOM节点已经存在于HTML文档中，它会首先从文档移除，然后再添加，也就是说，用<code>append()</code>和<code>prepend()</code>，可以<code>移动</code>一个DOM节点。</li>
 <li>对于同级节点还可以用<code>after()</code>或者<code>before()</code>方法把新节点插入到指定位置</li>
