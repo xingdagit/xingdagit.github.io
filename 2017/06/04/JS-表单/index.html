@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      JS-表单 | SPACE-19 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    
+
+    <meta name="description" content="因为表单本身也是DOM树，所以用JavaScript操作表单和操作DOM类似。 一、获取值： 对于text、password、hidden以及select类型的&amp;lt;input&amp;gt;，利用value属性获得对应的用户输入值； 123// &amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;email&amp;quot;&amp;gt;var input = document.ge">
+<meta name="keywords" content="JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS-表单 | SPACE-19">
+<meta property="og:url" content="http://yoursite.com/2017/06/04/JS-表单/index.html">
+<meta property="og:site_name" content="SPACE-19">
+<meta property="og:description" content="因为表单本身也是DOM树，所以用JavaScript操作表单和操作DOM类似。 一、获取值： 对于text、password、hidden以及select类型的&amp;lt;input&amp;gt;，利用value属性获得对应的用户输入值； 123// &amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;email&amp;quot;&amp;gt;var input = document.ge">
+<meta property="og:updated_time" content="2017-06-04T07:34:54.282Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS-表单 | SPACE-19">
+<meta name="twitter:description" content="因为表单本身也是DOM树，所以用JavaScript操作表单和操作DOM类似。 一、获取值： 对于text、password、hidden以及select类型的&amp;lt;input&amp;gt;，利用value属性获得对应的用户输入值； 123// &amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;email&amp;quot;&amp;gt;var input = document.ge">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">SPACE-19</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          XD
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">JS-表单</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-04" class="post-meta__date date">2017-06-04</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/JS/">JS</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>因为表单本身也是DOM树，所以用JavaScript操作表单和操作DOM类似。</p>
+<h3 id="一、获取值："><a href="#一、获取值：" class="headerlink" title="一、获取值："></a>一、获取值：</h3><ul>
+<li><p>对于text、password、hidden以及select类型的<code>&lt;input&gt;</code>，利用value属性获得对应的用户输入值；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// &lt;input type=&quot;text&quot; id=&quot;email&quot;&gt;</div><div class="line">var input = document.getElementById(&apos;email&apos;);</div><div class="line">input.value; // &apos;用户输入的值&apos;</div></pre></td></tr></table></figure>
+</li>
+<li><p>而对于单选框和复选框，value属性返回的永远是HTML预设的值，而我们需要获得的实际是用户是否“勾上了”选项，所以应该用checked判断：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;weekday&quot; id=&quot;monday&quot; value=&quot;1&quot;&gt; Monday&lt;/label&gt;</div><div class="line">// &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;weekday&quot; id=&quot;tuesday&quot; value=&quot;2&quot;&gt; Tuesday&lt;/label&gt;</div><div class="line">var mon = document.getElementById(&apos;monday&apos;);</div><div class="line">var tue = document.getElementById(&apos;tuesday&apos;);</div><div class="line">mon.value; // &apos;1&apos;</div><div class="line">tue.value; // &apos;2&apos;</div><div class="line">mon.checked; // true或者false</div><div class="line">tue.checked; // true或者false</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="二、设置值："><a href="#二、设置值：" class="headerlink" title="二、设置值："></a>二、设置值：</h3><ul>
+<li><p>对于text、password、hidden以及select类型的<code>&lt;input&gt;</code>，直接设置value属性就可以</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// &lt;input type=&quot;text&quot; id=&quot;email&quot;&gt;</div><div class="line">var input = document.getElementById(&apos;email&apos;);</div><div class="line">input.value = &apos;test@example.com&apos;; // 文本框的内容已更新</div></pre></td></tr></table></figure>
+</li>
+<li><p>对于单选框和复选框，设置checked为true或false即可</p>
+</li>
+</ul>
+<h3 id="三、提交表单："><a href="#三、提交表单：" class="headerlink" title="三、提交表单："></a>三、提交表单：</h3><ol>
+<li>方式一是通过<code>&lt;form&gt;</code>元素的submit()方法提交一个表单，例如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//响应一个&lt;button&gt;的click事件，在JavaScript代码中提交表单</div><div class="line">&lt;!-- HTML --&gt;</div><div class="line">&lt;form id=&quot;test-form&quot;&gt;</div><div class="line">  &lt;input type=&quot;text&quot; name=&quot;test&quot;&gt;</div><div class="line">  &lt;button type=&quot;button&quot; onclick=&quot;doSubmitForm()&quot;&gt;Submit&lt;/button&gt;</div><div class="line">&lt;/form&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function doSubmitForm() &#123;</div><div class="line">  var form = document.getElementById(&apos;test-form&apos;);</div><div class="line">  // 可以在此修改form的input...</div><div class="line">  form.submit();// 提交form</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>但这种方式的缺点是扰乱了浏览器对form的正常提交。浏览器默认点击<code>&lt;button type=&quot;submit&quot;&gt;</code>时提交表单，或者用户在最后一个输入框按回车键。</p>
+<ol>
+<li>第二种方式是响应<code>&lt;form&gt;</code>本身的onsubmit事件，在提交form时作修改：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;!-- HTML --&gt;</div><div class="line">&lt;form id=&quot;test-form&quot; onsubmit=&quot;return checkForm()&quot;&gt;</div><div class="line">    &lt;input type=&quot;text&quot; name=&quot;test&quot;&gt;</div><div class="line">    &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;</div><div class="line">&lt;/form&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">function checkForm() &#123;</div><div class="line">    var form = document.getElementById(&apos;test-form&apos;);</div><div class="line">    // 可以在此修改form的input...</div><div class="line">    return true; // 继续下一步 (return false时将不会继续提交form，这种情况通常对应用户输入有误，提示用户错误信息后终止提交form)</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在检查和修改<code>&lt;input&gt;</code>时，要充分利用<code>&lt;input type=&quot;hidden&quot;&gt;</code>来传递数据。存储密码的<code>&lt;input&gt;</code>可不设置name属性(没有name属性的<code>&lt;input&gt;</code>的数据不会被提交)，在javascript中将其密码值传给<code>&lt;input type=&quot;hidden&quot;&gt;</code>，使提交更安全。</p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
