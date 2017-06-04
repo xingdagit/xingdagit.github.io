@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      jQuery-编写插件 | SPACE-19 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    
+
+    <meta name="description" content="扩展jQuery——-编写jQuery插件 虽然使用jQuery对象可以操作一组DOM，而且支持链式操作，用起来很方便。但jQuery内置的方法永远不可能满足所有的需求。 比如要高亮显示某些DOM元素，用jQuery可以这么实现：$(&amp;#39;span.hl&amp;#39;).css(&amp;#39;backgroundColor&amp;#39;, &amp;#39;#fffceb&amp;#39;).css(&amp;#39;color">
+<meta name="keywords" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery-编写插件 | SPACE-19">
+<meta property="og:url" content="http://yoursite.com/2017/06/04/jQuery-编写插件/index.html">
+<meta property="og:site_name" content="SPACE-19">
+<meta property="og:description" content="扩展jQuery——-编写jQuery插件 虽然使用jQuery对象可以操作一组DOM，而且支持链式操作，用起来很方便。但jQuery内置的方法永远不可能满足所有的需求。 比如要高亮显示某些DOM元素，用jQuery可以这么实现：$(&amp;#39;span.hl&amp;#39;).css(&amp;#39;backgroundColor&amp;#39;, &amp;#39;#fffceb&amp;#39;).css(&amp;#39;color">
+<meta property="og:updated_time" content="2017-06-04T15:44:09.714Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery-编写插件 | SPACE-19">
+<meta name="twitter:description" content="扩展jQuery——-编写jQuery插件 虽然使用jQuery对象可以操作一组DOM，而且支持链式操作，用起来很方便。但jQuery内置的方法永远不可能满足所有的需求。 比如要高亮显示某些DOM元素，用jQuery可以这么实现：$(&amp;#39;span.hl&amp;#39;).css(&amp;#39;backgroundColor&amp;#39;, &amp;#39;#fffceb&amp;#39;).css(&amp;#39;color">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">SPACE-19</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          XD
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">jQuery-编写插件</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-04" class="post-meta__date date">2017-06-04</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/jQuery/">jQuery</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="扩展jQuery——-编写jQuery插件"><a href="#扩展jQuery——-编写jQuery插件" class="headerlink" title="扩展jQuery——-编写jQuery插件"></a>扩展jQuery——-编写jQuery插件</h3><ul>
+<li>虽然使用jQuery对象可以操作一组DOM，而且支持链式操作，用起来很方便。但jQuery内置的方法永远不可能满足所有的需求。</li>
+<li>比如要高亮显示某些DOM元素，用jQuery可以这么实现：<code>$(&#39;span.hl&#39;).css(&#39;backgroundColor&#39;, &#39;#fffceb&#39;).css(&#39;color&#39;, &#39;#d85030&#39;);</code>。但当对多个元素设置时就要重复写，而且要增加样式时也十分麻烦(每条都要增加)。</li>
+<li>编写jQuery插件，我们就能将其统一起来，实现一个自定义方法<code>highlight()</code>，使调用以及后续修改更简单：<code>$(&#39;span.hl&#39;).highlight();</code></li>
+<li><p>给jQuery对象绑定一个新方法是通过扩展<code>$.fn对象</code>实现的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//函数内部的this在调用时被绑定为jQuery对象，所以函数内部代码可以正常调用所有jQuery对象的方法</div><div class="line">$.fn.highlight = function () &#123;</div><div class="line">  // this已绑定为当前jQuery对象:</div><div class="line">  this.css(&apos;backgroundColor&apos;, &apos;#fffceb&apos;).css(&apos;color&apos;, &apos;#d85030&apos;);</div><div class="line">  return this;</div><div class="line">&#125;</div><div class="line">//因为jQuery对象支持链式操作，return this的作用就是为了让自己写的扩展方法也能继续链式调用下去：</div><div class="line">$(&apos;span.hl&apos;).highlight().slideDown();</div><div class="line">//不然，用户调用的时候就要把上面的代码拆成两行了</div></pre></td></tr></table></figure>
+<p>也可以给自定义方法加个参数，让用户自己把参数用对象传进去：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$.fn.highlight = function (options) &#123;</div><div class="line">  // 要考虑到各种情况:</div><div class="line">  // options为undefined</div><div class="line">  // options只有部分key</div><div class="line">  var bgcolor = options &amp;&amp; options.backgroundColor || &apos;#fffceb&apos;;</div><div class="line">  var color = options &amp;&amp; options.color || &apos;#d85030&apos;;</div><div class="line">  this.css(&apos;backgroundColor&apos;, bgcolor).css(&apos;color&apos;, color);</div><div class="line">  return this;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>另一种方法是使用jQuery提供的辅助方法：<br><code>$.extend(target, obj1, obj2, ...)</code>。<br>它把多个object对象的属性合并到第一个target对象中，遇到同名属性，总是使用靠后的对象的值，也就是越往后优先级越高：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 把默认值和用户传入的options合并到对象&#123;&#125;中并返回:</div><div class="line">var opts = $.extend(&#123;&#125;, &#123;</div><div class="line">  backgroundColor: &apos;#00a8e6&apos;,</div><div class="line">  color: &apos;#ffffff&apos;</div><div class="line">&#125;, options);</div></pre></td></tr></table></figure>
+</li>
+<li><p>但上述的方法仍有一个不足：设定的默认值不能允许用户修改，每次调用都需要传入自定义的设置。下面为<code>highlight</code>函数的最佳实现方法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$.fn.highlight = function (options) &#123;</div><div class="line">  var opts = $.extend(&#123;&#125;, $.fn.highlight.defaults, options); // 合并默认值和用户设定值</div><div class="line">  this.css(&apos;backgroundColor&apos;, opts.backgroundColor).css(&apos;color&apos;, opts.color);</div><div class="line">  return this;</div><div class="line">&#125;</div><div class="line">// 设定默认值:</div><div class="line">$.fn.highlight.defaults = &#123;</div><div class="line">  color: &apos;#d85030&apos;,</div><div class="line">  backgroundColor: &apos;#fff8de&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用上述最佳方法，就只需先一次性设定默认值，然后可以简单地调用<code>highlight()</code>了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$.fn.highlight.defaults.color = &apos;#fff&apos;;</div><div class="line">$.fn.highlight.defaults.backgroundColor = &apos;#000&apos;;</div><div class="line">$(&apos;#test-highlight p:first-child span&apos;).highlight();</div><div class="line">$(&apos;#test-highlight p:last-child span&apos;).highlight(&#123;</div><div class="line">  color: &apos;#dd1144&apos;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>编写一个jQuery插件的原则：<br>1、给<code>$.fn</code>绑定函数，实现插件的代码逻辑；<br>2、插件函数最后要<code>return this</code>;以支持链式调用；<br>3、插件函数要有默认值，绑定在<code>$.fn.&lt;pluginName&gt;.defaults</code>上；<br>4、用户在调用时可传入设定值以便覆盖默认值。</p>
+</li>
+<li><p>还可以针对特定元素的扩展：主要用到<code>filter()方法</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">//要给所有指向外链的超链接加上一个跳转按钮提示</div><div class="line">$.fn.external = function () &#123;</div><div class="line">   // return返回的each()返回结果，支持链式调用:</div><div class="line">   return this.filter(&apos;a&apos;).each( function () &#123;</div><div class="line">       // 注意: each()内部的回调函数的this绑定为DOM本身!</div><div class="line">       var a = $(this);</div><div class="line">       var url = a.attr(&apos;href&apos;);</div><div class="line">       if (url &amp;&amp; (url.indexOf(&apos;http://&apos;)===0 || url.indexOf(&apos;https://&apos;)===0))</div><div class="line">       &#123;</div><div class="line">          a.attr(&apos;href&apos;, &apos;#0&apos;)</div><div class="line">           .removeAttr(&apos;target&apos;)</div><div class="line">           .append(&apos; &lt;i class=&quot;uk-icon-external-link&quot;&gt;&lt;/i&gt;&apos;)</div><div class="line">           .click(function () &#123;</div><div class="line">              if(confirm(&apos;你确定要前往&apos; + url + &apos;？&apos;))</div><div class="line">              &#123;</div><div class="line">                  window.open(url);</div><div class="line">              &#125;</div><div class="line">          &#125;);</div><div class="line">       &#125;</div><div class="line">   &#125;);</div><div class="line">&#125;</div><div class="line">//用户调用如下：</div><div class="line">$(&apos;#main a&apos;).external();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
