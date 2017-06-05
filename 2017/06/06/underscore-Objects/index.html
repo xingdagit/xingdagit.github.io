@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      underscore-Objects | SPACE-19 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    
+
+    <meta name="description" content="Objects和Array类似，underscore也提供了大量针对Object的函数。1.keys()/allKeys()  keys()可以非常方便地返回一个object自身所有的key，但不包含从原型链继承下来的： 1234567 function Student(name, age)  &amp;#123;    this.name = name; this.age = age;  &amp;#125;">
+<meta name="keywords" content="underscore">
+<meta property="og:type" content="article">
+<meta property="og:title" content="underscore-Objects | SPACE-19">
+<meta property="og:url" content="http://yoursite.com/2017/06/06/underscore-Objects/index.html">
+<meta property="og:site_name" content="SPACE-19">
+<meta property="og:description" content="Objects和Array类似，underscore也提供了大量针对Object的函数。1.keys()/allKeys()  keys()可以非常方便地返回一个object自身所有的key，但不包含从原型链继承下来的： 1234567 function Student(name, age)  &amp;#123;    this.name = name; this.age = age;  &amp;#125;">
+<meta property="og:updated_time" content="2017-06-05T16:15:32.265Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="underscore-Objects | SPACE-19">
+<meta name="twitter:description" content="Objects和Array类似，underscore也提供了大量针对Object的函数。1.keys()/allKeys()  keys()可以非常方便地返回一个object自身所有的key，但不包含从原型链继承下来的： 1234567 function Student(name, age)  &amp;#123;    this.name = name; this.age = age;  &amp;#125;">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">SPACE-19</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          XD
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">underscore-Objects</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-06" class="post-meta__date date">2017-06-06</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/underscore/">underscore</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="Objects"><a href="#Objects" class="headerlink" title="Objects"></a>Objects</h3><p>和<code>Array</code>类似，underscore也提供了大量针对<code>Object</code>的函数。<br>1.keys()/allKeys()</p>
+<ul>
+<li><p><code>keys()</code>可以非常方便地返回一个object自身所有的<code>key</code>，但<code>不包含</code>从原型链继承下来的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> function Student(name, age) </div><div class="line"> &#123; </div><div class="line">   this.name = name; </div><div class="line">this.age = age; </div><div class="line"> &#125; </div><div class="line"> var xiaoming = new Student(&apos;小明&apos;, 20); </div><div class="line"> _.keys(xiaoming); // [&apos;name&apos;, &apos;age&apos;]</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>allKeys()</code>除了object自身的<code>key</code>，还<code>包含</code>从原型链继承下来的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> function Student(name, age) </div><div class="line"> &#123; </div><div class="line">   this.name = name; </div><div class="line">this.age = age; </div><div class="line"> &#125; </div><div class="line"> Student.prototype.school = &apos;No.1 Middle School&apos;; </div><div class="line"> var xiaoming = new Student(&apos;小明&apos;, 20); </div><div class="line"> _.allKeys(xiaoming); // [&apos;name&apos;, &apos;age&apos;, &apos;school&apos;]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li><p>values()</p>
+<ul>
+<li>和<code>keys()</code>类似，<code>values()</code>返回object自身但<code>不包含</code>原型链继承的所有<code>值</code>：    </li>
+<li><p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var obj = &#123; name: &apos;小明&apos;, age: 20 &#125;; </div><div class="line">_.values(obj); // [&apos;小明&apos;, 20]</div></pre></td></tr></table></figure>
+</li>
+<li><p>注意，没有<code>allValues()函数</code>。</p>
+</li>
+</ul>
+</li>
+<li><p>mapObject()</p>
+<ul>
+<li><code>mapObject()</code>就是针对<code>object</code>版本的<code>map()</code>：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var obj = &#123; a: 1, b: 2, c: 3 &#125;; </div><div class="line">// 注意传入的函数签名，value在前，key在后: </div><div class="line">_.mapObject(obj, (v, k) =&gt; 100 + v); // &#123; a: 101, b: 102, c: 103 &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>invert()</p>
+<ul>
+<li><code>invert()</code>把object的每个key-value来个交换，key变成value，value变成key:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var obj = &#123; Adam: 90, Lisa: 85, Bart: 59 &#125;; </div><div class="line">_.invert(obj); // &#123; &apos;59&apos;: &apos;Bart&apos;, &apos;85&apos;: &apos;Lisa&apos;, &apos;90&apos;: &apos;Adam&apos; &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>extend() / extendOwn()</p>
+<ul>
+<li><code>extend()</code>把<code>多个object</code>的<code>key-value</code>合并到<code>第一个object</code>并返回;</li>
+<li><p>注意：如果有相同的key，后面的object的value将<code>覆盖</code>前面的object的value。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = &#123;name: &apos;Bob&apos;, age: 20&#125;; </div><div class="line">_.extend(a, &#123;age: 15&#125;, &#123;age: 88, city: &apos;Beijing&apos;&#125;);//年龄和城市都被覆盖了 </div><div class="line">// 变量a的内容也改变了： </div><div class="line">a; // &#123;name: &apos;Bob&apos;, age: 88, city: &apos;Beijing&apos;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>extendOwn()</code>和<code>extend()</code>类似，但获取属性时<code>忽略</code>从原型链继承下来的属性。</p>
+</li>
+</ul>
+</li>
+<li><p>clone()</p>
+<ul>
+<li><p><code>clone()</code>用于复制一个object对象，它会把原有对象的所有属性都复制到新的对象中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a = &#123; name: &apos;小明&apos;, age: 20, skills: [&apos;JavaScript&apos;, &apos;CSS&apos;, &apos;HTML&apos;] &#125;; </div><div class="line">var 对象b = _.clone(对象a);</div></pre></td></tr></table></figure>
+</li>
+<li><p>注意：<code>clone()</code>是“浅复制”，即两个对象相同的key所引用的value其实是同一对象：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//b.skills 引用 a.skills a.skills === b.skills; //true </div><div class="line">//所以修改a.skills会影响b.skills </div><div class="line">/* 注意区分修改与重新赋值的区别： </div><div class="line">  1)修改是改变了&lt;原对象属性值所引用的值&gt;，但原对象和复制得到的新对象的属性值引用还是原来的，所以这种修改会让俩对象的属性值都会变化； </div><div class="line">  2)重新赋值则是改变了&lt;原对象属性值的引用&gt;，开辟一个新的内存空间存放新的值，这时原对象属性值的引用变了，但刚刚复制得到的新对象还是引用原对象属性值的引用，所以没有影响。 </div><div class="line">  3)会产生修改还是重新赋值，就要看值是什么类型了： </div><div class="line">    *可变的就是修改；（如Array） </div><div class="line">    *不可变的就是重新赋值；（如string） </div><div class="line">如 a.skills[0] = java; //则为修改：两对象的skills[0]的引用的值都变成了java </div><div class="line">如 a.skills = &apos;arr&apos;; //则为重新赋值：原对象的skills引用变成引用arr数组了；而新对象还是引用[&apos;JavaScript&apos;, &apos;CSS&apos;, &apos;HTML&apos;]这个数组 </div><div class="line">*/</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>isEqual()</p>
+<ul>
+<li><code>isEqual()</code>对两个<code>object</code>或<code>Array</code>进行深度比较，内容完全相同则返回true（忽略内容顺序）：</li>
+<li>例子：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//比较object： </div><div class="line">var o1 = &#123; name: &apos;Bob&apos;, skills: &#123; Java: 90, JavaScript: 99 &#125;&#125;; </div><div class="line">var o2 = &#123; name: &apos;Bob&apos;, skills: &#123; JavaScript: 99, Java: 90 &#125;&#125;; </div><div class="line">o1 === o2; // false </div><div class="line">_.isEqual(o1, o2); // true </div><div class="line">//比较Array： </div><div class="line">var o1 = [ &apos;Bob&apos;, &#123; skills:[&apos;Java&apos;, &apos;JavaScript&apos;] &#125; ]; </div><div class="line">var o2 = [ &apos;Bob&apos;, &#123; skills:[&apos;Java&apos;, &apos;JavaScript&apos;] &#125; ]; </div><div class="line">o1 === o2; // false </div><div class="line">_.isEqual(o1, o2); // true</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>更多完整<code>Objects</code>函数请参考underscore的文档：<a href="http://underscorejs.org/#objects" target="_blank" rel="external">http://underscorejs.org/#objects</a></li>
+</ul>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
