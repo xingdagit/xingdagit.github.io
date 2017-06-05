@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      JS-动画 | SPACE-19 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    
+
+    <meta name="description" content="一、动画效果的运动框架实现思路1、速度(常用的改变值left、right、width、height、opcity)(匀速运动涉及到定时器)2、缓冲运动3、多物体运动4、任意值变化5、链式运动6、同时运动 二、JS 速度动画(匀速运动)1、设置定时器，每隔一段时间更改位置，达到匀速运动2、设置定时器前需清除定时器，以防多次触发重复生成多个定时器3、当运动位置达到目标值时，可通过清除定时器停止运动4、">
+<meta name="keywords" content="JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS-动画 | SPACE-19">
+<meta property="og:url" content="http://yoursite.com/2017/06/05/JS-动画/index.html">
+<meta property="og:site_name" content="SPACE-19">
+<meta property="og:description" content="一、动画效果的运动框架实现思路1、速度(常用的改变值left、right、width、height、opcity)(匀速运动涉及到定时器)2、缓冲运动3、多物体运动4、任意值变化5、链式运动6、同时运动 二、JS 速度动画(匀速运动)1、设置定时器，每隔一段时间更改位置，达到匀速运动2、设置定时器前需清除定时器，以防多次触发重复生成多个定时器3、当运动位置达到目标值时，可通过清除定时器停止运动4、">
+<meta property="og:updated_time" content="2017-06-05T03:10:24.354Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS-动画 | SPACE-19">
+<meta name="twitter:description" content="一、动画效果的运动框架实现思路1、速度(常用的改变值left、right、width、height、opcity)(匀速运动涉及到定时器)2、缓冲运动3、多物体运动4、任意值变化5、链式运动6、同时运动 二、JS 速度动画(匀速运动)1、设置定时器，每隔一段时间更改位置，达到匀速运动2、设置定时器前需清除定时器，以防多次触发重复生成多个定时器3、当运动位置达到目标值时，可通过清除定时器停止运动4、">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">SPACE-19</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          XD
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">JS-动画</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-05" class="post-meta__date date">2017-06-05</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/JS/">JS</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="一、动画效果的运动框架实现思路"><a href="#一、动画效果的运动框架实现思路" class="headerlink" title="一、动画效果的运动框架实现思路"></a>一、动画效果的运动框架实现思路</h3><p>1、速度(常用的改变值left、right、width、height、opcity)(匀速运动涉及到定时器)<br>2、缓冲运动<br>3、多物体运动<br>4、任意值变化<br>5、链式运动<br>6、同时运动</p>
+<h3 id="二、JS-速度动画-匀速运动"><a href="#二、JS-速度动画-匀速运动" class="headerlink" title="二、JS 速度动画(匀速运动)"></a>二、JS 速度动画(匀速运动)</h3><p>1、设置定时器，每隔一段时间更改位置，达到匀速运动<br>2、设置定时器前需清除定时器，以防多次触发重复生成多个定时器<br>3、当运动位置达到目标值时，可通过清除定时器停止运动<br>4、当定义函数多处相同时，可封装为一个函数，用不同参数调用，尽量少传递相同的参数，逐步实现优化<br>5、实例：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"> //实现一个隐藏在屏幕左端里的div当鼠标移上和移走时分别以匀速运动弹出和收回的动画效果</div><div class="line"> &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line"> window.onload=function()&#123;</div><div class="line">    var oDiv1=document.getElementById(&apos;div1&apos;);</div><div class="line">    oDiv1.onmouseover=function()&#123;</div><div class="line">  starMove(0);   //弹出时，左端的目标值为0(从-200到0)</div><div class="line"> &#125;;</div><div class="line"> oDiv1.onmouseout=function()&#123;</div><div class="line">starMove(-200); //收回时，左端目标值为-200(从0到-200)</div><div class="line"> &#125;;</div><div class="line"> &#125;;</div><div class="line"></div><div class="line"> var timer1=null;//定时器</div><div class="line"> speed=0; //匀速运动的速度</div><div class="line"> function starMove(iTarget)</div><div class="line"> &#123;</div><div class="line">  var oDiv1=document.getElementById(&apos;div1&apos;);</div><div class="line">  clearInterval(timer1); //设置定时器前先清除定时器</div><div class="line">  timer1=setInterval(function()&#123;</div><div class="line">  if(oDiv1.offsetLeft==iTarget)//如果已经达到运动的目标了</div><div class="line">        &#123;</div><div class="line">	clearInterval(timer1);</div><div class="line">  &#125;</div><div class="line">        else</div><div class="line">        &#123;</div><div class="line">	if(iTarget&lt;0) //目标为负值时表示要向左运动</div><div class="line">	   speed=-10;</div><div class="line">	else      //目标为正值时表示要向右运动</div><div class="line">	   speed=10;</div><div class="line">	oDiv1.style.left=oDiv1.offsetLeft+speed+&apos;px&apos;;</div><div class="line">  &#125;</div><div class="line">  &#125;,30);</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>小知识：<br> <em>offsetLeft 获取的是相对于父对象的左边距
+ </em>left 获取或设置相对于 具有定位属性(position定义为relative)的父对象 的左边距，即如果父div的position定义为relative,子div的position定义为absolute，那么子div的style.left的值是相对于父div的值，此时该值与offsetLeft几乎相同，区别在于：<br>  1)style.left 返回的是字符串(28px)，offsetLeft返回的是数值(28)，如要对取得的值进行计算，用offsetLeft会比较方便。<br>  2)style.left是读写的，offsetLeft是只读的。所以要改变div的位置，只能修改style.left。<br>  3)style.left的值需事先定义，否则取到的值为空。而且必须要定义在html里（定义在css里为空）。offsetLeft则不需事先定义。</p>
+</blockquote>
+<h3 id="三、JS-透明度动画-匀速运动"><a href="#三、JS-透明度动画-匀速运动" class="headerlink" title="三、JS 透明度动画(匀速运动)"></a>三、JS 透明度动画(匀速运动)</h3><ul>
+<li>使用js实现透明度运动而不采用直接设置css的style.opacity属性来改变透明度,是因为css的透明度的设置是一步到位，瞬时完成的，而使用js可以实现逐渐变化效果</li>
+<li><code>opacity</code>指不透明度，<code>opacity</code>为0时表示完全透明(效果等同于css的隐藏)</li>
+<li><code>opacity:0.3;</code>  /*所有主流浏览器都支持opacity属性</li>
+<li><p><code>filter: alpha(opacity:30);</code>  /<em>IE浏览器专用，opacity属性值为0~100</em>/</p>
+<blockquote>
+<p>注意：IE8和早期版本支持另一种过滤器属性。像：filter:Alpha(opacity=50),而IE8版本之前的opacity属性值是0~1</p>
+</blockquote>
+</li>
+<li><p>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">//实现一个div，当鼠标移上和移走时分别以匀速运动改变透明度的动画效果</div><div class="line">&lt;html&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">*&#123;margin:0; padding:0;&#125;</div><div class="line">#div1&#123;</div><div class="line">    width:500px; height:500px; background: #F00; </div><div class="line">    opacity:0.3; </div><div class="line">    filter:alpha(opacity:30);</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">window.onload = function()&#123;</div><div class="line">    var odiv = document.getElementById(&apos;div1&apos;);</div><div class="line">    odiv.onmouseover = function()&#123;</div><div class="line">        startMove(100);//要完全显示时，不透明度为100</div><div class="line">    &#125;</div><div class="line">    odiv.onmouseout = function()&#123;</div><div class="line">        startMove(30); //增加透明度</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var time = null;</div><div class="line">alpha = 30;//因透明度没有属性，所以创建透明变量进行，最后并赋值给透明度属性</div><div class="line">function startMove(iTarget)</div><div class="line">&#123;</div><div class="line">  var odiv = document.getElementById(&apos;div1&apos;);</div><div class="line">  clearInterval(time);</div><div class="line">  time = setInterval(function()&#123;</div><div class="line">      var speed = 0;</div><div class="line">      if(alpha &lt; iTarget)&#123; //要变为完全显示时</div><div class="line">          speed = 10;</div><div class="line">      &#125; </div><div class="line">      else &#123;    //要变为具有透明度时</div><div class="line">          speed = -10;</div><div class="line">      &#125;</div><div class="line">      if(alpha == iTarget)&#123; //达到指定透明度目标</div><div class="line">          clearInterval(time);</div><div class="line">      &#125;</div><div class="line">      else &#123;      //还没达到</div><div class="line">          alpha += speed; //设置变化</div><div class="line">          odiv.style.filter = &apos;alpha(opacity:&apos; + alpha +&apos; )&apos;;//变化后赋值给属性(IE)</div><div class="line">          odiv.style.opacity = alpha / 100;  //变化后赋值给属性(火狐/chrome：范围0—1，所以要除于100)</div><div class="line">      &#125;</div><div class="line">  &#125;,50);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id=&quot;div1&quot;&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>四、JS 缓冲运动</p>
+<ul>
+<li>缓冲运动特点：由快到慢时速度慢慢变慢，由慢到快时速度慢慢变快（运动速度会改变）</li>
+<li>缓冲运动的速度值要转换成整数，不然将到达不了终点(出现空隙)，可视情况使用<code>Math.ceil()</code>(向上取整)还是<code>Math.floor(向下取整)</code></li>
+<li>实例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"> //对上面`一`中实现的匀速弹出和收回div的例子修改为缓冲运动</div><div class="line"> //重点修改地方：将运动速度修改为随运动改变而不是固定</div><div class="line"> &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line"> window.onload=function()&#123;</div><div class="line">   var oDiv1=document.getElementById(&apos;div1&apos;);</div><div class="line">   oDiv1.onmouseover=function()&#123;</div><div class="line">	starMove(0);   //弹出时，左端的目标值为0(从-200到0)</div><div class="line">&#125;;</div><div class="line">oDiv1.onmouseout=function()&#123;</div><div class="line">	starMove(-200); //收回时，左端目标值为-200(从0到-200)</div><div class="line">&#125;;</div><div class="line"> &#125;;</div><div class="line"></div><div class="line"> var timer1=null;//定时器</div><div class="line"> function starMove(iTarget)</div><div class="line"> &#123;</div><div class="line">var oDiv1=document.getElementById(&apos;div1&apos;);</div><div class="line">clearInterval(timer1); //设置定时器前先清除定时器</div><div class="line">timer1=setInterval(function()&#123;</div><div class="line">     var speed= (iTarget - oDiv1.offsetLeft)/20;  //缓冲运动的速度(可变)</div><div class="line">     speed = speed&gt;0? Math.ceil(speed) : Math.floor(speed);</div><div class="line">  if(oDiv1.offsetLeft==iTarget)  //如果已经达到运动的目标了</div><div class="line">     &#123;</div><div class="line">	 clearInterval(timer1);</div><div class="line">  &#125;</div><div class="line">     else  </div><div class="line">         /*之前速度为正为负的判断改变可以去掉了*/</div><div class="line">      oDiv1.style.left=oDiv1.offsetLeft+speed+&apos;px&apos;;</div><div class="line">   &#125;,30);</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>五、JS 多物体运动</p>
+<ul>
+<li>使用for循环来为每一个TagNameList[i] 添加事件</li>
+<li>在每个物体对象调用操作函数时，要把当前出发函数的对象(this)也作为参数传过去</li>
+<li>多物体运动争抢资源问题：多物体不要共用一个值,所以要对每个物体对象上定义一个专属的属性值存储器。如设置了一个公共定时器，都触发了就会抢夺，产生混乱，所以最好为每个物体设置专属的定时器</li>
+<li><p>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">//【多个物体的宽度变化】【缓冲运动】</div><div class="line">var aLi = document.getElementsByTagName(&quot;li&quot;);//假设结构为一组li</div><div class="line">for(var i=0; i&lt;aLi.length; i++)</div><div class="line">&#123;</div><div class="line">    aLi[i].timer=null; //给每一个li设置一个timer</div><div class="line">    aLi[i].onmouseover = function()&#123;</div><div class="line">      startMove(this,400);</div><div class="line">    &#125;</div><div class="line">    aLi[i].onmouseout = function()&#123;</div><div class="line">      startMove(this,200);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">function startMove(obj,iTarget)</div><div class="line">&#123;</div><div class="line">    clearInterval(obj.timer);</div><div class="line">    obj.timer = setInterval(function()&#123;</div><div class="line">       var speed = ( iTarget - obj.offsetWidth )/8;</div><div class="line">       speed = speed&gt;0 ? Math.ceil(speed) :Math.floor(speed);</div><div class="line">       if(obj.offsetWidth == iTarget)</div><div class="line">       &#123;</div><div class="line">          clearInterval(obj.timer);</div><div class="line">       &#125;</div><div class="line">       else</div><div class="line">       &#123;</div><div class="line">          obj.style.width = obj.offsetWidth + speed + &quot;px&quot;;</div><div class="line">       &#125;</div><div class="line">    &#125;,30) </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>多样式变化情况:</p>
+<ul>
+<li>若在上面多个物体宽度变化例子中给矩形添加一个外边框：<code>border:4px solid #000</code>，会发现变宽之后的宽为392px，变回来之后是256px，与预期的400px和200px不符</li>
+<li>原因：用<code>oDiv.offsetWidth</code>获取到的是包括边框border在内的宽度(padding+border+width属性值之和)，而<code>obj.stlye.width</code>是样式中的块width(不包括border)。导致：<code>obj.style.width=obj.offsetWidth-1=(obj.style.width+borderWidth)-1</code>，即当borderWidth＞1时,其实是在加宽度而不是减宽度;</li>
+<li>【解决方法1】把原来的样式<code>#div1{width:200px;....}</code>中的width去掉，改为写在行间<code>&lt;div id=&quot;div1&quot; style=&quot;width:200px;&quot;&gt;</code>，并将<code>oDiv.style.width = oDiv.offsetWidth-1+&quot;px&quot;;</code>改成<code>oDiv.style.width = parseInt(oDiv.style.width)-1+&quot;px&quot;;</code></li>
+<li><p>【解决方法2】也可以保留<code>#div1{width:200px;....}</code>，但要采用函数<code>getStyle</code>来获取其属性</p>
+<blockquote>
+<p>小知识：<br>用js的style属性即<code>document.getElementById(‘element’).style.xxx</code>可获得html标签元素的行内样式，但它获取的只是DOM元素style属性里的样式规则，对于嵌入样式以及通过class属性引用外部样式表的外部样式是不能获取的，即不能获取非行内的样式。所以js提供<code>currentStyle</code>和<code>getComputedStyle</code>方法来获取css的非行内样式 ，可以封装为<code>function getStyle(obj,attr)</code>来实现获取。</p>
+</blockquote>
+</li>
+<li><p>【解决方法2】如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">//如添加给一个宽度逐渐变小的div加上边框</div><div class="line">&lt;style&gt;</div><div class="line">Body,ul,li&#123;</div><div class="line">  margin:0;</div><div class="line">  padding:0;</div><div class="line">&#125;</div><div class="line">ul,li&#123;</div><div class="line">  list-style:none;</div><div class="line">  width:200px;</div><div class="line">  background:yellow;</div><div class="line">  margin-bottom:20px;</div><div class="line">  border: 4px solid #000;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">window.onload = function()</div><div class="line">&#123;</div><div class="line">   var aLi = document.getElementByTagName(‘li’);</div><div class="line">   for(var i=0;i&lt;aLi.length;i++)</div><div class="line">   &#123;</div><div class="line">      aLi[i].timer=null;</div><div class="line">      aLi[i].onmouseover = function()&#123;</div><div class="line">         startMove(this,400);</div><div class="line">      &#125; </div><div class="line">      aLi[i].onmouseout = function()&#123;</div><div class="line">         startMove(this,200);</div><div class="line">      &#125; </div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line">function startMove()</div><div class="line">&#123;</div><div class="line">   setInterval(function()&#123;</div><div class="line">     var oDiv = document.getElementById(‘div1’);</div><div class="line">     oDiv.style.width = parseInt( getStyle(oDiv,&quot;width&quot;) ) – 1 + ‘px’ ;</div><div class="line">   &#125;,30)</div><div class="line">)</div><div class="line">function getStyle(obj,attr)  //传递对象和属性</div><div class="line">&#123;</div><div class="line">   if(obj.currentStyle) //IE浏览器</div><div class="line">   &#123; </div><div class="line">      return obj.currentStyle[attr];</div><div class="line">   &#125;</div><div class="line">   else      //firefox ,opera,safari,chrome浏览器</div><div class="line">   &#123; </div><div class="line">      return getComputedStyle(obj,null)[attr];</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">…</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div id=’div1’&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>若想添加多个样式(或任意属性值)，要尽量优化代码，让它能适合更多属性的使用。如要改变高度和宽度(将函数抽象化一个函数而不是分开写成两个函数)，如要改变透明度(要增加透明度属性值为小数还有单位的考虑处理)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">//实现对鼠标移入移出，第一个li高度变化，第二个li宽度变化</div><div class="line">window.onload=function()</div><div class="line">&#123;</div><div class="line">   var Li1=document.getElementById(&apos;li1&apos;);</div><div class="line">   var Li2=document.getElementById(&apos;li2&apos;);</div><div class="line">   Li1.onmouseover=function()&#123;</div><div class="line">      startMove(Li1,&apos;height&apos;,400);</div><div class="line">   &#125;</div><div class="line">   Li1.onmouseout=function()&#123;</div><div class="line">      startMove(Li1,&apos;height&apos;,200);</div><div class="line">   &#125;</div><div class="line">   Li2.onmouseover=function()&#123;</div><div class="line">      startMove(Li2,&apos;width&apos;,400);</div><div class="line">   &#125;</div><div class="line">   Li2.onmouseout=function()&#123;</div><div class="line">      startMove(Li2,&apos;width&apos;,200);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line">function startMove(obj,attr,iTarget)//将属性作为参数传递</div><div class="line">&#123;</div><div class="line">   clearInterval(obj.timer);  </div><div class="line">   obj.timer=setInterval(function()&#123;</div><div class="line">      //取当前的值</div><div class="line">      var icur=null;</div><div class="line">      if(attr==&apos;opacity&apos;)//如果是对透明度的处理</div><div class="line">      &#123;</div><div class="line">         // parseFloat针对浮点数的处理</div><div class="line">         // Math.round：为解决javascript一些浮点数会带有多余尾数的问题而进行四舍五入处理</div><div class="line">      icur=Math.round(parseFloat(getStyle(obj,attr))*100);</div><div class="line">      &#125;</div><div class="line">      else</div><div class="line">      &#123;</div><div class="line">      icur=parseInt(getStyle(obj,attr));</div><div class="line">      &#125;</div><div class="line">      //计算速度</div><div class="line">      var speed=(iTarget-icur)/8;</div><div class="line">      speed=speed&gt;0?Math.ceil(speed):Math.floor(speed);</div><div class="line">      //检测是否停止</div><div class="line">      if(icur==iTarget)</div><div class="line">      &#123;</div><div class="line">         clearInterval(obj.timer);</div><div class="line">      &#125;</div><div class="line">      else</div><div class="line">      &#123;</div><div class="line">         if(attr==&apos;opacity&apos;) //如果是对透明度的处理</div><div class="line">         &#123;</div><div class="line">            obj.style.filter=&apos; alpha(opacity:&apos;+(icur+speed)+&apos;) &apos;;// 针对IE(属性值为整数)</div><div class="line">            obj.style.opacity=(icur+speed)/100;  //针对chrome和Firefox(属性值为小数)</div><div class="line">      &#125;</div><div class="line">         else</div><div class="line">         &#123;</div><div class="line">       obj.style[attr]=icur+speed+&apos;px&apos;;</div><div class="line">      	&#125;</div><div class="line">      &#125;</div><div class="line">   &#125;,30);</div><div class="line">&#125;</div><div class="line">function getStyle(obj,attr)</div><div class="line">&#123;</div><div class="line">   if(obj.currentStyle)&#123;</div><div class="line">      return obj.currentStyle[attr];</div><div class="line">   &#125;</div><div class="line">   else&#123;</div><div class="line">      return getComputedStyle(obj,false)[attr];</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="六、JS-链式动画"><a href="#六、JS-链式动画" class="headerlink" title="六、JS 链式动画"></a>六、JS 链式动画</h3><ul>
+<li>链式动画即执行一系列紧密相联的运动，直至执行完最后一个动画</li>
+<li>代码重点：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line">window.onload=function()</div><div class="line">&#123;</div><div class="line">	var l1=document.getElementById(&apos;li&apos;); </div><div class="line">//一直往里执行直至最后一个操作执行完</div><div class="line">	l1.onmouseover=function()</div><div class="line">&#123;</div><div class="line">        startMove(l1,&apos;width&apos;,600,function()&#123;</div><div class="line">            startMove(l1,&apos;height&apos;,400,function()&#123;</div><div class="line">                startMove(l1,&apos;opacity&apos;,100);</div><div class="line">             &#125;);</div><div class="line">        &#125;);</div><div class="line">&#125;;</div><div class="line">//还原操作</div><div class="line">	l1.onmouseout=function()</div><div class="line">&#123;</div><div class="line">		startMove(l1,&apos;opacity&apos;,30,function()&#123;</div><div class="line">			startMove(l1,&apos;height&apos;,100,function()&#123;</div><div class="line">				startMove(l1,&apos;width&apos;,200);</div><div class="line">			&#125;);</div><div class="line">		&#125;);</div><div class="line">	&#125;;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">function startMove(obj,attr,iTarget,fn)  //添加一个回调函数fn参数</div><div class="line">&#123;	</div><div class="line">clearInterval(obj.timer);</div><div class="line">obj.timer=setInterval(function()&#123;</div><div class="line">var icur=null;</div><div class="line">//1.判断类型</div><div class="line">if(attr==&apos;opacity&apos;)</div><div class="line">&#123;</div><div class="line">icur=Math.round(parseFloat(getStyle(obj,attr))*100);</div><div class="line">&#125;</div><div class="line">else</div><div class="line">&#123;</div><div class="line">icur=parseInt(getStyle(obj,attr));</div><div class="line">&#125;</div><div class="line">//2.算速度</div><div class="line">var speed=(iTarget-icur)/8;</div><div class="line">speed=speed&gt;0?Math.ceil(speed):Math.floor(speed);</div><div class="line">//3.检测停止</div><div class="line">if(icur==iTarget)</div><div class="line">&#123;</div><div class="line">clearInterval(obj.timer);</div><div class="line">if(fn) //判断是否存在回调函数,若有则调用</div><div class="line">&#123;	 </div><div class="line">fn();</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">else</div><div class="line">&#123;</div><div class="line">if(attr==&apos;opacity&apos;)</div><div class="line">&#123;</div><div class="line">obj.style.filter=&apos;alpha(opacity:&apos;+(icur+speed)+&apos;)&apos;;</div><div class="line">obj.style.opacity=(icur+speed)/100;</div><div class="line">&#125;</div><div class="line">else</div><div class="line">&#123;</div><div class="line">obj.style[attr]=icur+speed+&apos;px&apos;;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">&#125;,30);</div><div class="line">&#125;</div><div class="line">function getStyle(obj,attr)</div><div class="line">&#123;</div><div class="line">if(obj.currentStyle)&#123;</div><div class="line">return obj.currentStyle[attr];</div><div class="line">&#125;</div><div class="line">else&#123;</div><div class="line">return getComputedStyle(obj,false)[attr];</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="七、JS-同时运动动画"><a href="#七、JS-同时运动动画" class="headerlink" title="七、JS 同时运动动画"></a>七、JS 同时运动动画</h3><ul>
+<li>同时运动即多物体的多样式同时在变化。</li>
+<li>首先要知道，通过连续调用多个<code>startMove函数</code>来改变多个样式是无效的。因为同时执行多个函数，后一个函数执行时会清除前一个函数的定时器，所以实际效果是只执行了最后一个函数。</li>
+<li>最佳的方法就是使用<code>json</code>格式来传递数据。</li>
+<li>最终封装的“完美移动框架”如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line">function startMove(obj,json,fn)</div><div class="line">&#123;</div><div class="line">clearInterval(obj.timer);</div><div class="line">   obj.timer=setInterval(function()&#123;</div><div class="line"> for(var attr in json)</div><div class="line">&#123;</div><div class="line"> var flag=true;//标志所有运动是否到达目标值</div><div class="line">      var curr=0;</div><div class="line">if(attr==&apos;opacity&apos;) //判断是否为透明度</div><div class="line">&#123;</div><div class="line"> curr=Math.round(parseFloat(getStyle(obj,attr))*100);</div><div class="line">      &#125;</div><div class="line">else&#123;</div><div class="line"> curr=parseInt(getStyle(obj,attr));</div><div class="line">      &#125;</div><div class="line">      //移动速度处理</div><div class="line">var speed=0;</div><div class="line">      speed=(json[attr]-curr)/10;</div><div class="line">      speed=speed&gt;0?Math.ceil(speed):Math.floor(speed);</div><div class="line">      if(curr!=json[attr])//仍未达到目标时赋值为false</div><div class="line">&#123;</div><div class="line">        flag=false;</div><div class="line">      &#125;</div><div class="line">      if (attr==&apos;opacity&apos;) </div><div class="line">&#123;</div><div class="line">         obj.style.filter=&apos;alpha(opacity:&apos;+(curr+speed)+&quot;)&quot;;</div><div class="line">         obj.style.opacity=(curr+speed)/100;</div><div class="line">      &#125;</div><div class="line">else</div><div class="line">&#123;</div><div class="line">         obj.style[attr]=curr+speed+&apos;px&apos;;</div><div class="line">      &#125;</div><div class="line"> &#125;</div><div class="line">     if(flag)//已经达到运动目标了</div><div class="line">&#123;</div><div class="line">       clearInterval(obj.timer);</div><div class="line"> if(fn)</div><div class="line">&#123;</div><div class="line">         fn();</div><div class="line">   &#125;</div><div class="line">     &#125;</div><div class="line">   &#125;,30);</div><div class="line">&#125;</div><div class="line">//取样式</div><div class="line">function getStyle(obj,attr)</div><div class="line">&#123;</div><div class="line"> if(obj.currentStyle)  //IE取样式</div><div class="line">&#123;</div><div class="line">return obj.currentStyle[attr];</div><div class="line"> &#125;</div><div class="line">else</div><div class="line">&#123;</div><div class="line">    return getComputedStyle(obj,false)[attr];</div><div class="line"> &#125;</div><div class="line">&#125;</div><div class="line">/********************************/</div><div class="line">调用：</div><div class="line">window.onload = function()&#123;</div><div class="line">  var oLi = document.getElementById(‘li1’);</div><div class="line">  oLi.onmouseover = function()&#123;</div><div class="line">      startMove(oLi,&#123;width:300,height:200,opacity:100&#125;);</div><div class="line">  &#125;</div><div class="line">  oLi.onmouseout = function()&#123;</div><div class="line">      startMove(oLi,&#123;width:200,height:100,opacity:30&#125;);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="八、一个动画案例"><a href="#八、一个动画案例" class="headerlink" title="八、一个动画案例"></a>八、<a href="http://www.imooc.com/video/3173" target="_blank" rel="external">一个动画案例</a></h3>
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
