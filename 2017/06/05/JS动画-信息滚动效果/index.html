@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      JS动画-信息滚动效果 | SPACE-19 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    
+
+    <meta name="description" content="一、使用&amp;lt;marquee&amp;gt;标签 &amp;lt;marquee&amp;gt;…&amp;lt;/marquee&amp;gt;：文字信息滚动标签。可以设置滚动方向、速度、时间。滚动方式：来回滚动，重复滚动和非重复滚动 属性：   behavior—滚动的方式 alternate：表示在两端之间来回滚动 scroll：表示由一端滚动到另一端，会重复 slide：表示由一端滚动到另一端，不会重复   direction">
+<meta name="keywords" content="JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS动画-信息滚动效果 | SPACE-19">
+<meta property="og:url" content="http://yoursite.com/2017/06/05/JS动画-信息滚动效果/index.html">
+<meta property="og:site_name" content="SPACE-19">
+<meta property="og:description" content="一、使用&amp;lt;marquee&amp;gt;标签 &amp;lt;marquee&amp;gt;…&amp;lt;/marquee&amp;gt;：文字信息滚动标签。可以设置滚动方向、速度、时间。滚动方式：来回滚动，重复滚动和非重复滚动 属性：   behavior—滚动的方式 alternate：表示在两端之间来回滚动 scroll：表示由一端滚动到另一端，会重复 slide：表示由一端滚动到另一端，不会重复   direction">
+<meta property="og:updated_time" content="2017-06-05T03:29:22.462Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS动画-信息滚动效果 | SPACE-19">
+<meta name="twitter:description" content="一、使用&amp;lt;marquee&amp;gt;标签 &amp;lt;marquee&amp;gt;…&amp;lt;/marquee&amp;gt;：文字信息滚动标签。可以设置滚动方向、速度、时间。滚动方式：来回滚动，重复滚动和非重复滚动 属性：   behavior—滚动的方式 alternate：表示在两端之间来回滚动 scroll：表示由一端滚动到另一端，会重复 slide：表示由一端滚动到另一端，不会重复   direction">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">SPACE-19</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          XD
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">JS动画-信息滚动效果</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-05" class="post-meta__date date">2017-06-05</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/JS/">JS</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="一、使用-lt-marquee-gt-标签"><a href="#一、使用-lt-marquee-gt-标签" class="headerlink" title="一、使用&lt;marquee&gt;标签"></a>一、使用<code>&lt;marquee&gt;</code>标签</h3><ul>
+<li><code>&lt;marquee&gt;…&lt;/marquee&gt;</code>：文字信息滚动标签。可以设置滚动方向、速度、时间。滚动方式：来回滚动，重复滚动和非重复滚动</li>
+<li>属性：</li>
+</ul>
+<ol>
+<li><code>behavior</code>—滚动的方式<ul>
+<li>alternate：表示在两端之间来回滚动</li>
+<li>scroll：表示由一端滚动到另一端，会重复</li>
+<li>slide：表示由一端滚动到另一端，不会重复</li>
+</ul>
+</li>
+<li><code>direction</code>—滚动的方向：down、up、left(默认)、right</li>
+<li><code>loop</code>—滚动的次数(默认为-1，表示一直滚动下去)</li>
+<li><code>scrollamount</code>—表示滚动速度(值为正整数，默认为6)</li>
+<li><code>scrolldelay</code>—表示停顿时间(值是正整数，默认为0，单位毫秒)</li>
+<li><code>align</code>—表示元素的垂直对齐方式(值可以是top，middle(默认)，bottom)</li>
+<li><code>bgcolor</code>—表示运动区域的背景色(值是16进制的RGB颜色，默认为白色)</li>
+<li><code>height、width</code>—表示运动区域的<code>高度</code>和<code>宽度</code>(值是正整数（单位是像素）或百分数，默认width=100% height为标签内元素的高度)</li>
+<li><code>hspace、vspace</code>—表示元素到区域边界的<code>水平距离</code>和<code>垂直距离</code>(值是正整数，单位是像素)</li>
+<li><code>onmouseover=this.stop();  onmouseout=this.start()</code>—表示当鼠标移上区域时滚动停止，当鼠标移开时又继续滚动。</li>
+</ol>
+<h3 id="二、无缝滚动"><a href="#二、无缝滚动" class="headerlink" title="二、无缝滚动"></a>二、无缝滚动</h3><ul>
+<li>无缝滚动：内容滚完之后不停止也不空白。</li>
+<li>无缝滚动原理：原始内容为a，克隆内容为b。假设由下往上滚动，当a底部滚动到达可视区的底部（a要滚动完）时，通过克隆a得到b，并使b在紧接在a的后面。当a的内容刚好滚动出可视区（b顶端到达可视区顶部）时，用a替换b，此时a相当于回到了原始位置，于是就实现了无缝滚动。 </li>
+<li>实例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">var area = document.getElementById(&apos;moocBox&apos;), //滚动区域</div><div class="line">con1 = document.getElementById(&apos;con1&apos;), //原始信息列表</div><div class="line">con2 = document.getElementById(&apos;con2&apos;); //克隆信息列表</div><div class="line">con2.innerHTML = con1.innerHTML; //克隆（注意是innerHTML）</div><div class="line">function scrollUp() //滚动函数</div><div class="line">&#123;  </div><div class="line">  //scrollTop:设置或获取位于对象最顶端和窗口中可见内容的最顶端之间的距离 (即网页被卷去的高)</div><div class="line">  //如已滚动的高度等于原始信息列表的高度（即原始信息列表已完全滚动完）</div><div class="line">  if(area.scrollTop &gt;= con1.offsetHeight) </div><div class="line">  &#123;</div><div class="line">    area.scrollTop = 0;//归零，从头滚动</div><div class="line">  &#125;</div><div class="line">  else</div><div class="line">  &#123;</div><div class="line">    area.scrollTop++;//继续滚动</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">var time = 50;</div><div class="line">var myScroll = setInterval(&apos;scrollUp()&apos;,time);//定时向上滚动</div><div class="line">//设置鼠标移入移出事件</div><div class="line">area.onmouseover=function()&#123;  //移入</div><div class="line">  clearInterval(myscroll);</div><div class="line">&#125;</div><div class="line">area.onmouseout=function()&#123;  //移出</div><div class="line">  myScroll = setInterval(&apos;scrollUp()&apos;,time);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div id=&quot;moocBox&quot;&gt;</div><div class="line">    &lt;ul id=&quot;con1&quot;&gt;//原始信息列表</div><div class="line">      &lt;li&gt;...&lt;/li&gt;</div><div class="line">      …</div><div class="line">      &lt;li&gt;...&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    &lt;ul id=&quot;con2&quot;&gt;&lt;/ul&gt;//用于克隆的信息列表</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>三、间歇性无缝滚动</p>
+<ul>
+<li>间歇性：滚动到一定程度时暂停一会，再继续滚动。</li>
+<li>原理：每滚动m行就<code>clearInterval</code>，然后通过<code>setTimeout</code>设置等待t秒后再执行<code>setInterval</code>。</li>
+<li>注意区别：<ol>
+<li><code>setTimeout</code>(表达式，延迟时间)：执行时，在载入后起延迟指定时间，才执行一次表达式，且仅执行一次，如需多次执行可以用递归或者循环；</li>
+<li><code>setInterVal</code>(表达式，交互时间)：执行时，从载入后起每隔指定时间，就执行一次表达式，一直执行下去。</li>
+</ol>
+</li>
+<li>实例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line"> 	var area = document.getElementById(&apos;moocBox&apos;);</div><div class="line"> 	area.innerHTML += area.innerHTML;//克隆</div><div class="line">  var speed = 50;</div><div class="line">  var delay = 2000;</div><div class="line"> 	var liHeight = 24; //设置滚动高度（这里为一行的高度）（也可以为多行的高度）</div><div class="line"> 	var time;</div><div class="line"> 	function startMove()</div><div class="line"> 	&#123;</div><div class="line">      area.scrollTop ++;</div><div class="line"> 		time = setInterval(&quot;scrollUp()&quot;,speed);</div><div class="line"> 	&#125;</div><div class="line"> 	function scrollUp()</div><div class="line">  &#123;</div><div class="line">  	if( area.scrollTop % liHeight == 0)  //当滚动高度整除行高时</div><div class="line">  	&#123;</div><div class="line">  	    clearInterval(time);  //先停止滚动</div><div class="line">  		setTimeout(&quot;startMove()&quot;,delay);  //等待2秒后再滚动</div><div class="line">  	&#125;</div><div class="line">  	else</div><div class="line">      &#123; </div><div class="line">          area.scrollTop ++;</div><div class="line">  		if(area.scrollTop &gt;= area.scrollHeight/2)// 当内容已滚动出可视区时 </div><div class="line">  		&#123;</div><div class="line">  			area.scrollTop = 0; //重置</div><div class="line">  		&#125;</div><div class="line">  	&#125;</div><div class="line"> 	&#125;</div><div class="line"> 	setTimeout(&quot;startMove()&quot;,delay); //初始调用一次setTimeout，以开始运动</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
