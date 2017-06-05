@@ -7,22 +7,24 @@
     
 
     <title>
-      所有文章: 2017/5 
+      underscore-Chaining | SPACE-19 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
     
 
-    <meta name="description" content="record--noBlog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="所有文章: 2017/5">
-<meta property="og:url" content="http://yoursite.com/archives/2017/05/index.html">
+    <meta name="description" content="Chaining chain()能通过包装对象来使对象能够进行链式调用。 链式调用每一步返回的都是包装对象，可通过调用value()获得最终结果。 例子：12345678//如一操作： _.filter(_.map([1, 4, 9, 16, 25], Math.sqrt), x =&amp;gt; x % 2 === 1); // [1, 3, 5] //将上述操作写成链式调用： _.chain([1,">
+<meta name="keywords" content="underscore">
+<meta property="og:type" content="article">
+<meta property="og:title" content="underscore-Chaining | SPACE-19">
+<meta property="og:url" content="http://yoursite.com/2017/06/06/underscore-Chaining/index.html">
 <meta property="og:site_name" content="SPACE-19">
-<meta property="og:description" content="record--noBlog">
+<meta property="og:description" content="Chaining chain()能通过包装对象来使对象能够进行链式调用。 链式调用每一步返回的都是包装对象，可通过调用value()获得最终结果。 例子：12345678//如一操作： _.filter(_.map([1, 4, 9, 16, 25], Math.sqrt), x =&amp;gt; x % 2 === 1); // [1, 3, 5] //将上述操作写成链式调用： _.chain([1,">
+<meta property="og:updated_time" content="2017-06-05T16:34:01.745Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="所有文章: 2017/5">
-<meta name="twitter:description" content="record--noBlog">
+<meta name="twitter:title" content="underscore-Chaining | SPACE-19">
+<meta name="twitter:description" content="Chaining chain()能通过包装对象来使对象能够进行链式调用。 链式调用每一步返回的都是包装对象，可通过调用value()获得最终结果。 例子：12345678//如一操作： _.filter(_.map([1, 4, 9, 16, 25], Math.sqrt), x =&amp;gt; x % 2 === 1); // [1, 3, 5] //将上述操作写成链式调用： _.chain([1,">
     
     
     
@@ -147,65 +149,49 @@ classes that you can use:
         <div class="content-wrapper__inner entry">
             
 
+<article class="post-container post-container--single">
 
-  <h1 class="archive-title">所有文章: 2017/5</h1>
-  <hr class="post-list__divider" />
-
-
-<div class="main-post-list">
-    <ol class="post-list">
+  <header class="post-header">
     
-    
-    <li>
+    <h1 class="post-title">underscore-Chaining</h1>
 
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/05/02/关于导航条菜单/" title="link to 关于导航条菜单">关于导航条菜单</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-05-02" class="post-list__meta--date date">2017-05-02</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/05/02/CSS-样式设置小技巧/" title="link to CSS-样式设置小技巧">CSS-样式设置小技巧</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-05-02" class="post-list__meta--date date">2017-05-02</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-  </ol>
-
-  <hr class="post-list__divider " />
-
-<nav class="pagination" role="navigation">
     
 
-    <span class="pagination__page-number"> 1 / 1</span>
+    <div class="post-meta">
+      <time datetime="2017-06-06" class="post-meta__date date">2017-06-06</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/underscore/">underscore</a>
+            </font>
+          
+
+      </span>
+    </div>
     
     
-</nav>
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="Chaining"><a href="#Chaining" class="headerlink" title="Chaining"></a>Chaining</h3><ul>
+<li><code>chain()</code>能通过包装对象来使对象能够进行链式调用。</li>
+<li>链式调用每一步返回的都是包装对象，可通过调用value()获得最终结果。</li>
+<li>例子：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//如一操作： </div><div class="line">_.filter(_.map([1, 4, 9, 16, 25], Math.sqrt), x =&gt; x % 2 === 1); // [1, 3, 5] </div><div class="line">//将上述操作写成链式调用： </div><div class="line">_.chain([1, 4, 9, 16, 25]) </div><div class="line"> .map(Math.sqrt)           //[1,2,3,4,5] </div><div class="line"> .filter(x =&gt; x % 2 === 1) //[1,3,5] </div><div class="line"> .value(); //[1,3,5] </div><div class="line">//因为每一步返回的都是包装对象，所以最后一步的结果需要调用value()获得最终结果。</div></pre></td></tr></table></figure></li>
+</ul>
+
+  </section>
+
+  
+  
+</article>
 
 
-</div>
             <footer class="footer">
 
     <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
@@ -233,6 +219,18 @@ classes that you can use:
 
 
     
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
     
     
     <!--kill ie6 -->
