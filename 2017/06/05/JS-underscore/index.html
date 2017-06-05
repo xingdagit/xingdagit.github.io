@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/05/JS-underscore/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="underscore简介 JavaScript是函数式编程语言，支持高阶函数和闭包。函数式编程非常强大，可以写出非常简洁的代码。  例如Array的map()和filter()方法： 1234&amp;apos;use strict&amp;apos;;var a1 = [1, 4, 9, 16];var a2 = a1.map(Math.sqrt); // [1, 2, 3, 4]var a3 = a2.fil">
-<meta property="og:updated_time" content="2017-06-05T13:37:31.196Z">
+<meta property="og:updated_time" content="2017-06-05T13:42:42.300Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS-underscore | SPACE-19">
 <meta name="twitter:description" content="underscore简介 JavaScript是函数式编程语言，支持高阶函数和闭包。函数式编程非常强大，可以写出非常简洁的代码。  例如Array的map()和filter()方法： 1234&amp;apos;use strict&amp;apos;;var a1 = [1, 4, 9, 16];var a2 = a1.map(Math.sqrt); // [1, 2, 3, 4]var a3 = a2.fil">
@@ -200,11 +200,12 @@ classes that you can use:
 </li>
 </ul>
 <h3 id="一、Collections"><a href="#一、Collections" class="headerlink" title="一、Collections"></a>一、Collections</h3><ul>
-<li><code>underscore</code>为<code>集合类</code>(<code>集合类</code>是指<code>Array</code>和<code>Object</code>，暂不支持Map和Set)对象提供了一致的接口。<br>1.map() / filter()<ul>
+<li><code>underscore</code>为<code>集合类</code>(<code>集合类</code>是指<code>Array</code>和<code>Object</code>，暂不支持Map和Set)对象提供了一致的接口。</li>
+</ul>
+<p>1.map() / filter()</p>
+<ul>
 <li><code>underscore</code>和Array的map()与filter()类似，但是<code>underscore的map()和filter()</code>可以作用于<code>Object</code>。</li>
 <li>当作用于<code>Object</code>时，传入的函数为<code>function (value, key)</code>，第一个参数接收value，第二个参数接收key：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var upper = _.map(obj, function (value, key) &#123;</div><div class="line">      return ???;</div><div class="line">   &#125;);</div><div class="line">//_.map返回结果是Array</div><div class="line">//若要返回Object，把_.map换成_.mapObject就可以</div></pre></td></tr></table></figure>
-</li>
-</ul>
 </li>
 </ul>
 <p>2.every() / some()</p>
@@ -229,7 +230,7 @@ classes that you can use:
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line">6.shuffle() / sample()</div><div class="line">  - `shuffle()`用洗牌算法随机打乱一个集合，且每次结果都不一样：</div><div class="line">    `_.shuffle([1, 2, 3, 4, 5, 6]); `// [3, 5, 4, 6, 2, 1]</div><div class="line">  - `sample()`则是随机选择`一个或多个`元素：</div></pre></td></tr></table></figure>
 <p>// 注意每次结果都不一样：<br>// 随机选1个：<br><em>.sample([1, 2, 3, 4, 5, 6]); // 2<br>// 随机选3个：
 </em>.sample([1, 2, 3, 4, 5, 6], 3); // [6, 1, 4]</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">* 更多完整`Collections`函数请参考underscore的文档：http://underscorejs.org/#collections</div><div class="line"></div><div class="line">### 二、Arrays</div><div class="line">* underscore为Array提供了许多工具类方法，可以更方便快捷地操作Array。</div><div class="line">1.first() / last()</div><div class="line">  - 分别取第一个和最后一个元素：</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">* 更多完整`Collections`函数请参考underscore的文档：http://underscorejs.org/#collections</div><div class="line"></div><div class="line">### 二、Arrays</div><div class="line">* underscore为Array提供了许多工具类方法，可以更方便快捷地操作Array。</div><div class="line"></div><div class="line">1.first() / last()</div><div class="line">  - 分别取第一个和最后一个元素：</div></pre></td></tr></table></figure>
 <p>var arr = [2, 4, 6, 8];<br><em>.first(arr); // 2
 </em>.last(arr); // 8</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line">2.flatten()</div><div class="line">  - `flatten()`接收一个Array(无论里面再嵌套了多少个Array)，`flatten()`最后都把它们变成一个`一维数组`：</div><div class="line">    `_.flatten([1, [2], [3, [[4], [5]]]]); // [1, 2, 3, 4, 5]`</div><div class="line">	</div><div class="line">3.zip() / unzip()</div><div class="line">  - `zip()`把两个或多个数组的所有元素按索引对齐，然后按索引合并成新数组。</div><div class="line">    例如，有一个Array保存了名字，另一个Array保存了分数，现在，要把名字和分数给对上，就可以用`zip()`轻松实现：</div></pre></td></tr></table></figure>
@@ -243,7 +244,7 @@ classes that you can use:
 <p>// 从1到11：<br>_.range(1, 11); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</p>
 <p>// 从0到30，步长5:<br>_.range(0, 30, 5); // [0, 5, 10, 15, 20, 25]</p>
 <p>// 从0到-10，步长-1:<br>_.range(0, -10, -1); // [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">* 更多完整`Arrays`函数请参考underscore的文档：http://underscorejs.org/#arrays</div><div class="line"></div><div class="line">### 三、Functions</div><div class="line">* 因为underscore本来就是为了充分发挥JavaScript的`函数式编程特性`，所以也提供了大量JavaScript本身没有的`高阶函数`。</div><div class="line">1.bind()</div><div class="line">  - 可以把将传入参数（如一个对象）直接绑定在一个函数的`this指针`上，从而更方便调用函数</div><div class="line">  - 实例：</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">* 更多完整`Arrays`函数请参考underscore的文档：http://underscorejs.org/#arrays</div><div class="line"></div><div class="line">### 三、Functions</div><div class="line">* 因为underscore本来就是为了充分发挥JavaScript的`函数式编程特性`，所以也提供了大量JavaScript本身没有的`高阶函数`。</div><div class="line"></div><div class="line">1.bind()</div><div class="line">  - 可以把将传入参数（如一个对象）直接绑定在一个函数的`this指针`上，从而更方便调用函数</div><div class="line">  - 实例：</div></pre></td></tr></table></figure>
 <p>console.log(‘Hello, world!’);// 输出’Hello, world!’<br>//若想用log()取代console.log()，更方便地输出：<br>//1.这方法不行，因为直接调用log()传入的this指针是undefined：<br>var log = console.log;<br>log(‘Hello, world!’);// Uncaught TypeError: Illegal invocation<br>//小知识：”独立调用一个函数，严格模式下this指向undefined，非严格模式下this指向window”</p>
 <p>//2.可以调用call并传入console对象作为this，但好像更麻烦了:<br>log.call(console, ‘Hello, world!’);// 输出Hello, world!</p>
 <p>//3.用bind()把console对象直接绑定在log()的this指针上，就可以直接正常调用log()来输出了<br>var log = _.bind(console.log, console);<br>log(‘Hello, world!’);  // 输出Hello, world!</p>
@@ -267,7 +268,7 @@ i --;
 <p>_.delay(alert, 2000);// 2秒后调用alert()</p>
 <p>// 如果要延迟调用的函数有参数，把参数也传进去：<br>var log = <em>.bind(console.log, console);
 </em>.delay(log, 2000, ‘Hello,world!’); // 2秒后打印’Hello, world!’:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">* 更多完整`Functions`函数请参考underscore的文档：http://underscorejs.org/#functions</div><div class="line"></div><div class="line"></div><div class="line">### 五、Objects</div><div class="line">* 和`Array`类似，underscore也提供了大量针对`Object`的函数。</div><div class="line">1.keys()/allKeys()</div><div class="line">  - `keys()`可以非常方便地返回一个object自身所有的`key`，但`不包含`从原型链继承下来的：</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">* 更多完整`Functions`函数请参考underscore的文档：http://underscorejs.org/#functions</div><div class="line"></div><div class="line"></div><div class="line">### 五、Objects</div><div class="line">* 和`Array`类似，underscore也提供了大量针对`Object`的函数。</div><div class="line"></div><div class="line">1.keys()/allKeys()</div><div class="line">  - `keys()`可以非常方便地返回一个object自身所有的`key`，但`不包含`从原型链继承下来的：</div></pre></td></tr></table></figure>
 <p>function Student(name, age) {<br>   this.name = name;<br>   this.age = age;<br>}<br>var xiaoming = new Student(‘小明’, 20);<br>_.keys(xiaoming); // [‘name’, ‘age’]</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- `allKeys()`除了object自身的`key`，还`包含`从原型链继承下来的：</div></pre></td></tr></table></figure>
 <p>function Student(name, age) {<br>  this.name = name;<br>  this.age = age;<br>}<br>Student.prototype.school = ‘No.1 Middle School’;<br>var xiaoming = new Student(‘小明’, 20);<br>_.allKeys(xiaoming); // [‘name’, ‘age’, ‘school’]</p>
@@ -290,7 +291,7 @@ i --;
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">7.isEqual()</div><div class="line">  - `isEqual()`对两个`object`或`Array`进行深度比较，内容完全相同则返回true（忽略内容顺序）：</div><div class="line">  - 例子：</div></pre></td></tr></table></figure>
 <p>//比较object：<br>var o1 = { name: ‘Bob’, skills: { Java: 90, JavaScript: 99 }};<br>var o2 = { name: ‘Bob’, skills: { JavaScript: 99, Java: 90 }};<br>o1 === o2; // false<br>_.isEqual(o1, o2); // true</p>
 <p>//比较Array：<br>var o1 = [ ‘Bob’, { skills:[‘Java’, ‘JavaScript’] }  ];<br>var o2 = [ ‘Bob’, { skills:[‘Java’, ‘JavaScript’] }  ];<br>o1 === o2; // false<br>_.isEqual(o1, o2); // true</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">* 更多完整`Objects`函数请参考underscore的文档：http://underscorejs.org/#objects</div><div class="line"></div><div class="line"></div><div class="line">### Chaining</div><div class="line">* `chain()`能通过包装对象来使对象能够进行链式调用。</div><div class="line">- 链式调用每一步返回的都是包装对象，可通过调用value()获得最终结果。</div><div class="line">* 例子：</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">* 更多完整`Objects`函数请参考underscore的文档：http://underscorejs.org/#objects</div><div class="line"></div><div class="line"></div><div class="line">### Chaining</div><div class="line">* `chain()`能通过包装对象来使对象能够进行链式调用。</div><div class="line">* 链式调用每一步返回的都是包装对象，可通过调用value()获得最终结果。</div><div class="line">* 例子：</div></pre></td></tr></table></figure>
 <p>//如一操作：<br><em>.filter(</em>.map([1, 4, 9, 16, 25], Math.sqrt), x =&gt; x % 2 === 1); // [1, 3, 5]<br>//将上述操作写成链式调用：<br>_.chain([1, 4, 9, 16, 25])<br>.map(Math.sqrt)           //[1,2,3,4,5]<br>.filter(x =&gt; x % 2 === 1) //[1,3,5]<br>.value();                 //[1,3,5]<br>//因为每一步返回的都是包装对象，所以最后一步的结果需要调用value()获得最终结果。<br>```</p>
 </li>
 </ul>
