@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      underscore-Functions | SPACE-19 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    
+
+    <meta name="description" content="Functions因为underscore本来就是为了充分发挥JavaScript的函数式编程特性，所以也提供了大量JavaScript本身没有的高阶函数。  bind()  可以把将传入参数（如一个对象）直接绑定在一个函数的this指针上，从而更方便调用函数 实例： 12345678910111213141516171819202122232425    console.log(&amp;apos;He">
+<meta name="keywords" content="underscore">
+<meta property="og:type" content="article">
+<meta property="og:title" content="underscore-Functions | SPACE-19">
+<meta property="og:url" content="http://yoursite.com/2017/06/05/underscore-Functions/index.html">
+<meta property="og:site_name" content="SPACE-19">
+<meta property="og:description" content="Functions因为underscore本来就是为了充分发挥JavaScript的函数式编程特性，所以也提供了大量JavaScript本身没有的高阶函数。  bind()  可以把将传入参数（如一个对象）直接绑定在一个函数的this指针上，从而更方便调用函数 实例： 12345678910111213141516171819202122232425    console.log(&amp;apos;He">
+<meta property="og:updated_time" content="2017-06-05T15:42:56.334Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="underscore-Functions | SPACE-19">
+<meta name="twitter:description" content="Functions因为underscore本来就是为了充分发挥JavaScript的函数式编程特性，所以也提供了大量JavaScript本身没有的高阶函数。  bind()  可以把将传入参数（如一个对象）直接绑定在一个函数的this指针上，从而更方便调用函数 实例： 12345678910111213141516171819202122232425    console.log(&amp;apos;He">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">SPACE-19</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          XD
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">underscore-Functions</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-05" class="post-meta__date date">2017-06-05</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/underscore/">underscore</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h3><p>因为underscore本来就是为了充分发挥JavaScript的<code>函数式编程特性</code>，所以也提供了大量JavaScript本身没有的<code>高阶函数</code>。</p>
+<ol>
+<li><p>bind()</p>
+<ul>
+<li>可以把将传入参数（如一个对象）直接绑定在一个函数的<code>this指针</code>上，从而更方便调用函数</li>
+<li><p>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">    console.log(&apos;Hello, world!&apos;);// 输出&apos;Hello, world!&apos;</div><div class="line">    //若想用log()取代console.log()，更方便地输出：</div><div class="line">	//1.这方法不行，因为直接调用log()传入的this指针是undefined：</div><div class="line">    var log = console.log;</div><div class="line">    log(&apos;Hello, world!&apos;);// Uncaught TypeError: Illegal invocation</div><div class="line">	//小知识：&quot;独立调用一个函数，严格模式下this指向undefined，非严格模式下this指向window&quot;</div><div class="line">	</div><div class="line">	//2.可以调用call并传入console对象作为this，但好像更麻烦了:</div><div class="line">    log.call(console, &apos;Hello, world!&apos;);// 输出Hello, world!</div><div class="line">	</div><div class="line">	//3.用bind()把console对象直接绑定在log()的this指针上，就可以直接正常调用log()来输出了</div><div class="line">	var log = _.bind(console.log, console);</div><div class="line">	log(&apos;Hello, world!&apos;);  // 输出Hello, world!</div><div class="line">    ```	</div><div class="line"></div><div class="line">2. partial()</div><div class="line">  - 认识`偏函数`：</div><div class="line">    假设要计算`x^y`，这时只需调用`Math.pow(x, y)`就可以了；</div><div class="line">    但当要经常计算`2^y`，每次都写`Math.pow(2, y)`就比较麻烦；</div><div class="line">	那我们就可以创建一个新的函数`pow2N(y)`，实现更方便调用；</div><div class="line">	这个新函数`pow2N(y)`就是根据`Math.pow(x, y)`创建出来的`偏函数`，它固定住了原函数的第一个参数（始终为2）</div><div class="line">  - 可见创建`偏函数`的目的是将原函数的某些参数固定住，从而降低新函数调用的难度。	</div><div class="line">  - `partial()`的作用就是为一个函数创建`偏函数`；</div><div class="line">  - 第一个参数为要参考的函数名，后面的参数即为原来传入参考函数的参数（可自己决定固定或不固定这些参数，不固定的用`_`代替）；</div><div class="line">  - 例子：</div></pre></td></tr></table></figure>
+<p>//计算2的n次方（固定第一个参数为2）：<br>var pow2N = <em>.partial(Math.pow, 2);<br>pow2N(3); // 8<br>pow2N(5); // 32<br>pow2N(10); // 1024<br>//计算n的3次方（固定第三个参数为3）：<br>var cube = </em>.partial(Math.pow, _ , 3);<br>cube(3); // 27<br>cube(5); // 125<br>cube(10); // 1000</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">3. memoize()</div><div class="line">  - 如果一个函数调用开销、耗时很大(计算过程长且数据多)（如计算阶乘），就希望能把结果缓存下来，以便后续调用时直接获得结果。</div><div class="line">  - `memoize()`的作用就是`自动缓存函数计算的结果`。</div><div class="line">  - 例子：</div></pre></td></tr></table></figure>
+<p>var factorial = _.memoize(function(n) {<br>  //计算n的阶乘n!<br>  console.log(‘开始计算’ + n + ‘!…’);<br>  var s = 1, i = n;<br>  while (i &gt; 1)<br>  {</p>
+<pre><code>s = s * i;
+i --;
+</code></pre><p>  }<br>  console.log(n + ‘! = ‘ + s);<br>  return s;<br>}<br>// 第一次调用:<br>factorial(10); // 3628800<br>// 注意控制台输出:<br>// start calculate 10!…<br>// 10! = 3628800</p>
+<p>//第一次调用后已自动缓存函数计算结果</p>
+<p>// 第二次调用并没有计算，而是直接返回上次计算后缓存的结果:<br>factorial(10); // 3628800<br>// 控制台没有输出</p>
+<p>//但是一换了参数，仍然会重新计算：<br>factorial(9); //会重新计算<br>//对factorial()函数改进为递归调用，就可以了：<br>var factorial = _.memoize(function(n) {<br>  console.log(‘start calculate ‘ + n + ‘!…’);<br>  if (n &lt; 2) {</p>
+<pre><code>return 1;
+</code></pre><p>  }<br>  return n * factorial(n - 1);<br>});<br>factorial(9); // 362880<br>// console无输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">4. once()</div><div class="line">  - `once()`保证某个函数执行且仅执行一次。</div><div class="line">  - 如果用户在页面上点两个按钮中任何一个都可以执行某函数的话，就可以用`once()`保证函数仅调用一次，无论用户点击多少次：</div></pre></td></tr></table></figure>
+<p>var register = _.once(function () {<br>   alert(‘已经点过了!’);<br>});</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">5. delay()</div><div class="line">  - `delay()`可以让一个函数延迟执行，效果和setTimeout()一样，但代码明显简单了：</div></pre></td></tr></table></figure>
+<p>_.delay(alert, 2000);// 2秒后调用alert()</p>
+<p>// 如果要延迟调用的函数有参数，把参数也传进去：<br>var log = <em>.bind(console.log, console);
+</em>.delay(log, 2000, ‘Hello,world!’); // 2秒后打印’Hello, world!’:<br>```</p>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>更多完整<code>Functions</code>函数请参考underscore的文档：<a href="http://underscorejs.org/#functions" target="_blank" rel="external">http://underscorejs.org/#functions</a></li>
+</ul>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
