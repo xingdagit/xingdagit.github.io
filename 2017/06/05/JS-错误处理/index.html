@@ -14,17 +14,17 @@
     
     
 
-    <meta name="description" content="一、在执行JavaScript代码的时候，有些情况下会发生错误。二、错误分两种： 1. 一种是程序写的逻辑不对，导致代码执行异常。对于这种错误，要修复程序。 例如： 12var s = null;var len = s.length; // TypeError：null变量没有length属性  2. 一种是执行过程中，程序可能遇到无法预测的异常情况而报错。 例如，网络连接中断，读取不存在的文件，">
+    <meta name="description" content="一、在执行JavaScript代码的时候，有些情况下会发生错误。二、错误分两种：  一种是程序写的逻辑不对，导致代码执行异常。对于这种错误，要修复程序。例如： 12var s = null;var len = s.length; // TypeError：null变量没有length属性  一种是执行过程中，程序可能遇到无法预测的异常情况而报错。例如，网络连接中断，读取不存在的文件，没有操作权限等">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS-错误处理 | SPACE-19">
 <meta property="og:url" content="http://yoursite.com/2017/06/05/JS-错误处理/index.html">
 <meta property="og:site_name" content="SPACE-19">
-<meta property="og:description" content="一、在执行JavaScript代码的时候，有些情况下会发生错误。二、错误分两种： 1. 一种是程序写的逻辑不对，导致代码执行异常。对于这种错误，要修复程序。 例如： 12var s = null;var len = s.length; // TypeError：null变量没有length属性  2. 一种是执行过程中，程序可能遇到无法预测的异常情况而报错。 例如，网络连接中断，读取不存在的文件，">
-<meta property="og:updated_time" content="2017-06-05T01:32:05.940Z">
+<meta property="og:description" content="一、在执行JavaScript代码的时候，有些情况下会发生错误。二、错误分两种：  一种是程序写的逻辑不对，导致代码执行异常。对于这种错误，要修复程序。例如： 12var s = null;var len = s.length; // TypeError：null变量没有length属性  一种是执行过程中，程序可能遇到无法预测的异常情况而报错。例如，网络连接中断，读取不存在的文件，没有操作权限等">
+<meta property="og:updated_time" content="2017-06-05T02:05:21.890Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS-错误处理 | SPACE-19">
-<meta name="twitter:description" content="一、在执行JavaScript代码的时候，有些情况下会发生错误。二、错误分两种： 1. 一种是程序写的逻辑不对，导致代码执行异常。对于这种错误，要修复程序。 例如： 12var s = null;var len = s.length; // TypeError：null变量没有length属性  2. 一种是执行过程中，程序可能遇到无法预测的异常情况而报错。 例如，网络连接中断，读取不存在的文件，">
+<meta name="twitter:description" content="一、在执行JavaScript代码的时候，有些情况下会发生错误。二、错误分两种：  一种是程序写的逻辑不对，导致代码执行异常。对于这种错误，要修复程序。例如： 12var s = null;var len = s.length; // TypeError：null变量没有length属性  一种是执行过程中，程序可能遇到无法预测的异常情况而报错。例如，网络连接中断，读取不存在的文件，没有操作权限等">
     
     
     
@@ -180,14 +180,14 @@ classes that you can use:
 
   <section id="post-content" class="article-content post">
     <p>一、在执行JavaScript代码的时候，有些情况下会发生错误。<br>二、错误分两种：</p>
-<pre><code>1. 一种是程序写的逻辑不对，导致代码执行异常。对于这种错误，要修复程序。
-例如：
+<ol>
+<li><p>一种是程序写的逻辑不对，导致代码执行异常。对于这种错误，要修复程序。<br>例如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var s = null;</div><div class="line">var len = s.length; // TypeError：null变量没有length属性</div></pre></td></tr></table></figure>
-
-2. 一种是执行过程中，程序可能遇到无法预测的异常情况而报错。
-例如，网络连接中断，读取不存在的文件，没有操作权限等。
-对于这种错误，就需要处理它，并可能需要给用户反馈。
-</code></pre><p>三、错误处理是程序设计时必须要考虑的问题。有些贴近系统底层的语言(如C)，错误是通过错误码返回的，不过这种方式表示错误在编写程序时十分不便。因此，高级语言通常都提供了更抽象的错误处理逻辑：<code>try ... catch ... finally</code>，JavaScript也不例外。</p>
+</li>
+<li><p>一种是执行过程中，程序可能遇到无法预测的异常情况而报错。<br>例如，网络连接中断，读取不存在的文件，没有操作权限等。<br>对于这种错误，就需要处理它，并可能需要给用户反馈。</p>
+</li>
+</ol>
+<p>三、错误处理是程序设计时必须要考虑的问题。有些贴近系统底层的语言(如C)，错误是通过错误码返回的，不过这种方式表示错误在编写程序时十分不便。因此，高级语言通常都提供了更抽象的错误处理逻辑：<code>try ... catch ... finally</code>，JavaScript也不例外。</p>
 <ul>
 <li><p>使用<code>try ... catch ... finally</code>处理错误时，上例代码编写如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var r1, r2, s = null;</div><div class="line">try</div><div class="line">&#123;</div><div class="line">  r1 = s.length; // 此处应产生错误</div><div class="line">  r2 = 100; // 该语句不会执行</div><div class="line">&#125; </div><div class="line">catch (e)</div><div class="line">&#123;</div><div class="line">  alert(&apos;出错了：&apos; + e);</div><div class="line">&#125;</div><div class="line">finally </div><div class="line">&#123;</div><div class="line">  console.log(&apos;finally&apos;);</div><div class="line">&#125;</div><div class="line">console.log(&apos;r1 = &apos; + r1); // r1应为undefined</div><div class="line">console.log(&apos;r2 = &apos; + r2); // r2应为undefined</div></pre></td></tr></table></figure>
