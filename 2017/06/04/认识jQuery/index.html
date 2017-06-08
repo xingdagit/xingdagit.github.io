@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/04/认识jQuery/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="jQuery的理念 ——-“Write Less, Do More”  jQuery是轻量级的javascript库其核心依然是javascript。不仅兼容了CSS3，还兼容各种浏览器  jQuery作用  消除浏览器差异：不需要写冗长的代码来针对不同的浏览器来绑定事件，编写AJAX等代码； 简洁的操作DOM的方法：写$(&amp;#39;#test&amp;#39;)肯定比document.getEleme">
-<meta property="og:updated_time" content="2017-06-08T13:31:32.846Z">
+<meta property="og:updated_time" content="2017-06-08T15:24:31.540Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="认识jQuery | SPACE-19">
 <meta name="twitter:description" content="jQuery的理念 ——-“Write Less, Do More”  jQuery是轻量级的javascript库其核心依然是javascript。不仅兼容了CSS3，还兼容各种浏览器  jQuery作用  消除浏览器差异：不需要写冗长的代码来针对不同的浏览器来绑定事件，编写AJAX等代码； 简洁的操作DOM的方法：写$(&amp;#39;#test&amp;#39;)肯定比document.getEleme">
@@ -219,9 +219,11 @@ classes that you can use:
 </li>
 </ul>
 <ul>
-<li>JQuery加载初始化页面的三种方法：<br>1.<code>$(document).ready(function(){});</code><br>2.<code>$(function(){});</code><br>3.<code>jQuery(function($){});</code></li>
+<li><p>JQuery加载初始化页面的三种方法：<br>1.<code>$(document).ready(function(){});</code><br>2.<code>$(function(){});</code><br>3.<code>jQuery(function($){});</code><br>加载初始化页面也就是等待页面的文档（document）中的节点都加载完毕后再执行后续的代码，因为在执行代码的时可能会依赖页面的某一个元素，所以要确保这个元素真正的的被加载完毕后才能正确的使用。</p>
+</li>
+<li><p>为什么javascript代码要放在body中？<br>当文档加载的时候就会自动实行脚本（javascript），如果不放在body中，就要在代码开头要加上<br><code>$(document).ready(function(){});</code> ，<br>相当于原生js代码中的<code>window.onload= function（）{}</code></p>
+</li>
 </ul>
-<p>加载初始化页面也就是等待页面的文档（document）中的节点都加载完毕后再执行后续的代码，因为在执行代码的时可能会依赖页面的某一个元素，所以要确保这个元素真正的的被加载完毕后才能正确的使用。</p>
 
   </section>
 
