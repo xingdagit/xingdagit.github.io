@@ -14,17 +14,17 @@
     
     
 
-    <meta name="description" content="jQuery对象与DOM对象对一个&amp;lt;p id=”aaa”&amp;gt;&amp;lt;/p&amp;gt;进行操作：  普通处理，即通过标准JavaScript处理： 123var p = document.getElementById(&amp;apos;aaa&amp;apos;);p.innerHTML = &amp;apos;哈哈哈哈哈&amp;apos;;p.style.color = &amp;apos;red&amp;apos;; 通过原生DOM">
+    <meta name="description" content="对一个&amp;lt;p id=&amp;quot;aaa&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;进行操作：  普通处理，即通过标准JavaScript处理： 123var p = document.getElementById(&amp;apos;aaa&amp;apos;);p.innerHTML = &amp;apos;哈哈哈哈哈&amp;apos;;p.style.color = &amp;apos;red&amp;apos;; 通过原生DOM模型提供">
 <meta name="keywords" content="jQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery对象与DOM对象 | SPACE-19">
 <meta property="og:url" content="http://yoursite.com/2017/06/08/jQuery对象与DOM对象/index.html">
 <meta property="og:site_name" content="SPACE-19">
-<meta property="og:description" content="jQuery对象与DOM对象对一个&amp;lt;p id=”aaa”&amp;gt;&amp;lt;/p&amp;gt;进行操作：  普通处理，即通过标准JavaScript处理： 123var p = document.getElementById(&amp;apos;aaa&amp;apos;);p.innerHTML = &amp;apos;哈哈哈哈哈&amp;apos;;p.style.color = &amp;apos;red&amp;apos;; 通过原生DOM">
-<meta property="og:updated_time" content="2017-06-08T15:46:14.239Z">
+<meta property="og:description" content="对一个&amp;lt;p id=&amp;quot;aaa&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;进行操作：  普通处理，即通过标准JavaScript处理： 123var p = document.getElementById(&amp;apos;aaa&amp;apos;);p.innerHTML = &amp;apos;哈哈哈哈哈&amp;apos;;p.style.color = &amp;apos;red&amp;apos;; 通过原生DOM模型提供">
+<meta property="og:updated_time" content="2017-06-08T15:58:17.133Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery对象与DOM对象 | SPACE-19">
-<meta name="twitter:description" content="jQuery对象与DOM对象对一个&amp;lt;p id=”aaa”&amp;gt;&amp;lt;/p&amp;gt;进行操作：  普通处理，即通过标准JavaScript处理： 123var p = document.getElementById(&amp;apos;aaa&amp;apos;);p.innerHTML = &amp;apos;哈哈哈哈哈&amp;apos;;p.style.color = &amp;apos;red&amp;apos;; 通过原生DOM">
+<meta name="twitter:description" content="对一个&amp;lt;p id=&amp;quot;aaa&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;进行操作：  普通处理，即通过标准JavaScript处理： 123var p = document.getElementById(&amp;apos;aaa&amp;apos;);p.innerHTML = &amp;apos;哈哈哈哈哈&amp;apos;;p.style.color = &amp;apos;red&amp;apos;; 通过原生DOM模型提供">
     
     
     
@@ -179,25 +179,23 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h3 id="jQuery对象与DOM对象"><a href="#jQuery对象与DOM对象" class="headerlink" title="jQuery对象与DOM对象"></a>jQuery对象与DOM对象</h3><p>对一个<code>&lt;p id=”aaa”&gt;&lt;/p&gt;</code>进行操作：</p>
+    <p>对一个<code>&lt;p id=&quot;aaa&quot;&gt;&lt;/p&gt;</code>进行操作：</p>
 <ol>
 <li><p>普通处理，即通过标准JavaScript处理：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var p = document.getElementById(&apos;aaa&apos;);</div><div class="line">p.innerHTML = &apos;哈哈哈哈哈&apos;;</div><div class="line">p.style.color = &apos;red&apos;;</div></pre></td></tr></table></figure>
-<p>通过原生DOM模型提供的<code>document.getElementById(“aaa”)</code>方法获取的DOM元素就是一个<code>DOM对象</code>，再通过innerHTML与style属性处理文本与颜色。</p>
+<p>通过原生DOM模型提供的<code>document.getElementById(&quot;aaa&quot;)</code>方法获取的DOM元素就是一个<code>DOM对象</code>，再通过innerHTML与style属性处理文本与颜色。</p>
 </li>
 <li><p>jQuery的处理：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var $p = $(&apos;#aaa&apos;);</div><div class="line">$p.html(&apos;哈哈哈哈哈哈&apos;).css(&apos;color&apos;,&apos;red&apos;);</div></pre></td></tr></table></figure>
-<p>通过$(‘#aaa’)方法会得到一个$p的<code>jQuery对象</code>，$p是一个类数组对象。这个对象里面包含了DOM对象的信息，然后封装了很多操作方法，调用自己的方法html与css，得到的效果与标准的JavaScript处理结果是一致的。</p>
+<p>通过<code>$(&#39;#aaa&#39;)</code>方法会得到一个$p的<code>jQuery对象</code>，$p是一个类数组对象。这个对象里面包含了DOM对象的信息，然后封装了很多操作方法，调用自己的方法html与css，得到的效果与标准的JavaScript处理结果是一致的。</p>
 </li>
 </ol>
 <p>通过标准的JavaScript操作DOM与jQuyer操作DOM的对比，不难发现：<br>1.通过jQuery方法包装后的对象，是一个类数组对象。它与DOM对象完全不同，唯一相似的是它们都能操作DOM。<br>2.通过jQuery处理DOM的操作，可以让开发者更专注业务逻辑的开发，而不需要我们具体知道哪个DOM节点有那些方法，也不需要关心不同浏览器的兼容性问题，我们通过jQuery提供的API进行开发，代码也会更加精短。</p>
 <blockquote>
 <p>类数组对象：一个对象并不是由Array构造函数所创建的,但它依然呈现出数组的行为,这些对象被称为“类数组对象”。</p>
 </blockquote>
-<h3 id="jQuery对象与DOM对象之间的相互转换"><a href="#jQuery对象与DOM对象之间的相互转换" class="headerlink" title="jQuery对象与DOM对象之间的相互转换"></a>jQuery对象与DOM对象之间的相互转换</h3><p>jQuery库本质上还是JavaScript代码，它只是对JavaScript语言进行包装处理，为的是提供更好更方便快捷的DOM处理与开发中经常使用的功能。我们使用jQuery的同时也能混合JavaScript原生代码一起使用。<br>而在很多场景中，我们需要jQuery与DOM能够相互的转换，它们都是可以操作的DOM元素，jQuery是一个类数组对象，而DOM对象就是一个单独的DOM元素。</p>
-<ul>
-<li>jQuery对象 转化成 DOM对象</li>
-</ul>
+<h3 id="jQuery对象与DOM对象之间的相互转换"><a href="#jQuery对象与DOM对象之间的相互转换" class="headerlink" title="jQuery对象与DOM对象之间的相互转换"></a>jQuery对象与DOM对象之间的相互转换</h3><p>  jQuery库本质上还是JavaScript代码，它只是对JavaScript语言进行包装处理，为的是提供更好更方便快捷的DOM处理与开发中经常使用的功能。我们使用jQuery的同时也能混合JavaScript原生代码一起使用。<br>  而在很多场景中，我们需要jQuery与DOM能够相互的转换，它们都是可以操作的DOM元素，jQuery是一个类数组对象，而DOM对象就是一个单独的DOM元素。</p>
+<p>一、jQuery对象 转化成 DOM对象</p>
 <ol>
 <li><p>利用<code>数组下标</code>的方式读取到jQuery中的DOM对象</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//HTML代码：</div><div class="line">&lt;div&gt;元素一&lt;/div&gt;</div><div class="line">&lt;div&gt;元素二&lt;/div&gt;</div><div class="line">&lt;div&gt;元素三&lt;/div&gt;</div><div class="line"></div><div class="line">//javascript代码：</div><div class="line">var $div = $(&apos;div&apos;) //得到jQuery对象 </div><div class="line">var div = $div[0] //转化成DOM对象 </div><div class="line">div.style.color = &apos;red&apos; //操作dom对象的属性</div><div class="line"></div><div class="line">//用jQuery找到所有的div元素（3个），因为jQuery对象也是一个数组结构，可以通过数组下标索引找到第一个div元素，通过返回的div对象，调用它的style属性修改第一个div元素的颜色。</div><div class="line">//要注意的是，数组的索引是从0开始的，即第一个元素下标是0</div></pre></td></tr></table></figure>
@@ -207,9 +205,7 @@ classes that you can use:
 </li>
 </ol>
 <p>其实源码里面的<code>get方法</code>就是利用的第一种方式处理的，只是包装成一个函数让开发者更直接方便的使用。</p>
-<ul>
-<li>DOM对象 转化成 jQuery对象<br>相比较jQuery转化成DOM，开发中更多的情况是把一个<code>Dom对象</code>加工成<code>jQuery对象</code>。<br><code>$(参数)</code>是一个多功能的方法，通过传递不同的参数而产生不同的作用。<br>所以把一个<code>Dom对象</code>转换成<code>jQuery对象</code>的方法是：<br>通过给<code>$(参数)</code>函数传递一个<code>DOM对象</code>的参数，jQuery方法就会把这个<code>DOM对象</code>给包装成一个<code>新的jQuery对象</code>。<br>例子：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//HTML代码:</div><div class="line">&lt;div&gt;元素一&lt;/div&gt;</div><div class="line">&lt;div&gt;元素二&lt;/div&gt;</div><div class="line">&lt;div&gt;元素三&lt;/div&gt;</div><div class="line"></div><div class="line">//JavaScript代码:</div><div class="line">//先获取到所有div节点的元素，结果是一个DOM合集对象(包含3个div元素)：</div><div class="line">var div = document.getElementsByTagName(&apos;div&apos;); //得到DOM对象 </div><div class="line">var $div = $(div); //转化得到jQuery对象 </div><div class="line">var $first = $div.first(); //找到第一个div元素 </div><div class="line">$first.css(&apos;color&apos;, &apos;red&apos;); //给第一个元素设置颜色</div></pre></td></tr></table></figure></li>
-</ul>
+<p>二、DOM对象 转化成 jQuery对象<br>相比较jQuery转化成DOM，开发中更多的情况是把一个<code>Dom对象</code>加工成<code>jQuery对象</code>。<br><code>$(参数)</code>是一个多功能的方法，通过传递不同的参数而产生不同的作用。<br>所以把一个<code>Dom对象</code>转换成<code>jQuery对象</code>的方法是：<br>通过给<code>$(参数)</code>函数传递一个<code>DOM对象</code>的参数，jQuery方法就会把这个<code>DOM对象</code>给包装成一个<code>新的jQuery对象</code>。<br>例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//HTML代码:</div><div class="line">&lt;div&gt;元素一&lt;/div&gt;</div><div class="line">&lt;div&gt;元素二&lt;/div&gt;</div><div class="line">&lt;div&gt;元素三&lt;/div&gt;</div><div class="line"></div><div class="line">//JavaScript代码:</div><div class="line">//先获取到所有div节点的元素，结果是一个DOM合集对象(包含3个div元素)：</div><div class="line">var div = document.getElementsByTagName(&apos;div&apos;); //得到DOM对象 </div><div class="line">var $div = $(div); //转化得到jQuery对象 </div><div class="line">var $first = $div.first(); //找到第一个div元素 </div><div class="line">$first.css(&apos;color&apos;, &apos;red&apos;); //给第一个元素设置颜色</div></pre></td></tr></table></figure></p>
 
   </section>
 
