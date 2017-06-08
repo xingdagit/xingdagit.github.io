@@ -14,17 +14,17 @@
     
     
 
-    <meta name="description" content="jQuery的理念 ——-“Write Less, Do More”  jQuery作用  消除浏览器差异：不需要写冗长的代码来针对不同的浏览器来绑定事件，编写AJAX等代码； 简洁的操作DOM的方法：写$(&amp;#39;#test&amp;#39;)肯定比document.getElementById(&amp;#39;test&amp;#39;)来得简洁； 轻松实现动画、修改CSS等各种操作。   jQuery版本">
+    <meta name="description" content="jQuery的理念 ——-“Write Less, Do More”  jQuery是轻量级的javascript库其核心依然是javascript。不仅兼容了CSS3，还兼容各种浏览器  jQuery作用  消除浏览器差异：不需要写冗长的代码来针对不同的浏览器来绑定事件，编写AJAX等代码； 简洁的操作DOM的方法：写$(&amp;#39;#test&amp;#39;)肯定比document.getEleme">
 <meta name="keywords" content="jQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="认识jQuery | SPACE-19">
 <meta property="og:url" content="http://yoursite.com/2017/06/04/认识jQuery/index.html">
 <meta property="og:site_name" content="SPACE-19">
-<meta property="og:description" content="jQuery的理念 ——-“Write Less, Do More”  jQuery作用  消除浏览器差异：不需要写冗长的代码来针对不同的浏览器来绑定事件，编写AJAX等代码； 简洁的操作DOM的方法：写$(&amp;#39;#test&amp;#39;)肯定比document.getElementById(&amp;#39;test&amp;#39;)来得简洁； 轻松实现动画、修改CSS等各种操作。   jQuery版本">
-<meta property="og:updated_time" content="2017-06-04T12:44:34.986Z">
+<meta property="og:description" content="jQuery的理念 ——-“Write Less, Do More”  jQuery是轻量级的javascript库其核心依然是javascript。不仅兼容了CSS3，还兼容各种浏览器  jQuery作用  消除浏览器差异：不需要写冗长的代码来针对不同的浏览器来绑定事件，编写AJAX等代码； 简洁的操作DOM的方法：写$(&amp;#39;#test&amp;#39;)肯定比document.getEleme">
+<meta property="og:updated_time" content="2017-06-08T13:31:32.846Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="认识jQuery | SPACE-19">
-<meta name="twitter:description" content="jQuery的理念 ——-“Write Less, Do More”  jQuery作用  消除浏览器差异：不需要写冗长的代码来针对不同的浏览器来绑定事件，编写AJAX等代码； 简洁的操作DOM的方法：写$(&amp;#39;#test&amp;#39;)肯定比document.getElementById(&amp;#39;test&amp;#39;)来得简洁； 轻松实现动画、修改CSS等各种操作。   jQuery版本">
+<meta name="twitter:description" content="jQuery的理念 ——-“Write Less, Do More”  jQuery是轻量级的javascript库其核心依然是javascript。不仅兼容了CSS3，还兼容各种浏览器  jQuery作用  消除浏览器差异：不需要写冗长的代码来针对不同的浏览器来绑定事件，编写AJAX等代码； 简洁的操作DOM的方法：写$(&amp;#39;#test&amp;#39;)肯定比document.getEleme">
     
     
     
@@ -182,22 +182,28 @@ classes that you can use:
     <ul>
 <li><p>jQuery的理念 ——-“Write Less, Do More”</p>
 </li>
+<li><p>jQuery是<code>轻量级</code>的javascript库<br>其核心依然是javascript。<br>不仅兼容了CSS3，还兼容各种浏览器</p>
+</li>
 <li><p>jQuery作用</p>
 <ol>
 <li>消除浏览器差异：不需要写冗长的代码来针对不同的浏览器来绑定事件，编写AJAX等代码；</li>
 <li>简洁的操作DOM的方法：写<code>$(&#39;#test&#39;)</code>肯定比<code>document.getElementById(&#39;test&#39;)</code>来得简洁；</li>
 <li>轻松实现动画、修改CSS等各种操作。</li>
+<li>丰富的UI</li>
+<li>完善的事件机制</li>
+<li>出色的Ajax封装</li>
 </ol>
 </li>
 <li><p>jQuery版本</p>
 <ul>
 <li>目前有1.x和2.x两个主要版本。</li>
-<li>区别：2.x移除了对古老的IE 6、7、8的支持，因此2.x的代码更精简（选择哪个版本主要取决于你是否想支持IE 6~8）。</li>
-<li>从jQuery官网可以下载最新版本。下载的jQuery只是一个jquery-xxx.js文件，有compressed（已压缩）和uncompressed（未压缩）两种版本，使用时完全一样。但如果你想深入研究jQuery源码，那就用uncompressed版本。</li>
+<li>区别：2.x为了兼容移动端开发而移除了对古老的IE 6、7、8的支持，因此2.x的代码更精简更快（选择哪个版本主要取决于你是否想支持IE 6~8）。</li>
+<li>从jQuery官网可以下载最新版本。下载的jQuery只是一个jquery-xxx.js文件，有<code>compressed（已压缩）</code>和<code>uncompressed（开发版）</code>两种版本。<br>使用时完全一样，但若要深入研究jQuery源码，并且在开发中便于代码修改及调试，那就用uncompressed版本；而在项目上线发布时就要用compressed版本（体积更小，效率更快）</li>
+<li><a href="http://jquery.com/download/" target="_blank" rel="external">jQuery官网下载页面</a></li>
 </ul>
 </li>
-<li><p>引入jQuery<br>方法：在页面的<code>&lt;head&gt;</code>内引入jQuery文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">   &lt;script src=&quot;//code.jquery.com/jquery-1.11.3.min.js&quot;&gt;…&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
+<li><p>引入jQuery<br>jQuery是<code>轻量级</code>的javascript脚本库,所以不需特别的安装即可使用。<br>引入jQuery方法：在页面的<code>&lt;head&gt;</code>内引入jQuery文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">   &lt;script type=&quot;text/javascript&quot; src=&quot;//code.jquery.com/jquery-1.11.3.min.js&quot;&gt;…&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
 </li>
 <li><p><code>$</code>符号</p>
 <ul>
@@ -207,10 +213,15 @@ classes that you can use:
 <li><p><code>$</code>本质上就是一个函数，但是函数也是对象，于是<code>$</code>除了可以直接调用外，也有很多其他属性。</p>
 </li>
 <li>注意，你看到的<code>$</code>函数名可能不是<code>jQuery(selector, context)</code>，因为很多JavaScript压缩工具可以对函数名和参数改名，所以压缩过的jQuery源码<code>$</code>函数可能变成<code>a(b, c)</code>。</li>
-<li>大多数时候都直接用<code>$</code>（因为写起来更简单）。但如果<code>$</code>这个变量不幸地被占用了，而且还不能改，那就只能让jQuery把<code>$</code>变量交出来，然后就只能使用<code>jQuery</code>这个变量：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$;  // jQuery(selector, context)</div><div class="line">jQuery.noConflict();</div><div class="line">$;  // undefined</div><div class="line">jQuery;  // jQuery(selector, context)</div><div class="line">//由于jQuery在占用`$`之前，先在内部保存了原来的$，所以调用`jQuery.noConflict()`会把原来保存的变量还原</div></pre></td></tr></table></figure></li>
+<li>大多数时候都直接用<code>$</code>（因为写起来更简单）。但如果<code>$</code>这个变量不幸地被占用了，而且还不能改，那就只能让jQuery把<code>$</code>变量交出来，然后就只能使用<code>jQuery</code>这个变量：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$;  // jQuery(selector, context)</div><div class="line">jQuery.noConflict();</div><div class="line">$;  // undefined</div><div class="line">jQuery;  // jQuery(selector, context)</div><div class="line">//由于jQuery在占用`$`之前，先在内部保存了原来的$，所以调用`jQuery.noConflict()`会把原来保存的变量还原</div><div class="line">//也可以将这个别名赋给一个新的变量：</div><div class="line">var j = jQuery.noConflict();//这样就可以用“j”替代“$”了</div></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
+<ul>
+<li>JQuery加载初始化页面的三种方法：<br>1.<code>$(document).ready(function(){});</code><br>2.<code>$(function(){});</code><br>3.<code>jQuery(function($){});</code></li>
+</ul>
+<p>加载初始化页面也就是等待页面的文档（document）中的节点都加载完毕后再执行后续的代码，因为在执行代码的时可能会依赖页面的某一个元素，所以要确保这个元素真正的的被加载完毕后才能正确的使用。</p>
 
   </section>
 
