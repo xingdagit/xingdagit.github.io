@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/12/jQuery-DOM/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="jQuery动态操作DOM 用选择器拿到了jQuery对象之后做什么呢——–操作对应的DOM节点 用jQuery对象操作DOM，可改善JavaScript操作DOM的许多不足，而且不需要考虑浏览器差异了，全部统一操作。 一个jQuery对象可以包含(选择)0个或任意个DOM对象，它的方法实际上会作用在对应的每个DOM节点上。  jQuery对象有“批量操作”的特点。 jQuery对象的所有方法都返">
-<meta property="og:updated_time" content="2017-06-12T16:35:42.986Z">
+<meta property="og:updated_time" content="2017-06-12T16:41:11.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery-DOM | SPACE-19">
 <meta name="twitter:description" content="jQuery动态操作DOM 用选择器拿到了jQuery对象之后做什么呢——–操作对应的DOM节点 用jQuery对象操作DOM，可改善JavaScript操作DOM的许多不足，而且不需要考虑浏览器差异了，全部统一操作。 一个jQuery对象可以包含(选择)0个或任意个DOM对象，它的方法实际上会作用在对应的每个DOM节点上。  jQuery对象有“批量操作”的特点。 jQuery对象的所有方法都返">
@@ -186,39 +186,24 @@ classes that you can use:
 <li>jQuery对象有“批量操作”的特点。</li>
 <li>jQuery对象的所有方法都返回一个jQuery对象（可能是新的也可能是自身），因此可设置<code>var 变量名=$(‘….’);</code>，再利用该变量名来调用方法。</li>
 </ul>
-<h3 id="1-创建DOM节点和节点属性"><a href="#1-创建DOM节点和节点属性" class="headerlink" title="1.创建DOM节点和节点属性"></a>1.创建DOM节点和节点属性</h3><p>创建的流程：</p>
-<ol>
-<li>创建节点（如元素、属性和文本）</li>
-<li>添加节点的一些属性</li>
-<li>加入到文档中<br>先回顾使用javascript原生方法<br>1)创建元素：<code>document.createElement</code><br>2)设置属性：<code>setAttribute</code><br>3)添加文本：<code>innerHTML</code><br>4)加入文档：<code>appendChild</code><br>原生方法的一些问题：<br>1、每一个元素节点都必须单独创建<br>2、节点是属性需要单独设置，而且设置的接口不是很统一<br>3、添加到指定的元素位置不灵活<br>4、最后还有一个最重要的：浏览器兼容问题处理<br>使用jQuery的方法</li>
-<li>创建元素节点：<br>一般是通过<code>$()函数</code>处理，并直接把要创建节点的结构通过<code>HTML标记字符串</code>描述出来。<br>语法：<code>$(&quot;html结构&quot;)</code>，如<code>$(&quot;&lt;div&gt;&lt;/div&gt;&quot;)</code></li>
-<li>创建为本节点：<br>方法与创建元素节点类似，可以直接把文本内容一并描述。<br>如 <code>$( &quot;&lt;div&gt;我是文本节点&lt;/div&gt;&quot; )</code></li>
-<li>创建为属性节点：<br>与创建元素节点同样的方式。<br>如 <code>$( &quot;&lt;div id=&#39;test&#39; class=&#39;aaron&#39;&gt;我是文本节点&lt;/div&gt;&quot; )</code></li>
-</ol>
+<h3 id="1-创建DOM节点和节点属性"><a href="#1-创建DOM节点和节点属性" class="headerlink" title="1.创建DOM节点和节点属性"></a>1.创建DOM节点和节点属性</h3><p>创建的流程：<br>  1.创建节点（如元素、属性和文本）<br>  2.添加节点的一些属性<br>  3.加入到文档中<br>先回顾使用javascript原生方法<br>  1)创建元素：<code>document.createElement</code><br>  2)设置属性：<code>setAttribute</code><br>  3)添加文本：<code>innerHTML</code><br>  4)加入文档：<code>appendChild</code><br>原生方法的一些问题：<br>  1、每一个元素节点都必须单独创建<br>  2、节点是属性需要单独设置，而且设置的接口不是很统一<br>  3、添加到指定的元素位置不灵活<br>  4、最后还有一个最重要的：浏览器兼容问题处理<br>使用jQuery的方法<br>  1.创建元素节点：<br>  一般是通过<code>$()函数</code>处理，并直接把要创建节点的结构通过<code>HTML标记字符串</code>描述出来。<br>  语法：<code>$(&quot;html结构&quot;)</code>，如<code>$(&quot;&lt;div&gt;&lt;/div&gt;&quot;)</code><br>  2.创建为本节点：<br>  方法与创建元素节点类似，可以直接把文本内容一并描述。<br>  如 <code>$( &quot;&lt;div&gt;我是文本节点&lt;/div&gt;&quot; )</code><br>  3.创建为属性节点：<br>  与创建元素节点同样的方式。<br>  如 <code>$( &quot;&lt;div id=&#39;test&#39; class=&#39;aaron&#39;&gt;我是文本节点&lt;/div&gt;&quot; )</code></p>
 <h3 id="2-DOM节点的添加-插入"><a href="#2-DOM节点的添加-插入" class="headerlink" title="2.DOM节点的添加(插入)"></a>2.DOM节点的添加(插入)</h3><p>上面方法只是创建了元素节点，它只是临时存放在内存中，还没有加入到文档中。<br>加入到文档中就需要添加DOM节点，这涉及到一个位置关系。常见的就是把这个新创建的元素，当作页面某一个元素的子元素放到其内部。<br>如果要添加的DOM节点已经存在于HTML文档中，它会首先从文档移除，然后再添加，相当于<code>移动</code>一个DOM节点。</p>
-<ul>
-<li><p>内部末尾添加DOM节点<br>对存在<code>父子、祖辈关系</code>的节点可实现<code>内部添加DOM节点</code>;<br>jQuery定义了2个方法来实现<code>内部末尾添加DOM节点</code>：</p>
+<p>一、内部末尾添加DOM节点<br>对存在<code>父子、祖辈关系</code>的节点可实现<code>内部添加DOM节点</code>;<br>jQuery定义了2个方法来实现<code>内部末尾添加DOM节点</code>：</p>
 <ol>
 <li><code>append(content)方法</code>：<br>作用：向每个匹配的元素内部<code>追加</code>内容；<br>调用者是<code>被插入的对象</code>；<br>参数为<code>在对象内插入的元素内容</code>；<br>与原生的<code>appendChild方法</code>类似；</li>
 <li><code>appendTo(content)方法</code><br>作用：把所有匹配的元素<code>追加</code>到另一个指定的元素/元素集合中；<br>实际上这个方法颠倒了上面的<code>$(A).append(B)</code>方法操作，即不是把B追加到A中，而是把A追加到B中；<br>调用者是<code>要插入的元素内容</code>;<br>参数为<code>被插入的对象</code>；</li>
 </ol>
-</li>
-<li><p>内部前头添加DOM节点<br>对存在<code>父子、祖辈关系</code>的节点可实现<code>内部添加DOM节点</code>;<br>jQuery定义了2个方法来实现<code>内部前头添加DOM节点</code>：</p>
+<p>二、内部前头添加DOM节点<br>对存在<code>父子、祖辈关系</code>的节点可实现<code>内部添加DOM节点</code>;<br>jQuery定义了2个方法来实现<code>内部前头添加DOM节点</code>：</p>
 <ol>
 <li><code>prepend(content)方法</code>：<br>作用：向每个匹配的元素内部<code>前置</code>内容；</li>
 <li><code>prependTo(content)方法</code>：<br>作用：把所有匹配的元素<code>前置</code>到另一个指定的元素/元素集合中</li>
 </ol>
-</li>
-<li><p>外部添加DOM节点<br>对存在<code>兄弟关系</code>的节点可实现<code>外部添加DOM节点</code>;<br>jQuery定义了2个方法来实现外部添加DOM节点：</p>
+<p>三、外部添加DOM节点<br>对存在<code>兄弟关系</code>的节点可实现<code>外部添加DOM节点</code>;<br>jQuery定义了2个方法来实现外部添加DOM节点：</p>
 <ol>
 <li><code>after(content)方法</code>：<br>作用：在匹配元素集合中的每个元素后面插入参数所指定的内容，作为其兄弟节点；<br>after向元素的后边添加html代码，如果元素后面有元素了，那将后面的元素后移，然后将html代码插入</li>
 <li><code>before(content)方法</code>：<br>作用：根据参数在匹配元素的前面插入内容<br>before向元素的前边添加html代码，如果元素前面有元素了，那将前面的元素前移，然后将html代码插入<br>两种方法的相同点：<br>1)都是用来对相对选中元素外部增加相邻的兄弟节点<br>2)都可以接收<code>HTML字符串，DOM元素，元素数组，或者jQuery对象</code>为参数，用来插入到集合中每个匹配元素的前面或者后面<br>3)都支持多个参数传递，如<code>after(div1,div2,....)</code><br>还有insertAfter()与insertBefore()两种方法，只是调用对象与参数不同</li>
 </ol>
-</li>
-<li><p>实例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;test-div&quot;&gt;</div><div class="line">  &lt;ul&gt;</div><div class="line">     &lt;li&gt;&lt;span&gt;JavaScript&lt;/span&gt;&lt;/li&gt;</div><div class="line">     &lt;li&gt;&lt;span&gt;Python&lt;/span&gt;&lt;/li&gt;</div><div class="line">     &lt;li&gt;&lt;span&gt;Swift&lt;/span&gt;&lt;/li&gt;</div><div class="line">  &lt;/ul&gt;</div><div class="line"> &lt;/div&gt;</div><div class="line"> /*****************向列表新增一个语言*******************/ </div><div class="line"> var ul = $(&apos;#test-div&gt;ul&apos;);  //先拿到`&lt;ul&gt;`节点 </div><div class="line"></div><div class="line"> //添加字符串(HTML片段):</div><div class="line"> ul.append(&apos;&lt;li&gt;&lt;span&gt;Haskell&lt;/span&gt;&lt;/li&gt;&apos;); </div><div class="line"></div><div class="line"> // 添加DOM对象:</div><div class="line"> var ps = document.createElement(&apos;li&apos;);//先创建</div><div class="line"> ps.innerHTML = &apos;&lt;span&gt;Pascal&lt;/span&gt;&apos;;//赋值</div><div class="line"> ul.append(ps);</div><div class="line"></div><div class="line"> // 添加jQuery对象:</div><div class="line"> ul.append($(&apos;#scheme&apos;));</div><div class="line"></div><div class="line"> // 添加函数对象: </div><div class="line"> //传入函数时，要求返回一个字符串、DOM对象或者jQuery对象。因为jQuery的append()可能作用于一组DOM节点，只有传入函数才能针对每个DOM生成不同的子节点。</div><div class="line"> ul.append(function (index, html) &#123;</div><div class="line">    return &apos;&lt;li&gt;&lt;span&gt;Language - &apos; + index + &apos;&lt;/span&gt;&lt;/li&gt;&apos;;</div><div class="line"> &#125;);</div><div class="line"> // 把新节点插入到指定位置，如插入到JavaScript和Python之间</div><div class="line"> var js = $(&apos;#test-div&gt;ul&gt;li:first-child&apos;);  //先定位到JavaScript</div><div class="line"> js.after(&apos;&lt;li&gt;&lt;span&gt;Lua&lt;/span&gt;&lt;/li&gt;&apos;);  //然后用after()方法</div></pre></td></tr></table></figure>
-</li>
-</ul>
+<p>四、实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;test-div&quot;&gt;</div><div class="line">  &lt;ul&gt;</div><div class="line">     &lt;li&gt;&lt;span&gt;JavaScript&lt;/span&gt;&lt;/li&gt;</div><div class="line">     &lt;li&gt;&lt;span&gt;Python&lt;/span&gt;&lt;/li&gt;</div><div class="line">     &lt;li&gt;&lt;span&gt;Swift&lt;/span&gt;&lt;/li&gt;</div><div class="line">  &lt;/ul&gt;</div><div class="line"> &lt;/div&gt;</div><div class="line"> /*****************向列表新增一个语言*******************/ </div><div class="line"> var ul = $(&apos;#test-div&gt;ul&apos;);  //先拿到`&lt;ul&gt;`节点 </div><div class="line"></div><div class="line"> //添加字符串(HTML片段):</div><div class="line"> ul.append(&apos;&lt;li&gt;&lt;span&gt;Haskell&lt;/span&gt;&lt;/li&gt;&apos;); </div><div class="line"></div><div class="line"> // 添加DOM对象:</div><div class="line"> var ps = document.createElement(&apos;li&apos;);//先创建</div><div class="line"> ps.innerHTML = &apos;&lt;span&gt;Pascal&lt;/span&gt;&apos;;//赋值</div><div class="line"> ul.append(ps);</div><div class="line"></div><div class="line"> // 添加jQuery对象:</div><div class="line"> ul.append($(&apos;#scheme&apos;));</div><div class="line"></div><div class="line"> // 添加函数对象: </div><div class="line"> //传入函数时，要求返回一个字符串、DOM对象或者jQuery对象。因为jQuery的append()可能作用于一组DOM节点，只有传入函数才能针对每个DOM生成不同的子节点。</div><div class="line"> ul.append(function (index, html) &#123;</div><div class="line">    return &apos;&lt;li&gt;&lt;span&gt;Language - &apos; + index + &apos;&lt;/span&gt;&lt;/li&gt;&apos;;</div><div class="line"> &#125;);</div><div class="line"> // 把新节点插入到指定位置，如插入到JavaScript和Python之间</div><div class="line"> var js = $(&apos;#test-div&gt;ul&gt;li:first-child&apos;);  //先定位到JavaScript</div><div class="line"> js.after(&apos;&lt;li&gt;&lt;span&gt;Lua&lt;/span&gt;&lt;/li&gt;&apos;);  //然后用after()方法</div></pre></td></tr></table></figure></p>
 <h3 id="3-DOM节点的删除"><a href="#3-DOM节点的删除" class="headerlink" title="3.DOM节点的删除"></a>3.DOM节点的删除</h3><p>jQuery提供了几种不同的方法用来移除页面上节点。<br><code>empty()方法</code>：</p>
 <ul>
 <li>作用：清空内部(后代)，即只移除指定元素中的所有子节点，调用对象本身仍留在DOM中</li>
