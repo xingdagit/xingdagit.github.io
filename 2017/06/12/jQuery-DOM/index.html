@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/12/jQuery-DOM/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="jQuery动态操作DOM 用选择器拿到了jQuery对象之后做什么呢——–操作对应的DOM节点 用jQuery对象操作DOM，可改善JavaScript操作DOM的许多不足，而且不需要考虑浏览器差异了，全部统一操作。 一个jQuery对象可以包含(选择)0个或任意个DOM对象，它的方法实际上会作用在对应的每个DOM节点上。  jQuery对象有“批量操作”的特点。 jQuery对象的所有方法都返">
-<meta property="og:updated_time" content="2017-06-13T08:58:50.692Z">
+<meta property="og:updated_time" content="2017-06-13T09:05:42.739Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery-DOM | SPACE-19">
 <meta name="twitter:description" content="jQuery动态操作DOM 用选择器拿到了jQuery对象之后做什么呢——–操作对应的DOM节点 用jQuery对象操作DOM，可改善JavaScript操作DOM的许多不足，而且不需要考虑浏览器差异了，全部统一操作。 一个jQuery对象可以包含(选择)0个或任意个DOM对象，它的方法实际上会作用在对应的每个DOM节点上。  jQuery对象有“批量操作”的特点。 jQuery对象的所有方法都返">
@@ -290,7 +290,7 @@ classes that you can use:
 <p><code>find()方法</code></p>
 <ul>
 <li>快速查找指定jQuery合集中每个元素的<code>后代元素</code>(后代关系,包括儿子辈，孙子辈)。</li>
-<li>与其他的树遍历方法不同，<code>find()方法</code>的参数<code>，即选择器表达式是</code>必需的<code>。如果我们需要实现对所有后代元素的取回，可以传递通配选择器</code>*`。</li>
+<li>与其他的树遍历方法不同，<code>find()方法</code>的参数，即选择器表达式是<code>必需的</code>。如果我们需要实现对所有后代元素的取回，可以传递通配选择器<code>*</code>。</li>
 <li>只在后代中遍历，不包括自己。</li>
 <li>向下查找多级，匹配元素，并根据匹配的元素创建一个新的 jQuery 对象</li>
 <li>选择器context其实是由<code>find()方法</code>实现的;<br>因此，<code>$(&#39;.item-ii&#39;).find(&#39;li&#39;)</code>等价于<code>$(&#39;li&#39;,&#39;.item-ii&#39;)</code>(找到类名为item-ii的标签下的li标签)。</li>
@@ -320,12 +320,12 @@ classes that you can use:
 </ul>
 <p><code>next()方法</code></p>
 <ul>
-<li>快速查找指定jQuery合集中每一个元素后面紧邻的<code>直接兄弟元素</code>的<code>元素集合</code></li>
+<li>快速查找指定jQuery合集中每一个元素<code>后面紧邻的直接兄弟元素</code>的<code>元素集合</code></li>
 <li>也可通过传递选择器参数，进行筛选</li>
 </ul>
 <p><code>prev()方法</code></p>
 <ul>
-<li>快速查找指定jQuery合集中每一个元素前面紧邻的<code>直接兄弟元素</code>的<code>元素集合</code></li>
+<li>快速查找指定jQuery合集中每一个元素<code>前面紧邻的直接兄弟元素</code>的<code>元素集合</code></li>
 <li>也可通过传递选择器参数，进行筛选</li>
 </ul>
 <p><code>siblings()方法</code></p>
