@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/02/CSS-样式设置小技巧/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="1. 水平居中设置-行内元素 通过给其父元素设置text-align:center来实现水平居中 实例：1234567&amp;lt;style&amp;gt;  .txtCenter&amp;#123;  text-align:center;  &amp;#125;&amp;lt;/style&amp;gt;//&amp;lt;div&amp;gt;为后面文本的父元素&amp;lt;body&amp;gt;  &amp;lt;div class=&amp;quot;txtCenter&amp;qu">
-<meta property="og:updated_time" content="2017-05-02T10:05:18.524Z">
+<meta property="og:updated_time" content="2017-06-14T11:15:11.160Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS-样式设置小技巧 | SPACE-19">
 <meta name="twitter:description" content="1. 水平居中设置-行内元素 通过给其父元素设置text-align:center来实现水平居中 实例：1234567&amp;lt;style&amp;gt;  .txtCenter&amp;#123;  text-align:center;  &amp;#125;&amp;lt;/style&amp;gt;//&amp;lt;div&amp;gt;为后面文本的父元素&amp;lt;body&amp;gt;  &amp;lt;div class=&amp;quot;txtCenter&amp;qu">
@@ -185,20 +185,17 @@ classes that you can use:
 </li>
 </ul>
 <h2 id="2-水平居中设置-定宽块状元素"><a href="#2-水平居中设置-定宽块状元素" class="headerlink" title="2. 水平居中设置-定宽块状元素"></a>2. 水平居中设置-定宽块状元素</h2><ul>
-<li>定宽块状元素：块状元素的宽度width为固定值</li>
-<li>通过设置“左右margin”值为“auto”来实现水平居中</li>
-<li>实例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/*设置 div 这个块状元素水平居中*/</div><div class="line">&lt;style&gt;</div><div class="line">div&#123;</div><div class="line">    width:200px;/*定宽*//*定宽块状元素的条件*/</div><div class="line">    margin:20px auto;/* margin-left 与 margin-right 设置为 auto *//*上下margin可随意设置*/</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<li>定宽块状元素：宽度width为固定值的块状元素</li>
+<li>通过设置<code>左右margin值为auto</code>来实现水平居中</li>
+<li>实例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/*设置 div 这个块状元素水平居中*/</div><div class="line">&lt;style&gt;</div><div class="line">div</div><div class="line">&#123;</div><div class="line">    width:200px;/*定宽*//*定宽块状元素的条件*/</div><div class="line">    margin:20px auto;/* margin-left 与 margin-right 设置为 auto *//*上下margin可随意设置*/</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="3-水平居中总结-不定宽块状元素方法（一）"><a href="#3-水平居中总结-不定宽块状元素方法（一）" class="headerlink" title="3. 水平居中总结-不定宽块状元素方法（一）"></a>3. 水平居中总结-不定宽块状元素方法（一）</h2><ul>
-<li>不定宽块状元素：块状元素的宽度width不固定</li>
-<li>不定宽度的块状元素有三种方法居中：</li>
-</ul>
+<h2 id="3-水平居中总结-不定宽块状元素方法（一）"><a href="#3-水平居中总结-不定宽块状元素方法（一）" class="headerlink" title="3. 水平居中总结-不定宽块状元素方法（一）"></a>3. 水平居中总结-不定宽块状元素方法（一）</h2><p>不定宽块状元素：块状元素的宽度width不固定<br>不定宽块状元素有三种方法实现居中：</p>
 <ol>
-<li><p>加入 table 标签方法：</p>
+<li><p>加入<code>&lt;table&gt;</code>方法：</p>
 <ul>
 <li>利用table标签的长度自适应性—即不定义其长度也不默认父元素body的长度（table其长度根据其内文本长度决定），即将其当做一个定宽度块元素，利用定宽度块状居中的margin的方法来使其水平居中</li>
-<li>步骤：先在需要设置居中的元素外面加入一个 table 标签 ( 包括<table> <tbody>、<tr>、<td> )；然后为这个 table 设置“左右 margin 居中”（这个和定宽块状元素的方法一样）</td></tr></tbody></table></li>
+<li>步骤：<br>首先在需要设置居中的元素外面加入一个<code>&lt;table&gt;</code>标签 ( 包括<code>&lt;table&gt; &lt;tbody&gt;、&lt;tr&gt;、&lt;td&gt;</code>)；<br>然后为这个<code>&lt;table&gt;</code>设置<code>左右 margin 居中</code>（这步和定宽块状元素的设置方法一样）</li>
 </ul>
 </li>
 <li><p>设为行内元素方法：</p>
@@ -222,7 +219,10 @@ classes that you can use:
 </ol>
 <h2 id="4-垂直居中-父元素高度确定的单行文本"><a href="#4-垂直居中-父元素高度确定的单行文本" class="headerlink" title="4. 垂直居中-父元素高度确定的单行文本"></a>4. 垂直居中-父元素高度确定的单行文本</h2><ul>
 <li>通过设置父元素的 height 和 line-height 高度一致来实现垂直居中</li>
-<li>小知识：line-height 与 font-size 的计算值之差，在CSS中成为“行间距”。它分为上下两半，分别表示一个文本行内容的顶部和底部。</li>
+<li><blockquote>
+<p>小知识：<br>line-height 与 font-size 的计算值之差，在CSS中成为“行间距”。<br>它均分为上下两半，分别表示一个文本行内容的顶部和底部。</p>
+</blockquote>
+</li>
 <li>文字行高与块高一致带来了一个弊端：当文字内容的长度大于块的宽时，就有内容脱离了块</li>
 </ul>
 <h2 id="5-垂直居中-父元素高度确定的多行文本"><a href="#5-垂直居中-父元素高度确定的多行文本" class="headerlink" title="5. 垂直居中-父元素高度确定的多行文本"></a>5. 垂直居中-父元素高度确定的多行文本</h2><ul>
@@ -231,7 +231,7 @@ classes that you can use:
 <ol>
 <li><p>在需要设置垂直居中的元素外面加入 table 标签 (包括tbody、tr、td)标签，同时设置 <code>vertical-align：middle；</code>(因<code>&lt;td&gt;</code>标签默认情况下就默认设置了 vertical-align 为 middle，所以也不需要显式地设置了)；<br>vertical-align属性：用于竖直居中，父元素设置此样式时，对inline-block类型的子元素都有用。</p>
 </li>
-<li><p>在 chrome、firefox 及 IE8以上的浏览器下可以设置块级元素的display为table-cell（设置为表格单元显示），并设置 <code>vertical-align：middle；</code>；<br>好处是不用添加多余的无意义的标，但注意 IE6、7 并不支持这个样式, 兼容性比较差</p>
+<li><p>在 chrome、firefox 及 IE8以上的浏览器下可以设置块级元素的{display为table-cell}<code>（设置为表格单元显示），并设置</code>vertical-align：middle；`；<br>好处是不用添加多余的无意义的标，但注意 IE6、7 并不支持这个样式, 兼容性比较差</p>
 </li>
 </ol>
 <h2 id="6-隐性改变display类型"><a href="#6-隐性改变display类型" class="headerlink" title="6. 隐性改变display类型"></a>6. 隐性改变display类型</h2><ul>

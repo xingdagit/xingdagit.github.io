@@ -14,18 +14,18 @@
     
     
 
-    <meta name="description" content="1. 一切皆为框 分类  块级元素 —- “块框”从上到下一个接一个地排列，框之间的垂直距离是由框的垂直外边距计算出来 行内元素 —- “行内框”在一行中水平布置。只有通过水平内边距、边框和外边距可调整它们的间距。垂直内边距、边框和外边距不影响行内框的高度(除非改为display: block) 一段/每行文本 —- “无名块框”不与专门定义的元素相关联；也具有块级元素特点 一行形成的水平框 —-">
+    <meta name="description" content="1. 一切皆为框 分类  块级元素 —- “块框”从上到下一个接一个地排列，框之间的垂直距离是由框的垂直外边距计算出来 行内元素 —- “行内框”在一行中水平布置。只有通过水平内边距、边框和外边距可调整它们的间距。垂直内边距、边框和外边距不影响行内框的高度(除非改为display: block) 一段/每行文本 —- “无名块框”不与专门定义的元素相关联也具有块级元素特点 一行形成的水平框 —-行">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS-定位 | SPACE-19">
 <meta property="og:url" content="http://yoursite.com/2017/04/24/CSS-定位/index.html">
 <meta property="og:site_name" content="SPACE-19">
-<meta property="og:description" content="1. 一切皆为框 分类  块级元素 —- “块框”从上到下一个接一个地排列，框之间的垂直距离是由框的垂直外边距计算出来 行内元素 —- “行内框”在一行中水平布置。只有通过水平内边距、边框和外边距可调整它们的间距。垂直内边距、边框和外边距不影响行内框的高度(除非改为display: block) 一段/每行文本 —- “无名块框”不与专门定义的元素相关联；也具有块级元素特点 一行形成的水平框 —-">
+<meta property="og:description" content="1. 一切皆为框 分类  块级元素 —- “块框”从上到下一个接一个地排列，框之间的垂直距离是由框的垂直外边距计算出来 行内元素 —- “行内框”在一行中水平布置。只有通过水平内边距、边框和外边距可调整它们的间距。垂直内边距、边框和外边距不影响行内框的高度(除非改为display: block) 一段/每行文本 —- “无名块框”不与专门定义的元素相关联也具有块级元素特点 一行形成的水平框 —-行">
 <meta property="og:image" content="http://img.mukewang.com/539fbb3a0001304305570259.jpg">
-<meta property="og:updated_time" content="2017-04-30T13:38:10.973Z">
+<meta property="og:updated_time" content="2017-06-14T10:21:59.249Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS-定位 | SPACE-19">
-<meta name="twitter:description" content="1. 一切皆为框 分类  块级元素 —- “块框”从上到下一个接一个地排列，框之间的垂直距离是由框的垂直外边距计算出来 行内元素 —- “行内框”在一行中水平布置。只有通过水平内边距、边框和外边距可调整它们的间距。垂直内边距、边框和外边距不影响行内框的高度(除非改为display: block) 一段/每行文本 —- “无名块框”不与专门定义的元素相关联；也具有块级元素特点 一行形成的水平框 —-">
+<meta name="twitter:description" content="1. 一切皆为框 分类  块级元素 —- “块框”从上到下一个接一个地排列，框之间的垂直距离是由框的垂直外边距计算出来 行内元素 —- “行内框”在一行中水平布置。只有通过水平内边距、边框和外边距可调整它们的间距。垂直内边距、边框和外边距不影响行内框的高度(除非改为display: block) 一段/每行文本 —- “无名块框”不与专门定义的元素相关联也具有块级元素特点 一行形成的水平框 —-行">
 <meta name="twitter:image" content="http://img.mukewang.com/539fbb3a0001304305570259.jpg">
     
     
@@ -186,7 +186,7 @@ classes that you can use:
 <ol>
 <li>块级元素 —- “块框”<br>从上到下一个接一个地排列，框之间的垂直距离是由框的垂直外边距计算出来</li>
 <li>行内元素 —- “行内框”<br>在一行中水平布置。只有通过水平内边距、边框和外边距可调整它们的间距。垂直内边距、边框和外边距不影响行内框的高度(除非改为<code>display: block</code>)</li>
-<li>一段/每行文本 —- “无名块框”<br>不与专门定义的元素相关联；<br>也具有块级元素特点</li>
+<li>一段/每行文本 —- “无名块框”<br>不与专门定义的元素相关联<br>也具有块级元素特点</li>
 <li>一行形成的水平框 —-行框（LineBox）<br>行框的高度总是足以容纳它包含的所有行内框。不过设置行高可以增加这个框的高度</li>
 </ol>
 </li>
@@ -201,7 +201,8 @@ classes that you can use:
 </li>
 </ul>
 <h2 id="2-CSS-定位机制"><a href="#2-CSS-定位机制" class="headerlink" title="2. CSS 定位机制"></a>2. CSS 定位机制</h2><ol>
-<li>标准文档流(普通流)<ul>
+<li><p>标准文档流(普通流)</p>
+<ul>
 <li>流式布局/流动模型(Flow)</li>
 <li>除非专门指定，否则所有框都在普通流中定位。即普通流中的元素的位置由元素在(X)HTML中的位置决定</li>
 <li>相对定位元素仍处于标准文档流中，浮动元素与绝对定位元素则会脱离标准文档流</li>
@@ -217,21 +218,20 @@ classes that you can use:
 </li>
 </ul>
 </li>
-</ol>
-<ol>
-<li>浮动定位<ul>
+<li><p>浮动定位</p>
+<ul>
 <li>浮动布局/浮动模型(Float)</li>
 <li>可实现横向多列布局</li>
 <li>float属性</li>
-<li>浮动框可向 左/右 移动，直至它的外边缘碰到 包含框/另一浮动框 的边框为止</li>
+<li>浮动框可向 左/右 移动，直至它的外边缘碰到<code>包含框/另一浮动框</code>的边框为止</li>
 <li>设置浮动若没设置宽度，元素宽度随内容变化而变化(无内容时缩成一个小点)</li>
-<li>浮动让元素脱离标准文档流<ul>
+<li><code>浮动让元素脱离标准文档流</code><ul>
 <li>使元素处于标准文档流之上，不处于同一层</li>
 <li>导致元素会覆盖在它底下的处于标准文档流的元素</li>
 <li>假设A和B都处于标准文档流(同一层)，且A在B上面<ol>
 <li>A浮动了(脱离本层)，B往上移动并占据A的位置，而且可能被A遮住了(藏在A的底下)</li>
-<li>B浮动了(脱离本层)，B不会走到A后面跟A处于同一行</li>
-<li>A和B都浮动(脱离本层)，B就会走到A的后面跟A处于同一行</li>
+<li>B浮动了(脱离本层)，B不会走到A后面，但跟A处于同一行</li>
+<li>A和B都浮动(脱离本层)，B就会走到A的后面，且跟A处于同一行</li>
 </ol>
 </li>
 </ul>
@@ -249,8 +249,6 @@ classes that you can use:
 </li>
 </ul>
 </li>
-</ol>
-<ol>
 <li><p>绝对定位</p>
 <ul>
 <li>层模型（Layer）</li>
@@ -275,17 +273,17 @@ classes that you can use:
 <li>拥有偏移属性：即可以使元素框偏移(相对于自身原占位置左上角进行位移)</li>
 <li>其元素仍处于标准文档流中</li>
 <li>元素仍保持其未进行相对定位前的形状，原本占据的空间也保留着(因为仍处于标准文档流中)</li>
-<li>拥有z-index属性</li>
-<li>position:relative 与top、right、bottom、left 分别组合来实现各方向相对定位的偏移</li>
-<li>网页制作中某元素需要偏移参照基准时，一般对作为参照基准的元素(父包含块)设置相对定位(因为仍处于标准文档流中)</li>
+<li>拥有z-index属性(可通过它来控制堆放次序)</li>
+<li><code>position:relative</code>与<code>top、right、bottom、left</code>分别组合来实现各方向<code>相对定位</code>的偏移</li>
+<li>网页制作中某元素需要偏移参照基准时，一般对<code>作为参照基准的元素(父包含块)</code>设置相对定位(因为仍处于标准文档流中)</li>
 </ul>
 </li>
 <li><p>absolute —绝对定位</p>
 <ul>
 <li>元素框从文档流完全删除</li>
-<li>元素完全脱离了标准文档流</li>
+<li>元素<code>完全脱离了标准文档流</code></li>
 <li>元素在原文档流所占空间会消失，导致部分元素发生偏移(可能会出现元素的覆盖重叠)</li>
-<li>建立了以<strong>包含块</strong>为基准的定位(相对于其包含块定位)<br>包含块可能是：文档中另一元素(最近已定位父元素) | 最初包含块(浏览器)</li>
+<li>建立了以<strong>包含块</strong>为基准的定位(相对于其包含块定位)<br>包含块可能是：<code>文档中另一元素(最近已定位父元素)</code> | <code>最初包含块(浏览器)</code></li>
 <li>拥有z-index属性(可通过它来控制堆放次序)</li>
 <li>拥有偏移属性：即可以使元素框偏移<ol>
 <li>未设置偏移量<ul>
@@ -303,8 +301,8 @@ classes that you can use:
 </li>
 <li>元素定位后生成一个块级框，而不论它在原正常文档流中生成何种类型的框</li>
 <li>当元素设置了绝对定位 但 没设置宽度时，宽度随内容变化而变化</li>
-<li>position:absolute 与 top、right、bottom、left 分别组合 实现各方向绝对定位的偏移</li>
-<li>absolute + relative组合使用可实现元素相对于其他同等级元素进行定位：被参照的加relative，定位的加absolute</li>
+<li><code>position:absolute</code>与<code>top、right、bottom、left</code>分别组合 实现各方向<code>绝对定位</code>的偏移</li>
+<li>absolute + relative组合使用可实现元素相对于其他同等级元素进行定位：<br>被参照的使用relative，需定位的使用absolute</li>
 </ul>
 </li>
 <li><p>fixed —固定定位</p>
@@ -317,16 +315,16 @@ classes that you can use:
 </li>
 </ol>
 </li>
-<li>top、right、bottom、left 属性是通过设置 元素外边距边界与其包含块边界间的距离 来进行偏移   </li>
+<li>top、right、bottom、left 属性是根据设置<code>元素外边距边界</code>与<code>其包含块边界</code>间的距离 来进行偏移   </li>
 </ul>
 </li>
 </ol>
 <h2 id="3-CSS-关于定位的属性"><a href="#3-CSS-关于定位的属性" class="headerlink" title="3. CSS 关于定位的属性"></a>3. CSS 关于定位的属性</h2><ol>
-<li>overflow 属性<ul>
+<li><code>overflow</code> 属性<ul>
 <li>当元素内容溢出其区域时所做处理</li>
 <li>属性值：<ol>
 <li>visible(默认)：不修剪，突出外面显示</li>
-<li>hidden：多处部分隐藏</li>
+<li>hidden：多出部分隐藏</li>
 <li>scroll：生成滚动条</li>
 <li>auto：如被修剪，则生成滚动条</li>
 <li>inherit：继承父元素的overflow属性值</li>
@@ -334,7 +332,7 @@ classes that you can use:
 </li>
 </ul>
 </li>
-<li>clip 属性<ul>
+<li><code>clip</code> 属性<ul>
 <li>剪裁绝对定位元素</li>
 <li>属性值：<ol>
 <li>shape：形状</li>
@@ -344,14 +342,14 @@ classes that you can use:
 </li>
 </ul>
 </li>
-<li>vertical-align 属性<ul>
+<li><code>vertical-align</code> 属性<ul>
 <li>设置元素垂直对齐方式</li>
 </ul>
 </li>
-<li>z-index 属性<ul>
+<li><code>z-index</code> 属性<ul>
 <li>设置元素的堆叠顺序</li>
 <li>拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面</li>
-<li>Z-index 仅能在定位元素上奏效</li>
+<li>z-index 仅能在<code>定位元素</code>上奏效</li>
 <li>属性值<ol>
 <li>auto(默认)：堆叠顺序与父元素相等</li>
 <li>数值：可正可负，正数比负数层次高</li>
@@ -365,24 +363,24 @@ classes that you can use:
 <li>在 CSS 中，可以使用多种属性来水平对齐元素</li>
 <li><p>三种方式：</p>
 <ol>
-<li>使用 margin 属性来水平对齐<ul>
-<li>通过将左右外边距(margin-left/margin-right)或设置为 “auto” 或 <code>margin:auto;</code>，来对齐块元素</li>
-<li>规定的是均等地分配可用的外边距，结果就是<strong>居中</strong>的元素</li>
+<li>使用<code>margin属性</code>来水平对齐<ul>
+<li>通过将左右外边距(margin-left/margin-right)设置为<code>auto</code>或设置<code>margin:auto;</code>，来实现水平对齐块元素</li>
+<li>规定的是均等地分配可用的外边距，结果就是<code>居中</code>的元素</li>
 <li>如果宽度是 100%，则对齐没有效果</li>
 </ul>
 </li>
-<li>使用 position 属性进行左和右对齐<ul>
+<li>使用<code>position属性</code>进行左和右对齐<ul>
 <li>即利用绝对定位(position:absolute;)</li>
 </ul>
 </li>
-<li>使用 float 属性来进行左和右对齐</li>
+<li>使用<code>float属性</code>来进行左和右对齐</li>
 </ol>
 </li>
 <li><p>跨浏览器兼容性问题</p>
 <ul>
-<li>使用 <strong>position</strong> 属性 和 <strong>float 属性</strong> 对齐元素时，对 <code>&lt;body&gt;</code>元素的外边距和内边距进行预定义(<code>body{margin:0;padding:0;}</code>)是一个好主意,这样可以避免在不同的浏览器中出现可见的差异。</li>
-<li>当使用 position 属性时，IE8以及更早的版本存在一个问题:若容器元素（如<code>&lt;divclass=&quot;container&quot;&gt;</code>）设置了指定的宽度，并且省略了 !DOCTYPE 声明，那么 IE8 以及更早的版本会在右侧增加 17px 的外边距（这似乎是为滚动条预留的空间）</li>
-<li>所以，请始终设置 !DOCTYPE 声明：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">body</div><div class="line">&#123;</div><div class="line">margin:0;</div><div class="line">padding:0;</div><div class="line">&#125;</div><div class="line">....</div></pre></td></tr></table></figure></li>
+<li>使用 <strong>position 属性</strong> 和 <strong>float 属性</strong> 对齐元素时，对 <code>&lt;body&gt;</code>元素的外边距和内边距进行预定义(<code>body{margin:0;padding:0;}</code>)是一个好主意,这样可以避免在不同的浏览器中出现可见的差异。</li>
+<li>当使用 position 属性时，IE8以及更早的版本存在一个问题:<br>若容器元素（如<code>&lt;div class=&quot;container&quot;&gt;</code>）设置了指定的宽度，并且省略了<code>!DOCTYPE</code>声明，那么 IE8 以及更早的版本会在右侧增加 17px 的外边距（这似乎是为滚动条预留的空间）</li>
+<li>所以，请始终设置<code>!DOCTYPE 声明</code>：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">body</div><div class="line">&#123;</div><div class="line">  margin:0;</div><div class="line">  padding:0;</div><div class="line">&#125;</div><div class="line">....</div></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
