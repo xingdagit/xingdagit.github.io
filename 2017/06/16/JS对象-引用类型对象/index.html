@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      JS对象-引用类型对象 | SPACE-19 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    
+
+    <meta name="description" content="一、javascript引用类型对象 也叫本地对象。 引用类型值是指那些可能由多个值构成的对象。 js不允许直接访问内存中的位置，也就是不能直接访问操作对象的内存空间。在操作对象时，实际上是在操作对象的引用而不是实际的对象。 引用类型的值是对象，保存在堆内存中，包含引用类型值的变量实际上包含的并不是对象本身，而是一个指向该对象的指针。从一个变量向另一个变量复制引用类型的值，复制的其实是指针，因此两">
+<meta name="keywords" content="JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS对象-引用类型对象 | SPACE-19">
+<meta property="og:url" content="http://yoursite.com/2017/06/16/JS对象-引用类型对象/index.html">
+<meta property="og:site_name" content="SPACE-19">
+<meta property="og:description" content="一、javascript引用类型对象 也叫本地对象。 引用类型值是指那些可能由多个值构成的对象。 js不允许直接访问内存中的位置，也就是不能直接访问操作对象的内存空间。在操作对象时，实际上是在操作对象的引用而不是实际的对象。 引用类型的值是对象，保存在堆内存中，包含引用类型值的变量实际上包含的并不是对象本身，而是一个指向该对象的指针。从一个变量向另一个变量复制引用类型的值，复制的其实是指针，因此两">
+<meta property="og:image" content="http://img.mukewang.com/533295ab0001dead05190599.jpg">
+<meta property="og:image" content="http://img.mukewang.com/555c650d0001ae7b04180297.jpg">
+<meta property="og:updated_time" content="2017-06-16T08:49:02.800Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS对象-引用类型对象 | SPACE-19">
+<meta name="twitter:description" content="一、javascript引用类型对象 也叫本地对象。 引用类型值是指那些可能由多个值构成的对象。 js不允许直接访问内存中的位置，也就是不能直接访问操作对象的内存空间。在操作对象时，实际上是在操作对象的引用而不是实际的对象。 引用类型的值是对象，保存在堆内存中，包含引用类型值的变量实际上包含的并不是对象本身，而是一个指向该对象的指针。从一个变量向另一个变量复制引用类型的值，复制的其实是指针，因此两">
+<meta name="twitter:image" content="http://img.mukewang.com/533295ab0001dead05190599.jpg">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">SPACE-19</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          XD
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">JS对象-引用类型对象</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-16" class="post-meta__date date">2017-06-16</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/JS/">JS</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="一、javascript引用类型对象"><a href="#一、javascript引用类型对象" class="headerlink" title="一、javascript引用类型对象"></a>一、javascript引用类型对象</h3><ul>
+<li>也叫本地对象。</li>
+<li><code>引用类型值</code>是指那些可能由多个值构成的对象。</li>
+<li>js不允许直接访问内存中的位置，也就是不能直接访问操作对象的内存空间。<br>在操作对象时，实际上是在操作对象的引用而不是实际的对象。</li>
+<li>引用类型的值是<code>对象</code>，保存在<code>堆内存</code>中，包含引用类型值的变量实际上包含的并不是对象本身，而是<code>一个指向该对象的指针</code>。<br>从一个变量向另一个变量复制<code>引用类型的值</code>，复制的其实是<code>指针</code>，因此两个变量最终都指向<code>同一个对象</code>。</li>
+<li>对于引用类型的值，可以为其<code>添加</code>属性和方法，也可以<code>改变和删除</code>其属性和方法</li>
+<li>引用类型包括<code>Object</code>、<code>Array</code>、<code>Date</code>、<code>RegExp</code>、<code>Function</code>、<code>基本包装类型</code>（Boolean类型、Number类型、String类型）和<code>内置(标准)对象</code>（Global、Math）。<br>也就是说，基本包装类型对象和单体内置对象也属于引用类型对象，都是特殊的引用类型。</li>
+</ul>
+<h3 id="1、Object类型对象"><a href="#1、Object类型对象" class="headerlink" title="1、Object类型对象"></a>1、Object类型对象</h3><ul>
+<li>JavaScript 原生提供Object对象（注意起首的O是大写），所有其他对象都继承自这个对象。</li>
+<li><p>创建Object实例的两种方式：<br>1.使用new操作符后跟Object构造函数<br>2.使用对象字面量表示法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//使用new操作符后跟Object构造函数 </div><div class="line">var person = new Object(); </div><div class="line">person.name = &quot;Tony&quot;; </div><div class="line">person.age = 29; </div><div class="line"></div><div class="line">//使用对象字面量表示法 </div><div class="line">var person = &#123; </div><div class="line">    name : &quot;Tony&quot;, </div><div class="line">	age : 29 </div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Object()函数可当作一个<code>将任意值转为对象</code>的工具方法，这个方法常用于保证某个值一定是对象。<br>如果参数是原始基本类型的值，则返回对应的包装对象的实例，<br>如果参数是一个对象，则返回原对象。<br>利用这一点，可以写一个判断变量是否为对象的函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function isObject(value) </div><div class="line">&#123; </div><div class="line">   return value === Object(value); </div><div class="line">&#125; </div><div class="line">isObject([])   // true </div><div class="line">isObject(true) // false</div></pre></td></tr></table></figure>
+</li>
+<li><p>Object 对象的静态方法<br>所谓“静态方法”，是指部署在Object对象自身的方法。<br><code>Object.keys方法</code>和<code>Object.getOwnPropertyNames方法</code>很相似，一般用来<code>遍历对象的属性</code>。<br>它们的参数都是一个对象，都返回一个数组，该数组的成员都是对象自身的（而不是继承的）所有属性名。<br>它们的区别在于，<code>Object.keys方法</code>只返回可枚举的属性，<code>Object.getOwnPropertyNames方法</code>还返回不可枚举的属性名。<br>一般情况下都是使用<code>Object.keys方法</code>来遍历数组的属性。</p>
+</li>
+<li><p>Object实例对象的方法，主要有以下六个：<br>1.valueOf()：返回当前对象对应的值。<br>2.toString()：返回当前对象对应的字符串形式。<br>3.toLocaleString()：返回当前对象对应的本地字符串形式。<br>4.hasOwnProperty()：判断某个属性是否为当前对象自身的属性，还是继承自原型对象的属性。<br>5.isPrototypeOf()：判断当前对象是否为另一个对象的原型。<br>6.propertyIsEnumerable()：判断某个属性是否可枚举。</p>
+</li>
+</ul>
+<h3 id="2、Array类型对象"><a href="#2、Array类型对象" class="headerlink" title="2、Array类型对象"></a>2、Array类型对象</h3><ul>
+<li>数组对象是一个对象的集合，里面的对象可以是不同类型的。</li>
+<li>数组的每一个成员对象都有一个“下标”，用来表示它在数组中的位置，是从零开始的。</li>
+<li><p>创建数组类型对象：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//使用Array构造函数创建（可以省略new操作符）</div><div class="line">var colors = new Array(); </div><div class="line">//给构造函数传递一个值时，</div><div class="line">//如果是数值，则会按照该数值创建该数值个空元素的数组；</div><div class="line">//如果是其他类型的参数，则会创建以它们为数组元素的数组 。</div><div class="line">var colors = new Array(20); //创建length值为20的数组 </div><div class="line">var colors = new Array(“red”, &quot;blue&quot;, &quot;green&quot;); //创建包含三个字符串值得数组 (不建议使用这种方法)</div><div class="line"></div><div class="line">//使用数组字面量表示法（定义数组的时候，直接初始化数据）</div><div class="line">var colors = [&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;];</div></pre></td></tr></table></figure>
+</li>
+<li><p>访问数组元素：<br><code>数组名[下标] = 值;</code> //下标从0开始</p>
+</li>
+<li>数组属性：<br><code>&lt;数组对象&gt;.length；</code> //返回：数组的长度，即数组里有多少个元素。它等于数组里最后一个元素的下标加一。</li>
+<li>数组方法：<ol>
+<li>Array静态方法：<code>Array.isArray(对象名)</code>//用来判断一个值是否为数组。它可以弥补typeof运算符的不足。</li>
+<li>Array实例方法：<br><img src="http://img.mukewang.com/533295ab0001dead05190599.jpg" alt="数组方法"><br>1)<code>对象.concat(array1,array2,...,arrayN);</code>//用于连接两个或多个数组。此方法返回一个新数组，不改变原来的数组<br>2)<code>对象.join(分隔符);</code>//用于把数组中的所有元素放入一个字符串并返回。元素是通过指定的分隔符进行分隔的<br>3)<code>对象.reverse();</code>  //用于颠倒数组中元素的顺序(该方法会改变原来的数组)<br>4)<code>对象.slice(start,end);</code> //从已有的数组中返回选定的元素(返回一个新的数组)<br>5)<code>对象.sort([方法函数]);</code>//使数组中的元素按照一定的顺序排列(不指定&lt;方法函数&gt;，则按unicode码顺序排列)</li>
+</ol>
+</li>
+</ul>
+<h3 id="3、Date类型对象"><a href="#3、Date类型对象" class="headerlink" title="3、Date类型对象"></a>3、Date类型对象</h3><ul>
+<li>Date对象用来表示日期和时间。</li>
+<li>Date对象可以储存任意一个日期，并且可以精确到毫秒数（1/1000秒）。</li>
+<li><p>创建Date对象：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var now = new Date();//获取系统当前时间(从本机操作系统获取的时间，不一定准确)</div><div class="line">var d = new Date(2015, 5, 19, 20, 15, 30, 123); //创建一个指定日期和时间的Date对象，即Fri Jun 19 2015 20:15:30 GMT+0800 (CST)</div><div class="line">var d = Date.parse(&apos;2015-06-24T19:49:22.875+08:00&apos;);//创建一个指定日期和时间的方法(通过解析一个符合ISO 8601格式的字符串)</div><div class="line">var d = new Date(时间戳数字串); //但返回的不是Date对象而是一个时间戳。要把时间戳再转换为一个Date对象</div></pre></td></tr></table></figure>
+</li>
+<li><p>时间戳</p>
+<ul>
+<li>是一个<code>自增的整数</code>，它表示从<code>1970年1月1日零时整</code>的<code>GMT时区</code>开始那一刻到现在的<code>毫秒数</code>;</li>
+<li>时间戳可以精确地表示一个时刻，并且与时区无关;(世界上无论哪个时区的电脑，它们此刻产生的时间戳数字都是一样的)</li>
+<li>任何浏览器都可以把一个时间戳正确转换为本地时间;</li>
+<li>所以只需要传递时间戳或把时间戳从数据库里读出来，再让JavaScript自动转换就可以转为当地时间</li>
+<li>获取当前时间戳：<code>Date.now</code></li>
+</ul>
+</li>
+<li>调用方法：<code>日期对象.方法名()</code></li>
+<li><p>Date对象的方法：<br><img src="http://img.mukewang.com/555c650d0001ae7b04180297.jpg" alt=" Date对象方法"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var now = new Date();//返回当前的日期和时间-----定义的关键词</div><div class="line">now.getFullYear(); // 返回4位完整格式年份(如2014)(常用)，也可以获取完整年月日</div><div class="line">now.getMonth(); // 返回月份值(0~11)，1表示二月</div><div class="line">now.getDate(); // 返回几号(1~31)</div><div class="line">now.getDay(); // 返回星期几(0~6)</div><div class="line">now.getHours(); // 返回小时数(0~23)(24小时制)</div><div class="line">now.getMinutes(); // 返回分钟数(0~59)</div><div class="line">now.getSeconds(); // 返回秒数</div><div class="line">now.getMilliseconds(); // 返回毫秒数</div><div class="line">now.getTime(); // 返回毫秒数(以number形式表示的时间戳)</div><div class="line">now.toLocaleString(); // &apos;2015/6/24 下午7:49:22&apos;，本地时间（北京时区+8:00），显示的字符串与操作系统设定的格式有关</div><div class="line">now.toUTCString(); // &apos;Wed, 24 Jun 2015 11:49:22 GMT&apos;，UTC时间，与本地时间相差8小时</div></pre></td></tr></table></figure>
+</li>
+<li><p>显示时间实例：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">window.onload=function()&#123;</div><div class="line">showTime();</div><div class="line">&#125;</div><div class="line">function checkTime(i) //当分钟或秒是一位数时，前面补0</div><div class="line">&#123;</div><div class="line">   return i&lt;10?  &apos;0&apos;+i : i ;	</div><div class="line">&#125;</div><div class="line">function showTime()</div><div class="line">&#123;  </div><div class="line">   var myDate=new Date();</div><div class="line">   var year=myDate.getFullYear();</div><div class="line">   var month=myDate.getMonth()+1;</div><div class="line">   var day=myDate.getDate();</div><div class="line">   var d=myDate.getDay (); </div><div class="line">   var h=myDate.getHours();</div><div class="line">   var m=myDate.getMinutes();</div><div class="line">   var s=myDate.getSeconds();</div><div class="line">   m = checkTime(m);</div><div class="line">   s = checkTime(s);</div><div class="line"></div><div class="line">   document.getElementById(&apos;show&apos;).innerHTML=year+&apos;年&apos;+month+&apos;月&apos;+day+&apos;日&apos;+&apos; 星期&apos;+&apos;日一二三四五六&apos;.charAt(d)+h+&apos;:&apos;+m+&apos;:&apos;+s;</div><div class="line"></div><div class="line">   setTimeout(showTime,500); //循环递归调用(五百毫秒一次)</div><div class="line">   /*setTimeout()只执行一次。如要多次调用，最好使用 setInterval() 或在setTimeout()函数里再次调用 setTimeout()。*/</div><div class="line">&#125;  </div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"> &lt;div id=&quot;show&quot;&gt;显示时间的位置&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>显示距离某时间点剩余多少时间的实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">//1天=24小时，1小时=60分，1分=60秒，1秒=1000毫秒 </div><div class="line">&lt;head&gt; </div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt; </div><div class="line">window.onload = function() &#123; </div><div class="line">   showTime(); </div><div class="line">&#125; </div><div class="line">function showTime() </div><div class="line">&#123; </div><div class="line">   var endTime = new Date(&quot;2017/5/25,22:12:00&quot;); </div><div class="line">var nowTime = new Date(); </div><div class="line">var leftSeconds = parseInt((endTime.getTime()-nowTime.getTime())/1000);//两个时间点之间的秒数 </div><div class="line">var d = parseInt( leftSeconds/(60*60*24) );//天数，取整 </div><div class="line">var h = parseInt( leftSeconds/(60*60)%24 );//小时，模24，为获取天数之外的小时数 </div><div class="line">var m = parseInt( leftSeconds/60%60 );//分钟，模60，为获取残留的分钟数 </div><div class="line">var s = parseInt( leftSeconds%60 );//秒数，模60，为获取残留的秒数 </div><div class="line">if(leftSeconds&lt;=0) </div><div class="line">&#123; </div><div class="line">   document.getElementById(&quot;LeftTime&quot;).innerHTML=&quot;倒计时结束&quot;; </div><div class="line">&#125; </div><div class="line">else </div><div class="line">&#123; </div><div class="line">   document.getElementById(&quot;LeftTime&quot;).innerHTML=d+&quot;天&quot;+h+&quot;小时&quot;+m+&quot;分&quot;+s+&quot;秒&quot;; </div><div class="line">setTimeout(showTime,500);//循环递归调用 </div><div class="line">&#125; </div><div class="line">&#125; </div><div class="line">&lt;/script&gt; </div><div class="line">&lt;/head&gt; </div><div class="line">&lt;body&gt; </div><div class="line">&lt;div class=&quot;content&quot;&gt; </div><div class="line">   &lt;div class=&quot;time&quot;&gt;还剩 &lt;span id=&quot;LeftTime&quot;&gt;&lt;/span&gt;&lt;/div&gt; </div><div class="line">&lt;/div&gt; </div><div class="line">&lt;/body&gt; </div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="4、RegExp类型对象"><a href="#4、RegExp类型对象" class="headerlink" title="4、RegExp类型对象"></a>4、RegExp类型对象</h3><p>即正则表达式对象</p>
+<ul>
+<li>创建：<br>1.使用字面量形式定义正则表达式 (<code>/.../</code>方式)：<code>var pattern1 = /[bc]at/i ;</code></li>
+</ul>
+<p>2.使用RegExp构造函数创建: <code>var pattern2 = new RegExp(&quot;[bc]at&quot;, &quot;i&quot;) ;</code><br>构造函数接受两个参数：要匹配的字符串模式和可选的标志字符串<br>这种方式存在字符串的转义问题</p>
+<p>3.上面两种方式创建的正则表达式不一样:<br>正则表达式字面量始终会共享同一个RegExp实例，而使用构造函数创建的每一个新RegExp实例都是一个新实例。</p>
+<ul>
+<li>属性：<br>正则对象的属性分成两类：<br>1.修饰符相关的属性<br>返回一个布尔值，表示对应的修饰符是否设置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ignoreCase：返回一个布尔值，表示是否设置了i修饰符，该属性只读。</div><div class="line">global：返回一个布尔值，表示是否设置了g修饰符，该属性只读。</div><div class="line">multiline：返回一个布尔值，表示是否设置了m修饰符，该属性只读。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>2.与修饰符无关的属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">lastIndex：返回下一次开始搜索的位置。该属性可读写，但是只在设置了g修饰符时有意义。</div><div class="line">source：返回正则表达式的字符串形式（不包括反斜杠），该属性只读。</div></pre></td></tr></table></figure></p>
+<ul>
+<li><p>RegExp实例方法<br>1.<code>exec()</code>方法<br>接受要应用模式的字符串为参数，<br>返回包含第一个匹配项信息的数组 或者 在没有匹配项的情况下返回null。<br>返回的数组包含两个额外的属性：index和input。其中，index表示匹配项在字符串中的位置，input表示应用正则表达式的字符串。在数组中，第一项是与整个模式匹配的字符串，其他项是与模式中的捕获组匹配的字符串。</p>
+<p><code>可用于分组</code><br>1)正则表达式还有提取子串的强大功能；<br>2)RegExp对象的exec()方法用于提取出符合格式的子串；<br>3)exec()方法在匹配成功后，会返回一个Array，第一个元素是正则表达式匹配到的整个字符串，后面的字符串表示匹配成功的子串；在匹配失败时返回null。<br>4)实例：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//从匹配的字符串中提取出区号和本地号码</div><div class="line">var re = /^(\d&#123;3&#125;)-(\d&#123;3,8&#125;)$/;</div><div class="line">re.exec(&apos;010-12345&apos;); // [&apos;010-12345&apos;, &apos;010&apos;, &apos;12345&apos;]</div><div class="line">re.exec(&apos;010 12345&apos;); // null</div></pre></td></tr></table></figure>
+<p>5)有时候用正则表达式也无法做到完全验证，比如识别日期</p>
+<p><code>可用于贪婪匹配</code><br>1)正则匹配默认是贪婪匹配，即匹配尽可能多的字符；<br>2)比如匹配出数字后面的0：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var re = /^(\d+)(0*)$/;</div><div class="line">re.exec(&apos;102300&apos;); // [&apos;102300&apos;, &apos;102300&apos;, &apos;&apos;]     (由于\d+采用贪婪匹配，直接把后面的0全部匹配了，结果0*只能匹配空字符串了)</div><div class="line">//必须让\d+采用非贪婪匹配（也就是尽可能少匹配），才能把后面的0匹配出来:</div><div class="line">var re = /^(\d+?)(0*)$/;  //加个?就可以让\d+采用非贪婪匹配</div><div class="line">re.exec(&apos;102300&apos;); // [&apos;102300&apos;, &apos;1023&apos;, &apos;00&apos;]</div></pre></td></tr></table></figure>
+<p><code>可用于全局搜索</code><br>1)JavaScript的正则表达式还有几个特殊的标志，最常用的是<code>g</code>，表示<code>全局匹配</code>：<br>  <code>var r1 = /test/g;</code> //等价于 <code>var r2 = new RegExp(&#39;test&#39;, &#39;g&#39;);</code><br>2)局匹配可以多次执行<code>exec()</code>方法来搜索一个匹配的字符串，每运行exec()一次正则表达式本身会更新lastIndex属性一次，表示上次匹配到的最后索引；<br>3)全局匹配类似搜索，因此不能使用<code>/^...$/</code>，那样只会最多匹配一次；<br>4)正则表达式还可以指定i标志，表示忽略大小写，m标志，表示执行多行匹配。</p>
+</li>
+</ul>
+<p>2.<code>test()</code>方法<br>用于测试给定的字符串是否符合条件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var re = /^\d&#123;3&#125;\-\d&#123;3,8&#125;$/; </div><div class="line">re.test(&apos;010-12345&apos;); // true </div><div class="line">re.test(&apos;010-1234x&apos;); // false</div></pre></td></tr></table></figure></p>
+<ul>
+<li><p>匹配规则<br>正则表达式是一种用来匹配字符串的有用方式：<br>1)精确匹配：直接给出全部字符<br>2)模糊匹配：<code>\d</code>可匹配一个<code>数字</code>，<code>\w</code>可匹配一个<code>字母或数字</code>，<code>\s</code>可匹配一个<code>空格（包括Tab等空白符），</code>\s+<code>可匹配</code>至少一个空格<code>（例如匹配&#39; &#39;，&#39;\t\t&#39;）
+用</code>*<code>表示任意个字符（包括0个）；
+用</code>+<code>表示至少一个字符；
+用</code>.<code>可以匹配任意字符；
+用</code>?<code>表示0个或1个字符；
+用</code>{n}<code>表示n个字符；
+用</code>{n,m}<code>表示n-m个字符；</code>A|B<code>可以匹配A或B，所以</code>(J|j)ava(S|s)cript<code>可以匹配&#39;JavaScript&#39;、&#39;Javascript&#39;、&#39;javaScript&#39;或者&#39;javascript&#39;；</code>^<code>表示行的开头，</code>^\d<code>表示必须以数字开头；</code>$<code>表示行的结束，</code>\d$<code>表示必须以数字结束；</code>空格<code>也算入匹配范围
+用</code>[]<code>表示范围可以更精确地匹配；
+特殊字符，在正则表达式中要用</code>`转义；<br>例子:</p>
+<ul>
+<li><code>00\d</code>可匹配<code>007</code>，但无法匹配<code>00A</code>；</li>
+<li><code>\d\d\d</code>可匹配<code>010</code>；</li>
+<li><code>\w\w</code>可匹配<code>js</code>;</li>
+<li><code>js.</code>可匹配 <code>&#39;jsp&#39;、&#39;jss&#39;、&#39;js!&#39;</code>等等</li>
+<li><code>[0-9a-zA-Z\_]</code>可以匹配<code>一个数字、字母或者下划线</code>；</li>
+<li><code>[0-9a-zA-Z\_]+</code>可以匹配<code>至少由一个数字、字母或者下划线组成的字符串</code>，比如’a100’，’0_Z’，’js2015’等等；</li>
+<li><code>[a-zA-Z\_\$][0-9a-zA-Z\_\$]*</code>可以匹配<code>由字母或下划线、$开头，后接任意个由一个数字、字母或者下划线、$组成的字符串</code>，也就是JavaScript允许的变量名；</li>
+<li><code>[a-zA-Z\_\$][0-9a-zA-Z\_\$]{0, 19}</code>更精确地限制了变量的长度是1-20个字符（前面1个字符+后面最多19个字符）。</li>
+</ul>
+</li>
+<li><p>字符串对象的方法之中，有4种与正则对象有关<br>1)match()：返回一个数组，成员是所有匹配的子字符串。<br>2)search()：按照给定的正则表达式进行搜索，返回一个整数，表示匹配开始的位置。<br>3)replace()：按照给定的正则表达式进行替换，返回替换后的字符串。<br>4)split()：按照给定规则进行字符串分割，返回一个数组，包含分割后的各个成员。<br>用正则表达式切分字符串比用固定的字符更灵活，且可把不规范的输入转化成正确的数组；</p>
+</li>
+</ul>
+<h3 id="5、Function类型对象"><a href="#5、Function类型对象" class="headerlink" title="5、Function类型对象"></a>5、Function类型对象</h3><p>函数实际上是对象。<br>每个函数都是Function类型的实例，而且都与其他引用类型一样具有属性和方法。<br>由于函数是对象，因此函数名实际上也是一个指向函数对象的指针，不会与某个函数绑定。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//函数声明定义 </div><div class="line">function sum(num1, num2)</div><div class="line">&#123; </div><div class="line">   return num1 + num2; </div><div class="line">&#125; </div><div class="line">//函数表达式定义 </div><div class="line">var sum = function(num1, num2)</div><div class="line">&#123; </div><div class="line">   return num1 + num2; </div><div class="line">&#125; </div><div class="line">//Function构造函数定义 </div><div class="line">var sum = new Function(&quot;num1&quot;, &quot;num2&quot;, &quot;return num1 + num2&quot;); //不推荐</div></pre></td></tr></table></figure></p>
+<p>函数声明和函数表达式的区别：<br>解析器向执行环境中加载数据时，会率先读取函数声明，并使其在执行代码前可用（可用访问），<br>至于函数表达式必须等到解析器执行到它所在的代码行，才回真正被解释执行。</p>
+<p>函数内部属性：arguments</p>
+<p>函数属性和方法<br>属性：length 和 prototype<br>方法：js函数中的apply()、call()、bind()方法</p>
+<h3 id="基本包装类型对象请见“JS对象-基本包装类型对象”一文。"><a href="#基本包装类型对象请见“JS对象-基本包装类型对象”一文。" class="headerlink" title="基本包装类型对象请见“JS对象-基本包装类型对象”一文。"></a>基本包装类型对象请见“JS对象-基本包装类型对象”一文。</h3><h3 id="内置-标准-对象请见“JS对象-内置对象”一文。"><a href="#内置-标准-对象请见“JS对象-内置对象”一文。" class="headerlink" title="内置(标准)对象请见“JS对象-内置对象”一文。"></a>内置(标准)对象请见“JS对象-内置对象”一文。</h3>
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
