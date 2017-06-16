@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/16/JS-基本数据类型/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="javascript基本数据类型javascript拥有5种基本数据类型：Number、String、Boolean、Undefined和Null  基本类型值是指简单的数据段，都是按值访问的，因为可以操作保存在变量中的实际值; 基本类型的值在内存中占据固定大小的空间，被保存在栈内存中。一个变量向另一个变量复制基本类型的值时，会创建这个值的一个副本。 不能给基本类型的值添加属性。 用typeof方">
-<meta property="og:updated_time" content="2017-06-16T08:04:37.498Z">
+<meta property="og:updated_time" content="2017-06-16T08:13:58.866Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS-基本数据类型 | SPACE-19">
 <meta name="twitter:description" content="javascript基本数据类型javascript拥有5种基本数据类型：Number、String、Boolean、Undefined和Null  基本类型值是指简单的数据段，都是按值访问的，因为可以操作保存在变量中的实际值; 基本类型的值在内存中占据固定大小的空间，被保存在栈内存中。一个变量向另一个变量复制基本类型的值时，会创建这个值的一个副本。 不能给基本类型的值添加属性。 用typeof方">
@@ -220,9 +220,9 @@ classes that you can use:
 </li>
 <li><p>数值转换<br>有三种方法：<code>Number()、parseInt()和parseFloat()</code>。<br>三种方法可以接受各种进制的数字，但对于含数字的字符串并不适用。<br>若数字为1.2. 会报错，但字符串为’1.2.’则不会报错。</p>
 <ol>
-<li>Number()<br>可用于任何类型；<br><code>Number(true):1 || Number(false):0</code>;<br><code>Number(各种进制的数字)</code>：运算后的十进制的数字，如1.0或1.或01会以1输出;<br><code>Number(undefined)</code>:NaN;<br><code>Number(null)</code>:0;<br><code>Number(字符串)</code>：<br>   字符串中不识别八进制，按照十进制数字处理<br>   1)Number(只包含数字的十进制和十六进制的字符串)：运算后的十进制的数字<br>   2)Number(‘’和’ ‘):0<br>   3)Number(其他情况的字符串):NaN<br><code>Number(对象)</code>：<br>   1)Number([]和[0]和[-0]):0<br>   2)Number([数字])：运算后的数字<br>   3)Number([1,2]和{}和其他对象):NaN</li>
-<li>parseInt()<br>用于把字符串转换成数值。<br>在转换字符串时，会忽略字符串前面的空格，直到找到第一个非空格字符。如果第一个字符不是数字字符或者负号，parseInt()就会返回NaN。如果是，则继续解析，直到解析完成或者遇到非数字字符。<br>可以识别出各种进制的整数，但对于八进制字面量的字符串，ECMAScript3会解析而ECMAScript5不会解析<br>提供第二个参数，表示多少进制，如：<code>parseInt(&#39;123&#39;,16或10或2)</code><br><code>parseInt(各种进制的数字)</code>：运算后的十进制的数字。如1.0或1.或01会以1输出<br>因为parseInt()是专门用来处理字符串转换数字的，所以<code>parseInt(其他类型包括&#39;&#39;)</code>//NaN</li>
-<li>parseFloat<br>用于把字符串转换成数值。<br>类似于parseInt()，会忽略字符串前面的空格，直到找到第一个非空格字符。<br><code>parseFloat()</code>只能解析十进制字符串<br><code>parseFloat(各种进制的数字)</code>：运算后的十进制的数字。如1.0或1.或01会以1输出</li>
+<li><code>Number()</code><br>可用于任何类型；<br>1)Number(true):1 || Number(false):0;<br>2)Number(各种进制的数字)：运算后的十进制的数字，如1.0或1.或01会以1输出;<br>3)Number(undefined):NaN;`<br>4)Number(null):0;<br>5)Number(字符串)：<br>   字符串中不识别八进制，按照十进制数字处理<br>   Number(只包含数字的十进制和十六进制的字符串)：运算后的十进制的数字<br>   Number(‘’和’ ‘):0<br>   Number(其他情况的字符串):NaN<br>6)Number(对象)：<br>   Number([]和[0]和[-0]):0<br>   Number([数字])：运算后的数字<br>   Number([1,2]和{}和其他对象):NaN</li>
+<li><code>parseInt()</code><br>用于把字符串转换成数值。<br>在转换字符串时，会忽略字符串前面的空格，直到找到第一个非空格字符。如果第一个字符不是数字字符或者负号，parseInt()就会返回NaN。如果是，则继续解析，直到解析完成或者遇到非数字字符。<br>可以识别出各种进制的整数，但对于八进制字面量的字符串，ECMAScript3会解析而ECMAScript5不会解析<br>提供第二个参数，表示多少进制，如：<code>parseInt(&#39;123&#39;,16或10或2)</code><br><code>parseInt(各种进制的数字)</code>：运算后的十进制的数字。如1.0或1.或01会以1输出<br>因为parseInt()是专门用来处理字符串转换数字的，所以<code>parseInt(其他类型包括&#39;&#39;)</code>//NaN</li>
+<li><code>parseFloat</code><br>用于把字符串转换成数值。<br>类似于parseInt()，会忽略字符串前面的空格，直到找到第一个非空格字符。<br><code>parseFloat()</code>只能解析十进制字符串<br><code>parseFloat(各种进制的数字)</code>：运算后的十进制的数字。如1.0或1.或01会以1输出</li>
 </ol>
 </li>
 <li><p>合法的Number类型：</p>
@@ -253,48 +253,34 @@ classes that you can use:
 <li><p>一些字符串操作方法：<br>调用这些方法本身<code>不会改变</code>原有字符串的内容，而是<code>返回一个新字符串</code><br>1)<code>对象.toUpperCase();</code>//将字符串转化成大写<br>2)<code>对象.toLowerCase();</code>//将字符串转化成小写<br>3)<code>对象.charAt(index);</code>//返回指定位置的字符(index：0~length-1，不在返回空字符串)(其实也可以用数组形式实现相同效果)<br>4)<code>对象.indexOf(需检索的字符串值,[开始检索位置]);</code>//返回某个指定的字符串值在字符串中首次出现的位置，没有返回-1<br>5)<code>对象.split(切割标志,[切割后元素数]);</code> //将字符串分割为字符串数组，并返回此数组<br>6)<code>对象.substring(开始位置,[结束位置]);</code> //提取字符串中介于[开始位置,结束位置-1)的字符<br>7)<code>对象.substr(开始位置,[提取字符串的长度])</code>;// 从字符串中提取从开始位置起的指定数目(长度)的字符串(开始位置为负时表示从尾开始)</p>
 </li>
 </ul>
-<h3 id="三、Boolean-布尔值"><a href="#三、Boolean-布尔值" class="headerlink" title="三、Boolean(布尔值)"></a>三、Boolean(布尔值)</h3><pre><code>* 值：true、false、布尔运算计算值(2 &gt; 1; // 这是一个true值)
-* 出现场景：
-  1. 条件语句导致系统执行的隐士类型转换
-  2. 字面量或变量定义
-* 类型转换 
-  1. Number(true): 1 || Number(false) : 0 
-  2. String(true):&apos;true&apos; || String(false):&apos;false&apos;
-* Boolean()方法
-  1. Boolean(undefined):false
-  2. Boolean(null):false
-  3. Boolean(非空对象包括空数组[]和空对象{}):true
-  4. Boolean(非0): true || Boolean(0和NaN):false
-  5. Boolean(非空包括空格字符串):true || Boolean(&apos;&apos;):false
-* 注意：true不一定等于1,false也不一定等于0
-</code></pre><h3 id="四、Undefined"><a href="#四、Undefined" class="headerlink" title="四、Undefined"></a>四、Undefined</h3><pre><code>* Undefined类型只有一个值，就是undefined。
-* undefined 表示一个未声明的变量，或已声明但没有赋值的变量，或一个并不存在的对象属性。
-* `var a `&lt;=&gt; `var a = undefined;`
-* 对于尚未声明过的变量，只能执行一项操作，就是使用`typeof操作符`检测其数据类型【但在严格模式下会导致错误】
-* 出现场景：
-  1. 已声明未赋值的变量
-  2. 获取对象不存在的属性
-  3. 无返回值的函数的执行结果
-  4. 函数的参数没有传入(可用于判断函数参数是否传递成功)
-  5. `void(expression)`
-* 类型转换
-  1. Boolean(undefined)：false 
-  2. Number(undefined):NaN 
-  3. String(undefined):&apos;undefined&apos;
-* 注意：只能用`===`运算来测试某个值是否是未定义的，因为`==`运算符认为undefined值等价于 null。
-</code></pre><h3 id="五、Null"><a href="#五、Null" class="headerlink" title="五、Null"></a>五、Null</h3><pre><code>* Null类型只有一个值---`null`,逻辑角度看，null值表示一个空对象指针
-* null表示一个“空”（没有值）。它和0(数值)以及空字符串`&apos;&apos;`(长度为0的字符串)不同。
-* 如果定义的变量将用于保存对象，最好将该变量初始化为null。
-* 实际上`undefined`值是派生自`null值`的，所以`undefined == null`(但===不成立)
-* 出现场景：对象不存在时
-* 类型转换：
-  1. Boolean(null)：false
-  2. Number(null):0
-  3. String(null):&apos;null&apos;
-* 注意1：null是空对象指针，而[]是空数组，{}是空对象，三者不相同。
-* 注意2：null不能添加自定义属性
-* 其他语言中也有类似JavaScript的null的表示：Java也用null，Swift用nil，Python用None表示。
-</code></pre>
+<h3 id="三、Boolean-布尔值"><a href="#三、Boolean-布尔值" class="headerlink" title="三、Boolean(布尔值)"></a>三、Boolean(布尔值)</h3><ul>
+<li>值：true、false、布尔运算计算值(2 &gt; 1; // 这是一个true值)</li>
+<li>出现场景：<br>1)条件语句导致系统执行的隐士类型转换<br>2)字面量或变量定义</li>
+<li>类型转换<br>1)Number(true): 1 || Number(false) : 0<br>2)tring(true):’true’ || String(false):’false’</li>
+<li>Boolean()方法<br>1)Boolean(undefined):false<br>2)Boolean(null):false<br>3)Boolean(非空对象包括空数组[]和空对象{}):true<br>4)Boolean(非0): true || Boolean(0和NaN):false<br>5)Boolean(非空包括空格字符串):true || Boolean(‘’):false</li>
+<li>注意：true不一定等于1,false也不一定等于0</li>
+</ul>
+<h3 id="四、Undefined"><a href="#四、Undefined" class="headerlink" title="四、Undefined"></a>四、Undefined</h3><ul>
+<li>Undefined类型只有一个值，就是undefined。</li>
+<li>undefined 表示一个未声明的变量，或已声明但没有赋值的变量，或一个并不存在的对象属性。</li>
+<li><code>var a</code>&lt;=&gt; <code>var a = undefined;</code></li>
+<li>对于尚未声明过的变量，只能执行一项操作，就是使用<code>typeof操作符</code>检测其数据类型【但在严格模式下会导致错误】</li>
+<li>出现场景：<br>1)已声明未赋值的变量<br>2)获取对象不存在的属性<br>3)无返回值的函数的执行结果<br>4)函数的参数没有传入(可用于判断函数参数是否传递成功)<br>5)<code>void(expression)</code></li>
+<li>类型转换<br>1)Boolean(undefined)：false<br>2)Number(undefined):NaN<br>3)String(undefined):’undefined’</li>
+<li>注意：只能用<code>===</code>运算来测试某个值是否是未定义的，因为<code>==</code>运算符认为undefined值等价于 null。</li>
+</ul>
+<h3 id="五、Null"><a href="#五、Null" class="headerlink" title="五、Null"></a>五、Null</h3><ul>
+<li>Null类型只有一个值—<code>null</code>,逻辑角度看，null值表示一个空对象指针</li>
+<li>null表示一个“空”（没有值）。它和0(数值)以及空字符串<code>&#39;&#39;</code>(长度为0的字符串)不同。</li>
+<li>如果定义的变量将用于保存对象，最好将该变量初始化为null。</li>
+<li>实际上<code>undefined</code>值是派生自<code>null值</code>的，所以<code>undefined == null</code>(但===不成立)</li>
+<li>出现场景：对象不存在时</li>
+<li>类型转换：<br>1)Boolean(null)：false<br>2)Number(null):0<br>3)String(null):’null’</li>
+<li>注意1：null是空对象指针，而[]是空数组，{}是空对象，三者不相同。</li>
+<li>注意2：null不能添加自定义属性</li>
+<li>其他语言中也有类似JavaScript的null的表示：Java也用null，Swift用nil，Python用None表示。</li>
+</ul>
+
   </section>
 
   
