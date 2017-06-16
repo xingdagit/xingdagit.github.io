@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/16/JS-javascript对象/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="一、javascript 对象 JavaScript 中的所有事物都是对象，如:字符串、数值、数组、函数等，每个对象带有属性和方法。此外，JavaScript 允许自定义对象。 其实并不是一切皆对象，因为javascript拥有5种基本数据类型(Undefined、Null、Boolean、Number和String)和一个引用数据类型(Object)。 不过在js的核心思想里：操作数据时是将所有">
-<meta property="og:updated_time" content="2017-06-16T08:21:19.115Z">
+<meta property="og:updated_time" content="2017-06-16T08:27:41.408Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS-javascript对象 | SPACE-19">
 <meta name="twitter:description" content="一、javascript 对象 JavaScript 中的所有事物都是对象，如:字符串、数值、数组、函数等，每个对象带有属性和方法。此外，JavaScript 允许自定义对象。 其实并不是一切皆对象，因为javascript拥有5种基本数据类型(Undefined、Null、Boolean、Number和String)和一个引用数据类型(Object)。 不过在js的核心思想里：操作数据时是将所有">
@@ -188,9 +188,13 @@ classes that you can use:
 </ul>
 <h3 id="二、javascript对象分类"><a href="#二、javascript对象分类" class="headerlink" title="二、javascript对象分类"></a>二、javascript对象分类</h3><p>javascript对象根据类型不同可分为：</p>
 <ol>
-<li>内部(内置)对象<br>内部对象又分为：<br>1)引用类型对象(本地对象)<ul>
+<li><p>内部(内置)对象<br>内部对象又分为：<br>1)引用类型对象(本地对象)</p>
+<ul>
 <li>本地对象（native object），定义为“独立于宿主环境的 ECMAScript 实现提供的对象”。</li>
-<li>包括Object 、Array、Date、RegExp、Function、基本包装类型对象(Boolean类型、Number类型、String类型)、单体内置对象（Global和Math）<br>2)单体内置对象</li>
+<li>包括Object 、Array、Date、RegExp、Function、基本包装类型对象(Boolean类型、Number类型、String类型)、单体内置对象（Global和Math）</li>
+</ul>
+<p>2)单体内置对象</p>
+<ul>
 <li>单体内置对象（built-in object）定义为“由 ECMAScript 实现提供的、独立于宿主环境的所有对象，在 ECMAScript 程序开始执行时出现”。</li>
 <li>这意味着开发者不必明确实例化内置对象，它已被实例化了。</li>
 <li>ECMA-262 只定义了两个单体内置对象，即<code>Global</code>和<code>Math</code></li>
@@ -212,14 +216,14 @@ classes that you can use:
 </ol>
 <h3 id="三、javascript对象的创建"><a href="#三、javascript对象的创建" class="headerlink" title="三、javascript对象的创建"></a>三、javascript对象的创建</h3><ul>
 <li>使用对象前先要进行对象的创建。</li>
-<li>JavaScript中创建对象的几种方式：<br>1.使用<code>原始格式</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var person = &#123; </div><div class="line">   name:&quot;Kevin&quot;, </div><div class="line">   age:31, </div><div class="line">   5:&quot;Test&quot; </div><div class="line">&#125;; </div><div class="line">alert(person.name); </div><div class="line">alert(person[&quot;5&quot;]);</div></pre></td></tr></table></figure>
+<li>JavaScript中创建对象的几种方式：<br>1.使用<code>原始格式</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var person = &#123; </div><div class="line">     name:&quot;Kevin&quot;, </div><div class="line">  age:31, </div><div class="line">  5:&quot;Test&quot; </div><div class="line">&#125;; </div><div class="line">alert(person.name); </div><div class="line">alert(person[&quot;5&quot;]);</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>2.使用<code>Object构造函数</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var person = new Object(); </div><div class="line">person.name=&quot;kevin&quot;; </div><div class="line">person.age=31; </div><div class="line">alert(person.name); </div><div class="line">alert(person[&quot;name&quot;]);</div></pre></td></tr></table></figure></p>
+<p>2.使用<code>Object构造函数</code><br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var person = new Object(); </div><div class="line">person.name=&quot;kevin&quot;; </div><div class="line">person.age=31; </div><div class="line">alert(person.name); </div><div class="line">alert(person[&quot;name&quot;]);</div></pre></td></tr></table></figure></p>
 <p>3.使用<code>内置对象</code></p>
 <ul>
 <li>指通过JavaScript语言原生对象的构造方法，实例化出一个新的对象。</li>
-<li>实例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var str = new String(&quot;xxx&quot;); //创建并初始化String</div><div class="line">var str1 = &quot;xxx&quot;; //直接赋值来创建的String</div><div class="line">var func = new Function(&quot;x&quot;,&quot;alert(x)&quot;);//实例初始化一个function</div><div class="line">var o = new Object();//创建并初始化一个Object</div></pre></td></tr></table></figure>
+<li>实例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str = new String(&quot;xxx&quot;); </div><div class="line">//创建并初始化String var str1 = &quot;xxx&quot;; </div><div class="line">//直接赋值来创建的String </div><div class="line">var func = new Function(&quot;x&quot;,&quot;alert(x)&quot;);//实例初始化一个function </div><div class="line">var o = new Object();//创建并初始化一个Object</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>4.使用<code>自定义构造函数</code></p>
@@ -228,13 +232,10 @@ classes that you can use:
 <li>即使用this关键字定义创建的上下文属性，创建自定义对象构造器</li>
 <li>注意命名规范：作为构造函数的函数首字母要大写，以区别其它函数</li>
 <li><p>实例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//创建自定义构造函数：</div><div class="line">function Person(name,age,job) </div><div class="line">&#123; </div><div class="line">  this.name=name; </div><div class="line">  this.age=age; </div><div class="line">  this.job=job; </div><div class="line">  this.sayName=function() </div><div class="line">  &#123; </div><div class="line">     alert(this.name);</div><div class="line">  &#125;; </div><div class="line">&#125;</div><div class="line">//有了对象构造器，就可以创建新的对象实例：</div><div class="line">var person = new Person(&quot;kevin&quot;,31,&quot;SE&quot;); </div><div class="line">person.sayName();</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//创建自定义构造函数： </div><div class="line">function Person(name,age,job) </div><div class="line">&#123; </div><div class="line">   this.name=name; </div><div class="line">this.age=age; </div><div class="line">this.job=job; </div><div class="line">this.sayName=function() &#123; </div><div class="line">   alert(this.name); </div><div class="line">&#125;; </div><div class="line">&#125; </div><div class="line">//有了对象构造器，就可以创建新的对象实例：</div><div class="line">var person = new Person(&quot;kevin&quot;,31,&quot;SE&quot;); </div><div class="line">person.sayName();</div></pre></td></tr></table></figure>
 </li>
-<li><p>这种方式有个缺陷，如上例的sayName方法，它的每个实例都是指向不同的函数实例，而不是同一个。</p>
+<li><p>这种方式有个缺陷，如上例的sayName方法，它的每个实例都是指向不同的函数实例，而不是同一个。<br>5.使用<code>原型模式</code></p>
 </li>
-</ul>
-<p>5.使用<code>原型模式</code></p>
-<ul>
 <li>解决了方法4中提到的缺陷，使不同的对象的函数（如sayFriends）指向了同一个函数。<br>而且由于<code>prototype</code>实际上是指向父级的一种引用，它仅仅是个数据的副本，因此在初始化及存储上<code>更节约资源</code><br>但它本身也有缺陷，就是实例共享了引用类型friends。从下面的代码执行结果可以看到，两个实例的friends的值是一样的，这可能不是我们所期望的。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function Person() &#123; &#125; </div><div class="line"></div><div class="line">Person.prototype = &#123; </div><div class="line">    constructor : Person, </div><div class="line">	name:&quot;kevin&quot;, </div><div class="line">	age:31, </div><div class="line">	job:&quot;SE&quot;, </div><div class="line">	friends:[&quot;Jams&quot;,&quot;Martin&quot;], </div><div class="line">	sayFriends:function() &#123; </div><div class="line">	   alert(this.friends); </div><div class="line">	&#125; </div><div class="line">&#125;; </div><div class="line">var person1 = new Person(); </div><div class="line">person1.friends.push(&quot;Joe&quot;); </div><div class="line">person1.sayFriends();//Jams,Martin,Joe </div><div class="line"></div><div class="line">var person2 = new Person(); </div><div class="line">person2.sayFriends();//James,Martin,Joe</div></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -244,9 +245,7 @@ classes that you can use:
 <li>实例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">//构造函数</div><div class="line">function Person(name,age,job)</div><div class="line">&#123; </div><div class="line">   this.name=name; </div><div class="line">   this.age=age; </div><div class="line">   this.job=job; </div><div class="line">   this.friends=[&quot;Jams&quot;,&quot;Martin&quot;]; </div><div class="line">&#125; </div><div class="line"></div><div class="line">//原型模式</div><div class="line">Person.prototype.sayFriends=function() &#123; </div><div class="line">    alert(this.friends); </div><div class="line">&#125;; </div><div class="line"></div><div class="line">var person1 = new Person(&quot;kevin&quot;,31,&quot;SE&quot;);</div><div class="line">var person2 = new Person(&quot;Tom&quot;,30,&quot;SE&quot;); </div><div class="line">person1.friends.push(&quot;Joe&quot;); </div><div class="line">person1.sayFriends();//Jams,Martin,Joe </div><div class="line">person2.sayFriends();//Jams,Martin</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<ol>
-<li><code>使用JSON反序列</code></li>
-</ol>
+<p>7.<code>使用JSON反序列</code></p>
 <ul>
 <li>JavaScript Object Notation(JavaScript对象命名)</li>
 <li>一种超轻量级的数据交换格式，易于阅读和编写，同时也易于及其解析和生成。</li>
