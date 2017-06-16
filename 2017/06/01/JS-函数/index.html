@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/01/JS-函数/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="一、函数定义和调用 定义函数：function 函数名(参数) {…}JavaScript的函数也是一个对象，函数名可视为指向该函数的变量，因此也可以这样定义函数：var abs = function (x) {..}; 调用函数：1)在&amp;lt;script&amp;gt;标签内调用：函数名(参数);2)在HTML文件中调用，如通过点击按钮后调用已定义好的函数：onclick=&amp;quot;函数名(参数)&amp;">
-<meta property="og:updated_time" content="2017-06-14T16:34:18.182Z">
+<meta property="og:updated_time" content="2017-06-15T02:25:08.238Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS-函数 | SPACE-19">
 <meta name="twitter:description" content="一、函数定义和调用 定义函数：function 函数名(参数) {…}JavaScript的函数也是一个对象，函数名可视为指向该函数的变量，因此也可以这样定义函数：var abs = function (x) {..}; 调用函数：1)在&amp;lt;script&amp;gt;标签内调用：函数名(参数);2)在HTML文件中调用，如通过点击按钮后调用已定义好的函数：onclick=&amp;quot;函数名(参数)&amp;">
@@ -261,10 +261,10 @@ classes that you can use:
 </li>
 <li><p><code>apply()方法</code></p>
 <ul>
-<li>虽在一个独立的函数调用中，this根据是否是strict模式分别指向undefined或window，<br>但还是有方法可以<code>指定函数的this指向哪个对象</code>：用函数本身的<code>apply()方法</code></li>
+<li>虽在一个独立的函数调用中，this根据是否是strict模式分别指向undefined或window，<br>但还是有方法可以<code>指定</code>函数的this指向哪个对象：用函数本身的<code>apply()方法</code></li>
 <li>apply方法接收两个参数：<br>1.需要绑定的this变量（表示this要指向的对象）<br>2.Array（数组形式添加）（表示函数本身的参数）</li>
 <li><p>实例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">   function getAge() </div><div class="line">&#123;</div><div class="line">       var y = new Date().getFullYear();</div><div class="line">       return y - this.birth;</div><div class="line">   &#125;</div><div class="line">   var xiaoming = &#123;</div><div class="line">       name: &apos;小明&apos;,</div><div class="line">       birth: 1990,</div><div class="line">       age: getAge  </div><div class="line">   &#125;;</div><div class="line">   xiaoming.age(); // 25</div><div class="line">   getAge.apply(xiaoming, []); // 25（使this指向xiaoming, 参数为空）</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function getAge()</div><div class="line">&#123;</div><div class="line">       var y = new Date().getFullYear();</div><div class="line">       return y - this.birth;</div><div class="line">   &#125;</div><div class="line">   var xiaoming = &#123;</div><div class="line">       name: &apos;小明&apos;,</div><div class="line">       birth: 1990,</div><div class="line">       age: getAge  </div><div class="line">   &#125;;</div><div class="line">   xiaoming.age(); // 25</div><div class="line">   getAge.apply(xiaoming, []); // 25（使this指向xiaoming, 参数为空）</div></pre></td></tr></table></figure>
 </li>
 <li><p>利用<code>apply()</code>，还可以动态改变函数的行为；<br>(JavaScript所有对象都是动态的，即使内置的函数，也可以重新指向新的函数)<br>实例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//需求：统计一下代码中一共调用了多少次parseInt()函数</div><div class="line">//方法：动态改变parseInt函数的默认行为（免得要把所有的调用都找出来，然后手动加上count += 1）</div><div class="line">var count = 0;</div><div class="line">var oldParseInt = parseInt; // 保存原函数</div><div class="line">window.parseInt = function () &#123;</div><div class="line">   count += 1;</div><div class="line">   return oldParseInt.apply(null, arguments); // 使用apply调用原函数</div><div class="line">&#125;;</div><div class="line">// 测试:</div><div class="line">parseInt(&apos;10&apos;);</div><div class="line">parseInt(&apos;20&apos;);</div><div class="line">parseInt(&apos;30&apos;);</div><div class="line">count; // 3</div></pre></td></tr></table></figure>
@@ -276,7 +276,7 @@ classes that you can use:
 </ol>
 <ul>
 <li>与<code>apply()</code>类似，唯一区别是：<br><code>apply()</code>把参数<code>打包成Array再传入</code>；<br><code>call()</code>把参数<code>按顺序传入</code>。</li>
-<li>比如调用<code>Math.max(3, 5, 4)</code>，<br>分别用apply()和call()实现如下：<br><code>Math.max.apply(null, [3, 5, 4]);</code> // 5<br><code>Math.max.call(null, 3, 5, 4);</code>    // 5</li>
+<li>比如调用<code>Math.max(3, 5, 4)</code>，<br>分别用apply()和call()实现如下：<br><code>Math.max.apply(null, [3, 5, 4]);</code> // 5<br><code>Math.max.call(null, 3, 5, 4);</code>    // 5 </li>
 </ul>
 <ol>
 <li>对普通函数调用时，通常把this绑定为null</li>
@@ -349,8 +349,8 @@ classes that you can use:
 <li>ES6标准新增了一种新的函数：<code>Arrow Function（箭头函数）</code></li>
 <li>语法：<br> <code>x =&gt; x * x</code>  // 相当于function (x) {  return x * x;  } </li>
 <li>箭头函数有两种格式：<ol>
-<li>只包含一个表达式，省略{ … }和return ：x =&gt; x * x</li>
-<li>包含多条语句，不省略{ … }和return：x =&gt; {…return…}</li>
+<li>只包含一个表达式，<code>省略</code>{ … }和return：<code>x =&gt; x * x</code></li>
+<li>包含多条语句，<code>不省略</code>{ … }和return：<code>x =&gt; {…return…}</code></li>
 </ol>
 </li>
 <li>参数种类：<ol>
@@ -359,8 +359,8 @@ classes that you can use:
 <li>可变参数: <code>(x, y, ...rest) =&gt; {…}</code></li>
 </ol>
 </li>
-<li>如果要返回一个对象：<br><code>x =&gt; ({ foo: x })</code> //不加括号就会出错(因为和函数体的{ … }有语法冲突)</li>
-<li>箭头函数类似匿名函数一样简化了函数定义，<br>但它们有个明显的区别：箭头函数内部的this是词法作用域，由上下文确定。<br>这样，使用箭头函数完全修复了this的指向，this总是指向词法作用域，也就是外层调用者obj： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">    birth: 1990,</div><div class="line">    getAge: function () &#123;</div><div class="line">        var b = this.birth; // 1990</div><div class="line">        var fn = () =&gt; new Date().getFullYear() - this.birth; //this指向obj对象(而不是指向window或undefined)</div><div class="line">        return fn();</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">obj.getAge(); // 25</div><div class="line">//注意：由于this在箭头函数中已经按照词法作用域绑定了</div><div class="line">//所以，用call()或者apply()调用箭头函数时，无法对this进行绑定，即传入的第一个参数被忽略：</div><div class="line">var obj = &#123;</div><div class="line">   birth: 1990,</div><div class="line">   getAge: function (year) &#123;</div><div class="line">     var b = this.birth; // 1990</div><div class="line">     var fn = (y) =&gt; y - this.birth; // this已经绑定了原对象obj，所以this.birth仍是1990</div><div class="line">     return  fn.call ( &#123;birth:2000&#125;  , year );</div><div class="line">   &#125;</div><div class="line">&#125;;</div><div class="line">obj.getAge(2015); // 25</div></pre></td></tr></table></figure>
+<li>如果要返回一个对象：<br><code>x =&gt; ( { foo: x } )</code> //不加括号就会出错(因为和函数体的{ … }有语法冲突)</li>
+<li>箭头函数类似匿名函数一样简化了函数定义，<br>但它们有个明显的区别：箭头函数内部的this是<code>词法作用域</code>，由上下文确定。<br>这样，使用箭头函数完全修复了this的指向，this总是指向词法作用域，也就是<code>外层调用者obj</code>： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">    birth: 1990,</div><div class="line">    getAge: function () &#123;</div><div class="line">        var b = this.birth; // 1990</div><div class="line">        var fn = () =&gt; new Date().getFullYear() - this.birth; //this指向obj对象(而不是指向window或undefined)</div><div class="line">        return fn();</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">obj.getAge(); // 25</div><div class="line">//注意：由于this在箭头函数中已经按照词法作用域绑定了</div><div class="line">//所以用call()或者apply()调用箭头函数时，无法对this进行绑定，即传入的第一个参数被忽略：</div><div class="line">var obj = &#123;</div><div class="line">   birth: 1990,</div><div class="line">   getAge: function (year) &#123;</div><div class="line">     var b = this.birth; // 1990</div><div class="line">     var fn = (y) =&gt; y - this.birth; // this已经绑定了原对象obj，所以this.birth仍是1990</div><div class="line">     return  fn.call ( &#123;birth:2000&#125; , year ); //传入的第一个参数无作用，因为this已经按词法作用域绑定了</div><div class="line">   &#125;</div><div class="line">&#125;;</div><div class="line">obj.getAge(2015); // 25(而不是15)</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="八、generator"><a href="#八、generator" class="headerlink" title="八、generator"></a>八、generator</h2><ul>
@@ -372,13 +372,11 @@ classes that you can use:
 </li>
 <li><p>可以用<code>逐个输出</code>代替<code>最后才输出一个数组</code>的方式</p>
 </li>
-<li>创建generator对象：<br><code>foo(5);</code> 或 <code>var f= foo(5);</code>//用一个对象接收</li>
-<li><p>调用generator对象：<br>1)不断地调用generator对象的next()方法</p>
+<li>创建generator对象：<br><code>foo(5);</code><br>或<br><code>var f= foo(5);</code>//用一个对象接收</li>
+<li><p>调用generator对象：</p>
 <ol>
-<li>语法：<code>f.next();</code></li>
-<li>next()方法会执行generator的代码，每次遇到yield xxx ,就返回一个对象<code>{value: x, done: true/false}</code>，然后“暂停”；</li>
-<li>返回的value就是yield的返回值，done表示这个generator是否已经执行结束了；</li>
-<li>当执行到done为true时， value就是return的返回值，这个generator对象已经全部执行完毕，不要再继续调用next()了。<br>2)用<code>for ... of</code>循环迭代generator对象<br>语法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   for (var x of foo(5)) </div><div class="line">&#123;</div><div class="line">     console.log(x); </div><div class="line">   &#125;</div><div class="line">   //这种方式不需要自己判断done的值；</div></pre></td></tr></table></figure>
+<li>不断地调用generator对象的<code>next()方法</code><br>1)语法：<code>generator对象.next();</code><br>2)next()方法会执行generator的代码，每次遇到yield xxx ,就返回一个对象<code>{value: x, done: true/false}</code>，然后“暂停”；<br>3)返回的value就是yield的返回值，done表示这个generator是否已经执行结束了；<br>4)当执行到done为true时，value就是return的返回值，这个generator对象已经全部执行完毕，不要再继续调用next()了。</li>
+<li>用<code>for ... of</code>循环迭代generator对象<br>语法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">for (var x of foo(5)) </div><div class="line">&#123; </div><div class="line">   console.log(x); </div><div class="line">&#125; </div><div class="line">//这种方式不需要自己判断done的值</div></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
