@@ -23,7 +23,7 @@
 <meta property="og:description" content="一、javascript引用类型对象 也叫本地对象。 引用类型值是指那些可能由多个值构成的对象。 js不允许直接访问内存中的位置，也就是不能直接访问操作对象的内存空间。在操作对象时，实际上是在操作对象的引用而不是实际的对象。 引用类型的值是对象，保存在堆内存中，包含引用类型值的变量实际上包含的并不是对象本身，而是一个指向该对象的指针。从一个变量向另一个变量复制引用类型的值，复制的其实是指针，因此两">
 <meta property="og:image" content="http://img.mukewang.com/533295ab0001dead05190599.jpg">
 <meta property="og:image" content="http://img.mukewang.com/555c650d0001ae7b04180297.jpg">
-<meta property="og:updated_time" content="2017-06-16T08:49:02.800Z">
+<meta property="og:updated_time" content="2017-06-16T08:57:46.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS对象-引用类型对象 | SPACE-19">
 <meta name="twitter:description" content="一、javascript引用类型对象 也叫本地对象。 引用类型值是指那些可能由多个值构成的对象。 js不允许直接访问内存中的位置，也就是不能直接访问操作对象的内存空间。在操作对象时，实际上是在操作对象的引用而不是实际的对象。 引用类型的值是对象，保存在堆内存中，包含引用类型值的变量实际上包含的并不是对象本身，而是一个指向该对象的指针。从一个变量向另一个变量复制引用类型的值，复制的其实是指针，因此两">
@@ -184,7 +184,7 @@ classes that you can use:
   <section id="post-content" class="article-content post">
     <h3 id="一、javascript引用类型对象"><a href="#一、javascript引用类型对象" class="headerlink" title="一、javascript引用类型对象"></a>一、javascript引用类型对象</h3><ul>
 <li>也叫本地对象。</li>
-<li><code>引用类型值</code>是指那些可能由多个值构成的对象。</li>
+<li>引用类型值是指那些可能由多个值构成的对象。</li>
 <li>js不允许直接访问内存中的位置，也就是不能直接访问操作对象的内存空间。<br>在操作对象时，实际上是在操作对象的引用而不是实际的对象。</li>
 <li>引用类型的值是<code>对象</code>，保存在<code>堆内存</code>中，包含引用类型值的变量实际上包含的并不是对象本身，而是<code>一个指向该对象的指针</code>。<br>从一个变量向另一个变量复制<code>引用类型的值</code>，复制的其实是<code>指针</code>，因此两个变量最终都指向<code>同一个对象</code>。</li>
 <li>对于引用类型的值，可以为其<code>添加</code>属性和方法，也可以<code>改变和删除</code>其属性和方法</li>
@@ -244,38 +244,24 @@ classes that you can use:
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">//1天=24小时，1小时=60分，1分=60秒，1秒=1000毫秒 </div><div class="line">&lt;head&gt; </div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt; </div><div class="line">window.onload = function() &#123; </div><div class="line">   showTime(); </div><div class="line">&#125; </div><div class="line">function showTime() </div><div class="line">&#123; </div><div class="line">   var endTime = new Date(&quot;2017/5/25,22:12:00&quot;); </div><div class="line">var nowTime = new Date(); </div><div class="line">var leftSeconds = parseInt((endTime.getTime()-nowTime.getTime())/1000);//两个时间点之间的秒数 </div><div class="line">var d = parseInt( leftSeconds/(60*60*24) );//天数，取整 </div><div class="line">var h = parseInt( leftSeconds/(60*60)%24 );//小时，模24，为获取天数之外的小时数 </div><div class="line">var m = parseInt( leftSeconds/60%60 );//分钟，模60，为获取残留的分钟数 </div><div class="line">var s = parseInt( leftSeconds%60 );//秒数，模60，为获取残留的秒数 </div><div class="line">if(leftSeconds&lt;=0) </div><div class="line">&#123; </div><div class="line">   document.getElementById(&quot;LeftTime&quot;).innerHTML=&quot;倒计时结束&quot;; </div><div class="line">&#125; </div><div class="line">else </div><div class="line">&#123; </div><div class="line">   document.getElementById(&quot;LeftTime&quot;).innerHTML=d+&quot;天&quot;+h+&quot;小时&quot;+m+&quot;分&quot;+s+&quot;秒&quot;; </div><div class="line">setTimeout(showTime,500);//循环递归调用 </div><div class="line">&#125; </div><div class="line">&#125; </div><div class="line">&lt;/script&gt; </div><div class="line">&lt;/head&gt; </div><div class="line">&lt;body&gt; </div><div class="line">&lt;div class=&quot;content&quot;&gt; </div><div class="line">   &lt;div class=&quot;time&quot;&gt;还剩 &lt;span id=&quot;LeftTime&quot;&gt;&lt;/span&gt;&lt;/div&gt; </div><div class="line">&lt;/div&gt; </div><div class="line">&lt;/body&gt; </div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="4、RegExp类型对象"><a href="#4、RegExp类型对象" class="headerlink" title="4、RegExp类型对象"></a>4、RegExp类型对象</h3><p>即正则表达式对象</p>
-<ul>
-<li>创建：<br>1.使用字面量形式定义正则表达式 (<code>/.../</code>方式)：<code>var pattern1 = /[bc]at/i ;</code></li>
-</ul>
-<p>2.使用RegExp构造函数创建: <code>var pattern2 = new RegExp(&quot;[bc]at&quot;, &quot;i&quot;) ;</code><br>构造函数接受两个参数：要匹配的字符串模式和可选的标志字符串<br>这种方式存在字符串的转义问题</p>
-<p>3.上面两种方式创建的正则表达式不一样:<br>正则表达式字面量始终会共享同一个RegExp实例，而使用构造函数创建的每一个新RegExp实例都是一个新实例。</p>
-<ul>
-<li>属性：<br>正则对象的属性分成两类：<br>1.修饰符相关的属性<br>返回一个布尔值，表示对应的修饰符是否设置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ignoreCase：返回一个布尔值，表示是否设置了i修饰符，该属性只读。</div><div class="line">global：返回一个布尔值，表示是否设置了g修饰符，该属性只读。</div><div class="line">multiline：返回一个布尔值，表示是否设置了m修饰符，该属性只读。</div></pre></td></tr></table></figure>
-</li>
-</ul>
+<h3 id="4、RegExp类型对象"><a href="#4、RegExp类型对象" class="headerlink" title="4、RegExp类型对象"></a>4、RegExp类型对象</h3><p>即正则表达式对象<br>创建：<br>1.使用字面量形式定义正则表达式 (<code>/.../</code>方式)：<code>var pattern1 = /[bc]at/i ;</code><br>2.使用RegExp构造函数创建: <code>var pattern2 = new RegExp(&quot;[bc]at&quot;, &quot;i&quot;) ;</code><br>构造函数接受两个参数：要匹配的字符串模式和可选的标志字符串<br>这种方式存在字符串的转义问题<br>3.上面两种方式创建的正则表达式不一样:<br>正则表达式字面量始终会共享同一个RegExp实例，而使用构造函数创建的每一个新RegExp实例都是一个新实例。</p>
+<p>属性：<br>正则对象的属性分成两类：<br>1.修饰符相关的属性<br>返回一个布尔值，表示对应的修饰符是否设置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ignoreCase：返回一个布尔值，表示是否设置了i修饰符，该属性只读。</div><div class="line">global：返回一个布尔值，表示是否设置了g修饰符，该属性只读。</div><div class="line">multiline：返回一个布尔值，表示是否设置了m修饰符，该属性只读。</div></pre></td></tr></table></figure></p>
 <p>2.与修饰符无关的属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">lastIndex：返回下一次开始搜索的位置。该属性可读写，但是只在设置了g修饰符时有意义。</div><div class="line">source：返回正则表达式的字符串形式（不包括反斜杠），该属性只读。</div></pre></td></tr></table></figure></p>
-<ul>
-<li><p>RegExp实例方法<br>1.<code>exec()</code>方法<br>接受要应用模式的字符串为参数，<br>返回包含第一个匹配项信息的数组 或者 在没有匹配项的情况下返回null。<br>返回的数组包含两个额外的属性：index和input。其中，index表示匹配项在字符串中的位置，input表示应用正则表达式的字符串。在数组中，第一项是与整个模式匹配的字符串，其他项是与模式中的捕获组匹配的字符串。</p>
-<p><code>可用于分组</code><br>1)正则表达式还有提取子串的强大功能；<br>2)RegExp对象的exec()方法用于提取出符合格式的子串；<br>3)exec()方法在匹配成功后，会返回一个Array，第一个元素是正则表达式匹配到的整个字符串，后面的字符串表示匹配成功的子串；在匹配失败时返回null。<br>4)实例：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//从匹配的字符串中提取出区号和本地号码</div><div class="line">var re = /^(\d&#123;3&#125;)-(\d&#123;3,8&#125;)$/;</div><div class="line">re.exec(&apos;010-12345&apos;); // [&apos;010-12345&apos;, &apos;010&apos;, &apos;12345&apos;]</div><div class="line">re.exec(&apos;010 12345&apos;); // null</div></pre></td></tr></table></figure>
-<p>5)有时候用正则表达式也无法做到完全验证，比如识别日期</p>
-<p><code>可用于贪婪匹配</code><br>1)正则匹配默认是贪婪匹配，即匹配尽可能多的字符；<br>2)比如匹配出数字后面的0：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var re = /^(\d+)(0*)$/;</div><div class="line">re.exec(&apos;102300&apos;); // [&apos;102300&apos;, &apos;102300&apos;, &apos;&apos;]     (由于\d+采用贪婪匹配，直接把后面的0全部匹配了，结果0*只能匹配空字符串了)</div><div class="line">//必须让\d+采用非贪婪匹配（也就是尽可能少匹配），才能把后面的0匹配出来:</div><div class="line">var re = /^(\d+?)(0*)$/;  //加个?就可以让\d+采用非贪婪匹配</div><div class="line">re.exec(&apos;102300&apos;); // [&apos;102300&apos;, &apos;1023&apos;, &apos;00&apos;]</div></pre></td></tr></table></figure>
-<p><code>可用于全局搜索</code><br>1)JavaScript的正则表达式还有几个特殊的标志，最常用的是<code>g</code>，表示<code>全局匹配</code>：<br>  <code>var r1 = /test/g;</code> //等价于 <code>var r2 = new RegExp(&#39;test&#39;, &#39;g&#39;);</code><br>2)局匹配可以多次执行<code>exec()</code>方法来搜索一个匹配的字符串，每运行exec()一次正则表达式本身会更新lastIndex属性一次，表示上次匹配到的最后索引；<br>3)全局匹配类似搜索，因此不能使用<code>/^...$/</code>，那样只会最多匹配一次；<br>4)正则表达式还可以指定i标志，表示忽略大小写，m标志，表示执行多行匹配。</p>
-</li>
-</ul>
+<p>RegExp实例方法<br>1.<code>exec()</code>方法<br>  接受要应用模式的字符串为参数，<br>  返回包含第一个匹配项信息的数组 或者 在没有匹配项的情况下返回null。<br>  返回的数组包含两个额外的属性：index和input。其中，index表示匹配项在字符串中的位置，input表示应用正则表达式的字符串。在数组中，第一项是与整个模式匹配的字符串，其他项是与模式中的捕获组匹配的字符串。</p>
+<p>  <code>可用于分组</code><br>  1)正则表达式还有提取子串的强大功能；<br>  2)RegExp对象的exec()方法用于提取出符合格式的子串；<br>  3)exec()方法在匹配成功后，会返回一个Array，第一个元素是正则表达式匹配到的整个字符串，后面的字符串表示匹配成功的子串；在匹配失败时返回null。<br>  4)实例：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//从匹配的字符串中提取出区号和本地号码</div><div class="line">var re = /^(\d&#123;3&#125;)-(\d&#123;3,8&#125;)$/;</div><div class="line">re.exec(&apos;010-12345&apos;); // [&apos;010-12345&apos;, &apos;010&apos;, &apos;12345&apos;]</div><div class="line">re.exec(&apos;010 12345&apos;); // null</div></pre></td></tr></table></figure></p>
+<p>  5)有时候用正则表达式也无法做到完全验证，比如识别日期</p>
+<p>  <code>可用于贪婪匹配</code><br>  1)正则匹配默认是贪婪匹配，即匹配尽可能多的字符；<br>  2)比如匹配出数字后面的0：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var re = /^(\d+)(0*)$/;</div><div class="line">re.exec(&apos;102300&apos;); // [&apos;102300&apos;, &apos;102300&apos;, &apos;&apos;]     (由于\d+采用贪婪匹配，直接把后面的0全部匹配了，结果0*只能匹配空字符串了)</div><div class="line">//必须让\d+采用非贪婪匹配（也就是尽可能少匹配），才能把后面的0匹配出来:</div><div class="line">var re = /^(\d+?)(0*)$/;  //加个?就可以让\d+采用非贪婪匹配</div><div class="line">re.exec(&apos;102300&apos;); // [&apos;102300&apos;, &apos;1023&apos;, &apos;00&apos;]</div></pre></td></tr></table></figure></p>
+<p>  <code>可用于全局搜索</code><br>  1)JavaScript的正则表达式还有几个特殊的标志，最常用的是<code>g</code>，表示<code>全局匹配</code>：<br>    <code>var r1 = /test/g;</code> //等价于 <code>var r2 = new RegExp(&#39;test&#39;, &#39;g&#39;);</code><br>  2)局匹配可以多次执行<code>exec()</code>方法来搜索一个匹配的字符串，每运行exec()一次正则表达式本身会更新lastIndex属性一次，表示上次匹配到的最后索引；<br>  3)全局匹配类似搜索，因此不能使用<code>/^...$/</code>，那样只会最多匹配一次；<br>  4)正则表达式还可以指定i标志，表示忽略大小写，m标志，表示执行多行匹配。</p>
 <p>2.<code>test()</code>方法<br>用于测试给定的字符串是否符合条件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var re = /^\d&#123;3&#125;\-\d&#123;3,8&#125;$/; </div><div class="line">re.test(&apos;010-12345&apos;); // true </div><div class="line">re.test(&apos;010-1234x&apos;); // false</div></pre></td></tr></table></figure></p>
-<ul>
-<li><p>匹配规则<br>正则表达式是一种用来匹配字符串的有用方式：<br>1)精确匹配：直接给出全部字符<br>2)模糊匹配：<code>\d</code>可匹配一个<code>数字</code>，<code>\w</code>可匹配一个<code>字母或数字</code>，<code>\s</code>可匹配一个<code>空格（包括Tab等空白符），</code>\s+<code>可匹配</code>至少一个空格<code>（例如匹配&#39; &#39;，&#39;\t\t&#39;）
-用</code>*<code>表示任意个字符（包括0个）；
-用</code>+<code>表示至少一个字符；
-用</code>.<code>可以匹配任意字符；
-用</code>?<code>表示0个或1个字符；
-用</code>{n}<code>表示n个字符；
-用</code>{n,m}<code>表示n-m个字符；</code>A|B<code>可以匹配A或B，所以</code>(J|j)ava(S|s)cript<code>可以匹配&#39;JavaScript&#39;、&#39;Javascript&#39;、&#39;javaScript&#39;或者&#39;javascript&#39;；</code>^<code>表示行的开头，</code>^\d<code>表示必须以数字开头；</code>$<code>表示行的结束，</code>\d$<code>表示必须以数字结束；</code>空格<code>也算入匹配范围
-用</code>[]<code>表示范围可以更精确地匹配；
-特殊字符，在正则表达式中要用</code>`转义；<br>例子:</p>
+<p>匹配规则<br>正则表达式是一种用来匹配字符串的有用方式：<br>  1)精确匹配：直接给出全部字符<br>  2)模糊匹配：<code>\d</code>可匹配一个<code>数字</code>，<code>\w</code>可匹配一个<code>字母或数字</code>，<code>\s</code>可匹配一个<code>空格（包括Tab等空白符），</code>\s+<code>可匹配</code>至少一个空格<code>（例如匹配&#39; &#39;，&#39;\t\t&#39;）
+  用</code>*<code>表示任意个字符（包括0个）；
+  用</code>+<code>表示至少一个字符；
+  用</code>.<code>可以匹配任意字符；
+  用</code>?<code>表示0个或1个字符；
+  用</code>{n}<code>表示n个字符；
+  用</code>{n,m}<code>表示n-m个字符；</code>A|B<code>可以匹配A或B，所以</code>(J|j)ava(S|s)cript<code>可以匹配&#39;JavaScript&#39;、&#39;Javascript&#39;、&#39;javaScript&#39;或者&#39;javascript&#39;；</code>^<code>表示行的开头，</code>^\d<code>表示必须以数字开头；</code>$<code>表示行的结束，</code>\d$<code>表示必须以数字结束；</code>空格<code>也算入匹配范围
+  用</code>[]<code>表示范围可以更精确地匹配；
+  特殊字符，在正则表达式中要用</code>`转义；<br>  例子:</p>
 <ul>
 <li><code>00\d</code>可匹配<code>007</code>，但无法匹配<code>00A</code>；</li>
 <li><code>\d\d\d</code>可匹配<code>010</code>；</li>
@@ -286,10 +272,7 @@ classes that you can use:
 <li><code>[a-zA-Z\_\$][0-9a-zA-Z\_\$]*</code>可以匹配<code>由字母或下划线、$开头，后接任意个由一个数字、字母或者下划线、$组成的字符串</code>，也就是JavaScript允许的变量名；</li>
 <li><code>[a-zA-Z\_\$][0-9a-zA-Z\_\$]{0, 19}</code>更精确地限制了变量的长度是1-20个字符（前面1个字符+后面最多19个字符）。</li>
 </ul>
-</li>
-<li><p>字符串对象的方法之中，有4种与正则对象有关<br>1)match()：返回一个数组，成员是所有匹配的子字符串。<br>2)search()：按照给定的正则表达式进行搜索，返回一个整数，表示匹配开始的位置。<br>3)replace()：按照给定的正则表达式进行替换，返回替换后的字符串。<br>4)split()：按照给定规则进行字符串分割，返回一个数组，包含分割后的各个成员。<br>用正则表达式切分字符串比用固定的字符更灵活，且可把不规范的输入转化成正确的数组；</p>
-</li>
-</ul>
+<p>字符串对象的方法之中，有4种与正则对象有关<br>1)match()：返回一个数组，成员是所有匹配的子字符串。<br>2)search()：按照给定的正则表达式进行搜索，返回一个整数，表示匹配开始的位置。<br>3)replace()：按照给定的正则表达式进行替换，返回替换后的字符串。<br>4)split()：按照给定规则进行字符串分割，返回一个数组，包含分割后的各个成员。<br>用正则表达式切分字符串比用固定的字符更灵活，且可把不规范的输入转化成正确的数组；</p>
 <h3 id="5、Function类型对象"><a href="#5、Function类型对象" class="headerlink" title="5、Function类型对象"></a>5、Function类型对象</h3><p>函数实际上是对象。<br>每个函数都是Function类型的实例，而且都与其他引用类型一样具有属性和方法。<br>由于函数是对象，因此函数名实际上也是一个指向函数对象的指针，不会与某个函数绑定。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//函数声明定义 </div><div class="line">function sum(num1, num2)</div><div class="line">&#123; </div><div class="line">   return num1 + num2; </div><div class="line">&#125; </div><div class="line">//函数表达式定义 </div><div class="line">var sum = function(num1, num2)</div><div class="line">&#123; </div><div class="line">   return num1 + num2; </div><div class="line">&#125; </div><div class="line">//Function构造函数定义 </div><div class="line">var sum = new Function(&quot;num1&quot;, &quot;num2&quot;, &quot;return num1 + num2&quot;); //不推荐</div></pre></td></tr></table></figure></p>
 <p>函数声明和函数表达式的区别：<br>解析器向执行环境中加载数据时，会率先读取函数声明，并使其在执行代码前可用（可用访问），<br>至于函数表达式必须等到解析器执行到它所在的代码行，才回真正被解释执行。</p>
 <p>函数内部属性：arguments</p>
