@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      JS对象-单体内置对象 | SPACE-19 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    
+
+    <meta name="description" content="一、认识javascript单体内置对象 内置对象（built-in object）定义为“由 ECMAScript 实现提供的、独立于宿主环境的所有对象，在 ECMAScript 程序开始执行时出现”。 这意味着开发者不必明确实例化内置对象，它已被实例化了。 ECMA-262 只定义了两个内置对象，即Global和Math。它们也是本地对象（根据定义，每个内置对象都是本地对象）  Global对">
+<meta name="keywords" content="JS对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS对象-单体内置对象 | SPACE-19">
+<meta property="og:url" content="http://yoursite.com/2017/06/16/JS对象-单体内置对象/index.html">
+<meta property="og:site_name" content="SPACE-19">
+<meta property="og:description" content="一、认识javascript单体内置对象 内置对象（built-in object）定义为“由 ECMAScript 实现提供的、独立于宿主环境的所有对象，在 ECMAScript 程序开始执行时出现”。 这意味着开发者不必明确实例化内置对象，它已被实例化了。 ECMA-262 只定义了两个内置对象，即Global和Math。它们也是本地对象（根据定义，每个内置对象都是本地对象）  Global对">
+<meta property="og:image" content="http://img.mukewang.com/532fe7cf0001e7b505170269.jpg">
+<meta property="og:image" content="http://img.mukewang.com/532fe841000174db05160622.jpg">
+<meta property="og:updated_time" content="2017-06-16T09:14:08.341Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS对象-单体内置对象 | SPACE-19">
+<meta name="twitter:description" content="一、认识javascript单体内置对象 内置对象（built-in object）定义为“由 ECMAScript 实现提供的、独立于宿主环境的所有对象，在 ECMAScript 程序开始执行时出现”。 这意味着开发者不必明确实例化内置对象，它已被实例化了。 ECMA-262 只定义了两个内置对象，即Global和Math。它们也是本地对象（根据定义，每个内置对象都是本地对象）  Global对">
+<meta name="twitter:image" content="http://img.mukewang.com/532fe7cf0001e7b505170269.jpg">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">SPACE-19</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          XD
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">JS对象-单体内置对象</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-16" class="post-meta__date date">2017-06-16</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/JS对象/">JS对象</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="一、认识javascript单体内置对象"><a href="#一、认识javascript单体内置对象" class="headerlink" title="一、认识javascript单体内置对象"></a>一、认识javascript<code>单体内置对象</code></h3><ul>
+<li>内置对象（built-in object）定义为“由 ECMAScript 实现提供的、独立于宿主环境的所有对象，在 ECMAScript 程序开始执行时出现”。</li>
+<li>这意味着开发者不必明确实例化内置对象，它已被实例化了。</li>
+<li>ECMA-262 只定义了两个内置对象，即<code>Global</code>和<code>Math</code>。<br>它们也是本地对象（根据定义，每个内置对象都是本地对象）</li>
+</ul>
+<h3 id="Global对象"><a href="#Global对象" class="headerlink" title="Global对象"></a>Global对象</h3><ul>
+<li>即全局对象，是ECMAScript中最特别的对象，因为实际上它根本不存在。</li>
+<li>在ECMAScript中，不存在独立的函数，所有函数都必须是某个对象的方法。<br>所以不属于其他对象的属性和方法，最终都是Global对象的属性和方法。</li>
+<li>Global对象不能直接使用，也不能用new运算符创建。<br>它在JavaScript引擎被初始化时创建，并初始化其方法和属性。 </li>
+<li>例如：<code>isNaN() 、isFinite() 、 parseInt()、parseFloat()</code>都是Global对象的方法。</li>
+<li><code>URI编码方法</code>：encodeURI()、encodeURIComponent()、decodeURI()、decodeURIComponent()</li>
+<li><code>eval()方法</code>：这方法就像一个完整的ECMAScript解析器，它只接受一个参数，即要执行的Javascript字符串。</li>
+<li>注意区分：<ol>
+<li>在全局作用域中<code>定义</code>的属性和函数，都是Global对象的属性和方法。<br>在全局作用域中<code>声明</code>的所有变量和函数，都成为了window对象的属性和方法。</li>
+<li>浏览器把<code>Global对象</code>作为<code>window对象</code>的<code>一部分</code>实现了。<br>因此，所有的全局属性和函数都是window对象的属性和方法。  </li>
+<li>即<code>window对象</code>包括<code>Global对象</code>。</li>
+</ol>
+</li>
+</ul>
+<h3 id="Math对象"><a href="#Math对象" class="headerlink" title="Math对象"></a>Math对象</h3><ul>
+<li>Math对象提供一些属性和方法对数据进行数学计算。</li>
+<li>Math 对象是一个固有的对象，无需创建，直接把 Math 作为对象使用就可以调用其所有属性和方法。这是它与Date,String对象的区别。</li>
+<li>Math 对象属性：<br><img src="http://img.mukewang.com/532fe7cf0001e7b505170269.jpg" alt=" Math 对象属性"><ul>
+<li>Math 对象方法：<br><img src="http://img.mukewang.com/532fe841000174db05160622.jpg" alt=" Math 对象方法"></li>
+<li>一些方法：<br>1)<code>Math.ceil (x);</code>// 对一个数进行向上取整(返回的是大于或等于x，并且与x最接近的整数)<br>2)<code>Math. floor (x);</code>// 对一个数进行向下取整(返回的是小于或等于x，并且与 x 最接近的整数)<br>3) <code>Math. round (x);</code>// 把一个数字四舍五入为最接近的整数(返回与x最接近的整数)<br>4) <code>Math. random ();</code>//返回一个大于或等于0但小于1的符号为正的数字值</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
