@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/04/JS-DOM事件/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="一、事件流 事件是文档或浏览器窗口中发生的特定的交互瞬间。 JS与html的交互都是通过事件来实现 事件流：描述的是从页面中接受事件的顺序 ，包括事件冒泡流和事件捕获流（两者相反）　1)事件冒泡流（IE）：事件最开始由最具体的元素（即文档中嵌套层次最深的那个节点）接收，然后逐级沿DOM树向上传播到最不具体的那个节点（文档）——–从最内层至最外层　2)事件捕获流（Netscape）：不太具体的节点（">
-<meta property="og:updated_time" content="2017-06-04T12:46:29.745Z">
+<meta property="og:updated_time" content="2017-06-19T14:42:58.507Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS-DOM事件 | SPACE-19">
 <meta name="twitter:description" content="一、事件流 事件是文档或浏览器窗口中发生的特定的交互瞬间。 JS与html的交互都是通过事件来实现 事件流：描述的是从页面中接受事件的顺序 ，包括事件冒泡流和事件捕获流（两者相反）　1)事件冒泡流（IE）：事件最开始由最具体的元素（即文档中嵌套层次最深的那个节点）接收，然后逐级沿DOM树向上传播到最不具体的那个节点（文档）——–从最内层至最外层　2)事件捕获流（Netscape）：不太具体的节点（">
@@ -184,19 +184,17 @@ classes that you can use:
 <li>JS与html的交互都是通过<code>事件</code>来实现</li>
 <li>事件流：描述的是从页面中接受事件的顺序 ，包括事件冒泡流和事件捕获流（两者相反）<br>　1)事件冒泡流（IE）：事件最开始由最具体的元素（即文档中嵌套层次最深的那个节点）接收，然后逐级沿DOM树向上传播到最不具体的那个节点（文档）——–从最内层至最外层<br>　2)事件捕获流（Netscape）：不太具体的节点（文档）更早接收到事件，并沿DOM树向下传播，最具体的节点最后接收到事件———–从最外层至最内层<br>　3)常使用<code>事件冒泡流</code>。</li>
 </ul>
-<h3 id="二、事件处理程序"><a href="#二、事件处理程序" class="headerlink" title="二、事件处理程序"></a>二、事件处理程序</h3><ol>
-<li><p>HTML事件处理程序</p>
+<h3 id="二、事件处理程序"><a href="#二、事件处理程序" class="headerlink" title="二、事件处理程序"></a>二、事件处理程序</h3><p>1.HTML事件处理程序</p>
 <ul>
 <li>方法：事件直接加在HTML代码中</li>
 <li>缺点：<code>HTML</code>和<code>js</code>代码高耦合，如要修改就要修改两个地方：HTML元素内代码还有js函数 </li>
 <li><p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;input type=”button” …. onclick=”aa()”&gt;</div><div class="line">…</div><div class="line">function aa()&#123;</div><div class="line">  …</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;input type=”button” …. onclick=&quot;aa()&quot;&gt;</div><div class="line">…</div><div class="line">function aa()&#123;</div><div class="line">    …</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>不建议使用</p>
 </li>
 </ul>
-</li>
-<li><p>DOM0级事件处理程序</p>
+<p>2.DOM0级事件处理程序</p>
 <ul>
 <li>方法：先把元素取出来，然后为其事件处理程序属性添加操作函数</li>
 <li>属于较传统的方式</li>
@@ -207,47 +205,42 @@ classes that you can use:
 <li><p>使用较多</p>
 </li>
 </ul>
-</li>
-<li><p>DOM2级事件处理程序</p>
+<p>3.DOM2级事件处理程序</p>
 <ul>
 <li>方法：先把元素取出来，然后调用下面方法来处理</li>
-<li>定义了两个方法—-用于处理<code>添加</code>和<code>删除</code>事件处理程序的操作：<br>1)<code>addEventListener()</code>—-添加事件监听程序<br>2)<code>removeEventListener()</code>—-移除事件监听程序</li>
-<li>这两个方法都接收<code>三</code>个参数：<br>1)要处理的事件名（注意：事件名前面带<code>on</code>的需去掉<code>on</code>，如onclick –&gt; click）<br>2)作为事件处理程序的函数/方法<br>3)布尔值:<br>  <code>true</code>表示在<code>捕获</code>阶段调用事件处理程序；<br>  <code>false</code>表示在<code>冒泡</code>阶段调用事件处理程序(可最大限度的兼容浏览器 —&gt;一般设为false)</li>
+<li>定义了两个方法—-用于处理<code>添加</code>和<code>删除</code>事件处理程序的操作：<br> 1)<code>addEventListener()</code>—-添加事件监听程序<br> 2)<code>removeEventListener()</code>—-移除事件监听程序</li>
+<li>这两个方法都接收<code>三</code>个参数：<br> 1)要处理的事件名（注意：事件名前面带<code>on</code>的需去掉<code>on</code>，如onclick –&gt; click）<br> 2)作为事件处理程序的函数/方法<br> 3)布尔值:<br>   <code>true</code>表示在<code>捕获</code>阶段调用事件处理程序；<br>   <code>false</code>表示在<code>冒泡</code>阶段调用事件处理程序(可最大限度的兼容浏览器 —&gt;一般设为false)</li>
 <li>通过<code>addEventListener</code>添加的事件只能通过<code>removeEventListener</code>来删除。而且<code>参数</code>要与添加事件时相同。</li>
 <li><code>DOM0级</code>和<code>DOM2级</code>事件处理程序都可以给一个事件绑定多个函数，事件触发的时候会按照绑定顺序执行各个函数</li>
 <li><p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var btn3=document.getElementById(&quot;btn3&quot;);   //先取得btn3按钮对象</div><div class="line">btn3.addEventListener(&apos;click&apos;,showMessage,false); //给btn3的onclick属性添加事件</div><div class="line">btn3.removeEventListener(&apos;click&apos;,showMessage,false); //删除btn3的onclick事件监听(参数要一致)</div><div class="line">//给btn3的onclick属性添加事件，并绑定多个函数（DOM0级类似）</div><div class="line">btn3.addEventListener(&apos;click&apos;,函数1,函数2,false);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">   var btn3=document.getElementById(&quot;btn3&quot;);   //先取得btn3按钮对象</div><div class="line">   btn3.addEventListener(&apos;click&apos;,showMessage,false); //给btn3的onclick属性添加事件</div><div class="line">   btn3.removeEventListener(&apos;click&apos;,showMessage,false); //删除btn3的onclick事件监听(参数要一致)</div><div class="line">   </div><div class="line">//给btn3的onclick属性添加事件，并绑定多个函数（DOM0级类似）</div><div class="line">   btn3.addEventListener(&apos;click&apos;,函数1,函数2,false);</div></pre></td></tr></table></figure>
 </li>
 <li><p>注意：在事件绑定触发的函数中使用<code>this</code>可引用被触发的元素，可通过调用<code>this.属性名</code>获取相应属性</p>
 </li>
 <li>IE不支持</li>
 </ul>
-</li>
-<li><p>IE事件处理程序</p>
+<p>4.IE事件处理程序</p>
 <ul>
 <li>IE也提供了类似DOM2级事件处理程序的方法</li>
-<li>定义了两个方法—-用于处理<code>添加</code>和<code>删除</code>事件处理程序的操作：<br>1)<code>attachEvent ()</code>—-添加事件监听程序<br>2)<code>detachEvent ()</code>—-移除事件监听程序</li>
-<li>这两个方法都接收<code>两</code>个参数：<br>1)要处理的事件名（不用去掉<code>on</code>）<br>2)作为事件处理程序的函数/方法<br>去除了布尔值参数是因为IE8以及更早的浏览器版本只支持<code>事件冒泡</code></li>
+<li>定义了两个方法—-用于处理<code>添加</code>和<code>删除</code>事件处理程序的操作：<br> 1)<code>attachEvent ()</code>—-添加事件监听程序<br> 2)<code>detachEvent ()</code>—-移除事件监听程序</li>
+<li>这两个方法都接收<code>两</code>个参数：<br> 1)要处理的事件名（不用去掉<code>on</code>）<br> 2)作为事件处理程序的函数/方法<br> 去除了布尔值参数是因为IE8以及更早的浏览器版本只支持<code>事件冒泡</code></li>
 <li>通过<code>attachEvent</code>添加的事件只能通过<code>detachEvent</code>来删除。而且<code>参数</code>要与添加事件时相同。</li>
 <li><p>例子：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var btn3=document.getElementById(&quot;btn3&quot;);   //先取得btn3按钮对象</div><div class="line">btn3.attachEvent(&apos;onclick&apos;,showMessage); //在ie下给btn3添加事件</div><div class="line">btn3.detachEvent(&apos;onclick&apos;,showMessage); //在ie下删除btn3事件监听(参数要一致)</div></pre></td></tr></table></figure>
 </li>
-<li><p>支持ie事件处理程序的浏览器主要有ie和opera两个浏览器。</p>
+<li><p>支持IE事件处理程序的浏览器主要有ie和opera两个浏览器。</p>
 </li>
 </ul>
-</li>
-<li><p>跨浏览器事件处理程序</p>
+<p>5.跨浏览器事件处理程序</p>
 <ul>
-<li>将实现代码封装在一个对象中执行</li>
-<li>定义了两个方法—-用于处理<code>添加</code>和<code>删除</code>事件处理程序的操作：</li>
+<li>综合上述方法，将实现代码封装在一个对象中执行</li>
+<li>定义了用于处理<code>添加</code>和<code>删除</code>的两个事件处理程序的操作方法；</li>
 <li><p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">var eventUtil = &#123;</div><div class="line">  //定义添加句柄(函数名)</div><div class="line">  addHandler : function( element , type , handler)</div><div class="line">  &#123;</div><div class="line">     if(element.addEventListener)  //支持DOM2级事件处理程序(判断时只写方法名，不用加括号)</div><div class="line">     &#123;</div><div class="line">        element.addEventListener(type,handler,false);</div><div class="line">     &#125; </div><div class="line">     else if(element.attachEvent)   //支持IE事件处理程序</div><div class="line">     &#123;</div><div class="line">        element.attachEvent(&apos;on&apos;+type,handler); //事件名加上’on’</div><div class="line">     &#125; </div><div class="line">     else                      //支持 DOM0级事件处理程序</div><div class="line">     &#123;</div><div class="line">        element[&apos;on&apos;+type]=handler;//注意：js中所有用&apos;.&apos;的地方都可以用&apos;[]&apos;代替</div><div class="line">     &#125; </div><div class="line">  &#125;,  //&lt;--注意这里有个逗号</div><div class="line">  //定义删除句柄(函数名)</div><div class="line">  removeHandler : function( element , type , handler)</div><div class="line">  &#123;</div><div class="line">     if(element.removeEventListener) // 支持DOM2级事件处理程序</div><div class="line">     &#123;</div><div class="line">         element.removeEventListener(type,handler,false);</div><div class="line">     &#125; </div><div class="line">     else if (element.detachEvent)  //支持 IE事件处理程序</div><div class="line">     &#123;</div><div class="line">         element.detachEvent(&apos;on&apos;+type,handler);//事件名加上’on’</div><div class="line">     &#125; </div><div class="line">     else                       //支持DOM0级事件处理程序</div><div class="line">     &#123;</div><div class="line">         element[&apos;on&apos;+type]=null;</div><div class="line">     &#125; </div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">eventUtil.addHandler(btn3,&apos;click&apos;,showMessage); //调用添加句柄，添加事件</div><div class="line">eventUtil.removeHandler(btn3,&apos;click&apos;,showMessage); //调用删除句柄，删除事件</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">var eventUtil = &#123;</div><div class="line">  //定义添加句柄(函数名)</div><div class="line">  addHandler : function( element , type , handler)</div><div class="line">  &#123;</div><div class="line">     if(element.addEventListener)  //支持DOM2级事件处理程序(判断时只写方法名，不用加括号)</div><div class="line">     &#123;</div><div class="line">        element.addEventListener(type,handler,false);</div><div class="line">     &#125; </div><div class="line">     else if(element.attachEvent)   //支持IE事件处理程序</div><div class="line">     &#123;</div><div class="line">        element.attachEvent(&apos;on&apos;+type,handler); //事件名加上’on’</div><div class="line">     &#125; </div><div class="line">     else                      //支持 DOM0级事件处理程序</div><div class="line">     &#123;</div><div class="line">        element[&apos;on&apos;+type]=handler;//注意：js中所有用&apos;.&apos;的地方都可以用&apos;[]&apos;代替</div><div class="line">     &#125; </div><div class="line">  &#125;,  //&lt;--注意这里有个逗号</div><div class="line">	  </div><div class="line">  //定义删除句柄(函数名)</div><div class="line">  removeHandler : function( element , type , handler)</div><div class="line">  &#123;</div><div class="line">     if(element.removeEventListener) // 支持DOM2级事件处理程序</div><div class="line">     &#123;</div><div class="line">         element.removeEventListener(type,handler,false);</div><div class="line">     &#125; </div><div class="line">     else if (element.detachEvent)  //支持 IE事件处理程序</div><div class="line">     &#123;</div><div class="line">         element.detachEvent(&apos;on&apos;+type,handler);//事件名加上’on’</div><div class="line">     &#125; </div><div class="line">     else                       //支持DOM0级事件处理程序</div><div class="line">     &#123;</div><div class="line">         element[&apos;on&apos;+type]=null;</div><div class="line">     &#125; </div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">eventUtil.addHandler(btn3,&apos;click&apos;,showMessage); //调用添加句柄，添加事件</div><div class="line">eventUtil.removeHandler(btn3,&apos;click&apos;,showMessage); //调用删除句柄，删除事件</div></pre></td></tr></table></figure>
 </li>
 <li><p>支持ie事件处理程序的浏览器主要有ie和opera两个浏览器。</p>
 </li>
 </ul>
-</li>
-</ol>
 <h3 id="三、事件对象Event"><a href="#三、事件对象Event" class="headerlink" title="三、事件对象Event"></a>三、事件对象<code>Event</code></h3><ul>
 <li>在触发DOM上的事件时都会产生一个对象——事件对象<code>Event</code></li>
 <li>一般是在事件调用函数的参数中传递这个对象(名字自定义：如<code>event</code>)，在函数中就可以利用这个对象来调用获取它的各个属性和方法</li>
@@ -311,22 +304,22 @@ classes that you can use:
  },
  preventDefault:function(event)
  {
-     if(event.preventDefault)
+     if(event.preventDefault)//支持DOM
      {
        event.preventDefault();
      }
-　　　  　else
-　　　    {
+     else                    //支持IE
+     {
        event.returnValue=false;
      }
  },
  stopPropagation:function(event)
  {
-     if(event.stopPropagation)
+     if(event.stopPropagation)//支持DOM
      {
        event.stopPropagation();
      }
-     else
+     else                     //支持IE
      {
        event.cancelBubble=true;
      }
@@ -336,24 +329,21 @@ classes that you can use:
 </ul>
 </li>
 </ol>
-<h3 id="四、事件类型"><a href="#四、事件类型" class="headerlink" title="四、事件类型"></a>四、事件类型</h3><ul>
-<li>在触发DOM上的事件时都会产生一个对象——事件对象<code>Event</code></li>
-<li>一般是在事件调用函数的参数中传递这个对象(名字自定义：如<code>event</code>)，在函数中就可以利用这个对象来调用获取它的各个属性和方法</li>
-</ul>
-<ol>
+<h3 id="四、事件类型"><a href="#四、事件类型" class="headerlink" title="四、事件类型"></a>四、事件类型</h3><ol>
 <li><p>鼠标事件</p>
 <ul>
 <li>如<code>onclick、mouseover、mouseout、mousedown、mouseup、mousemove</code></li>
-<li>鼠标事件都是在浏览器窗口中的<code>特定位置</code>上发生的。这个位置信息保存在<code>事件</code>的<code>client</code>和<code>client</code>属性中。所有浏览器都支持这两个属性，它们的值表示事件发生时鼠标指针在视口中的水平和垂直坐标(不包括页面滚动的距离)。</li>
+<li>鼠标事件都是在浏览器窗口中的<code>特定位置</code>上发生的。这个位置信息保存在事件的<code>clientX</code>和<code>clientY</code>属性中。<br>所有浏览器都支持这两个属性，它们的值表示事件发生时鼠标指针位置相对于窗口客户区域的 x 坐标和y坐标(其中客户区域不包括窗口自身的控件和滚动条)。</li>
 <li>点击页面空白处时：<code>document.onclick = function(){  }</code></li>
-<li>实例：<br>实现拖拽(即鼠标跟随)步骤：<br>1、绑定鼠标点击事件<br>2、获取鼠标坐标：clientX，clientY (所有浏览器都支持此属性)<br>3、为容器元素绑定onmousemove (表明可拖拽元素只在容器元素内可拖拽)<br>4、将拖拽元素设置成绝对定位<br>5、在onmousemove中改变拖拽元素的left、top (注意left、top的算法)<br>6、设置left、top限定，禁止元素拖出窗口(left、top理解成x轴、y轴)<br>7、当前浏览器窗口宽度document.documentElement.clientWidth或document.body.clientWidth<br>8、拖拽元素绑定onmouseup事件，在此事件中注销onmousemove事件，完成元素拖拽的释放效果</li>
+<li>实例：<br>实现<code>拖拽容器(即鼠标跟随)</code>的步骤：<br>1、绑定鼠标点击事件<br>2、获取鼠标坐标：clientX，clientY (所有浏览器都支持此属性)<br>3、为容器元素绑定onmousemove (表明可拖拽元素只在容器元素内可拖拽)<br>4、将拖拽元素设置成绝对定位<br>5、在onmousemove中改变拖拽元素的left、top (注意left、top的算法)<br>6、设置left、top限定，禁止元素拖出窗口(left、top理解成x轴、y轴)<br>7、当前浏览器窗口宽度document.documentElement.clientWidth或document.body.clientWidth<br>8、拖拽元素绑定onmouseup事件，在此事件中注销onmousemove事件，完成元素拖拽的释放效果</li>
 </ul>
 </li>
 <li><p>键盘事件</p>
 <ul>
-<li>键盘事件发生时，可通过键盘事件对象(如event)的<code>keyCode</code>属性来判断键盘被按下的是哪个键：<code>if(event.keyCode==13)</code> //判断是否按下回车键</li>
-<li>一些按键的keyCode值：回车(13)、上(38)、下(40)、A(65)、空格(32)等等<br>1)<code>keyDown</code> ：当用户按下键盘上<code>任意键</code>时触发，而且按住不放会重复触发<br>2)<code>keyPress</code>：当用户按下键盘上<code>字符键</code>时触发，而且按住不放会重复触发<br>3)<code>keyUp</code>：当用户释放键盘上的键时触发</li>
+<li>键盘事件发生时，可通过键盘事件对象(如event)的<code>keyCode属性</code>来判断键盘被按下的是哪个键：<br><code>if(event.keyCode==13)</code> //判断是否按下回车键</li>
+<li>一些按键的keyCode值：回车(13)、上(38)、下(40)、A(65)、空格(32)等等</li>
 </ul>
+<p>1)<code>keyDown</code> ：当用户按下键盘上<code>任意键</code>时触发，而且按住不放会重复触发<br>2)<code>keyPress</code>：当用户按下键盘上<code>字符键</code>时触发，而且按住不放会重复触发<br>3)<code>keyUp</code>：当用户释放键盘上的键时触发</p>
 </li>
 </ol>
 
