@@ -14,21 +14,21 @@
     
     
 
-    <meta name="description" content="一、桥接模式(Bridge Pattern) 桥接模式属于结构型模式。 桥接模式是一个非常有用的模式，在桥接模式中体现了很多面向对象设计原则的思想，包括单一职责原则、开闭原则、合成复用原则、里氏代换原则、依赖倒转原则等。熟悉桥接模式有助于我们深入理解这些设计原则，也有助于我们形成正确的设计思想和培养良好的设计风格。  二、模式动机 在软件系统中，有些类由于其本身的固有特性，使得它有两个或多个变化维">
+    <meta name="description" content="一、桥接模式(Bridge Pattern) 桥接模式属于结构型模式。 桥接模式是一个非常实用的模式，在桥接模式中体现了很多面向对象设计原则的思想，包括单一职责原则、开闭原则、合成复用原则、里氏代换原则、依赖倒转原则等。熟悉桥接模式有助于我们深入理解这些设计原则，也有助于我们形成正确的设计思想和培养良好的设计风格。  二、模式动机 在软件系统中，有些类由于其本身的固有特性，使得它有两个或多个变化维">
 <meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式-桥接模式Bridge | SPACE-19">
 <meta property="og:url" content="http://yoursite.com/2017/06/23/设计模式-桥接模式Bridge/index.html">
 <meta property="og:site_name" content="SPACE-19">
-<meta property="og:description" content="一、桥接模式(Bridge Pattern) 桥接模式属于结构型模式。 桥接模式是一个非常有用的模式，在桥接模式中体现了很多面向对象设计原则的思想，包括单一职责原则、开闭原则、合成复用原则、里氏代换原则、依赖倒转原则等。熟悉桥接模式有助于我们深入理解这些设计原则，也有助于我们形成正确的设计思想和培养良好的设计风格。  二、模式动机 在软件系统中，有些类由于其本身的固有特性，使得它有两个或多个变化维">
+<meta property="og:description" content="一、桥接模式(Bridge Pattern) 桥接模式属于结构型模式。 桥接模式是一个非常实用的模式，在桥接模式中体现了很多面向对象设计原则的思想，包括单一职责原则、开闭原则、合成复用原则、里氏代换原则、依赖倒转原则等。熟悉桥接模式有助于我们深入理解这些设计原则，也有助于我们形成正确的设计思想和培养良好的设计风格。  二、模式动机 在软件系统中，有些类由于其本身的固有特性，使得它有两个或多个变化维">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/06/23/594d2c06d4678.jpg">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/06/23/594d32bee3e7a.jpg">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/06/24/594d4cea7ec64.jpg">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/06/24/594d4e62980b2.jpg">
-<meta property="og:updated_time" content="2017-06-23T17:23:34.991Z">
+<meta property="og:updated_time" content="2017-06-24T03:28:23.894Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式-桥接模式Bridge | SPACE-19">
-<meta name="twitter:description" content="一、桥接模式(Bridge Pattern) 桥接模式属于结构型模式。 桥接模式是一个非常有用的模式，在桥接模式中体现了很多面向对象设计原则的思想，包括单一职责原则、开闭原则、合成复用原则、里氏代换原则、依赖倒转原则等。熟悉桥接模式有助于我们深入理解这些设计原则，也有助于我们形成正确的设计思想和培养良好的设计风格。  二、模式动机 在软件系统中，有些类由于其本身的固有特性，使得它有两个或多个变化维">
+<meta name="twitter:description" content="一、桥接模式(Bridge Pattern) 桥接模式属于结构型模式。 桥接模式是一个非常实用的模式，在桥接模式中体现了很多面向对象设计原则的思想，包括单一职责原则、开闭原则、合成复用原则、里氏代换原则、依赖倒转原则等。熟悉桥接模式有助于我们深入理解这些设计原则，也有助于我们形成正确的设计思想和培养良好的设计风格。  二、模式动机 在软件系统中，有些类由于其本身的固有特性，使得它有两个或多个变化维">
 <meta name="twitter:image" content="https://ooo.0o0.ooo/2017/06/23/594d2c06d4678.jpg">
     
     
@@ -186,7 +186,7 @@ classes that you can use:
   <section id="post-content" class="article-content post">
     <h3 id="一、桥接模式-Bridge-Pattern"><a href="#一、桥接模式-Bridge-Pattern" class="headerlink" title="一、桥接模式(Bridge Pattern)"></a>一、桥接模式(Bridge Pattern)</h3><ul>
 <li>桥接模式属于结构型模式。</li>
-<li>桥接模式是一个非常有用的模式，<br>在桥接模式中体现了很多面向对象设计原则的思想，包括<code>单一职责原则</code>、<code>开闭原则</code>、<code>合成复用原则</code>、<code>里氏代换原则</code>、<code>依赖倒转原则</code>等。<br>熟悉桥接模式有助于我们深入理解这些设计原则，也有助于我们形成正确的设计思想和培养良好的设计风格。</li>
+<li>桥接模式是一个非常实用的模式，<br>在桥接模式中体现了很多面向对象设计原则的思想，包括<code>单一职责原则</code>、<code>开闭原则</code>、<code>合成复用原则</code>、<code>里氏代换原则</code>、<code>依赖倒转原则</code>等。<br>熟悉桥接模式有助于我们深入理解这些设计原则，也有助于我们形成正确的设计思想和培养良好的设计风格。</li>
 </ul>
 <h3 id="二、模式动机"><a href="#二、模式动机" class="headerlink" title="二、模式动机"></a>二、模式动机</h3><ul>
 <li>在软件系统中，有些类由于其本身的固有特性，使得它有两个或多个变化维度。<br>如一个既可以支持多种日志输出方式又可以支持多种操作系统的跨平台日志记录类。<br>对于这种多维度变化的系统，桥接模式提供了一套完整的解决方案，并且降低了系统的复杂性。</li>
