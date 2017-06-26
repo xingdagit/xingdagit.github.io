@@ -14,17 +14,17 @@
     
     
 
-    <meta name="description" content="一、单一职责原则(Single Responsibility Principle,SRP)重要系数：★★★★☆  “There should never be more than one reason for a class to change”  定义：类的职责要单一，不能将太多的职责放在一个类中。 描述：即一个类只负责一项职责。（高内聚、低耦合） 作用：为了避免（解决）由于一个负责多个职责的类">
+    <meta name="description" content="一、单一职责原则(Single Responsibility Principle,SRP)重要系数：★★★★☆  “There should never be more than one reason for a class to change”  定义：类的职责要单一，不能将太多的职责放在一个类中。 描述：即一个类只负责一项职责。（高内聚、低耦合） 作用：为了避免（解决）一个负责多个职责的类因其">
 <meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java设计模式-常用面向对象七大原则 | SPACE-19">
 <meta property="og:url" content="http://yoursite.com/2017/06/07/Java设计模式-常用面向对象七大原则/index.html">
 <meta property="og:site_name" content="SPACE-19">
-<meta property="og:description" content="一、单一职责原则(Single Responsibility Principle,SRP)重要系数：★★★★☆  “There should never be more than one reason for a class to change”  定义：类的职责要单一，不能将太多的职责放在一个类中。 描述：即一个类只负责一项职责。（高内聚、低耦合） 作用：为了避免（解决）由于一个负责多个职责的类">
-<meta property="og:updated_time" content="2017-06-07T12:31:04.170Z">
+<meta property="og:description" content="一、单一职责原则(Single Responsibility Principle,SRP)重要系数：★★★★☆  “There should never be more than one reason for a class to change”  定义：类的职责要单一，不能将太多的职责放在一个类中。 描述：即一个类只负责一项职责。（高内聚、低耦合） 作用：为了避免（解决）一个负责多个职责的类因其">
+<meta property="og:updated_time" content="2017-06-26T03:40:44.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java设计模式-常用面向对象七大原则 | SPACE-19">
-<meta name="twitter:description" content="一、单一职责原则(Single Responsibility Principle,SRP)重要系数：★★★★☆  “There should never be more than one reason for a class to change”  定义：类的职责要单一，不能将太多的职责放在一个类中。 描述：即一个类只负责一项职责。（高内聚、低耦合） 作用：为了避免（解决）由于一个负责多个职责的类">
+<meta name="twitter:description" content="一、单一职责原则(Single Responsibility Principle,SRP)重要系数：★★★★☆  “There should never be more than one reason for a class to change”  定义：类的职责要单一，不能将太多的职责放在一个类中。 描述：即一个类只负责一项职责。（高内聚、低耦合） 作用：为了避免（解决）一个负责多个职责的类因其">
     
     
     
@@ -185,7 +185,7 @@ classes that you can use:
 </blockquote>
 <p>定义：类的职责要单一，不能将太多的职责放在一个类中。</p>
 <p>描述：即一个类只负责一项职责。（高内聚、低耦合）</p>
-<p>作用：为了避免（解决）由于一个负责多个职责的类，因其中一个职责的改变而影响导致其他职责产生故障的问题。</p>
+<p>作用：为了避免（解决）一个负责多个职责的类因其中一个职责的改变而影响导致其他职责产生故障的问题。</p>
 <p>优点： </p>
 <ol>
 <li>降低类的复杂度。一个类只负责一项职责，其逻辑肯定要比负责多项职责简单的多；</li>
@@ -205,7 +205,7 @@ classes that you can use:
 <blockquote>
 <p>“Softeware entities like classes,modules and functions should be open for extension but closed for modifications.”</p>
 </blockquote>
-<p>定义：一个软件实体如类、模块和函数对扩展开放，但对修改关闭。</p>
+<p>定义：一个软件实体如类、模块和函数应对扩展开放，但对修改关闭。</p>
 <p>描述：即当软件需要变化时，尽量通过扩展软件实体的行为来实现变化，而不是通过修改已有的代码来实现变化（在不修改一个软件实体的基础上去扩展其功能）。</p>
 <p>作用：为软件实体的未来事物而制定的对现行开发设计进行约束。</p>
 <p>优点： </p>
@@ -216,9 +216,9 @@ classes that you can use:
 </ol>
 <p>注意：</p>
 <ol>
-<li>面向对象设计中最基础的设计原则</li>
+<li>面向对象设计中<code>最基础</code>的设计原则</li>
 <li>开闭原则对扩展开放，对修改关闭，并不意味着不做任何修改，低层模块的变更，必然要有高层模块进行耦合，否则就是一个孤立无意义的代码片段了。</li>
-<li>实现开闭原则关键在于抽象化</li>
+<li>实现开闭原则关键在于<code>抽象化</code></li>
 <li>对变化的封装包含两层含义：<br>第一，将相同的变化封装到一个接口或者抽象类中；<br>第二，将不同的变化封装到不同的接口或抽象类中，不应该有两个不同的变化出现在同一个接口或抽象类中。</li>
 </ol>
 <p>使用开闭原则的设计例子：</p>
@@ -246,7 +246,7 @@ classes that you can use:
 <p>注意：</p>
 <ol>
 <li>依赖倒置原则的核心思想是<code>面向接口编程</code>。</li>
-<li>修改类的依赖关系时，为避免因修改依赖类而给程序带来不必要的风险，将依赖类A修改为使用依赖接口I，被依赖类B和被依赖类C各自实现接口I：<br>即<code>类A</code>通过<code>接口I</code>间接与<code>类B</code>/<code>类C发生联系（A</code>实例化<code>I，B和C</code>implements<code>I并</code>实现`其中方法）。</li>
+<li>修改类的依赖关系时，为避免因修改依赖类而给程序带来不必要的风险，将依赖类A修改为使用依赖接口I，被依赖类B和被依赖类C各自实现接口I：<br>即<code>类A</code>通过<code>接口I</code>间接与<code>类B</code>/<code>类C</code>发生联系（A 实例化 I，B和C implements I并实现其中方法）。</li>
 <li>其实传递依赖关系有三种方式：除了前面说的<code>接口传递</code>，另外还有<code>构造方法传递</code>和<code>setter方法传递</code></li>
 <li>根据依赖倒置原则，在实际编程中一般需做到以下3点：<br>1）低层模块尽量都要有抽象类或接口，或两者都有。<br>2）变量的声明类型尽量是抽象类或接口。<br>3）使用继承时遵循里氏替换原则。 </li>
 </ol>
@@ -291,7 +291,7 @@ classes that you can use:
 <p>优点：因类与类之间的关系越密切，耦合度越大，当一个类发生改变时，对另一个类的影响也越大。所以遵循迪米特原则可以尽量降低类与类之间的耦合，使类与类之间保持松散的耦合关系。。</p>
 <p>注意：</p>
 <ol>
-<li>每个对象都会与其他对象有耦合关系（耦合的方式很多，依赖、关联、组合、聚合等）。<br>只要两个对象之间有耦合关系，我们就说这两个对象之间是朋友关系。<br>我们称<code>出现在成员变量、方法参数、方法返回值中的类</code>为<code>直接的朋友</code>，而<code>出现在局部变量中的类</code>则不是直接的朋友。<br>所以，陌生的类最好不要作为局部变量的形式出现在类的内部。</li>
+<li>每个对象都会与其他对象有耦合关系（耦合的方式很多，依赖、关联、组合、聚合等）。<br>只要两个对象之间有耦合关系，我们就说这两个对象之间是朋友关系。<br>我们称<code>出现在成员变量、方法参数、方法返回值中的类</code>为直接的朋友，而<code>出现在局部变量中的类</code>则不是直接的朋友。<br>所以，陌生的类最好不要作为局部变量的形式出现在类的内部。</li>
 <li>使用迪米特原则，通常需要利用“中介者”。但过分的使用会产生大量的中介和传递类，导致系统复杂度变大。所以在采用迪米特法则时要反复权衡，既做到结构清晰，又要高内聚低耦合。</li>
 </ol>
 <p>使用迪米特原则的例子：<br>1. </p>
