@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/07/Java设计模式-常用面向对象七大原则/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="一、单一职责原则(Single Responsibility Principle,SRP)重要系数：★★★★☆  “There should never be more than one reason for a class to change”  定义：类的职责要单一，不能将太多的职责放在一个类中。 描述：即一个类只负责一项职责。（高内聚、低耦合） 作用：为了避免（解决）一个负责多个职责的类因其">
-<meta property="og:updated_time" content="2017-06-26T03:40:44.768Z">
+<meta property="og:updated_time" content="2017-06-26T03:44:22.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java设计模式-常用面向对象七大原则 | SPACE-19">
 <meta name="twitter:description" content="一、单一职责原则(Single Responsibility Principle,SRP)重要系数：★★★★☆  “There should never be more than one reason for a class to change”  定义：类的职责要单一，不能将太多的职责放在一个类中。 描述：即一个类只负责一项职责。（高内聚、低耦合） 作用：为了避免（解决）一个负责多个职责的类因其">
@@ -183,7 +183,7 @@ classes that you can use:
 <blockquote>
 <p>“There should never be more than one reason for a class to change”</p>
 </blockquote>
-<p>定义：类的职责要单一，不能将太多的职责放在一个类中。</p>
+<p><strong>定义：类的职责要单一，不能将太多的职责放在一个类中。</strong></p>
 <p>描述：即一个类只负责一项职责。（高内聚、低耦合）</p>
 <p>作用：为了避免（解决）一个负责多个职责的类因其中一个职责的改变而影响导致其他职责产生故障的问题。</p>
 <p>优点： </p>
@@ -194,8 +194,8 @@ classes that you can use:
 </ol>
 <p>注意：</p>
 <ol>
-<li>单一职责原则不只是面向对象编程思想所特有的。只要是模块化的程序设计，都适用单一职责原则。</li>
-<li>要学会避免因需求变更或其他原因而出现职责扩散的现象。在职责扩散到我们无法控制的程度之前，要立刻对代码进行重构。</li>
+<li>单一职责原则不只是面向对象编程思想所特有的。只要是<code>模块化</code>的程序设计，都适用单一职责原则。</li>
+<li>要学会避免因需求变更或其他原因而出现<code>职责扩散</code>的现象。在职责扩散到我们无法控制的程度之前，要立刻对代码进行重构。</li>
 </ol>
 <p>使用单一职责原则的设计模式：</p>
 <ol>
@@ -205,7 +205,7 @@ classes that you can use:
 <blockquote>
 <p>“Softeware entities like classes,modules and functions should be open for extension but closed for modifications.”</p>
 </blockquote>
-<p>定义：一个软件实体如类、模块和函数应对扩展开放，但对修改关闭。</p>
+<p><strong>定义：一个软件实体如类、模块和函数应对扩展开放，但对修改关闭。</strong></p>
 <p>描述：即当软件需要变化时，尽量通过扩展软件实体的行为来实现变化，而不是通过修改已有的代码来实现变化（在不修改一个软件实体的基础上去扩展其功能）。</p>
 <p>作用：为软件实体的未来事物而制定的对现行开发设计进行约束。</p>
 <p>优点： </p>
@@ -226,8 +226,8 @@ classes that you can use:
 <li></li>
 </ol>
 <h3 id="三、里氏代换原则-Liskov-Substitution-Principle-LSP"><a href="#三、里氏代换原则-Liskov-Substitution-Principle-LSP" class="headerlink" title="三、里氏代换原则(Liskov Substitution Principle,LSP)"></a>三、里氏代换原则(Liskov Substitution Principle,LSP)</h3><p>重要系数：★★★★☆</p>
-<p>严格定义：如果对每一个类型为 T1的对象 o1，都有类型为 T2 的对象o2，使得以 T1定义的所有程序 P 在所有的对象 o1 都代换成 o2 时，程序 P 的行为没有发生变化，那么类型 T2 是类型 T1 的子类型。</p>
-<p>通俗定义：在软件系统中，一个可接受基类对象的地方必然可以接受一个子类对象。</p>
+<p><strong>严格定义：如果对每一个类型为 T1的对象 o1，都有类型为 T2 的对象o2，使得以 T1定义的所有程序 P 在所有的对象 o1 都代换成 o2 时，程序 P 的行为没有发生变化，那么类型 T2 是类型 T1 的子类型。</strong></p>
+<p><strong>通俗定义：在软件系统中，一个可接受基类对象的地方必然可以接受一个子类对象。</strong></p>
 <p>描述：在软件中将一个基类对象替换成它的子类对象，程序将不会产生任何错误和异常。反过来则不成立：如果一个软件实体使用的是一个子类对象的话，那么它不一定能够使用基类对象。</p>
 <p>注意：</p>
 <ol>
@@ -240,7 +240,7 @@ classes that you can use:
 <li></li>
 </ol>
 <h3 id="四、依赖倒置原则-Dependence-Inversion-Principle，DIP"><a href="#四、依赖倒置原则-Dependence-Inversion-Principle，DIP" class="headerlink" title="四、依赖倒置原则(Dependence Inversion Principle，DIP)"></a>四、依赖倒置原则(Dependence Inversion Principle，DIP)</h3><p>重要系数：★★★★★</p>
-<p>定义：高层模块不应该依赖低层模块，二者都应该依赖其抽象；抽象不应该依赖细节；细节应该依赖抽象。</p>
+<p><strong>定义：高层模块不应该依赖低层模块，二者都应该依赖其抽象；抽象不应该依赖细节；细节应该依赖抽象。</strong></p>
 <p>描述：要针对抽象层编程。而不要针对具体类编程。</p>
 <p>作用：遵循依赖倒置原则可以降低类之间的耦合性，提高系统的稳定性，降低修改程序造成的风险。</p>
 <p>注意：</p>
@@ -255,7 +255,7 @@ classes that you can use:
 <li>TDD开发模式</li>
 </ol>
 <h3 id="五、接口隔离原则-Interface-Segregation-Principle-ISP"><a href="#五、接口隔离原则-Interface-Segregation-Principle-ISP" class="headerlink" title="五、接口隔离原则(Interface Segregation Principle, ISP)"></a>五、接口隔离原则(Interface Segregation Principle, ISP)</h3><p>重要系数：★★☆☆☆</p>
-<p>定义：使用多个专门的接口来取代一个统一且臃肿的接口，即客户端不应该依赖它不需要的接口；一个类对另一个类的依赖应该建立在最小的接口上。</p>
+<p><strong>定义：使用多个专门的接口来取代一个统一且臃肿的接口，即客户端不应该依赖它不需要的接口；一个类对另一个类的依赖应该建立在最小的接口上。</strong></p>
 <p>描述：为各个类建立专用的接口，而不要试图去建立一个过于庞大臃肿的接口供所有依赖它的类去调用。即当一个接口太大时，需要将它分割成一些更细小的接口。使用该接口的客户端仅需知道与之相关的方法即可。每一个接口应该承担一种相对独立的角色。</p>
 <p>优点：接口是设计时对外部设定的“契约”，通过分散定义多个接口，可以预防外来变更的扩散，提高系统的灵活性和可维护性。</p>
 <p>注意：</p>
@@ -268,7 +268,7 @@ classes that you can use:
 <li></li>
 </ol>
 <h3 id="六、合成复用原则-Composition-Aggregate-Reuse-Principle-CARP"><a href="#六、合成复用原则-Composition-Aggregate-Reuse-Principle-CARP" class="headerlink" title="六、合成复用原则(Composition/Aggregate Reuse Principle, CARP)"></a>六、合成复用原则(Composition/Aggregate Reuse Principle, CARP)</h3><p>重要系数：★★★★☆</p>
-<p>定义：复用时要尽量使用关联关系（包括组合关系和聚合关系），少用继承。</p>
+<p><strong>定义：复用时要尽量使用关联关系（包括组合关系和聚合关系），少用继承。</strong></p>
 <p>描述：新的对象应尽量多使用对象间的关联关系，尽量少使用甚至不使用继承关系来达到复用已有对象的目的。</p>
 <p>优点：可以使系统更加灵活，降低类与类之间的耦合度，一个类的变化对其他类造成的影响相对较少。</p>
 <p>注意：</p>
@@ -286,7 +286,7 @@ classes that you can use:
 <blockquote>
 <p>不要和“陌生人”说话、只与你的直接朋友通信</p>
 </blockquote>
-<p>定义：一个软件实体应尽可能少地与其他实体发生相互作用。</p>
+<p><strong>定义：一个软件实体应尽可能少地与其他实体发生相互作用。</strong></p>
 <p>描述：如果两个类不必彼此直接通信，那么这两个类就不应当发生直接的相互作用，而是通过引入一个第三者发生间接交互。</p>
 <p>优点：因类与类之间的关系越密切，耦合度越大，当一个类发生改变时，对另一个类的影响也越大。所以遵循迪米特原则可以尽量降低类与类之间的耦合，使类与类之间保持松散的耦合关系。。</p>
 <p>注意：</p>
