@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/07/Java设计模式-常用面向对象七大原则/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="一、单一职责原则(Single Responsibility Principle,SRP)重要系数：★★★★☆  “There should never be more than one reason for a class to change”  定义：类的职责要单一，不能将太多的职责放在一个类中。 描述：即一个类只负责一项职责。（高内聚、低耦合） 作用：为了避免（解决）一个负责多个职责的类因其">
-<meta property="og:updated_time" content="2017-06-26T03:44:22.618Z">
+<meta property="og:updated_time" content="2017-06-26T05:40:00.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java设计模式-常用面向对象七大原则 | SPACE-19">
 <meta name="twitter:description" content="一、单一职责原则(Single Responsibility Principle,SRP)重要系数：★★★★☆  “There should never be more than one reason for a class to change”  定义：类的职责要单一，不能将太多的职责放在一个类中。 描述：即一个类只负责一项职责。（高内聚、低耦合） 作用：为了避免（解决）一个负责多个职责的类因其">
@@ -226,7 +226,7 @@ classes that you can use:
 <li></li>
 </ol>
 <h3 id="三、里氏代换原则-Liskov-Substitution-Principle-LSP"><a href="#三、里氏代换原则-Liskov-Substitution-Principle-LSP" class="headerlink" title="三、里氏代换原则(Liskov Substitution Principle,LSP)"></a>三、里氏代换原则(Liskov Substitution Principle,LSP)</h3><p>重要系数：★★★★☆</p>
-<p><strong>严格定义：如果对每一个类型为 T1的对象 o1，都有类型为 T2 的对象o2，使得以 T1定义的所有程序 P 在所有的对象 o1 都代换成 o2 时，程序 P 的行为没有发生变化，那么类型 T2 是类型 T1 的子类型。</strong></p>
+<p><strong>严格定义：如果对每一个类型为 T1的对象 o1，都有类型为 T2 的对象o2，使得以 T1定义的所有程序 P ，在所有的对象 o1 都代换成 o2 时，程序 P 的行为没有发生变化，那么类型 T2 是类型 T1 的子类型。</strong></p>
 <p><strong>通俗定义：在软件系统中，一个可接受基类对象的地方必然可以接受一个子类对象。</strong></p>
 <p>描述：在软件中将一个基类对象替换成它的子类对象，程序将不会产生任何错误和异常。反过来则不成立：如果一个软件实体使用的是一个子类对象的话，那么它不一定能够使用基类对象。</p>
 <p>注意：</p>
@@ -240,8 +240,8 @@ classes that you can use:
 <li></li>
 </ol>
 <h3 id="四、依赖倒置原则-Dependence-Inversion-Principle，DIP"><a href="#四、依赖倒置原则-Dependence-Inversion-Principle，DIP" class="headerlink" title="四、依赖倒置原则(Dependence Inversion Principle，DIP)"></a>四、依赖倒置原则(Dependence Inversion Principle，DIP)</h3><p>重要系数：★★★★★</p>
-<p><strong>定义：高层模块不应该依赖低层模块，二者都应该依赖其抽象；抽象不应该依赖细节；细节应该依赖抽象。</strong></p>
-<p>描述：要针对抽象层编程。而不要针对具体类编程。</p>
+<p><strong>定义：高层模块不应该依赖低层模块，二者都应该依赖其抽象；抽象不应该依赖细节，细节应该依赖抽象。</strong></p>
+<p>描述：要针对抽象层编程，而不要针对具体类编程。</p>
 <p>作用：遵循依赖倒置原则可以降低类之间的耦合性，提高系统的稳定性，降低修改程序造成的风险。</p>
 <p>注意：</p>
 <ol>
@@ -255,7 +255,7 @@ classes that you can use:
 <li>TDD开发模式</li>
 </ol>
 <h3 id="五、接口隔离原则-Interface-Segregation-Principle-ISP"><a href="#五、接口隔离原则-Interface-Segregation-Principle-ISP" class="headerlink" title="五、接口隔离原则(Interface Segregation Principle, ISP)"></a>五、接口隔离原则(Interface Segregation Principle, ISP)</h3><p>重要系数：★★☆☆☆</p>
-<p><strong>定义：使用多个专门的接口来取代一个统一且臃肿的接口，即客户端不应该依赖它不需要的接口；一个类对另一个类的依赖应该建立在最小的接口上。</strong></p>
+<p><strong>定义：使用多个专门的接口来取代一个统一的接口，即客户端不应该依赖它不需要的接口；一个类对另一个类的依赖应该建立在最小的接口上。</strong></p>
 <p>描述：为各个类建立专用的接口，而不要试图去建立一个过于庞大臃肿的接口供所有依赖它的类去调用。即当一个接口太大时，需要将它分割成一些更细小的接口。使用该接口的客户端仅需知道与之相关的方法即可。每一个接口应该承担一种相对独立的角色。</p>
 <p>优点：接口是设计时对外部设定的“契约”，通过分散定义多个接口，可以预防外来变更的扩散，提高系统的灵活性和可维护性。</p>
 <p>注意：</p>
@@ -273,10 +273,10 @@ classes that you can use:
 <p>优点：可以使系统更加灵活，降低类与类之间的耦合度，一个类的变化对其他类造成的影响相对较少。</p>
 <p>注意：</p>
 <ol>
-<li>尽量少用继承来进行复用的主要原因在于继承复用会破坏系统的封装性，滥用继承也可能会增加系统构建和维护的难度以及系统的复杂度。 </li>
-<li>因为继承会将基类的实现细节暴露给子类，由于基类的内部细节通常对子类来说是可见的，这种复用称为<code>“白箱”复用</code>。<br>对于这种复用，如果基类发生改变，那么子类的实现也不得不发生改变。</li>
-<li>由于组合或聚合关系可以将已有的对象（即成员对象）纳入到新对象中，使之成为新对象的一部分，因此新对象可以调用已有对象的功能，这样做可以使得成员对象的内部实现细节对于新对象不可见，这种复用称为<code>“黑箱”复用</code>。<br>对于这种复用，成员对象的变化对新对象的影响不大。</li>
-<li>一般而言，<br>如果两个类之间是<code>Has-A</code>的关系（某一个角色具有某一项责任），应使用组合或聚合;<br>如果两个类之间是<code>Is-A</code>的关系(一个类是另一个类的”一种”)，可使用继承。</li>
+<li>尽量少用继承来进行复用的主要原因在于继承复用会<code>破坏系统的封装性</code>，滥用继承也可能会增加系统构建和维护的难度以及系统的复杂度。 </li>
+<li>因为<code>继承</code>会将基类的实现细节<code>暴露</code>给子类，由于基类的内部细节通常对子类来说是<code>可见的</code>，这种复用称为<code>“白箱”复用</code>。<br>对于这种复用，如果基类发生改变，那么子类的实现也不得不发生改变。</li>
+<li>由于<code>组合或聚合关系</code>可以将已有的对象（即成员对象）纳入到新对象中，使之成为新对象的一部分，因此新对象可以调用已有对象的功能，这样做可以使得成员对象的内部实现细节对于新对象<code>不可见</code>，这种复用称为<code>“黑箱”复用</code>。<br>对于这种复用，成员对象的变化对新对象的影响不大。</li>
+<li>一般而言，<br>如果两个类之间是<code>Has-A</code>的关系（某一个角色具有某一项责任），应使用<code>组合或聚合</code>;<br>如果两个类之间是<code>Is-A</code>的关系(一个类是另一个类的”一种”)，可使用<code>继承</code>。</li>
 </ol>
 <p>使用合成复用原则的例子：</p>
 <ol>
@@ -291,8 +291,8 @@ classes that you can use:
 <p>优点：因类与类之间的关系越密切，耦合度越大，当一个类发生改变时，对另一个类的影响也越大。所以遵循迪米特原则可以尽量降低类与类之间的耦合，使类与类之间保持松散的耦合关系。。</p>
 <p>注意：</p>
 <ol>
-<li>每个对象都会与其他对象有耦合关系（耦合的方式很多，依赖、关联、组合、聚合等）。<br>只要两个对象之间有耦合关系，我们就说这两个对象之间是朋友关系。<br>我们称<code>出现在成员变量、方法参数、方法返回值中的类</code>为直接的朋友，而<code>出现在局部变量中的类</code>则不是直接的朋友。<br>所以，陌生的类最好不要作为局部变量的形式出现在类的内部。</li>
-<li>使用迪米特原则，通常需要利用“中介者”。但过分的使用会产生大量的中介和传递类，导致系统复杂度变大。所以在采用迪米特法则时要反复权衡，既做到结构清晰，又要高内聚低耦合。</li>
+<li>每个对象都会与其他对象有耦合关系（耦合的方式很多，依赖、关联、组合、聚合等）。<br>只要两个对象之间有<code>耦合关系</code>，我们就说这两个对象之间是<code>朋友关系</code>。<br>我们称<br>出现在<code>成员变量、方法参数、方法返回值</code>中的类为<code>直接的朋友</code>，<br>出现在<code>局部变量</code>中的类则<code>不是直接的朋友</code>。<br>所以，陌生的类最好不要作为局部变量的形式出现在类的内部。</li>
+<li>使用迪米特原则，通常需要利用<code>中介者</code>。<br>但过分的使用会产生大量的中介和传递类，导致系统复杂度变大。<br>所以在采用迪米特法则时要反复权衡，既做到结构清晰，又要高内聚低耦合。</li>
 </ol>
 <p>使用迪米特原则的例子：<br>1. </p>
 
