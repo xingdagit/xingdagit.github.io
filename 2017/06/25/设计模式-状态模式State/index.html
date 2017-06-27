@@ -23,7 +23,7 @@
 <meta property="og:description" content="一、状态模式(State Pattern) 状态模式属于行为型模式  二、模式动机 在很多情况下，一个对象的行为取决于一个或多个动态变化的属性，这样的属性叫做状态。如人的心情状态、酒店房间的已预订/空闲/已入住等状态。当一个有状态的(stateful)的对象与外部事件产生互动时，其内部状态就会改变，从而使得系统的行为也随之发生变化。 状态模式就是用于解决系统中复杂对象的状态转换以及不同状态下行为的">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/06/25/594f9bf9e5760.jpg">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/06/25/594fa9291ceaf.jpg">
-<meta property="og:updated_time" content="2017-06-27T11:42:44.709Z">
+<meta property="og:updated_time" content="2017-06-27T12:22:01.911Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式-状态模式State | SPACE-19">
 <meta name="twitter:description" content="一、状态模式(State Pattern) 状态模式属于行为型模式  二、模式动机 在很多情况下，一个对象的行为取决于一个或多个动态变化的属性，这样的属性叫做状态。如人的心情状态、酒店房间的已预订/空闲/已入住等状态。当一个有状态的(stateful)的对象与外部事件产生互动时，其内部状态就会改变，从而使得系统的行为也随之发生变化。 状态模式就是用于解决系统中复杂对象的状态转换以及不同状态下行为的">
@@ -189,7 +189,7 @@ classes that you can use:
 <li>在很多情况下，一个对象的行为取决于一个或多个动态变化的属性，这样的属性叫做状态。<br>如人的心情状态、酒店房间的已预订/空闲/已入住等状态。<br>当一个有状态的(stateful)的对象与外部事件产生互动时，其内部状态就会改变，从而使得系统的行为也随之发生变化。</li>
 <li>状态模式就是用于解决系统中复杂对象的状态转换以及不同状态下行为的封装问题的。</li>
 <li>当系统中某个对象存在多个状态，这些状态之间可以进行转换，而且对象在不同状态下行为不相同时可以使用状态模式。</li>
-<li>状态模式将拥有状态的对象和状态对应的行为分离，封装到专门的状态类中，使得对象状态可以灵活变化，<br>对于客户端而言，无须关心对象状态的转换以及对象所处的当前状态，无论对于何种状态的对象，客户端都可以一致处理。<br>这就是状态模式的动机。</li>
+<li>状态模式将<code>拥有状态的对象</code>和<code>状态对应的行为</code>分离，封装到专门的状态类中，使得对象状态可以灵活变化，对于客户端而言，无须关心对象状态的转换以及对象所处的当前状态，无论对于何种状态的对象，客户端都可以一致处理。<br>这就是状态模式的动机。</li>
 </ul>
 <h3 id="三、模式定义"><a href="#三、模式定义" class="headerlink" title="三、模式定义"></a>三、模式定义</h3><blockquote>
 <p>状态模式(State Pattern) ：允许一个对象在其内部状态改变时改变它的行为。</p>
@@ -205,36 +205,35 @@ classes that you can use:
 </li>
 </ul>
 <ol>
-<li>Context（环境类）：<br>环境类又称为上下文类，它是拥有多种状态的对象。<br>由于环境类的状态存在多样性且在不同状态下对象的行为有所不同，因此将状态独立出去形成单独的状态类。<br>在环境类中维护一个抽象状态类State的实例，这个实例定义当前状态，在具体实现时，它是一个State子类的对象。</li>
-<li>State（抽象状态类）：<br>它用于定义一个接口以封装与环境类的一个特定状态相关的行为，<br>在抽象状态类中声明了各种不同状态对应的方法，<br>而在其子类中实现类这些方法，由于不同状态下对象的行为可能不同，<br>因此在不同子类中方法的实现可能存在不同，相同的方法可以写在抽象状态类中。</li>
+<li>Context（环境类）：<br>环境类又称为上下文类，它是拥有多种状态的对象。<br>由于环境类的状态存在多样性且在不同状态下对象的行为有所不同，因此将状态独立出去形成单独的状态类。<br>在环境类中维护一个抽象状态类State的实例，这个实例定义当前状态。在具体实现时，它是一个State子类的对象。</li>
+<li>State（抽象状态类）：<br>它用于定义一个接口以封装与环境类的一个特定状态相关的行为。<br>在抽象状态类中声明了各种不同状态对应的方法，而在其子类中实现类这些方法。<br>由于不同状态下对象的行为可能不同，因此在不同子类中方法的实现可能存在不同，相同的方法可以写在抽象状态类中。</li>
 <li>ConcreteState（具体状态类）：<br>它是抽象状态类的子类，<br>每一个子类实现一个与环境类的一个状态相关的行为，<br>每一个具体状态类对应环境的一个具体状态，<br>不同的具体状态类其行为有所不同。</li>
 </ol>
 <h3 id="五、模式分析"><a href="#五、模式分析" class="headerlink" title="五、模式分析"></a>五、模式分析</h3><ul>
 <li>状态模式描述了<code>对象状态的变化</code>以及<code>对象如何在每一种状态下表现出不同的行为</code>。</li>
-<li>状态模式的关键是引入了一个<code>抽象类</code>来专门表示<code>对象的状态</code>，这个类我们叫做<code>抽象状态类</code>，<br>而对象的每一种具体状态类都继承了该类，并在不同具体状态类中实现了不同状态的行为，包括<code>各种状态之间的转换</code>。</li>
-<li><p>典型的<code>抽象状态类</code>代码如下所示：</p>
+<li><p>状态模式的关键是引入了一个<code>抽象类</code>来专门表示<code>对象的状态</code>，这个类我们叫做<code>抽象状态类</code>，<br>而对象的每一种具体状态类都继承了该类，并在不同具体状态类中实现了不同状态的行为，包括各种状态之间的转换。<br>典型的<code>抽象状态类</code>代码如下所示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">public abstract class State </div><div class="line">&#123;  </div><div class="line">    //声明抽象业务方法，不同的具体状态类可以不同的实现  </div><div class="line">    public abstract void handle();  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p>在抽象状态类的子类即具体状态类中实现了在抽象状态类中声明的业务方法，不同的具体状态类可以提供完全不同的方法实现。<br>在实际使用时，在一个状态类中可能包含多个业务方法,如果在具体状态类中某些业务方法的实现完全相同，可以将这些方法移至抽象状态类，实现代码的复用。<br>典型的<code>具体状态类</code>代码如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class ConcreteState extends State </div><div class="line">&#123;  </div><div class="line">    public void handle() </div><div class="line">	&#123;  </div><div class="line">        //方法具体实现代码  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li><p>在抽象状态类的子类即具体状态类中实现了在抽象状态类中声明的业务方法，不同的具体状态类可以提供完全不同的方法实现。<br>在实际使用时，一个状态类可能包含多个业务方法。<br>如果在具体状态类中某些业务方法的实现完全相同，可以将这些方法移至抽象状态类，实现代码的复用。<br>典型的<code>具体状态类</code>代码如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class ConcreteState extends State </div><div class="line">&#123;  </div><div class="line">    public void handle() </div><div class="line">    &#123;  </div><div class="line">        /不同行为具体实现代码  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p>环境类维持一个对抽象状态类的引用，通过setState()方法可以向环境类注入不同的状态对象，再在环境类的业务方法中调用状态对象的方法。<br>典型的<code>环境类</code>代码如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class Context </div><div class="line">&#123;  </div><div class="line">    private State state; //维持一个对抽象状态对象的引用  </div><div class="line">    private int value;   //其他属性值，该属性值的变化可能会导致对象状态发生变化  </div><div class="line">  </div><div class="line">    //设置状态对象  </div><div class="line">    public void setState(State state) &#123;  </div><div class="line">        this.state = state;  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    public void request() </div><div class="line">	&#123;  </div><div class="line">        //其他代码  </div><div class="line">        state.handle(); //调用状态对象的业务方法  </div><div class="line">        //其他代码  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li><p>环境类维持一个对抽象状态类的引用，并通过setState()方法注入不同的状态对象，以便在环境类的业务方法中调用状态对象的方法。<br>典型的<code>环境类</code>代码如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class Context </div><div class="line">&#123;  </div><div class="line">    private State state; //维持一个对抽象状态对象的引用  </div><div class="line">    private int value;   //其他属性值，该属性值的变化可能会导致对象状态发生变化  </div><div class="line">  </div><div class="line">    //设置状态对象  </div><div class="line">    public void setState(State state) &#123;  </div><div class="line">        this.state = state;  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    public void request() </div><div class="line">    &#123;  </div><div class="line">        //其他代码  </div><div class="line">        state.handle(); //调用状态对象的业务方法  </div><div class="line">        //其他代码  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p>虽然在状态模式结构图中，环境类Context与抽象状态类State之间存在单向的关联关系，在Context中定义了一个State对象。<br>但在具体实现时，它们之间可能存在更为复杂的关系，State与Context之间可能也存在<code>依赖</code>或者<code>关联</code>关系。</p>
+<li><p>虽然在状态模式结构图中，环境类Context与抽象状态类State之间存在单向的关联关系（在Context类中定义State对象）。<br>但在具体实现时，它们之间可能存在更为复杂的关系，State与Context之间可能也存在<code>依赖</code>或者<code>关联</code>关系。</p>
 </li>
 <li>在状态模式结构中需要理解环境类与抽象状态类的作用：</li>
 </ul>
 <ol>
 <li><code>环境类</code>实际上是真正拥有状态的对象，我们只是将环境类中与状态有关的代码提取出来封装到专门的状态类中。<br>如订票系统中的订单拥有多种状态则订单是环境类；酒店订房系统中的房间拥有多种状态则房间是环境类。<br>环境类有时候可充当状态管理器的角色，可以在环境类中对状态进行切换。</li>
-<li><code>抽象状态类</code>可以是抽象类也可以是接口。<br>不同状态类就是继承这个父类的不同子类，<br>状态类的产生是由于环境类存在多个状态，同时还满足两个条件：<br>(1) 这些状态经常需要切换<br>(2) 在不同的状态下对象的行为不同。<br>因此可将不同状态下的行为单独提取出来封装在具体的状态类中，使得环境类对象在其内部状态改变时可以改变它的行为。<br>对象看起来似乎修改了它的类，而实际上是由于切换到不同的具体状态类实现的。<br>由于环境类可设置为任一具体状态类，因此它针对<code>抽象状态类</code>编程，<br>在程序运行时可将任一具体状态类的对象设置到环境类中，从而使得环境类可改变内部状态，并且改变行为。</li>
+<li><code>抽象状态类</code>可以是抽象类也可以是接口。<br>不同的具体状态类就是继承这个父类的不同子类。<br>状态类的产生是由于环境类存在多个状态，同时还满足两个条件：<br>(1) 这些状态经常需要切换<br>(2) 在不同的状态下对象的行为不同。<br>因此可将不同状态下的行为单独提取出来封装在具体的状态类中，使得环境类对象在其内部状态改变时可以改变它的行为。<br>对象看起来似乎修改了它的类，实际上是由于切换到不同的具体状态类实现的。<br>由于环境类可设置为任一具体状态类，因此它针对<code>抽象状态类</code>编程，<br>在程序运行时可将任一具体状态类的对象设置到环境类中，从而使得环境类可改变内部状态，并且改变行为。</li>
 </ol>
 <ul>
 <li>也由上可得，一个对象状态之间的相互转换，通常有<code>两种</code>实现方式：</li>
 </ul>
 <ol>
-<li><code>统一由环境类来负责状态之间的转换</code><br>此时，环境类还充当了状态管理器(State Manager)角色，在环境类的业务方法中通过对某些属性值的判断实现状态转换，还可以提供一个专门的方法用于实现属性判断和状态转换。</li>
-<li><code>由具体状态类来负责状态之间的转换</code><br>可以在具体状态类的业务方法中判断环境类的某些属性值再根据情况为环境类设置新的状态对象，实现状态转换。<br>同样，也可以提供一个专门的方法来负责属性值的判断和状态转换。<br>此时，状态类与环境类之间就将存在依赖或关联关系，因为状态类需要访问环境类中的属性值。</li>
+<li>统一由<code>环境类</code>来负责状态之间的转换<br>此时，环境类还充当了状态管理器(State Manager)角色，在环境类的业务方法中通过对某些属性值的判断实现状态转换，还可以提供一个专门的方法用于实现属性判断和状态转换。</li>
+<li>由<code>各个具体状态类</code>来负责状态之间的转换<br>可以在具体状态类的业务方法中判断环境类的某些属性值再根据情况为环境类设置新的状态对象，实现状态转换。<br>同样，也可以提供一个专门的方法来负责属性值的判断和状态转换。<br>此时，状态类与环境类之间就将存在依赖或关联关系，因为状态类需要访问环境类中的属性值。</li>
 </ol>
 <h3 id="六、知识点"><a href="#六、知识点" class="headerlink" title="六、知识点"></a>六、知识点</h3><ul>
 <li><p>状态模式的主要优点如下：<br>(1) <code>封装了转换原则</code>。<br>(2) <code>枚举可能的状态</code>，在枚举状态前需要确定状态种类。<br>(3) 将所有与某个状态有关的行为放到一个类中，并且<code>可以方便地增加新的状态</code>，只需要改变对象状态即可改变对象的行为。<br>(4) 允许状态转换逻辑与状态对象合成一体，而不是某一个巨大的条件语句块。<br>(5) 可以让多个环境对象共享一个状态对象，从而减少系统中对象的个数。</p>
@@ -247,14 +246,14 @@ classes that you can use:
 </li>
 </ul>
 <h3 id="七、状态模式扩展"><a href="#七、状态模式扩展" class="headerlink" title="七、状态模式扩展"></a>七、状态模式扩展</h3><ul>
-<li><p>共享状态<br>在有些情况下，多个环境对象可能需要共享同一个状态，<br>如果希望在系统中实现多个环境对象共享一个或多个状态对象，那么需要将这些状态对象定义为<code>环境类的静态成员对象</code>。</p>
+<li><p>共享状态<br>在有些情况下，多个环境对象可能需要共享同一个状态。<br>如果希望在系统中实现多个环境对象共享一个或多个状态对象，那么需要将这些状态对象定义为环境类的<code>静态成员对象</code>。</p>
 </li>
 <li><p>简单状态模式与可切换状态的状态模式</p>
 </li>
 </ul>
 <ol>
-<li>简单状态模式：<br>简单状态模式是指状态都相互独立，状态之间无须进行转换的状态模式，这是最简单的一种状态模式。<br>对于这种状态模式，每个状态类都封装与状态相关的操作，而无须关心状态的切换，<br>可以在客户端直接实例化状态类，然后将状态对象设置到环境类中。<br>如果是这种简单的状态模式，它遵循“开闭原则”，<br>在客户端可以针对抽象状态类进行编程，而将具体状态类写到配置文件中，同时增加新的状态类对原有系统也不造成任何影响。</li>
-<li>可切换状态的状态模式：<br><code>大多数的状态模式都是可以切换状态的状态模式</code>，<br>在实现状态切换时，在具体状态类内部需要调用环境类Context的setState()方法进行状态的转换操作，<br>在具体状态类中可以调用到环境类的方法，因此状态类与环境类之间通常还存在关联关系或者依赖关系。<br>通过在状态类中引用环境类的对象来回调环境类的setState()方法实现状态的切换。<br>在这种可以切换状态的状态模式中，增加新的状态类可能需要修改其他某些状态类甚至环境类的源代码，否则系统无法切换到新增状态。</li>
+<li>简单状态模式：<br>简单状态模式是指状态都相互独立，状态之间无须进行转换的状态模式，这是最简单的一种状态模式。<br>对于这种状态模式，每个状态类都封装与状态相关的操作，而无须关心状态的切换，<br>可以在客户端直接实例化状态类，然后将状态对象设置到环境类中。<br>如果是这种简单的状态模式，它遵循<code>“开闭原则”</code>。即在客户端可以针对抽象状态类进行编程，而将具体状态类写到配置文件中，同时增加新的状态类对原有系统也不造成任何影响。</li>
+<li>可切换状态的状态模式：<br><code>大多数的状态模式都是可以切换状态的状态模式</code>。<br>在实现状态切换时，在具体状态类内部需要调用环境类Context的setState()方法进行状态的转换操作。<br>在具体状态类中可以调用到环境类的方法，因此状态类与环境类之间通常还存在关联关系或者依赖关系。<br>通过在状态类中引用环境类的对象来回调环境类的setState()方法实现状态的切换。<br>在这种可以切换状态的状态模式中，增加新的状态类可能需要修改其他某些状态类甚至环境类的源代码，否则系统无法切换到新增状态，违背了<code>“开闭原则”</code>。</li>
 </ol>
 <h3 id="八、重要实例"><a href="#八、重要实例" class="headerlink" title="八、重要实例"></a>八、重要实例</h3><ul>
 <li><p>要求：<br>在某银行系统中，我们定义了账户的三种状态：<br>(1) 如果账户中余额大于等于0，则账户的状态为绿色状态(GreenState)，此时用户既可以向该账户存款也可以从该账户取款；<br>(2) 如果账户中余额小于0，并且大于等于-1000，则账户的状态为黄色状态(YellowState)，此时用户既可以向该账户存款也可以从该账户取款；<br>(3) 如果账户中余额小于-1000，那么账户的状态为红色状态(RedState)，此时用户只能向该账户存款，不能再从中取款；<br>现用状态模式来实现状态的转化问题，用户只需执行简单的存款和取款操作，系统根据余额数量自动转换到相应的状态。请根据类图编程实现该系统,并写出相应Java代码。</p>
