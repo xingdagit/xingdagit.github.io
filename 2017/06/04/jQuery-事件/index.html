@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/04/jQuery-事件/index.html">
 <meta property="og:site_name" content="SPACE-19">
 <meta property="og:description" content="jQuery事件 因为JavaScript在浏览器中以单线程模式运行，页面加载后，一旦页面上所有的JavaScript代码被执行完后，就只能依赖触发事件来执行JavaScript代码。 浏览器在接收到用户的鼠标或键盘输入后，会自动在对应的DOM节点上触发相应的事件。如果该节点已经绑定了对应的JavaScript处理函数，该函数就会自动调用。 由于不同的浏览器绑定事件的代码都不太一样，所以用jQue">
-<meta property="og:updated_time" content="2017-06-04T14:12:58.782Z">
+<meta property="og:updated_time" content="2017-07-01T12:38:47.380Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery-事件 | SPACE-19">
 <meta name="twitter:description" content="jQuery事件 因为JavaScript在浏览器中以单线程模式运行，页面加载后，一旦页面上所有的JavaScript代码被执行完后，就只能依赖触发事件来执行JavaScript代码。 浏览器在接收到用户的鼠标或键盘输入后，会自动在对应的DOM节点上触发相应的事件。如果该节点已经绑定了对应的JavaScript处理函数，该函数就会自动调用。 由于不同的浏览器绑定事件的代码都不太一样，所以用jQue">
@@ -187,48 +187,219 @@ classes that you can use:
 <li>例子：用jQuery绑定一个click事件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var a = $(&apos;#test-link&apos;);  // 获取超链接的jQuery对象</div><div class="line">/*on方法用来绑定一个事件，需要传入事件名称和对应的处理函数作为参数*/</div><div class="line">a.on(&apos;click&apos;, function () &#123;</div><div class="line">   alert(&apos;Hello!&apos;);</div><div class="line">&#125;);</div><div class="line">/*另一种更简化的写法是直接调用click()方法（更常用）*/</div><div class="line">a.click(function () &#123;</div><div class="line">   alert(&apos;Hello!&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<h3 id="一、鼠标事件"><a href="#一、鼠标事件" class="headerlink" title="一、鼠标事件"></a>一、鼠标事件</h3><p><strong>click事件</strong></p>
+<ul>
+<li>鼠标单击时触发；</li>
+<li><p>方法一：<code>$ele.click()</code><br>绑定$ele元素，不带任何参数一般是用来指定触发一个事件，用的比较少</p>
+</li>
+<li><p>方法二：<code>$ele.click( handler(eventObject) )</code><br>绑定$ele元素，每次$ele元素触发点击操作会执行回调 handler函数，这样可以针对事件的反馈做很多操作了，方法中的this是指向了绑定事件的元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;test&quot;&gt;点击触发&lt;div&gt;</div><div class="line">$(&quot;#test&quot;).click(function() &#123;</div><div class="line">    //this指向 div元素</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>方法三：<code>$ele.click( [eventData ], handler(eventObject) )</code><br>使用与方法二一致，不过可以接受一个数据参数，这样的处理是为了解决不同作用域下数据传递的问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;test&quot;&gt;点击触发&lt;div&gt;</div><div class="line">$(&quot;#test&quot;).click(11111,function(e) &#123;</div><div class="line">    //this指向 div元素</div><div class="line">    //e.data  =&gt; 11111 传递数据</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>dblclick事件</strong></p>
+<ul>
+<li>鼠标双击时触发；</li>
+<li>dblclick()的用法和click()的用法是类似的，可以参考以上click()的用法。</li>
+<li><p>dbclick与click事件不同的是：</p>
 <ol>
-<li><p>鼠标事件<br><code>click</code>: 鼠标单击时触发；<br><code>dblclick</code>：鼠标双击时触发；<br><code>mouseenter</code>：鼠标进入时触发；<br><code>mouseleave</code>：鼠标移出时触发；<br><code>mousemove</code>：鼠标在DOM内部移动时触发；<br><code>hover</code>：鼠标进入和退出时触发两个函数，相当于<code>mouseenter</code>加上<code>mouseleave</code>。</p>
+<li>click事件其实是由mousedown与mouseup 2个动作构成，所以点击的动作只有在松手后才触发</li>
+<li>dblclick又是由2个click叠加而来的，所以dblclick事件只有在满足以下条件的情况下才能被触发:<br>1)鼠标指针在元素里面时点击。<br>2)鼠标指针在元素里面时释放。<br>3)鼠标指针在元素里面时再次点击，点击间隔时间，是系统而定。<br>4)鼠标指针在元素里面时再次释放。</li>
+</ol>
 </li>
-<li><p>键盘事件<br>键盘事件仅作用在当前焦点的DOM上，通常是<code>&lt;input&gt;</code>和<code>&lt;textarea&gt;</code>。<br><code>keydown</code>：键盘按下时触发；<br><code>keyup</code>：键盘松开时触发；<br><code>keypress</code>：按一次键后触发。</p>
+<li><p>注意：在同一元素上同时绑定 click 和 dblclick 事件是不可取的。各个浏览器事件触发的顺序是不同的，一些浏览器在dblclick之前接受两个 click 事件 ，而一些浏览器只接受一个 click 事件。用户往往可通过不同的操作系统和浏览器配置双击灵敏度</p>
 </li>
-<li><p>其他事件<br><code>focus</code>：当DOM获得焦点时触发；<br><code>blur</code>：当DOM失去焦点时触发；<br><code>change</code>：当<code>&lt;input&gt;</code>、<code>&lt;select&gt;</code>或<code>&lt;textarea&gt;</code>的内容改变时触发；<br><code>submit</code>：当<code>&lt;form&gt;</code>提交时触发；<br><code>ready</code>：当页面被载入并且DOM树完成初始化后触发且只触发一次，只作用于<code>document对象</code>。非常适合用来写其他的初始化代码。如给一个<code>&lt;form&gt;</code>表单绑定<code>submit</code>事件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//初始化代码必须放到document对象的ready事件中，以保证相关代码会在DOM树初始化后再执行</div><div class="line">    &lt;script&gt;</div><div class="line">        $(document).on(&apos;ready&apos;, function () &#123;</div><div class="line">            $(&apos;#idForm).on(&apos;submit&apos;, function () &#123;</div><div class="line">                alert(&apos;submit!&apos;);</div><div class="line">            &#125;);</div><div class="line">        &#125;);</div><div class="line">    &lt;/script&gt;</div><div class="line">//其实也可以简化为以下方式（更常见）</div><div class="line">$(function () &#123;</div><div class="line">       //初始化代码...</div><div class="line">&#125;);</div><div class="line"></div><div class="line">//!!!!!以后若遇到$(function () &#123;...&#125;)的形式，牢记这是document对象的ready事件处理函数</div><div class="line">//可以反复绑定事件处理函数，它们会依次执行</div><div class="line">$(function () &#123;</div><div class="line">    console.log(&apos;init A...&apos;);</div><div class="line">&#125;);</div><div class="line">$(function () &#123;</div><div class="line">    console.log(&apos;init B...&apos;);</div><div class="line">&#125;);</div><div class="line">$(function () &#123;</div><div class="line">    console.log(&apos;init C...&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</ul>
+<p><strong>mousedown与mouseup事件</strong></p>
+<ul>
+<li>mousedown()可监听用户鼠标<code>按下</code>的操作；mouseup()可监听用户鼠标<code>弹起</code>的操作</li>
+<li>下面以mousedown()为例，mouseup()类似</li>
+<li>方法一：<code>$ele.mousedown()</code><br>方法二：<code>$ele.mousedown( handler(eventObject) )</code><br>方法三：<code>$ele.mousedown( [eventData ], handler(eventObject) )</code></li>
+<li>mousedown事件触发需要以下几点：<br>1)mousedown强调是按下触发<br>2)如果在一个元素按住了鼠标不放，并且拖动鼠标离开这个元素，并释放鼠标键，这仍然是算作mousedown事件<br>3)任何鼠标按钮被按下时都能触发mousedown事件<br>4)用event 对象的which区别按键，敲击鼠标左键which的值是1，敲击鼠标中键which的值是2，敲击鼠标右键which的值是3</li>
+<li>mouseup事件触发需要以下几点：<br>1)mouseup强调是松手触发，与mousedown是相反的<br>2)mouseup与mousedown组合起来就是click事件<br>3)如果用户在一个元素上按下鼠标按键，并且拖动鼠标离开这个元素，然后释放鼠标键，这仍然是算作mouseup事件<br>4)任何鼠标按钮松手时都能触发mouseup事件<br>5)用event 对象的which区别按键，敲击鼠标左键which的值是1，敲击鼠标中键which的值是2，敲击鼠标右键which的值是3</li>
+<li>click与mousedown的区别：<br>click事件其实是由 mousedown 和 mouseup 2个动作构成，所以点击的动作只有在松手后才触发</li>
+</ul>
+<p><strong>mousemove事件</strong></p>
+<ul>
+<li>在交互操作中经常需知道用户是否有移动的操作。<br>基于移动的机制可以做出拖动、拖拽一系列的效果出来。<br>针对移动事件，jQuery提供了一个mousemove的快捷方法可以监听用户移动的的操作</li>
+<li>即鼠标在DOM内部移动时触发</li>
+<li>方法一：<code>$ele.mousemove()</code><br>方法二：<code>$ele.mousemove( handler(eventObject) )</code><br>方法三：<code>$ele.mousemove( [eventData ], handler(eventObject) )</code></li>
+<li>mousemove事件触发需要以下几点：<br>1)mousemove事件是当鼠标指针移动时触发的，即使是一个像素<br>2)如果处理器做任何重大的处理，或者如果该事件存在多个处理函数，这可能造成浏览器的严重的性能问题</li>
+</ul>
+<p><strong>mouseover与mouseout事件</strong></p>
+<ul>
+<li>与JS中的onmouseover()与onmouseout()事件类似，jQuery同样提供了这样的事件来监听用户的移入移出操作，mouseover()与mouseout()事件。</li>
+<li>两者用法类似，下面以mouseover为例：</li>
+<li>方法一：<code>$ele.mouseover()</code><br>方法二：<code>$ele.mouseover( handler(eventObject) )</code><br>方法三：<code>$ele.mouseover( [eventData ], handler(eventObject) )</code></li>
+</ul>
+<p><strong>mouseenter与mouseleave事件</strong></p>
+<ul>
+<li>在交互操作中，经常需要知道用户操作鼠标是否有移到元素内部或是元素外部，<br>因此jQuery提供了一个mouseenter和mouseleave的快捷方法可以监听用户移动到内部和移到外部的操作</li>
+<li>这两个事件的语法与mouseover和mouseout一样，主要区别(以mouseenter为例)：</li>
+</ul>
+<ol>
+<li>mouseenter JavaScript事件是Internet Explorer专有的。由于该事件在平时很有用，jQuery的模拟这一事件，以便它可用于所有浏览器。该事件在鼠标移入到元素上时被触发。任何HTML元素都可以接受此事件。</li>
+<li>mouseenter事件和mouseover事件的区别：<br>冒泡的方式处理问题，即mouseover/mouseout事件会发生事件冒泡，而mouseenter/mouseleave事件不会。<br>即mouseenter/mouseleave事件只会在绑定它的元素上被调用，而不会在后代节点上被触发。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;aaron2&quot;&gt;</div><div class="line">    &lt;p&gt;鼠标离开此区域触发mouseleave事件&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">//如果在p元素与div元素都绑定`mouseover`事件，鼠标在离开p元素，但是没有离开div元素的时候，触发的结果：`p元素和div元素都响应事件`</div><div class="line">//如果在p元素与div元素都绑定`mouseenter`事件，鼠标在离开p元素，但是没有离开div元素的时候，触发的结果：`p元素响应事件，而div元素不响应`</div></pre></td></tr></table></figure>
 </li>
 </ol>
+<p><strong>hover事件</strong></p>
 <ul>
-<li><p>事件参数</p>
+<li>鼠标进入和退出时触发两个函数，相当于<code>mouseenter</code>加上<code>mouseleave</code>。</li>
+<li>语法：<code>$(selector).hover(handlerIn, handlerOut)</code><br>handlerIn(eventObject)：当鼠标指针进入元素时触发执行的事件函数<br>handlerOut(eventObject)：当鼠标指针离开元素时触发执行的事件函数</li>
+</ul>
+<p><strong>focusin事件</strong></p>
 <ul>
-<li>有些事件如<code>mousemove</code>和<code>keypress</code>，需要获取<code>鼠标位置</code>和<code>按键的值</code>，否则监听这些事件就没什么意义了。</li>
+<li>当一个元素 或 其内部任何一个元素 获得焦点的时候，<br>例如：input元素，用户在点击聚焦时，如开发者需要捕获这个动作的时候，jQuery提供了一个focusin事件</li>
+<li>方法一：<code>$ele.focusin()</code><br>方法二：<code>$ele.focusin( handler )</code><br>方法三：<code>$ele.focusin( [eventData ], handler )</code></li>
+<li>相应地，也有一个focusout事件（失去焦点），语法一样。</li>
+</ul>
+<h3 id="二、键盘事件"><a href="#二、键盘事件" class="headerlink" title="二、键盘事件"></a>二、键盘事件</h3><p>键盘事件仅作用在当前焦点的DOM上，通常是<code>&lt;input&gt;</code>和<code>&lt;textarea&gt;</code>。<br><strong>keydown()与keyup()事件</strong></p>
+<ul>
+<li>鼠标有mousedown,mouseup之类的事件，这是根据人的手势动作分解的2个触发行为。<br>相对应的键盘也有这类事件，将用户行为分解成2个动作，键盘按下与松手。<br>针对这样的2种动作，jQuery分别提供了对应keydown与keyup方法来监听。</li>
+<li><p>keydown事件：<br>当用户在一个元素上第一次按下键盘上字母键的时候，就会触发它。<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//直接绑定事件</div><div class="line">$elem.keydown( handler(eventObject) )</div><div class="line">//传递参数</div><div class="line">$elem.keydown( [eventData ], handler(eventObject) )</div><div class="line">//手动触发已绑定的事件</div><div class="line">$elem.keydown()</div></pre></td></tr></table></figure>
+</li>
+<li><p>keyup事件：<br>当用户在一个元素上第一次松手键盘上的键的时候，就会触发它。<br>使用方法与keydown是一致的只是触发的条件是方法的。</p>
+</li>
+<li>注意：<br>keydown是在键盘按下就会触发；keyup是在键盘松手就会触发<br>理论上它可以绑定到任何元素，但keydown/keyup事件只是发送到具有焦点的元素上，不同的浏览器中，可获得焦点的元素略有不同，但是表单元素总是能获取焦点，所以对于此事件类型表单元素是最合适的。</li>
+</ul>
+<p><strong>keypress()事件</strong></p>
+<ul>
+<li>在input元素上绑定keydown事件会发现一个问题：每次获取的内容都是之前输入的，当前输入的获取不到。</li>
+<li>keydown事件触发在文字还没敲进文本框，这时如果在keydown事件中输出文本框中的文本，得到的是触发键盘事件前的文本，<br>而keyup事件触发时整个键盘事件的操作已经完成，获得的是触发键盘事件后的文本。</li>
+<li>因此当浏览器捕获键盘输入时，jQuery还提供了一个keypress的响应，语法跟keydown是非常相似</li>
+<li>即按一次键后触发</li>
+<li>keypress事件与keydown和keyup的主要区别：<br>1）只能捕获单个字符，不能捕获组合键<br>2）无法响应系统功能键（如delete，backspace）<br>3）不区分小键盘和主键盘的数字字符</li>
+<li>总结：<br>KeyPress主要用来接收字母、数字等ANSI字符，<br>而 KeyDown 和 KeyUP 事件过程可以处理任何不被 KeyPress 识别的击键，诸如：功能键（F1-F12）、编辑键、定位键以及任何这些键和键盘换档键的组合等。</li>
+</ul>
+<h3 id="三、表单事件"><a href="#三、表单事件" class="headerlink" title="三、表单事件"></a>三、表单事件</h3><p><strong>focus与blur事件</strong></p>
+<ul>
+<li>与focusin/focusout事件一样，也有用于处理表单焦点的focus与blur事件</li>
+<li>focus事件当DOM获得焦点时触发，<br>blur 事件当DOM失去焦点时触发。<br>两者区别在于：<code>是否支持冒泡处理</code>。</li>
+<li>即<br>focus/blur（不支持冒泡，只发生在元素本身）<br>focusin/focusout（支持冒泡）</li>
+</ul>
+<p><strong>change事件</strong></p>
+<ul>
+<li><code>&lt;input&gt;</code>、<code>&lt;textarea&gt;</code>和<code>&lt;select&gt;</code>元素的值都是可以发生改变的，开发者可以通过change事件去监听这些改变的动作</li>
+<li>即当<code>&lt;input&gt;</code>、<code>&lt;select&gt;</code>或<code>&lt;textarea&gt;</code>的内容改变时触发。</li>
+<li>input元素：<br>监听value值的变化，当有改变时，失去焦点后触发change事件。对于单选按钮和复选框，当用户用鼠标做出选择时，该事件立即触发。</li>
+<li>select元素<br>对于下拉选择框，当用户用鼠标作出选择时，该事件立即触发</li>
+<li>textarea元素<br>多行文本输入框，当有改变时，失去焦点后触发change事件</li>
+</ul>
+<p><strong>select事件</strong></p>
+<ul>
+<li>【注意：select事件只能用于<code>&lt;input&gt;</code>元素与<code>&lt;textarea&gt;</code>元素】</li>
+<li>当 文本类型的input元素 或 textarea 中的文本被选择时发生 select 事件。</li>
+<li>这个函数会调用执行绑定到select事件的所有函数，包括浏览器的默认行为。<br>可以通过在某个绑定的函数中返回false来防止触发浏览器的默认行为。</li>
+<li>方法一：<code>.select()</code><br>方法二：<code>$ele.select( handler(eventObject) )</code><br>方法三：<code>$ele.select( [eventData ], handler(eventObject) )</code></li>
+</ul>
+<p><strong>submit事件</strong></p>
+<ul>
+<li>提交表单是一个最常见的业务需求，比如用户注册，一些信息的输入都是需要表单的提交。同样的有时候开发者需要在表单提交的时候过滤一些的数据、做一些必要的操作（例如：验证表单输入的正确性，如果错误就阻止提交，从新输入）此时可以通过submit事件，监听下提交表单的这个动作</li>
+<li>当<code>&lt;form&gt;</code>提交时触发</li>
+<li>方法一：<code>$ele.submit()</code><br>方法二：<code>$ele.submit( handler(eventObject) )</code><br>方法三：<code>$ele.submit( [eventData ], handler(eventObject) )</code></li>
+<li>通过在<code>&lt;form&gt;</code>元素上绑定submit事件，开发者可以监听到用户的提交表单的的行为。<br>具体能触发submit事件的行为：<br>1) <code>&lt;input type=&quot;submit&quot;&gt;</code><br>2) <code>&lt;input type=&quot;image&quot;&gt;</code><br>3) <code>&lt;button type=&quot;submit&quot;&gt;</code><br>4) 当某些表单元素获取焦点时，敲击Enter（回车键）</li>
+<li>注意：<br>form元素是有默认提交表单(浏览器默认跳转)的行为，<br>如果通过submit处理的话，需要禁止浏览器的这个默认行为。<br>传统的方式是调用事件对象 <code>e.preventDefault()</code> 来处理，<br>而jQuery中可直接在函数中最后结尾return false即可，<br>jQuery处理代码如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&quot;#target&quot;).submit(function(data) &#123; </div><div class="line">   return false; //阻止默认行为，提交表单</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>read事件</strong></p>
+<ul>
+<li>当页面被载入并且DOM树完成初始化后触发且只触发一次，只作用于<code>document对象</code>。</li>
+<li>非常适合用来写其他的初始化代码。<br>如给一个<code>&lt;form&gt;</code>表单绑定<code>submit</code>事件：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//初始化代码必须放到document对象的ready事件中，以保证相关代码会在DOM树初始化后再执行</div><div class="line">    &lt;script&gt;</div><div class="line">        $(document).on(&apos;ready&apos;, function () &#123;</div><div class="line">            $(&apos;#idForm).on(&apos;submit&apos;, function () &#123;</div><div class="line">                alert(&apos;submit!&apos;);</div><div class="line">            &#125;);</div><div class="line">        &#125;);</div><div class="line">    &lt;/script&gt;</div><div class="line">//其实也可以简化为以下方式（更常见）</div><div class="line">$(function () &#123;</div><div class="line">       //初始化代码...</div><div class="line">&#125;);</div><div class="line"></div><div class="line">//!!!!!以后若遇到$(function () &#123;...&#125;)的形式，牢记这是document对象的ready事件处理函数</div><div class="line">//可以反复绑定事件处理函数，它们会依次执行</div><div class="line">$(function () &#123;</div><div class="line">    console.log(&apos;init A...&apos;);</div><div class="line">&#125;);</div><div class="line">$(function () &#123;</div><div class="line">    console.log(&apos;init B...&apos;);</div><div class="line">&#125;);</div><div class="line">$(function () &#123;</div><div class="line">    console.log(&apos;init C...&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="四、事件参数"><a href="#四、事件参数" class="headerlink" title="四、事件参数"></a>四、事件参数</h3><ul>
+<li>有些事件如上面提到的<code>mousemove</code>和<code>keypress</code>，需要获取<code>鼠标位置</code>和<code>按键的值</code>，否则监听这些事件就没什么意义了。</li>
 <li>其实所有事件都会传入<code>Event对象</code>作为参数，所以可以从<code>Event对象</code>上获取到更多的信息：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//当鼠标在div里面移动时会显示鼠标的横坐标和纵坐标</div><div class="line">$(function () &#123;</div><div class="line">  $(&apos;#testMouseMoveDiv&apos;).mousemove(function (e) &#123;</div><div class="line">      $(&apos;#testMouseMoveSpan&apos;).text(&apos;pageX = &apos; + e.pageX + &apos;, pageY = &apos; + e.pageY);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<h3 id="五、事件的绑定和解绑"><a href="#五、事件的绑定和解绑" class="headerlink" title="五、事件的绑定和解绑"></a>五、事件的绑定和解绑</h3><p><strong>on()的多事件绑定</strong></p>
+<ul>
+<li>为触发某个事件一般都要给元素绑定一个处理函数，所有这类事件都是属于<code>快捷处理</code>。<br>翻开源码其实可以看到，所有的快捷事件在底层的处理都是通过一个<code>&quot;on&quot;</code>方法来实现的。<br>即jQuery <code>on()方法</code>是官方推荐的绑定事件的一个方法。</li>
+<li>基本用法：<code>.on( events ,[ selector ] ,[ data ] )</code></li>
+<li><p>例如给一个元素绑定点击事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(&quot;#elem&quot;).click(function()&#123;&#125;)  //快捷方式</div><div class="line">$(&quot;#elem&quot;).on(&apos;click&apos;,function()&#123;&#125;) //on方式</div></pre></td></tr></table></figure>
 </li>
-<li><p>取消绑定</p>
+<li><p>由上面代码可知，on()方法的一个特点是<code>可以自定义事件名</code>，</p>
+</li>
+<li><p>也可以<code>多个事件绑定同一个函数</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(&quot;#elem&quot;).on(&quot;mouseover mouseout&quot;,function()&#123; &#125;);</div><div class="line">//通过空格分离，传递不同的事件名，可以同时绑定多个事件</div></pre></td></tr></table></figure>
+</li>
+<li><p>也可以<code>多个事件绑定不同函数</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(&quot;#elem&quot;).on(&#123;</div><div class="line">    mouseover:function()&#123;&#125;,  </div><div class="line">    mouseout:function()&#123;&#125;</div><div class="line">&#125;);</div><div class="line">//通过空格分离，传递不同的事件名，可以同时绑定多个事件，每一个事件执行自己的回调方法</div></pre></td></tr></table></figure>
+</li>
+<li><p>将数据传递到处理程序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function greet( event ) </div><div class="line">&#123;</div><div class="line">  alert( &quot;Hello &quot; + event.data.name ); //Hello 小明</div><div class="line">&#125;</div><div class="line">$( &quot;button&quot; ).on( &quot;click&quot;, &#123;</div><div class="line">  name: &quot;小明&quot;</div><div class="line">&#125;, greet );</div><div class="line">//可以通过第二参数（对象），当一个事件被触发时，要传递给事件处理函数的</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>on()的高级用法</strong></p>
+<ul>
+<li>针对自己处理机制，不仅有on方法，还有根据on演变出来的live方法(1.7后去掉了)，delegate方法等等。<br>这些方法的底层实现部分还是on方法，这是利用了on的另一个事件机制委托的机制衍变而来的。</li>
+<li>事件委托机制就是利用事件冒泡原理，把处理任务委托给父元素或者祖先元素（通常用父元素）。我们通过目标对象来判断事件源，并执行事件处理。</li>
+<li>注意：只有祖辈元素能委托后代元素，同辈元素之间不能相互委托，后代元素也不能委托祖辈元素。</li>
+<li>一般用法：当子元素过多而不能为每个子元素一一绑定事件时，可利用事件冒泡与事件委托，将事件响应动作绑定在这些子元素的共同父元素上。<br>当触发子元素时就会把这个事件往上冒泡到他们的父元素，从而触发事件响应动作。</li>
+<li><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.on( events ,[ selector ] ,[ data ], handler(eventObject) )</div></pre></td></tr></table></figure>
+</li>
+<li><p>可在on的第二参数中提供一个selector选择器，使用如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;left&quot;&gt;</div><div class="line">    &lt;p class=&quot;aaron&quot;&gt;</div><div class="line">        &lt;a&gt;目标节点&lt;/a&gt; //点击在这个元素上</div><div class="line">    &lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">//给出如下代码：</div><div class="line">$(&quot;div&quot;).on(&quot;click&quot;,&quot;p&quot;,fn);</div><div class="line"></div><div class="line">//注意：</div><div class="line">//事件绑定在最上层div元素上，当用户触发在a元素上，事件将往上冒泡，一直会冒泡到div元素上。</div><div class="line">//如果提供了第二参数，那么事件在往上冒泡的过程中遇到了选择器匹配的元素，将会触发事件回调函数。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>取消绑定</strong></p>
 <ul>
 <li>一个已被绑定的事件可以解除绑定。</li>
-<li><p>若要移除已绑定的click事件的<code>一个处理函数</code>，可通过<code>off(&#39;click&#39;, function)</code>实现：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function hello() &#123;</div><div class="line">  alert(&apos;hello!&apos;);</div><div class="line">&#125;</div><div class="line">a.click(hello); // 绑定事件</div><div class="line">// 10秒钟后解除绑定:</div><div class="line">setTimeout(function () &#123;</div><div class="line">  a.off(&apos;click&apos;, hello);</div><div class="line">&#125;, 10000);</div><div class="line">/**************************/</div><div class="line">//因为取消绑定事件需要传入“绑定的函数名”作参数，所以以“匿名方式”方式绑定的事件是不可以取消绑定的(两个匿名函数虽外表上一模一样，但它们是两个不同的函数对象)：</div><div class="line">// 绑定事件:</div><div class="line">a.click(function () &#123;</div><div class="line">  alert(&apos;hello!&apos;);</div><div class="line">&#125;);</div><div class="line">// 解除绑定（无效）:</div><div class="line">a.off(&apos;click&apos;, function () &#123;</div><div class="line">  alert(&apos;hello!&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<li>若要移除已绑定的click事件的<code>一个处理函数</code>，可通过<code>off(&#39;click&#39;, function)</code>实现。</li>
+<li>例子：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">function hello() </div><div class="line">&#123;</div><div class="line">  alert(&apos;hello!&apos;);</div><div class="line">&#125;</div><div class="line">a.click(hello); // 绑定事件</div><div class="line"></div><div class="line">a.off(&apos;click&apos;, hello);//解除绑定</div><div class="line"></div><div class="line">// 10秒钟后解除绑定:</div><div class="line">setTimeout(function () &#123;</div><div class="line">  a.off(&apos;click&apos;, hello);</div><div class="line">&#125;, 10000);</div><div class="line"></div><div class="line"></div><div class="line">//因为取消绑定事件需要传入“绑定的函数名”作参数，</div><div class="line">//所以以“匿名方式”方式绑定的事件是不可以取消绑定的(两个匿名函数虽外表上一模一样，但它们是两个不同的函数对象)：</div><div class="line">// 绑定事件:</div><div class="line">a.click(function () &#123;</div><div class="line">  alert(&apos;hello!&apos;);</div><div class="line">&#125;);</div><div class="line">// 解除绑定（无效）:</div><div class="line">a.off(&apos;click&apos;, function () &#123;</div><div class="line">  alert(&apos;hello!&apos;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line">//一次性解绑多个事件：</div><div class="line">$(&quot;elem&quot;).off(&quot;mousedown mouseup&quot;)</div><div class="line"></div><div class="line">//一次性解绑元素上的所有类型事件</div><div class="line">$(&quot;elem&quot;).off()</div><div class="line"></div><div class="line">//一次性解绑已绑定click事件的所有处理函数</div><div class="line">off(&apos;click&apos;)</div></pre></td></tr></table></figure>
 </li>
-<li><p>若要<code>一次性</code>移除已绑定的click事件的<code>所有处理函数</code>，可通过<code>off(&#39;click&#39;)</code>实现。</p>
-</li>
-<li>同理，若要<code>一次性</code>移除已绑定的所有类型的事件处理函数<code>，可通过</code>无参数调用off()`实现。</li>
 </ul>
-</li>
-<li><p>事件触发条件</p>
-<ul>
+<h3 id="六、事件触发条件"><a href="#六、事件触发条件" class="headerlink" title="六、事件触发条件"></a>六、事件触发条件</h3><ul>
 <li>需要注意的问题：事件的触发总是由<code>用户操作</code>引发的，用<code>JavaScript代码</code>去产生的操作将不会触发事件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//为一个文本框绑定change事件：</div><div class="line">$(&apos;#test-input&apos;).change(function () &#123;</div><div class="line">  console.log(&apos;changed...&apos;);</div><div class="line">&#125;);</div><div class="line">//当用户在文本框中输入时就会触发change事件，但用JavaScript代码去改动文本框的值，就不会触发change事件：</div><div class="line">$(&apos;#test-input&apos;).val(&apos;change it!&apos;); // 无法触发change事件</div><div class="line">//有时候希望用代码触发`change事件`，也可以通过直接调用`无参数的change()方法`来触发该事件：</div><div class="line">input.change(); // 触发change事件</div><div class="line">/*input.change()相当于input.trigger(&apos;change&apos;)，它是trigger()方法的简写*/</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<h3 id="七、jQuery事件对象"><a href="#七、jQuery事件对象" class="headerlink" title="七、jQuery事件对象"></a>七、jQuery事件对象</h3><ul>
+<li>在不同浏览器之间事件对象的获取, 以及事件对象的属性都有差异。</li>
+<li>jQuery根据 W3C 标准规范了事件对象，所以在jQuery事件回调方法中获取到的事件对象是经过兼容后处理过的一个标准的跨浏览器对象</li>
+<li>事件对象是用来记录一些事件发生时的相关信息的对象。</li>
+<li>事件对象只有事件发生时才会产生，并且只能是事件处理函数内部访问。<br>在所有事件处理函数运行结束后，事件对象就被销毁</li>
+<li><code>event.target</code><br>target 属性可以是注册事件时的元素，或者它的子元素。<br>通常用于比较 event.target 和 this 来确定事件是不是由于冒泡而触发的。<br>经常用于事件冒泡时处理事件委托。<br>简单来说就是：event.target代表当前触发事件的元素，可以通过当前元素对象的一系列属性来判断是不是我们想要的元素</li>
+</ul>
+<h3 id="八、事件对象的属性和方法"><a href="#八、事件对象的属性和方法" class="headerlink" title="八、事件对象的属性和方法"></a>八、事件对象的属性和方法</h3><ul>
+<li><code>event.type</code>：获取事件的类型</li>
+<li><code>event.pageX 和 event.pageY</code>：获取鼠标当前相对于页面的坐标<br>通过这2个属性，可以确定元素在当前页面的坐标值，<br>鼠标相对于文档的左边缘的位置（左边）与 （顶边）的距离，<br>简单来说是从页面左上角开始,即是以页面为参考点,不随滑动条移动而变化。</li>
+<li><code>event.preventDefault()</code>方法：阻止默认行为<br>这个用的特别多，<br>在执行这个方法后，如果点击一个链接（a标签），浏览器不会跳转到新的 URL 去了。<br>我们可以用 event.isDefaultPrevented() 来确定这个方法是否(在那个事件对象上)被调用过了。</li>
+<li><code>event.stopPropagation()</code>：阻止事件冒泡<br>事件是可以冒泡的，为防止事件冒泡到DOM树上，<br>也就是不触发的任何前辈元素上的事件处理函数。</li>
+<li><code>event.which</code>：获取在鼠标单击时，单击的是鼠标的哪个键<br>event.which 将 event.keyCode 和 event.charCode 标准化了。<br>event.which也将正常化的按钮按下(mousedown 和 mouseupevents)，<br>左键报告1，中间键报告2，右键报告3。</li>
+<li><code>event.currentTarget</code>: 在事件冒泡过程中的当前DOM元素<br>冒泡前的当前触发事件的DOM对象, 等同于this。</li>
+<li><code>e.target.textContent</code>：事件对象多对应元素的文本内容</li>
+<li>this和event.target的区别：<br>1) js中事件是会冒泡的，所以this是可以变化的，但event.target不会变化，它永远是直接接受事件的目标DOM元素；<br>2) this和event.target都是dom对象，如果要使用jquey中的方法可以将他们转换为jquery对象：$(this)和$(event.target);</li>
+</ul>
+<h3 id="九、jQuery自定义事件之trigger事件"><a href="#九、jQuery自定义事件之trigger事件" class="headerlink" title="九、jQuery自定义事件之trigger事件"></a>九、jQuery自定义事件之trigger事件</h3><ul>
+<li>众所周知类似于mousedown、click、keydown等等这类型的事件都是浏览器提供的，通俗叫<code>原生事件</code>，这类型的事件是需要有交互行为才能被触发。</li>
+<li><p>在jQuery通过on方法绑定一个原生事件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&apos;#elem&apos;).on(&apos;click&apos;, function() &#123;</div><div class="line">    alert(&quot;触发系统事件&quot;)</div><div class="line"> &#125;);</div></pre></td></tr></table></figure>
 </li>
-<li><p>浏览器安全限制</p>
-<ul>
+<li><p>上面代码的alert需要的执行条件：必须有用户点击才可以。<br>然而不同用户交互一般不能在某一时刻自动触发原生事件，<br>jQuery解决了这个问题，提供了一个trigger方法来触发浏览器事件。</p>
+</li>
+<li>trigger：根据绑定到匹配元素的给定的事件类型来执行所有的处理程序和行为</li>
+<li>语法：<code>$(&#39;#elem&#39;).trigger(&#39;click&#39;);</code><br>即在绑定on的事件元素上，通过trigger方法就可以调用到alert了。</li>
+<li><p>trigger除了能够触发浏览器事件，同时还支持自定义事件，并且自定义时间还支持传递参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(&apos;#elem&apos;).on(&apos;Aaron&apos;, function(event,arg1,arg2)&#123;</div><div class="line">    alert(&quot;自触自定义时间&quot;)</div><div class="line">&#125;);</div><div class="line"></div><div class="line">$(&apos;#elem&apos;).trigger(&apos;Aaron&apos;,[&apos;参数1&apos;,&apos;参数2&apos;])</div></pre></td></tr></table></figure>
+</li>
+<li><p>trigger触发浏览器事件与自定义事件区别？<br>1)自定义事件对象，是jQuery模拟原生实现的<br>2)自定义事件可以传递参数</p>
+</li>
+<li><p>trigger事件还有一个特性：会在DOM树上冒泡。<br>所以如果要阻止冒泡就需要在事件处理程序中返回false或调用事件对象中的.stopPropagation() 方法使事件停止冒泡</p>
+</li>
+<li>尽管<code>.trigger()</code>模拟事件对象，但是它并没有完美的复制自然发生的事件，<br>若要触发通过 jQuery 绑定的事件处理函数，而不触发原生的事件，<br>使用<code>.triggerHandler()</code>来代替。</li>
+<li>triggerHandler与trigger的用法是一样的，不同之处：<br>1) triggerHandler不会触发浏览器的默认行为，.triggerHandler( “submit” )将不会调用表单上的.submit()<br>2) .trigger() 会影响所有与 jQuery 对象相匹配的元素，而 .triggerHandler() 仅影响第一个匹配到的元素<br>3) 使用 .triggerHandler() 触发的事件，并不会在 DOM 树中向上冒泡。 如果它们不是由目标元素直接触发的，那么它就不会进行任何处理<br>4) 与普通的方法返回 jQuery 对象(这样就能够使用链式用法)相反，.triggerHandler() 返回最后一个处理的事件的返回值。如果没有触发任何事件，会返回 undefined</li>
+<li>例子：<a href="http://www.imooc.com/code/10156" target="_blank" rel="external">http://www.imooc.com/code/10156</a></li>
+</ul>
+<h3 id="十、浏览器安全限制"><a href="#十、浏览器安全限制" class="headerlink" title="十、浏览器安全限制"></a>十、浏览器安全限制</h3><ul>
 <li><p>在浏览器中有些JavaScript代码只有在<code>用户触发下</code>才能执行，例如<code>window.open()</code>函数：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 无法弹出新窗口，将被浏览器屏蔽:</div><div class="line">$(function () &#123;</div><div class="line">  window.open(&apos;/&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 </li>
 <li><p>这些“敏感代码”只能由用户操作来触发，所以应该把相应操作放在一个函数中，然后在一些常用事件(如click事件)处理函数中才去调用这个函数。</p>
-</li>
-</ul>
 </li>
 </ul>
 
